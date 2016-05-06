@@ -39,14 +39,13 @@ static THD_FUNCTION(Thread1, pArg) {
 
 	int _Cont;
 	for (_Cont = 0; _Cont < 16; _Cont++) {
-		chThdSleepMilliseconds(1000);
-		palTogglePad(GPIOG, GPIOG_LED1);
 		chThdSleepMilliseconds(500);
+		palTogglePad(GPIOG, GPIOG_LED1);
+		chprintf((BaseSequentialStream *) &SD1, " inicio ");
 		_Result = _ClassIIR->directFormI(_EntradasX[_Cont]);
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result);
 		chThdSleepMilliseconds(500);
 		palTogglePad(GPIOG, GPIOG_LED1);
-
 	}
 }
 

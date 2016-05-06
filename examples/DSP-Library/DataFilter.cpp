@@ -22,6 +22,8 @@ void DataFilter::newDataFilter(int pFilterOrder) {
 			sizeof(float) * (pFilterOrder + 1));
 	ArrayIntervalOutput = (int*) chHeapAlloc(NULL, sizeof(int) * 2);
 	ArrayInputsY = (float*) chHeapAlloc(NULL, sizeof(float) * (pFilterOrder));
+	ArrayResult = (float*) chHeapAlloc(NULL,
+				sizeof(float) * (pFilterOrder + BUFFER_SIZE));
 
 	setFilterOrder(pFilterOrder);
 }
