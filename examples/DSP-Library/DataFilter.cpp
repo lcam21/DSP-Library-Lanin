@@ -21,12 +21,7 @@ void DataFilter::newDataFilter(int pFilterOrder) {
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
 	ArrayIntervalOutput = (int*) chHeapAlloc(NULL, sizeof(int) * 2);
-	ArrayInputsY = (float*) chHeapAlloc(NULL,
-			sizeof(float) * (pFilterOrder));
-	ArrayInputsX = (float*) chHeapAlloc(NULL,
-			sizeof(float) * (pFilterOrder + BUFFER_SIZE));
-	ArrayResult = (float*) chHeapAlloc(NULL,
-			sizeof(float) * (pFilterOrder + BUFFER_SIZE));
+	ArrayInputsY = (float*) chHeapAlloc(NULL, sizeof(float) * (pFilterOrder));
 
 	setFilterOrder(pFilterOrder);
 }
@@ -41,7 +36,7 @@ DataFilter::~DataFilter() {
 }
 
 void DataFilter::createArrayInputFIR() {
-	for (Cont = BUFFER_SIZE - 1; Cont >= 0; Cont--) {
+	for (Cont = NumbOutput - 1; Cont >= 0; Cont--) {
 		ArrayInputsX[Cont + FilterOrder] = ArrayInputsX[Cont];
 	}
 
@@ -51,37 +46,18 @@ void DataFilter::createArrayInputFIR() {
 }
 
 void DataFilter::createArrayInputIIR() {
+	ArrayInputsX = (float*) chHeapAlloc(NULL,
+			sizeof(float) * (FilterOrder + BUFFER_SIZE));
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
 		ArrayInputsX[Cont] = ArrayInitialConditionsX[Cont];
 	}
 }
-
-//CREO Q NO SE OCUPA
-/*void DataFilter::createArrayInputY() { //****OJO**** Creo q no la necesito
-
- int _Cont;
-
- for (_Cont = NumbOutput; _Cont >= 0; _Cont--) {
- ArrayInputsY[_Cont + FilterOrder] = ArrayInputsY[_Cont];
- }
-
- for (_Cont = 1; _Cont < FilterOrder; _Cont++) {
- ArrayInputsY[_Cont - 1] = ArrayInitialConditionsY[_Cont];
- }
- }*/
 
 void DataFilter::moveArray(float *pArray) {
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
 		pArray[Cont] = pArray[Cont + BUFFER_SIZE];
 	}
 }
-
-//CREO Q NO SE OCUPA
-/*void DataFilter::copyArray(float *pArray1, float *pArray2) {
-	for (Cont = 0; Cont < BUFFER_SIZE; Cont++) {
-		pArray1[Cont + FilterOrder] = pArray2[Cont];
-	}
-}*/
 
 float* DataFilter::getArrayResult() const {
 	return ArrayResult;
@@ -97,12 +73,6 @@ int DataFilter::getNumbOutput() const {
 
 void DataFilter::setNumbOutput(int numbOutput) {
 	NumbOutput = numbOutput;
-}
-
-void DataFilter::numbOutput(int *pArrayOfInterval) {
-	NumbOutput = pArrayOfInterval[1] - pArrayOfInterval[0] + 1;
-	ArrayResult = (float*) chHeapAlloc(NULL, sizeof(float) * NumbOutput);
-
 }
 
 float* DataFilter::getArrayCoefficientsB() const {
@@ -125,21 +95,13 @@ float* DataFilter::getArrayInputsX() const {
 	return ArrayInputsX;
 }
 
-void DataFilter::setArrayInputsX(float* pArrayInputs) {
-	for (Cont = 0; Cont < BUFFER_SIZE; Cont++) {
+void DataFilter::setArrayInputsX(float* pArrayInputs, int pSizeInputs) {
+	NumbOutput = pSizeInputs;
+	ArrayInputsX = (float*) chHeapAlloc(NULL,sizeof(float) * (FilterOrder + pSizeInputs));
+	for (Cont = 0; Cont < pSizeInputs; Cont++) {
 		ArrayInputsX[Cont] = pArrayInputs[Cont];
 	}
-}
-
-int* DataFilter::getArrayIntervalOutput() const {
-	return ArrayIntervalOutput;
-}
-
-void DataFilter::setArrayIntervalOutput(int* pArrayIntervalOutput) {
-	for (Cont = 0; Cont < 2; Cont++) {
-		ArrayIntervalOutput[Cont] = pArrayIntervalOutput[Cont];
-	}
-	numbOutput(pArrayIntervalOutput);
+	ArrayResult = (float*) chHeapAlloc(NULL, sizeof(float) * NumbOutput);
 }
 
 int DataFilter::getFilterOrder() const {

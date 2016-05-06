@@ -42,7 +42,6 @@ float IIR::directFormI(float pData) {
 
 	//if the buffer is full, move the data
 	if (ContBuffer == BUFFER_SIZE) {
-		chprintf((BaseSequentialStream *) &SD1, "\r\nEntro buffer\r\n");
 		InitialDataFilter->moveArray(_ArrayInputsX);
 		InitialDataFilter->moveArray(_ArrayInputsY);
 		ContBuffer = 0;

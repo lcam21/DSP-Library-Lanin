@@ -17,7 +17,7 @@ float FuntionsMath::sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 
 	float _Result = 0; //save the result
 	int _PosInitCond = 0; //access to
-	int _Cont; //cont
+	int _Cont;
 
 	for (_Cont = pLowerLimit; _Cont <= pUpperLimit; _Cont++) {
 

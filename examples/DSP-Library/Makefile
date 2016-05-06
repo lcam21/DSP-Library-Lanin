@@ -125,7 +125,7 @@ CSRC = $(STARTUPSRC) \
 
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
-CPPSRC = main.cpp DataFilter.cpp IIR.cpp FuntionsMath.cpp
+CPPSRC = main.cpp DataFilter.cpp IIR.cpp FuntionsMath.cpp FIR.cpp
 
 # C sources to be compiled in ARM mode regardless of the global setting.
 # NOTE: Mixing ARM and THUMB mode enables the -mthumb-interwork compiler

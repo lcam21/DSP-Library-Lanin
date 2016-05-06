@@ -12,17 +12,12 @@
 #include "header/FIR.h"
 #include "header/FuntionsMath.h"
 
-FIR::FIR() {
-
-	// TODO Auto-generated constructor stub
-
-}
 
 FIR::~FIR() {
 	// TODO Auto-generated destructor stub
 }
 
-DataFilter* FIR::directFormI(DataFilter *pDataFilter) {
+float* FIR::directFormI(DataFilter *pDataFilter) {
 
 	FuntionsMath *_MathOperation = (FuntionsMath*) chHeapAlloc(NULL,
 				sizeof(FuntionsMath));
@@ -41,7 +36,7 @@ DataFilter* FIR::directFormI(DataFilter *pDataFilter) {
 				_ArrayCoefficients, _ArrayInputs, _Cont);
 	}
 
-	return pDataFilter;
+	return _ArrayResult;
 }
 
 

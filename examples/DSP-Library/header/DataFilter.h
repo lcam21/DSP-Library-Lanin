@@ -74,20 +74,9 @@ public:
 	float* getArrayInputsX() const;
 
 	/**
-	 * @brief set the value of array of initial inputs
+	 * @brief set the value of array of initial inputs - Only for filter FIR
 	 */
-	void setArrayInputsX(float* pArrayInputs);
-
-	/**
-	 * @brief return the pointer of array that have the interval of output
-	 * @return pointer double
-	 */
-	int* getArrayIntervalOutput() const;
-
-	/**
-	 * @brief set the value of array of interval of output
-	 */
-	void setArrayIntervalOutput(int* pArrayIntervalOutput);
+	void setArrayInputsX(float* pArrayInputs, int pSizeInputs);
 
 	/**
 	 * @brief return order of filter
@@ -154,12 +143,6 @@ private:
 	float Result; //Get the result of filter - For IIR
 
 	int Cont; //generic cont for use in FOR
-
-	/**
-	 * @brief funtion of get the number of output
-	 * @param pArrayOfInterval double pointer array
-	 */
-	void numbOutput(int *pArrayOfInterval);
 
 };
 

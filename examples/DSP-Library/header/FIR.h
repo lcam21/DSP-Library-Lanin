@@ -14,15 +14,10 @@ class FIR {
 public:
 
 	/**
-	 * @brief Construction of class
-	 */
-	FIR();
-
-	/**
 	 * @brief Method that implements the Direct Form I of a FIR Filter
 	 * @param pDataFilter
 	 */
-	DataFilter* directFormI(DataFilter *pDataFilter);
+	float* directFormI(DataFilter *pDataFilter);
 
 	/**
 	 * @brief Destruction of class
