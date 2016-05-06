@@ -21,21 +21,33 @@ static THD_WORKING_AREA(waThread1, 256);
 
 static THD_FUNCTION(Thread1, pArg) {
 	(void) pArg;
+	DataFilter *_DataFilter = (DataFilter *) pArg;
 
-	DataFilter *_DataFilter1 = (DataFilter *) pArg;
-
-	(void) pArg;
 	chRegSetThreadName("Filtro");
+
 	chprintf((BaseSequentialStream *) &SD1, "Entro hilo\r\n");
-	//while (TRUE) {
-	chThdSleepMilliseconds(1000);
-	palTogglePad(GPIOG, GPIOG_LED1);
-	chThdSleepMilliseconds(1000);
+
+	float _EntradasX[16] =
+			{ -1, 2, 4, 6, 4, 0, 0, 0, -1, 2, 8, 5, 3, -1, 7, 5 };
+
 	IIR *_ClassIIR = (IIR*) chHeapAlloc(NULL, sizeof(IIR));
-	_ClassIIR->directFormI(_DataFilter1);
-	palTogglePad(GPIOG, GPIOG_LED1);
-	chThdSleepMilliseconds(500);
-	//}
+	_ClassIIR->setInitialDataFilter(_DataFilter);
+
+	float _Result;
+
+	chprintf((BaseSequentialStream *) &SD1, "Resultado:");
+
+	int _Cont;
+	for (_Cont = 0; _Cont < 16; _Cont++) {
+		chThdSleepMilliseconds(1000);
+		palTogglePad(GPIOG, GPIOG_LED1);
+		chThdSleepMilliseconds(5000);
+		_Result = _ClassIIR->directFormI(_EntradasX[_Cont]);
+		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result);
+		chThdSleepMilliseconds(500);
+		palTogglePad(GPIOG, GPIOG_LED1);
+
+	}
 }
 
 int main() {
@@ -54,9 +66,6 @@ int main() {
 	float _CondicionesInicialesX[2] = { 0, 0 };
 	float _CoeficientesB[3] = { 0.333, 0.333, 0.333 };
 
-	float _EntradasX1[10] = { -1, 2, 4, 6, 4, 0, 0, 0, -1, 2 };
-	float _EntradasX2[10] = { 8, 5, 3, -1, 7, 5, 0, 0, 0, 0 };
-
 	float _CondicionesInicialesY[2] = { 0, 0 };
 	float _CoeficientesA[2] = { 0.167, 0.167 };
 
@@ -66,16 +75,9 @@ int main() {
 			sizeof(DataFilter));
 
 	_DataFilter->newDataFilter(_FilterOrder);
-
-	_DataFilter->setBuffer1(_EntradasX1);
-	_DataFilter->setBuffer2(_EntradasX2);
-
 	_DataFilter->setArrayCoefficientsB(_CoeficientesB);
 	_DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
-	_DataFilter->setArrayInputsX(_EntradasX1);
-
 	_DataFilter->setArrayIntervalOutput(_IntervaloResultado);
-
 	_DataFilter->setArrayInitialConditionsY(_CondicionesInicialesY);
 	_DataFilter->setArrayCoefficientsA(_CoeficientesA);
 

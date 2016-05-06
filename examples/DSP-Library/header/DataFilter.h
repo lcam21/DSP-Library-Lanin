@@ -16,8 +16,6 @@ public:
 	 * @brief Constructor of class
 	 * @param pFilterOrder number of filter order
 	 */
-	DataFilter(int pFilterOrder);
-
 	void newDataFilter(int pFilterOrder);
 
 	/**
@@ -26,9 +24,14 @@ public:
 	virtual ~DataFilter();
 
 	/**
-	 * @brief modify the array of input of add the initial conditions
+	 * @brief modify the array of input of add the initial conditions for filter FIR
 	 */
-	void createArrayInputX();
+	void createArrayInputFIR();
+
+	/**
+	 * @brief modify the array of input of add the initial conditions for filter IIR
+	 */
+	void createArrayInputIIR();
 
 	/**
 	 * @brief modify the array of input of add the initial conditions
@@ -123,7 +126,6 @@ public:
 	float* getArrayInitialConditionsY() const;
 	void setArrayInitialConditionsY(float* arrayInitialConditionsY);
 	float* getArrayInputsY() const;
-	void setArrayInputsY(float* arrayInputsY);
 	float* getBuffer1() const;
 	void setBuffer1(float* buffer1);
 	float* getBuffer2() const;
@@ -146,14 +148,12 @@ private:
 	float *ArrayInputsY; //Array that contains the inputs y[n-k]
 
 	//Variable of output data in axis Y
-	float *ArrayResult; //Array that contains the end result y[n]
-	int *ArrayIntervalOutput; //Array that contains the interval of output
-	int NumbOutput; //It get of ArrayIntervalOutput
+	float *ArrayResult; //Array that contains the end result y[n] - For FIR
+	int *ArrayIntervalOutput; //Array that contains the interval of output - For FIR
+	int NumbOutput; //It get of ArrayIntervalOutput- For FIR
+	float Result; //Get the result of filter - For IIR
 
-	float *Buffer1;
-	float *Buffer2;
-	bool Buffer1Ready;
-	bool Buffer2Ready;
+	int Cont; //generic cont for use in FOR
 
 	/**
 	 * @brief funtion of get the number of output
