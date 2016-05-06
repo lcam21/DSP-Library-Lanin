@@ -72,7 +72,7 @@ int main() {
 
 	_DataFilter->setArrayCoefficientsB(_CoeficientesB);
 	_DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
-	_DataFilter->setArrayInputsX(_EntradasX1); //Este no lo ocupo
+	_DataFilter->setArrayInputsX(_EntradasX1);
 
 	_DataFilter->setArrayIntervalOutput(_IntervaloResultado);
 
