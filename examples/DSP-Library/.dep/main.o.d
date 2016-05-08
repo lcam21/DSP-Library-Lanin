@@ -90,7 +90,7 @@ build/obj/main.o: main.cpp ../../ChibiOS/os/rt/include/ch.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\machine\types.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h \
  ../../ChibiOS/os/hal/include/serial.h \
- ../../ChibiOS/os/hal/lib/streams/chprintf.h header/IIR.h \
+ ../../ChibiOS/os/hal/lib/streams/chprintf.h header/IIR.h header/Filter.h \
  header/DataFilter.h header/FuntionsMath.h header/FIR.h \
  header/DataFilter.h
 
@@ -315,6 +315,8 @@ c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h:
 ../../ChibiOS/os/hal/lib/streams/chprintf.h:
 
 header/IIR.h:
+
+header/Filter.h:
 
 header/DataFilter.h:
 

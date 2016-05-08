@@ -5,20 +5,8 @@
  *      Author: lcalvare
  */
 
-#include <ch.h>
-#include <hal.h>
-#include <stdio.h>
-#include <serial.h>
-#include <chprintf.h>
-
 #include "header/IIR.h"
-#include "header/FuntionsMath.h"
-#include "header/DataFilter.h"
 
-IIR::~IIR() {
-	chHeapFree(MathOperation);
-	chHeapFree(InitialDataFilter);
-}
 
 float IIR::directFormI(float pData) {
 
@@ -67,12 +55,4 @@ float IIR::directFormI(float pData) {
 
 	return _Result;
 
-}
-
-void IIR::setInitialDataFilter(DataFilter *pInitialDataFilter) {
-	// Create class that do the sum
-	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
-	InitialDataFilter = pInitialDataFilter;
-	ContBuffer = 0;
-	InitialDataFilter->createArrayInput();
 }

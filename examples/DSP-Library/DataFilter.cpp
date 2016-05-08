@@ -5,21 +5,15 @@
  *      Author: luis
  */
 
-#include <ch.h>
-#include <hal.h>
-#include <stdio.h>
-#include <serial.h>
-#include <chprintf.h>
-
 #include "header/DataFilter.h"
 
 void DataFilter::newDataFilter(int pFilterOrder) {
 
 	//allocate memory
-	ArrayInitialConditionsX = (float*) chHeapAlloc(NULL,
-			sizeof(float) * pFilterOrder);
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
+	ArrayInputsX = (float*) chHeapAlloc(NULL,
+				sizeof(float) * (FilterOrder + BUFFER_SIZE));
 	ArrayCoefficientsA = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder));
 	ArrayInputsY = (float*) chHeapAlloc(NULL,
@@ -28,19 +22,10 @@ void DataFilter::newDataFilter(int pFilterOrder) {
 }
 DataFilter::~DataFilter() {
 	//free the memory
-	chHeapFree(ArrayInitialConditionsX);
 	chHeapFree(ArrayCoefficientsB);
 	chHeapFree(ArrayCoefficientsA);
 	chHeapFree(ArrayInputsY);
 	chHeapFree(ArrayInputsX);
-}
-
-void DataFilter::createArrayInput() {
-	ArrayInputsX = (float*) chHeapAlloc(NULL,
-			sizeof(float) * (FilterOrder + BUFFER_SIZE));
-	for (Cont = 0; Cont < FilterOrder; Cont++) {
-		ArrayInputsX[Cont] = ArrayInitialConditionsX[Cont];
-	}
 }
 
 void DataFilter::moveArray(float *pArray) {
@@ -61,7 +46,7 @@ void DataFilter::setArrayCoefficientsB(float* pArrayCoefficientsB) {
 
 void DataFilter::setArrayInitialConditionsX(float *pArrayInitialConditions) {
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
-		ArrayInitialConditionsX[Cont] = pArrayInitialConditions[Cont];
+		ArrayInputsX[Cont] = pArrayInitialConditions[Cont];
 	}
 }
 
@@ -85,10 +70,6 @@ void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
 	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
 		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
 	}
-}
-
-float* DataFilter::getArrayInitialConditionsY() const {
-	return ArrayInitialConditionsY;
 }
 
 void DataFilter::setArrayInitialConditionsY(float* arrayInitialConditionsY) {

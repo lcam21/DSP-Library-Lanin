@@ -18,8 +18,10 @@
 #include "header/FIR.h"
 #include "header/DataFilter.h"
 
+// 0 - FIR
+// 1 - IIR
+int TipoFiltro = 0;
 
-//***********IIR***********
 static THD_WORKING_AREA(waThread1, 256);
 
 static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
@@ -29,25 +31,44 @@ static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 	chRegSetThreadName("Filtro");
 
 	//data
-	float _EntradasX[9] = { 0.00000, 0.62791, 1.25333, 1.87381, 2.48690,
-			3.09017, 3.68125, 4.25779, 4.81754 };
+	float _EntradasX[16] = { -1, 2, 4, 6, 4, 0, 0, 0, -1, 2, 8, 5, 3, -1, 7, 5 };
+	float _Result;
 
 	IIR *_ClassIIR = (IIR*) chHeapAlloc(NULL, sizeof(IIR));
-	_ClassIIR->setInitialDataFilter(_DataFilter); //set data of filter
+	FIR *_ClassFIR = (FIR*) chHeapAlloc(NULL, sizeof(FIR));
 
-	float _Result;
+	if (TipoFiltro == 1) {
+		_ClassIIR->setInitialDataFilter(_DataFilter); //set data of filter
+
+	} else {
+		_ClassFIR->setInitialDataFilter(_DataFilter);
+	}
 
 	chprintf((BaseSequentialStream *) &SD1, "\r\nResultado:");
 
 	int _Cont;
 	//input data of filter
-	for (_Cont = 0; _Cont < 9; _Cont++) {
+	for (_Cont = 0; _Cont < 16; _Cont++) {
 		chThdSleepMilliseconds(500);
 		palTogglePad(GPIOG, GPIOG_LED1);
-		_Result = _ClassIIR->directFormI(_EntradasX[_Cont]); //set data
+
+		if (TipoFiltro == 1) {
+			_Result = _ClassIIR->directFormI(_EntradasX[_Cont]); //set data
+
+		} else {
+			_Result = _ClassFIR->directFormI(_EntradasX[_Cont]);
+		}
+
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result); //print result
+
 		chThdSleepMilliseconds(500);
 		palTogglePad(GPIOG, GPIOG_LED1);
+	}
+	if (TipoFiltro == 1) {
+		_ClassIIR->~Filter();
+
+	} else {
+		_ClassFIR->~Filter();
 	}
 }
 
@@ -60,13 +81,10 @@ int main() {
 
 	sdStart(&SD1, &uartCfg);
 
-	int _FilterOrder = 3;
+	int _FilterOrder = 2;
 
-	float _CondicionesInicialesX[3] = { 0, 0, 0 };
-	float _CoeficientesB[4] = { -0.0209863, 0.0203430, 0.0203430, -0.0209863 };
-
-	float _CondicionesInicialesY[3] = { 0, 0, 0 };
-	float _CoeficientesA[3] = { -3.1089549, 3.2355190, -1.1278510 };
+	float _CondicionesInicialesX[2] = { 0, 0 };
+	float _CoeficientesB[3] = { 0.333, 0.333, 0.333 };
 
 	DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
 			sizeof(DataFilter));
@@ -75,8 +93,13 @@ int main() {
 	_DataFilter->newDataFilter(_FilterOrder);
 	_DataFilter->setArrayCoefficientsB(_CoeficientesB);
 	_DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
-	_DataFilter->setArrayInitialConditionsY(_CondicionesInicialesY);
-	_DataFilter->setArrayCoefficientsA(_CoeficientesA);
+
+	if (TipoFiltro == 1) {
+		float _CondicionesInicialesY[2] = { 0, 0 };
+		float _CoeficientesA[2] = { 0.167, 0.167 };
+		_DataFilter->setArrayInitialConditionsY(_CondicionesInicialesY);
+		_DataFilter->setArrayCoefficientsA(_CoeficientesA);
+	}
 
 	void *_Arg = _DataFilter;
 
@@ -91,72 +114,3 @@ int main() {
 		chThdSleepMilliseconds(200);
 	}
 }
-
-//***********FIR***********
-
-/*
- static THD_WORKING_AREA(waThread2, 256);
-
- static THD_FUNCTION(Thread2, pArg) {
- (void) pArg;
- DataFilter *_DataFilter = (DataFilter *) pArg;
-
- chRegSetThreadName("Filtro");
-
- FIR *_ClassFIR = (FIR*) chHeapAlloc(NULL, sizeof(FIR));
- _ClassFIR->setInitialDataFilter(_DataFilter);
-
- float _Result;
-
- chprintf((BaseSequentialStream *) &SD1, "\r\nResultado:");
-
- float _EntradasX[16] = { -1, 2, 4, 6, 4, 0, 0, 0, -1, 2, 8, 5, 3, -1, 7, 5 };
-
- int _Cont;
- for (_Cont = 0; _Cont < 16; _Cont++) {
- chThdSleepMilliseconds(500);
- palTogglePad(GPIOG, GPIOG_LED1);
- _Result = _ClassFIR->directFormI(_EntradasX[_Cont]);
- chprintf((BaseSequentialStream *) &SD1, "%f ", _Result);
- chThdSleepMilliseconds(500);
- palTogglePad(GPIOG, GPIOG_LED1);
-
- }
- }
-
- int main() {
-
- halInit();
- chSysInit();
-
- SerialConfig uartCfg = { 9600, };
-
- sdStart(&SD1, &uartCfg);
-
- int _FilterOrder = 2;
-
- float _CondicionesInicialesX[2] = { 0, 0 };
- float _CoeficientesB[3] = { 0.333, 0.333, 0.333 };
-
- DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
- sizeof(DataFilter));
-
- _DataFilter->newDataFilter(_FilterOrder);
- _DataFilter->setArrayCoefficientsB(_CoeficientesB);
- _DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
-
- void *_Arg = _DataFilter;
-
- chThdCreateStatic(waThread2, sizeof(waThread2), NORMALPRIO, Thread2, _Arg);
-
- while (TRUE) {
- if (palReadPad(GPIOG, GPIOG_BUTTON)) {
- chprintf((BaseSequentialStream *) &SD1,
- "Se ha presionado SW1 \r\n");
- chThdSleepMilliseconds(200);
- }
- chThdSleepMilliseconds(200);
- }
- }
-
- */

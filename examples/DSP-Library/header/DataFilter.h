@@ -5,6 +5,9 @@
  *      Author: luis
  */
 
+#include <ch.h>
+#include <hal.h>
+
 #ifndef DATAFILTER_H_
 #define DATAFILTER_H_
 
@@ -22,11 +25,6 @@ public:
 	 * @brief Destructor of class
 	 */
 	virtual ~DataFilter();
-
-	/**
-	 * @brief modify the array of input of add the initial conditions for filter
-	 */
-	void createArrayInput();
 
 	/**
 	 * @brief modify the array of input of add the initial conditions
@@ -107,17 +105,15 @@ public:
 	 */
 	float* getArrayInputsY() const;
 
-private:
+protected:
 	//Variable generic of filter
 	int FilterOrder; //Number of the order of filter
 
 	// Variable of input data in axis X
-	float *ArrayInitialConditionsX; //Array that contains the initial conditions of x[n-k]
 	float *ArrayCoefficientsB; //Array that contains the coefficients b sub k
 	float *ArrayInputsX; //Array that contains the inputs x[n-k]
 
 	//Variable of input data in axis Y
-	float *ArrayInitialConditionsY; //Array that contains the initial conditions of y[n-k]
 	float *ArrayCoefficientsA; //Array that contains the coefficients a sub k
 	float *ArrayInputsY; //Array that contains the inputs y[n-k]
 

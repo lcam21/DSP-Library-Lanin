@@ -5,20 +5,7 @@
  *      Author: luis
  */
 
-#include <ch.h>
-#include <hal.h>
-#include <stdio.h>
-#include <serial.h>
-#include <chprintf.h>
-
 #include "header/FIR.h"
-#include "header/FuntionsMath.h"
-
-FIR::~FIR() {
-	//free memory
-	chHeapFree(MathOperation);
-	chHeapFree(InitialDataFilter);
-}
 
 float FIR::directFormI(float pData) {
 
@@ -50,13 +37,5 @@ float FIR::directFormI(float pData) {
 	ContBuffer++;
 
 	return _Result;
-}
-
-void FIR::setInitialDataFilter(DataFilter *pInitialDataFilter) {
-	// Create class that do the sum
-	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
-	InitialDataFilter = pInitialDataFilter;
-	ContBuffer = 0;
-	InitialDataFilter->createArrayInput();
 }
 

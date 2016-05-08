@@ -12,11 +12,6 @@ class FuntionsMath {
 public:
 
 	/**
-	 * @brief Construction of class
-	 */
-	FuntionsMath();
-
-	/**
 	 * @brief Method responsible for carrying out a special sum
 	 * @param pUpperLimit upper limit of the sum
 	 * @param pLowerLimit lower limit of the sum
@@ -27,11 +22,6 @@ public:
 	 */
 	float sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 			float* arrayX, int pCont);
-
-	/**
-	 * @brief Destruction of class
-	 */
-	virtual ~FuntionsMath();
 
 private:
 

@@ -5,37 +5,20 @@
  *      Author: luis
  */
 
+#include "Filter.h"
+
 #ifndef HEADER_FIR_H_
 #define HEADER_FIR_H_
 
-#include "DataFilter.h"
-#include "FuntionsMath.h"
-
-class FIR {
+class FIR : public Filter {
 public:
 
 	/**
 	 * @brief Method that implements the Direct Form I of a FIR Filter
 	 * @param pDataFilter
+	 * @return variable with get the filter data
 	 */
 	float directFormI(float pData);
-
-	/**
-	 * @brief Destruction of class
-	 */
-	virtual ~FIR();
-
-	/**
-	 * @brief Method for set the initial data for filter
-	 * @param type DataFilter
-	 */
-	void setInitialDataFilter(DataFilter *pInitialDataFilter);
-
-private:
-
-	FuntionsMath *MathOperation;
-	DataFilter *InitialDataFilter;
-	int ContBuffer;
 
 };
 

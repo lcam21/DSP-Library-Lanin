@@ -1,4 +1,5 @@
-build/obj/DataFilter.o: DataFilter.cpp ../../ChibiOS/os/rt/include/ch.h \
+build/obj/DataFilter.o: DataFilter.cpp header/DataFilter.h \
+ ../../ChibiOS/os/rt/include/ch.h \
  ../../ChibiOS/os/rt/ports/ARMCMx/compilers/GCC/chtypes.h \
  c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h \
  c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h \
@@ -77,20 +78,9 @@ build/obj/DataFilter.o: DataFilter.cpp ../../ChibiOS/os/rt/include/ch.h \
  ../../ChibiOS/os/hal/ports/STM32/LLD/OTGv1/usb_lld.h \
  ../../ChibiOS/os/hal/ports/STM32/LLD/OTGv1/stm32_otg.h \
  ../../ChibiOS/os/hal/include/st.h ../../ChibiOS/os/hal/include/mmc_spi.h \
- ../../ChibiOS/os/hal/include/serial_usb.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\stdio.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\_ansi.h \
- c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\reent.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\_types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\machine\_types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\machine\_default_types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\lock.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\machine\types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h \
- ../../ChibiOS/os/hal/include/serial.h \
- ../../ChibiOS/os/hal/lib/streams/chprintf.h header/DataFilter.h
+ ../../ChibiOS/os/hal/include/serial_usb.h
+
+header/DataFilter.h:
 
 ../../ChibiOS/os/rt/include/ch.h:
 
@@ -285,31 +275,3 @@ mcuconf.h:
 ../../ChibiOS/os/hal/include/mmc_spi.h:
 
 ../../ChibiOS/os/hal/include/serial_usb.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\stdio.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\_ansi.h:
-
-c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stdarg.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\sys\reent.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\sys\_types.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\machine\_types.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\machine\_default_types.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\sys\lock.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\sys\types.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\machine\types.h:
-
-c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h:
-
-../../ChibiOS/os/hal/include/serial.h:
-
-../../ChibiOS/os/hal/lib/streams/chprintf.h:
-
-header/DataFilter.h:

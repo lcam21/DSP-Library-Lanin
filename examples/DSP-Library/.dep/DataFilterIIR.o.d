@@ -1,5 +1,5 @@
-build/obj/IIR.o: IIR.cpp header/IIR.h header/Filter.h \
- ../../ChibiOS/os/rt/include/ch.h \
+build/obj/DataFilterIIR.o: DataFilterIIR.cpp header/DataFilterIIR.h \
+ header/DataFilter.h ../../ChibiOS/os/rt/include/ch.h \
  ../../ChibiOS/os/rt/ports/ARMCMx/compilers/GCC/chtypes.h \
  c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h \
  c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stdint.h \
@@ -78,12 +78,11 @@ build/obj/IIR.o: IIR.cpp header/IIR.h header/Filter.h \
  ../../ChibiOS/os/hal/ports/STM32/LLD/OTGv1/usb_lld.h \
  ../../ChibiOS/os/hal/ports/STM32/LLD/OTGv1/stm32_otg.h \
  ../../ChibiOS/os/hal/include/st.h ../../ChibiOS/os/hal/include/mmc_spi.h \
- ../../ChibiOS/os/hal/include/serial_usb.h header/DataFilter.h \
- header/FuntionsMath.h
+ ../../ChibiOS/os/hal/include/serial_usb.h
 
-header/IIR.h:
+header/DataFilterIIR.h:
 
-header/Filter.h:
+header/DataFilter.h:
 
 ../../ChibiOS/os/rt/include/ch.h:
 
@@ -278,7 +277,3 @@ mcuconf.h:
 ../../ChibiOS/os/hal/include/mmc_spi.h:
 
 ../../ChibiOS/os/hal/include/serial_usb.h:
-
-header/DataFilter.h:
-
-header/FuntionsMath.h:

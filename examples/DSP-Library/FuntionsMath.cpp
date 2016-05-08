@@ -8,10 +8,6 @@
 
 #include "header/FuntionsMath.h"
 
-FuntionsMath::FuntionsMath() {
-	// TODO Auto-generated constructor stub
-}
-
 float FuntionsMath::sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 		float* pArray, int pCont) {
 
@@ -26,10 +22,5 @@ float FuntionsMath::sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 		pCont--;
 	}
 	return _Result;
-}
-
-
-FuntionsMath::~FuntionsMath() {
-	// TODO Auto-generated destructor stub
 }
 

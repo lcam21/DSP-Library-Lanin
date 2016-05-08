@@ -1,4 +1,4 @@
-build/obj/IIR.o: IIR.cpp header/IIR.h header/Filter.h \
+build/obj/Filter.o: Filter.cpp header/Filter.h \
  ../../ChibiOS/os/rt/include/ch.h \
  ../../ChibiOS/os/rt/ports/ARMCMx/compilers/GCC/chtypes.h \
  c:\emtechesdk\gcc\lib\gcc\arm-none-eabi\4.8.3\include\stddef.h \
@@ -80,8 +80,6 @@ build/obj/IIR.o: IIR.cpp header/IIR.h header/Filter.h \
  ../../ChibiOS/os/hal/include/st.h ../../ChibiOS/os/hal/include/mmc_spi.h \
  ../../ChibiOS/os/hal/include/serial_usb.h header/DataFilter.h \
  header/FuntionsMath.h
-
-header/IIR.h:
 
 header/Filter.h:
 
