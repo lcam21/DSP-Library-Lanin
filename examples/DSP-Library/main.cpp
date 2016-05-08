@@ -18,30 +18,34 @@
 #include "header/FIR.h"
 #include "header/DataFilter.h"
 
+
+//***********IIR***********
 static THD_WORKING_AREA(waThread1, 256);
 
-static THD_FUNCTION(Thread1, pArg) {
+static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 	(void) pArg;
 	DataFilter *_DataFilter = (DataFilter *) pArg;
 
 	chRegSetThreadName("Filtro");
 
+	//data
 	float _EntradasX[9] = { 0.00000, 0.62791, 1.25333, 1.87381, 2.48690,
 			3.09017, 3.68125, 4.25779, 4.81754 };
 
 	IIR *_ClassIIR = (IIR*) chHeapAlloc(NULL, sizeof(IIR));
-	_ClassIIR->setInitialDataFilter(_DataFilter);
+	_ClassIIR->setInitialDataFilter(_DataFilter); //set data of filter
 
 	float _Result;
 
 	chprintf((BaseSequentialStream *) &SD1, "\r\nResultado:");
 
 	int _Cont;
+	//input data of filter
 	for (_Cont = 0; _Cont < 9; _Cont++) {
 		chThdSleepMilliseconds(500);
 		palTogglePad(GPIOG, GPIOG_LED1);
-		_Result = _ClassIIR->directFormI(_EntradasX[_Cont]);
-		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result);
+		_Result = _ClassIIR->directFormI(_EntradasX[_Cont]); //set data
+		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result); //print result
 		chThdSleepMilliseconds(500);
 		palTogglePad(GPIOG, GPIOG_LED1);
 	}
@@ -67,6 +71,7 @@ int main() {
 	DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
 			sizeof(DataFilter));
 
+	//set data of filter
 	_DataFilter->newDataFilter(_FilterOrder);
 	_DataFilter->setArrayCoefficientsB(_CoeficientesB);
 	_DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
@@ -86,6 +91,8 @@ int main() {
 		chThdSleepMilliseconds(200);
 	}
 }
+
+//***********FIR***********
 
 /*
  static THD_WORKING_AREA(waThread2, 256);

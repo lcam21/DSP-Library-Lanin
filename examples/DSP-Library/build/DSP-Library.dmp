@@ -7,8 +7,8 @@ start address 0x080001c1
 
 Program Header:
     LOAD off    0x00008000 vaddr 0x08000000 paddr 0x08000000 align 2**15
-         filesz 0x00009bdc memsz 0x00009be0 flags rwx
-    LOAD off    0x00018800 vaddr 0x20000800 paddr 0x08009be0 align 2**15
+         filesz 0x00009c2c memsz 0x00009c30 flags rwx
+    LOAD off    0x00018800 vaddr 0x20000800 paddr 0x08009c30 align 2**15
          filesz 0x00000000 memsz 0x00007430 flags rw-
     LOAD off    0x00018000 vaddr 0x20000000 paddr 0x20000000 align 2**15
          filesz 0x00000000 memsz 0x00000800 flags rw-
@@ -18,38 +18,38 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 startup       000001c0  08000000  08000000  00008000  2**4
                   CONTENTS, ALLOC, LOAD, DATA
-  1 .text         00009a1c  080001c0  080001c0  000081c0  2**4
+  1 .text         00009a6c  080001c0  080001c0  000081c0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .textalign    00000004  08009bdc  08009bdc  00011bdc  2**0
+  2 .textalign    00000004  08009c2c  08009c2c  00011c2c  2**0
                   ALLOC
   3 .mstack       00000400  20000000  20000000  00018000  2**0
                   ALLOC
   4 .pstack       00000400  20000400  20000400  00018000  2**0
                   ALLOC
-  5 .bss          00007430  20000800  08009be0  00018800  2**3
+  5 .bss          00007430  20000800  08009c30  00018800  2**3
                   ALLOC
-  6 .ARM.attributes 0000002f  00000000  00000000  00011bdc  2**0
+  6 .ARM.attributes 0000002f  00000000  00000000  00011c2c  2**0
                   CONTENTS, READONLY
-  7 .comment      00000070  00000000  00000000  00011c0b  2**0
+  7 .comment      00000070  00000000  00000000  00011c5b  2**0
                   CONTENTS, READONLY
-  8 .debug_info   00025ac2  00000000  00000000  00011c7b  2**0
+  8 .debug_info   00025ab4  00000000  00000000  00011ccb  2**0
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_abbrev 00006b84  00000000  00000000  0003773d  2**0
+  9 .debug_abbrev 00006b93  00000000  00000000  0003777f  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_aranges 00001958  00000000  00000000  0003e2c1  2**0
+ 10 .debug_aranges 00001958  00000000  00000000  0003e312  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 000016b8  00000000  00000000  0003fc19  2**0
+ 11 .debug_ranges 000016b8  00000000  00000000  0003fc6a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .debug_line   0000a7e3  00000000  00000000  000412d1  2**0
+ 12 .debug_line   0000a7f9  00000000  00000000  00041322  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_str    000054f6  00000000  00000000  0004bab4  2**0
+ 13 .debug_str    000054ea  00000000  00000000  0004bb1b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_frame  00005314  00000000  00000000  00050fac  2**2
+ 14 .debug_frame  00005314  00000000  00000000  00051008  2**2
                   CONTENTS, READONLY, DEBUGGING
 SYMBOL TABLE:
 08000000 l    d  startup	00000000 startup
 080001c0 l    d  .text	00000000 .text
-08009bdc l    d  .textalign	00000000 .textalign
+08009c2c l    d  .textalign	00000000 .textalign
 20000000 l    d  .mstack	00000000 .mstack
 20000400 l    d  .pstack	00000000 .pstack
 20000800 l    d  .bss	00000000 .bss
@@ -106,7 +106,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 080014e0 l     F .text	00000012 chSysUnlockFromISR
 08001500 l     F .text	0000000e chVTGetSystemTimeX
 08001510 l     F .text	000000e4 chVTDoTickI
-08009520 l     O .text	0000000c __func__.5928
+08009570 l     O .text	0000000c __func__.5928
 08001600 l     F .text	00000020 chRegSetThreadName
 08001620 l     F .text	0000001a chRegSetThreadNameX
 08001640 l     F .text	0000000e _idle_thread
@@ -125,8 +125,8 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001ad0 l     F .text	00000014 port_timer_set_alarm
 08001af0 l     F .text	0000000e port_timer_get_time
 08001b00 l     F .text	0000000e chVTGetSystemTimeX
-08009530 l     O .text	0000000b __func__.6545
-08009540 l     O .text	0000000d __func__.6553
+08009580 l     O .text	0000000b __func__.6545
+08009590 l     O .text	0000000d __func__.6553
 00000000 l    df *ABS*	00000000 chschd.c
 08001d60 l     F .text	0000001a port_lock
 08001d80 l     F .text	0000001a port_unlock
@@ -140,7 +140,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001e90 l     F .text	00000012 chSysUnlockFromISR
 08001eb0 l     F .text	00000022 chVTIsArmedI
 08001ee0 l     F .text	0000001c chSemFastSignalI
-08009550 l     O .text	0000000c __func__.6542
+080095a0 l     O .text	0000000c __func__.6542
 08002030 l     F .text	0000007c wakeup
 00000000 l    df *ABS*	00000000 chthreads.c
 080022d0 l     F .text	0000001a port_lock
@@ -154,16 +154,16 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08002410 l     F .text	0000002c queue_fifo_remove
 08002440 l     F .text	00000012 chSysLock
 08002460 l     F .text	0000003c chSysUnlock
-08009570 l     O .text	0000000c __func__.5842
+080095c0 l     O .text	0000000c __func__.5842
 080024a0 l     F .text	00000018 chThdGetSelfX
 080024c0 l     F .text	00000028 chThdSleepS
-08009580 l     O .text	0000000c __func__.6013
+080095d0 l     O .text	0000000c __func__.6013
 080024f0 l     F .text	00000050 chThdDoDequeueNextI
-080095c0 l     O .text	00000014 __func__.6025
-08009560 l     O .text	0000000d __func__.6554
-08009590 l     O .text	0000000b __func__.6598
-080095a0 l     O .text	0000000e __func__.6608
-080095b0 l     O .text	0000000d __func__.6620
+08009610 l     O .text	00000014 __func__.6025
+080095b0 l     O .text	0000000d __func__.6554
+080095e0 l     O .text	0000000b __func__.6598
+080095f0 l     O .text	0000000e __func__.6608
+08009600 l     O .text	0000000d __func__.6620
 00000000 l    df *ABS*	00000000 chtm.c
 080028f0 l     F .text	00000018 port_rt_get_counter_value
 08002910 l     F .text	00000076 tm_stop
@@ -178,34 +178,34 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08002c70 l     F .text	0000002a queue_dequeue
 08002ca0 l     F .text	00000012 chSysLock
 08002cc0 l     F .text	0000003c chSysUnlock
-08009610 l     O .text	0000000c __func__.5842
+08009660 l     O .text	0000000c __func__.5842
 08002d00 l     F .text	0000001e chMtxQueueNotEmptyS
-08009600 l     O .text	00000010 __func__.6537
-08009620 l     O .text	0000000b __func__.6545
-08009630 l     O .text	0000000c __func__.6568
+08009650 l     O .text	00000010 __func__.6537
+08009670 l     O .text	0000000b __func__.6545
+08009680 l     O .text	0000000c __func__.6568
 00000000 l    df *ABS*	00000000 chevents.c
-08009640 l     O .text	00000015 __func__.6562
-08009660 l     O .text	0000000d __func__.6579
+08009690 l     O .text	00000015 __func__.6562
+080096b0 l     O .text	0000000d __func__.6579
 00000000 l    df *ABS*	00000000 chqueues.c
 08003040 l     F .text	0000001a port_lock
 08003060 l     F .text	0000001a port_unlock
 08003080 l     F .text	0000001e queue_init
 080030a0 l     F .text	00000012 chSysLock
 080030c0 l     F .text	0000003c chSysUnlock
-08009670 l     O .text	0000000c __func__.5842
+080096c0 l     O .text	0000000c __func__.5842
 08003100 l     F .text	00000014 chThdQueueObjectInit
 08003120 l     F .text	00000022 chIQIsEmptyI
 08003150 l     F .text	00000034 chIQIsFullI
 08003190 l     F .text	00000034 chOQIsEmptyI
 080031d0 l     F .text	00000022 chOQIsFullI
-08009680 l     O .text	00000010 __func__.6565
-08009690 l     O .text	00000011 __func__.6601
+080096d0 l     O .text	00000010 __func__.6565
+080096e0 l     O .text	00000011 __func__.6601
 00000000 l    df *ABS*	00000000 chmemcore.c
 08003610 l     F .text	0000001a port_lock
 08003630 l     F .text	0000001a port_unlock
 08003650 l     F .text	00000012 chSysLock
 08003670 l     F .text	0000003c chSysUnlock
-080096b0 l     O .text	0000000c __func__.5842
+08009700 l     O .text	0000000c __func__.5842
 20000de8 l     O .bss	00000004 nextmem
 20000dec l     O .bss	00000004 endmem
 00000000 l    df *ABS*	00000000 chheap.c
@@ -218,9 +218,9 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000000 l    df *ABS*	00000000 hal.c
 080039a0 l     F .text	0000000c osalInit
 00000000 l    df *ABS*	00000000 hal_mmcsd.c
-080096c0 l     O .text	00000011 __func__.7912
-080096e0 l     O .text	00000014 __func__.7919
-08009700 l     O .text	00000018 __func__.7927
+08009710 l     O .text	00000011 __func__.7912
+08009730 l     O .text	00000014 __func__.7919
+08009750 l     O .text	00000018 __func__.7927
 00000000 l    df *ABS*	00000000 adc.c
 08003b70 l     F .text	00000014 osalMutexObjectInit
 00000000 l    df *ABS*	00000000 mac.c
@@ -234,18 +234,18 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08003cf0 l     F .text	0000001a port_unlock
 08003d10 l     F .text	00000012 chSysLock
 08003d30 l     F .text	0000003c chSysUnlock
-080097a0 l     O .text	0000000c __func__.6186
+080097f0 l     O .text	0000000c __func__.6186
 08003d70 l     F .text	0000000a osalSysLock
 08003d80 l     F .text	0000000a osalSysUnlock
 08003d90 l     F .text	00000014 osalThreadSleep
-08009720 l     O .text	00000020 sdc_vmt
+08009770 l     O .text	00000020 sdc_vmt
 08003db0 l     F .text	000000a0 mode_detect
 08003e50 l     F .text	00000070 mmc_init
 08003ec0 l     F .text	000000ac sdc_init
 08003f70 l     F .text	00000048 mmc_cmd6_construct
-08009740 l     O .text	00000013 __func__.8305
+08009790 l     O .text	00000013 __func__.8305
 08003fc0 l     F .text	00000058 sdc_cmd6_construct
-08009760 l     O .text	00000013 __func__.8312
+080097b0 l     O .text	00000013 __func__.8312
 08004020 l     F .text	00000042 sdc_cmd6_extract_info
 08004070 l     F .text	00000050 sdc_cmd6_check_status
 080040c0 l     F .text	000000f6 sdc_detect_bus_clk
@@ -253,19 +253,19 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08004230 l     F .text	00000034 detect_bus_clk
 08004270 l     F .text	00000080 sdc_set_bus_width
 080042f0 l     F .text	00000098 mmc_set_bus_width
-08009780 l     O .text	00000012 __func__.8356
-080097b0 l     O .text	0000000b __func__.8388
-080097c0 l     O .text	0000000e __func__.8399
-080097d0 l     O .text	00000008 __func__.8407
-080097e0 l     O .text	00000009 __func__.8415
-080097f0 l     O .text	00000008 __func__.8425
-08009800 l     O .text	0000000b __func__.8430
+080097d0 l     O .text	00000012 __func__.8356
+08009800 l     O .text	0000000b __func__.8388
+08009810 l     O .text	0000000e __func__.8399
+08009820 l     O .text	00000008 __func__.8407
+08009830 l     O .text	00000009 __func__.8415
+08009840 l     O .text	00000008 __func__.8425
+08009850 l     O .text	0000000b __func__.8430
 00000000 l    df *ABS*	00000000 serial.c
 08004850 l     F .text	0000001a port_lock
 08004870 l     F .text	0000001a port_unlock
 08004890 l     F .text	00000012 chSysLock
 080048b0 l     F .text	0000003c chSysUnlock
-08009840 l     O .text	0000000c __func__.5842
+08009890 l     O .text	0000000c __func__.5842
 080048f0 l     F .text	00000018 chEvtObjectInit
 08004910 l     F .text	00000022 chIQIsEmptyI
 08004940 l     F .text	0000000a osalSysLock
@@ -280,9 +280,9 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08004a80 l     F .text	00000020 gett
 08004aa0 l     F .text	00000028 writet
 08004ad0 l     F .text	00000028 readt
-08009810 l     O .text	00000020 vmt
-08009830 l     O .text	00000008 __func__.7954
-08009850 l     O .text	00000010 __func__.7963
+08009860 l     O .text	00000020 vmt
+08009880 l     O .text	00000008 __func__.7954
+080098a0 l     O .text	00000010 __func__.7963
 00000000 l    df *ABS*	00000000 spi.c
 08004c40 l     F .text	00000014 osalMutexObjectInit
 00000000 l    df *ABS*	00000000 st.c
@@ -290,8 +290,8 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08004cd0 l     F .text	00000014 st_lld_stop_alarm
 08004cf0 l     F .text	0000001a st_lld_set_alarm
 08004d10 l     F .text	00000022 st_lld_is_alarm_active
-08009860 l     O .text	0000000d __func__.7909
-08009870 l     O .text	0000000b __func__.7916
+080098b0 l     O .text	0000000d __func__.7909
+080098c0 l     O .text	0000000b __func__.7916
 00000000 l    df *ABS*	00000000 usb.c
 08004dc0 l     F .text	0000001a port_lock
 08004de0 l     F .text	0000001a port_unlock
@@ -301,20 +301,20 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08004e40 l     F .text	00000012 chSysUnlockFromISR
 08004e60 l     F .text	0000000a osalSysLockFromISR
 08004e70 l     F .text	0000000a osalSysUnlockFromISR
-08009880 l     O .text	00000002 zero_status
-08009890 l     O .text	00000002 active_status
-080098a0 l     O .text	00000002 halted_status
+080098d0 l     O .text	00000002 zero_status
+080098e0 l     O .text	00000002 active_status
+080098f0 l     O .text	00000002 halted_status
 08004e80 l     F .text	00000030 get_hword
 08004eb0 l     F .text	0000003c set_address
 08004ef0 l     F .text	000003a4 default_handler
-080098b0 l     O .text	00000011 __func__.8356
-080098d0 l     O .text	00000012 __func__.8361
-080098f0 l     O .text	0000000b __func__.8395
-08009900 l     O .text	0000000c __func__.8409
+08009900 l     O .text	00000011 __func__.8356
+08009920 l     O .text	00000012 __func__.8361
+08009940 l     O .text	0000000b __func__.8395
+08009950 l     O .text	0000000c __func__.8409
 00000000 l    df *ABS*	00000000 chprintf.c
 08005870 l     F .text	000000aa long_to_string_with_divisor
 08005920 l     F .text	00000022 ch_ltoa
-08009910 l     O .text	00000024 pow10
+08009960 l     O .text	00000024 pow10
 08005950 l     F .text	000000b0 ftoa
 00000000 l    df *ABS*	00000000 nvic.c
 00000000 l    df *ABS*	00000000 stm32_dma.c
@@ -356,7 +356,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08006d10 l     F .text	0000000a port_unlock_from_isr
 08006d20 l     F .text	00000012 chSysLock
 08006d40 l     F .text	0000003c chSysUnlock
-08009a20 l     O .text	0000000c __func__.6186
+08009a70 l     O .text	0000000c __func__.6186
 08006d80 l     F .text	00000012 chSysLockFromISR
 08006da0 l     F .text	00000012 chSysUnlockFromISR
 08006dc0 l     F .text	0000000a osalSysLock
@@ -368,14 +368,14 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08006e40 l     F .text	00000018 osalThreadResumeI
 20003358 l     O .bss	00000200 u
 08006e60 l     F .text	000000a0 sdc_lld_prepare_read_bytes
-08009a00 l     O .text	0000001b __func__.8258
+08009a50 l     O .text	0000001b __func__.8258
 08006f00 l     F .text	00000078 sdc_lld_prepare_read
 08006f80 l     F .text	00000078 sdc_lld_prepare_write
 08007000 l     F .text	00000098 sdc_lld_wait_transaction_end
 080070a0 l     F .text	000000a2 sdc_lld_collect_errors
 08007150 l     F .text	000000a0 sdc_lld_error_cleanup
-08009a30 l     O .text	00000015 __func__.8380
-08009a50 l     O .text	00000016 __func__.8389
+08009a80 l     O .text	00000015 __func__.8380
+08009aa0 l     O .text	00000016 __func__.8389
 00000000 l    df *ABS*	00000000 pal_lld.c
 080078f0 l     F .text	0000004c initgpio
 00000000 l    df *ABS*	00000000 usb_lld.c
@@ -391,14 +391,14 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08007ae0 l     F .text	00000018 osalThreadResumeI
 20003938 l     O .bss	00000014 ep0_state
 2000394c l     O .bss	00000008 ep0setup_buffer
-08009a70 l     O .text	00000024 ep0config
-08009aa0 l     O .text	0000000c fsparams
-08009ab0 l     O .text	0000000c hsparams
+08009ac0 l     O .text	00000024 ep0config
+08009af0 l     O .text	0000000c fsparams
+08009b00 l     O .text	0000000c hsparams
 08007b00 l     F .text	0000002e otg_rxfifo_flush
 08007b30 l     F .text	00000036 otg_txfifo_flush
 08007b70 l     F .text	0000001c otg_ram_reset
 08007b90 l     F .text	00000040 otg_ram_alloc
-08009ac0 l     O .text	0000000e __func__.8304
+08009b10 l     O .text	0000000e __func__.8304
 08007bd0 l     F .text	0000012e otg_epin_handler
 08007d00 l     F .text	00000100 otg_epout_handler
 08007e00 l     F .text	0000019c usb_lld_serve_interrupt
@@ -425,7 +425,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08008870 l     F .text	0000000a osalSysLockFromISR
 08008880 l     F .text	0000000a osalSysUnlockFromISR
 08008890 l     F .text	00000018 osalEventBroadcastFlagsI
-08009ad0 l     O .text	0000000c default_config
+08009b20 l     O .text	0000000c default_config
 080088b0 l     F .text	000000b0 usart_init
 08008960 l     F .text	0000006a set_error
 080089d0 l     F .text	00000126 serve_interrupt
@@ -446,7 +446,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 10000000 l       startup	00000000 __ram4_start__
 00000000 l       startup	00000000 __ram6_start__
 20007c30 l       .ARM.attributes	00000000 __ram0_free__
-08009be0 l       .mstack	00000000 _etext
+08009c30 l       .mstack	00000000 _etext
 00000000 l       *UND*	00000000 msObjectInit
 40025000 l       *ABS*	00000000 __ram5_end__
 00001000 l       *ABS*	00000000 __ram5_size__
@@ -474,11 +474,11 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 00000400 l       *ABS*	00000000 __main_stack_size__
 00000000 l       startup	00000000 __ram3_start__
 00000400 l       *ABS*	00000000 __process_stack_size__
-08009ae0 g     O .text	000000fc pal_default_config
+08009b30 g     O .text	000000fc pal_default_config
 08001280  w    F .text	00000006 Vector58
 08001280  w    F .text	00000006 VectorE8
 08001280  w    F .text	00000006 Vector9C
-08009180 g     F .text	0000001a _ZN10DataFilter14setFilterOrderEi
+08009190 g     F .text	0000001a _ZN10DataFilter14setFilterOrderEi
 08005ec0 g     F .text	0000005c nvicEnableVector
 08001280  w    F .text	00000006 VectorAC
 08001700 g     F .text	0000000e chSysTimerHandlerI
@@ -493,23 +493,23 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 080005e4 g     F .text	0000005a .hidden __floatdidf
 080039f0 g     F .text	0000009c _mmcsd_get_slice
 080025e0 g     F .text	0000002c _thread_memfill
-080090a0 g     F .text	0000004e _ZN10DataFilter21setArrayCoefficientsBEPf
+080090b0 g     F .text	0000004e _ZN10DataFilter21setArrayCoefficientsBEPf
 08001280  w    F .text	00000006 Vector11C
 08005420 g     F .text	00000064 usbStartTransmitI
 08001280  w    F .text	00000006 HardFault_Handler
-08009140 g     F .text	00000018 _ZNK10DataFilter15getArrayInputsXEv
+08009150 g     F .text	00000018 _ZNK10DataFilter15getArrayInputsXEv
 08001280  w    F .text	00000006 Vector1B8
 08006420 g     F .text	0000007c dmaInit
 08001280  w    F .text	00000006 Vector19C
 08005680 g     F .text	00000114 _usb_ep0in
 08003200 g     F .text	0000004a chIQObjectInit
 08002a10 g     F .text	00000018 chTMStartMeasurementX
-080091e0 g     F .text	0000004c _ZN10DataFilter26setArrayInitialConditionsYEPf
+08009220 g     F .text	0000004c _ZN10DataFilter26setArrayInitialConditionsYEPf
 080082e0 g     F .text	0000008a usb_lld_prepare_receive
 08000ee8 g     F .text	00000136 .hidden __divsf3
 08001280  w    F .text	00000006 Vector8C
 08001280  w    F .text	00000006 SysTick_Handler
-08009230 g     F .text	00000018 _ZNK10DataFilter15getArrayInputsYEv
+08009270 g     F .text	00000018 _ZNK10DataFilter15getArrayInputsYEv
 08007300 g     F .text	00000056 sdc_lld_set_bus_mode
 20000000 g       .ARM.attributes	00000000 __ram1_free__
 080075d0 g     F .text	000000e4 sdc_lld_read_aligned
@@ -558,7 +558,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 20000800 g       .pstack	00000000 __main_thread_stack_end__
 08001b10 g     F .text	00000030 _vt_init
 08002b40 g     F .text	00000010 _stats_start_measure_crit_isr
-08009250 g     F .text	000000f6 _ZN3IIR11directFormIEf
+08009290 g     F .text	000000f6 _ZN3IIR11directFormIEf
 08003720 g     F .text	00000054 chCoreAllocI
 08003780 g     F .text	0000002c _heap_init
 08000cd4 g     F .text	0000001c .hidden __aeabi_i2f
@@ -572,7 +572,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001028 g     F .text	00000066 .hidden __lesf2
 08001280  w    F .text	00000006 VectorEC
 20000800 g       .bss	00000000 _bss_start
-080090f0 g     F .text	0000004c _ZN10DataFilter26setArrayInitialConditionsXEPf
+08009100 g     F .text	0000004c _ZN10DataFilter26setArrayInitialConditionsXEPf
 20020000 g       *ABS*	00000000 __heap_end__
 08000554 g     F .text	0000001e .hidden __aeabi_ui2d
 080002d0 g     F .text	00000000 .hidden __aeabi_drsub
@@ -589,7 +589,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 080043f0 g     F .text	0000000a sdcInit
 080061f0 g     F .text	00000050 Vector124
 08003c90 g     F .text	00000038 macObjectInit
-080091c0 g     F .text	0000001a _ZN10DataFilter21setArrayCoefficientsAEPf
+080091d0 g     F .text	0000004e _ZN10DataFilter21setArrayCoefficientsAEPf
 080064f0 g     F .text	00000068 hal_lld_init
 08000598 g     F .text	0000003a .hidden __extendsfdf2
 08000894 g     F .text	000001d0 .hidden __aeabi_ddiv
@@ -605,7 +605,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08002a90 g     F .text	00000030 _stats_init
 08003c80 g     F .text	0000000a macInit
 08001280  w    F .text	00000006 Vector148
-08008fd0 g     F .text	0000005e _ZN10DataFilter16createArrayInputEv
+08008fe0 g     F .text	0000005e _ZN10DataFilter16createArrayInputEv
 08001280  w    F .text	00000006 Vector188
 08003b90 g     F .text	0000000a adcInit
 08000554 g     F .text	0000001e .hidden __floatunsidf
@@ -613,12 +613,12 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08002a60 g     F .text	00000028 chTMChainMeasurementToX
 08005a00 g     F .text	000004b4 chvprintf
 080046b0 g     F .text	00000080 sdcRead
-08009030 g     F .text	0000004c _ZN10DataFilter9moveArrayEPf
+08009040 g     F .text	0000004c _ZN10DataFilter9moveArrayEPf
 080016e0 g     F .text	00000018 chSysHalt
 08001280  w    F .text	00000006 Vector198
 08001280  w    F .text	00000006 Vector118
 08000ac0 g     F .text	0000009e .hidden __aeabi_d2f
-08009080 g     F .text	00000018 _ZNK10DataFilter21getArrayCoefficientsBEv
+08009090 g     F .text	00000018 _ZNK10DataFilter21getArrayCoefficientsBEv
 08001280  w    F .text	00000006 Vector64
 20007c30 g       .bss	00000000 _bss_end
 08000b68 g     F .text	00000164 .hidden __aeabi_fsub
@@ -660,7 +660,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001280  w    F .text	00000006 Vector178
 00000000 g       .ARM.attributes	00000000 __ram6_free__
 080026f0 g     F .text	0000001c chThdSleep
-08009940 g     O .text	000000c0 _stm32_dma_streams
+08009990 g     O .text	000000c0 _stm32_dma_streams
 08006100 g     F .text	00000050 Vector84
 080047b0 g     F .text	00000044 sdcSync
 08008370 g     F .text	000000a4 usb_lld_prepare_transmit
@@ -711,14 +711,14 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001280  w    F .text	00000006 VectorF0
 08006290 g     F .text	00000050 Vector12C
 08000cf0 g     F .text	0000008c .hidden __floatundisf
-08008f70 g     F .text	00000054 _ZN10DataFilter13newDataFilterEi
+08008f70 g     F .text	00000066 _ZN10DataFilter13newDataFilterEi
 08001280  w    F .text	00000006 Vector13C
 08000894 g     F .text	000001d0 .hidden __divdf3
 08005490 g     F .text	00000066 _usb_reset
 08000ccc g     F .text	00000024 .hidden __aeabi_ui2f
 08001280  w    F .text	00000006 Vector100
 08000640 g     F .text	00000254 .hidden __muldf3
-08009be0 g       .mstack	00000000 _textdata
+08009c30 g       .mstack	00000000 _textdata
 08001280  w    F .text	00000006 VectorE0
 08001280  w    F .text	00000006 VectorF4
 08002b30 g     F .text	00000010 _stats_stop_measure_crit_thd
@@ -726,7 +726,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 080018b0 g     F .text	0000002c _dbg_check_lock_from_isr
 08001030 g     F .text	0000005e .hidden __cmpsf2
 080073b0 g     F .text	00000074 sdc_lld_send_cmd_short
-08009350 g     F .text	00000034 _ZN3IIR20setInitialDataFilterEP10DataFilter
+08009390 g     F .text	00000034 _ZN3IIR20setInitialDataFilterEP10DataFilter
 08001280  w    F .text	00000006 MemManage_Handler
 08008e50 g     F .text	00000118 main
 08005f20 g     F .text	0000004c Vector6C
@@ -749,9 +749,9 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08000cf0 g     F .text	0000008c .hidden __aeabi_ul2f
 08003550 g     F .text	000000bc chOQWriteTimeout
 08001098 g     F .text	00000010 .hidden __aeabi_cfcmple
-08009160 g     F .text	00000018 _ZNK10DataFilter14getFilterOrderEv
+08009170 g     F .text	00000018 _ZNK10DataFilter14getFilterOrderEv
 080086d0 g     F .text	00000038 VectorB0
-080095e0 g     O .text	00000016 ch_debug
+08009630 g     O .text	00000016 ch_debug
 08000d80 g     F .text	00000168 .hidden __mulsf3
 08001280  w    F .text	00000006 Vector90
 08002fd0 g     F .text	00000070 chEvtSignalI
@@ -795,7 +795,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 080010bc g     F .text	00000012 .hidden __aeabi_fcmplt
 08001280  w    F .text	00000006 Vector68
 08002e70 g     F .text	000000e4 chMtxUnlock
-08009390 g     F .text	0000006e _ZN12FuntionsMath3sumEiiPfS0_i
+080093d0 g     F .text	00000078 _ZN12FuntionsMath3sumEiiPfS0_i
 080078d0 g     F .text	00000016 sdc_lld_sync
 20000400 g       .mstack	00000000 __main_stack_end__
 08006010 g     F .text	00000050 Vector78
@@ -805,7 +805,7 @@ e000ed04 l       *ABS*	00000000 SCB_ICSR
 08001280  w    F .text	00000006 Vector170
 08004b10 g     F .text	00000068 sdObjectInit
 08006760 g     F .text	0000009c Vector88
-080091a0 g     F .text	00000018 _ZNK10DataFilter21getArrayCoefficientsAEv
+080091b0 g     F .text	00000018 _ZNK10DataFilter21getArrayCoefficientsAEv
 20000400 g       .pstack	00000000 __main_thread_stack_base__
 08000ccc g     F .text	00000024 .hidden __floatunsisf
 08001b40 g     F .text	00000118 chVTDoSetI

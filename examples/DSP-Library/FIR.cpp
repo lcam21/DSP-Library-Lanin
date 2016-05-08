@@ -15,7 +15,9 @@
 #include "header/FuntionsMath.h"
 
 FIR::~FIR() {
-	// TODO Auto-generated destructor stub
+	//free memory
+	chHeapFree(MathOperation);
+	chHeapFree(InitialDataFilter);
 }
 
 float FIR::directFormI(float pData) {

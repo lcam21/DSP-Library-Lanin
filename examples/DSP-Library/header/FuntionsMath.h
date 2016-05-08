@@ -28,12 +28,14 @@ public:
 	float sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 			float* arrayX, int pCont);
 
-
-
 	/**
 	 * @brief Destruction of class
 	 */
 	virtual ~FuntionsMath();
+
+private:
+
+	int Cont;
 };
 
 #endif /* HEADER_FUNTIONSMATH_H_ */

@@ -20,13 +20,17 @@ void DataFilter::newDataFilter(int pFilterOrder) {
 			sizeof(float) * pFilterOrder);
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
-	ArrayInputsY = (float*) chHeapAlloc(NULL, sizeof(float) * (FilterOrder + BUFFER_SIZE));
+	ArrayCoefficientsA = (float*) chHeapAlloc(NULL,
+			sizeof(float) * (pFilterOrder));
+	ArrayInputsY = (float*) chHeapAlloc(NULL,
+			sizeof(float) * (FilterOrder + BUFFER_SIZE));
 	setFilterOrder(pFilterOrder);
 }
 DataFilter::~DataFilter() {
 	//free the memory
 	chHeapFree(ArrayInitialConditionsX);
 	chHeapFree(ArrayCoefficientsB);
+	chHeapFree(ArrayCoefficientsA);
 	chHeapFree(ArrayInputsY);
 	chHeapFree(ArrayInputsX);
 }
@@ -78,7 +82,9 @@ float* DataFilter::getArrayCoefficientsA() const {
 }
 
 void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
-	ArrayCoefficientsA = arrayCoefficientsA;
+	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
+		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
+	}
 }
 
 float* DataFilter::getArrayInitialConditionsY() const {

@@ -82,12 +82,29 @@ public:
 	 */
 	void setFilterOrder(int pFilterOrder);
 
+	/**
+	 * @brief get the value of coefficients A
+	 */
 	float* getArrayCoefficientsA() const;
+
+	/**
+	 * @brief set the value of coefficients A
+	 */
 	void setArrayCoefficientsA(float* arrayCoefficientsA);
 
+	/**
+	 * @brief get the value of InitialConditions Y
+	 */
 	float* getArrayInitialConditionsY() const;
+
+	/**
+	 * @brief set the value of InitialConditions Y
+	 */
 	void setArrayInitialConditionsY(float* arrayInitialConditionsY);
 
+	/**
+	 * @brief get the value of Inputs Y
+	 */
 	float* getArrayInputsY() const;
 
 private:
@@ -106,7 +123,6 @@ private:
 
 	//Variable of output data
 	float Result; //Get the result of filter - For IIR
-	float *ArrayResult;
 
 	int Cont; //generic cont for use in FOR
 

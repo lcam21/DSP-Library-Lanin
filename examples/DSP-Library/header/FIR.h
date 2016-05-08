@@ -25,11 +25,18 @@ public:
 	 */
 	virtual ~FIR();
 
+	/**
+	 * @brief Method for set the initial data for filter
+	 * @param type DataFilter
+	 */
 	void setInitialDataFilter(DataFilter *pInitialDataFilter);
+
 private:
+
 	FuntionsMath *MathOperation;
 	DataFilter *InitialDataFilter;
 	int ContBuffer;
+
 };
 
 #endif /* HEADER_FIR_H_ */

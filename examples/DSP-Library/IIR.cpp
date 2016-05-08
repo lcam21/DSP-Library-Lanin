@@ -16,7 +16,8 @@
 #include "header/DataFilter.h"
 
 IIR::~IIR() {
-	//free the variable
+	chHeapFree(MathOperation);
+	chHeapFree(InitialDataFilter);
 }
 
 float IIR::directFormI(float pData) {

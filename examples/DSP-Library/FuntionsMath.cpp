@@ -17,12 +17,11 @@ float FuntionsMath::sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 
 	float _Result = 0; //save the result
 	int _PosInitCond = 0; //access to
-	int _Cont;
 
-	for (_Cont = pLowerLimit; _Cont <= pUpperLimit; _Cont++) {
+	for (Cont = pLowerLimit; Cont <= pUpperLimit; Cont++) {
 
 		_PosInitCond = pCont + pUpperLimit;
-		_Result += pCoefficients[_Cont] * pArray[_PosInitCond];
+		_Result += pCoefficients[Cont] * pArray[_PosInitCond];
 
 		pCont--;
 	}
