@@ -9,6 +9,7 @@
 #define HEADER_IIR_H_
 
 #include "DataFilter.h"
+#include "FuntionsMath.h"
 
 class IIR {
 public:
@@ -32,6 +33,7 @@ public:
 	void setInitialDataFilter(DataFilter *pInitialDataFilter);
 
 private:
+	FuntionsMath *MathOperation;
 	DataFilter *InitialDataFilter;
 	int ContBuffer;
 };

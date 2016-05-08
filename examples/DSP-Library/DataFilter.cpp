@@ -20,34 +20,18 @@ void DataFilter::newDataFilter(int pFilterOrder) {
 			sizeof(float) * pFilterOrder);
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
-	ArrayIntervalOutput = (int*) chHeapAlloc(NULL, sizeof(int) * 2);
-	ArrayInputsY = (float*) chHeapAlloc(NULL, sizeof(float) * (pFilterOrder));
-	ArrayResult = (float*) chHeapAlloc(NULL,
-				sizeof(float) * (pFilterOrder + BUFFER_SIZE));
-
+	ArrayInputsY = (float*) chHeapAlloc(NULL, sizeof(float) * (FilterOrder + BUFFER_SIZE));
 	setFilterOrder(pFilterOrder);
 }
 DataFilter::~DataFilter() {
 	//free the memory
 	chHeapFree(ArrayInitialConditionsX);
 	chHeapFree(ArrayCoefficientsB);
-	chHeapFree(ArrayIntervalOutput);
 	chHeapFree(ArrayInputsY);
 	chHeapFree(ArrayInputsX);
-	chHeapFree(ArrayResult);
 }
 
-void DataFilter::createArrayInputFIR() {
-	for (Cont = NumbOutput - 1; Cont >= 0; Cont--) {
-		ArrayInputsX[Cont + FilterOrder] = ArrayInputsX[Cont];
-	}
-
-	for (Cont = 0; Cont < FilterOrder; Cont++) {
-		ArrayInputsX[Cont] = ArrayInitialConditionsX[Cont];
-	}
-}
-
-void DataFilter::createArrayInputIIR() {
+void DataFilter::createArrayInput() {
 	ArrayInputsX = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
@@ -59,22 +43,6 @@ void DataFilter::moveArray(float *pArray) {
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
 		pArray[Cont] = pArray[Cont + BUFFER_SIZE];
 	}
-}
-
-float* DataFilter::getArrayResult() const {
-	return ArrayResult;
-}
-
-void DataFilter::setArrayResult(float* arrayResult) {
-	ArrayResult = arrayResult;
-}
-
-int DataFilter::getNumbOutput() const {
-	return NumbOutput;
-}
-
-void DataFilter::setNumbOutput(int numbOutput) {
-	NumbOutput = numbOutput;
 }
 
 float* DataFilter::getArrayCoefficientsB() const {
@@ -95,15 +63,6 @@ void DataFilter::setArrayInitialConditionsX(float *pArrayInitialConditions) {
 
 float* DataFilter::getArrayInputsX() const {
 	return ArrayInputsX;
-}
-
-void DataFilter::setArrayInputsX(float* pArrayInputs, int pSizeInputs) {
-	NumbOutput = pSizeInputs;
-	ArrayInputsX = (float*) chHeapAlloc(NULL,sizeof(float) * (FilterOrder + pSizeInputs));
-	for (Cont = 0; Cont < pSizeInputs; Cont++) {
-		ArrayInputsX[Cont] = pArrayInputs[Cont];
-	}
-	ArrayResult = (float*) chHeapAlloc(NULL, sizeof(float) * NumbOutput);
 }
 
 int DataFilter::getFilterOrder() const {

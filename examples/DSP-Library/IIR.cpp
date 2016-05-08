@@ -21,10 +21,6 @@ IIR::~IIR() {
 
 float IIR::directFormI(float pData) {
 
-	// Create class that do the sum
-	FuntionsMath *_MathOperation = (FuntionsMath*) chHeapAlloc(NULL,
-			sizeof(FuntionsMath));
-
 	//variable that need
 	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
 	float *_ArrayInputsY = InitialDataFilter->getArrayInputsY();
@@ -42,7 +38,6 @@ float IIR::directFormI(float pData) {
 
 	//if the buffer is full, move the data
 	if (ContBuffer == BUFFER_SIZE) {
-		chprintf((BaseSequentialStream *) &SD1, "/n/rBuffer/r/n:");
 		InitialDataFilter->moveArray(_ArrayInputsX);
 		InitialDataFilter->moveArray(_ArrayInputsY);
 		ContBuffer = 0;
@@ -54,11 +49,11 @@ float IIR::directFormI(float pData) {
 	_ArrayInputsX[_ContInputData] = pData;
 
 	// sum for X
-	_ResultX = _MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
+	_ResultX = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
 			_ArrayInputsX, ContBuffer);
 
 	//sum for Y
-	_ResultY = _MathOperation->sum(_FilterOrder - 1, 0, _ArrayCoefficientsA,
+	_ResultY = MathOperation->sum(_FilterOrder - 1, 0, _ArrayCoefficientsA,
 			_ArrayInputsY, ContBuffer);
 
 	// Final reusult
@@ -74,7 +69,9 @@ float IIR::directFormI(float pData) {
 }
 
 void IIR::setInitialDataFilter(DataFilter *pInitialDataFilter) {
+	// Create class that do the sum
+	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
 	InitialDataFilter = pInitialDataFilter;
 	ContBuffer = 0;
-	InitialDataFilter->createArrayInputIIR();
+	InitialDataFilter->createArrayInput();
 }

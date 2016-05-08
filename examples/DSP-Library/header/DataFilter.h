@@ -24,14 +24,9 @@ public:
 	virtual ~DataFilter();
 
 	/**
-	 * @brief modify the array of input of add the initial conditions for filter FIR
+	 * @brief modify the array of input of add the initial conditions for filter
 	 */
-	void createArrayInputFIR();
-
-	/**
-	 * @brief modify the array of input of add the initial conditions for filter IIR
-	 */
-	void createArrayInputIIR();
+	void createArrayInput();
 
 	/**
 	 * @brief modify the array of input of add the initial conditions
@@ -42,8 +37,6 @@ public:
 	 * @brief move the data of array and add pData in te position [n-1]
 	 */
 	void moveArray(float *pArray);
-
-	void copyArray(float *pArray1, float *pArray2);
 
 	/**
 	 * @brief return the pointer of array that have the coefficients
@@ -89,38 +82,13 @@ public:
 	 */
 	void setFilterOrder(int pFilterOrder);
 
-	/**
-	 * @brief return the pointer of array that have the array result
-	 * @return pointer float
-	 */
-	float* getArrayResult() const;
-
-	/**
-	 * @brief set the value of array of result
-	 */
-	void setArrayResult(float* arrayResult);
-
-	/**
-	 * @brief return the number of output
-	 * @return integer variable with contains the number of output
-	 */
-	int getNumbOutput() const;
-
-	/**
-	 * @brief set the value of number of output
-	 */
-	void setNumbOutput(int numbOutput);
 	float* getArrayCoefficientsA() const;
 	void setArrayCoefficientsA(float* arrayCoefficientsA);
+
 	float* getArrayInitialConditionsY() const;
 	void setArrayInitialConditionsY(float* arrayInitialConditionsY);
+
 	float* getArrayInputsY() const;
-	float* getBuffer1() const;
-	void setBuffer1(float* buffer1);
-	float* getBuffer2() const;
-	void setBuffer2(float* buffer2);
-	bool isBufferReady() const;
-	void setBufferReady(bool bufferReady);
 
 private:
 	//Variable generic of filter
@@ -136,11 +104,9 @@ private:
 	float *ArrayCoefficientsA; //Array that contains the coefficients a sub k
 	float *ArrayInputsY; //Array that contains the inputs y[n-k]
 
-	//Variable of output data in axis Y
-	float *ArrayResult; //Array that contains the end result y[n] - For FIR
-	int *ArrayIntervalOutput; //Array that contains the interval of output - For FIR
-	int NumbOutput; //It get of ArrayIntervalOutput- For FIR
+	//Variable of output data
 	float Result; //Get the result of filter - For IIR
+	float *ArrayResult;
 
 	int Cont; //generic cont for use in FOR
 

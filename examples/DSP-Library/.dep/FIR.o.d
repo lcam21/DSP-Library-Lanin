@@ -88,8 +88,10 @@ build/obj/FIR.o: FIR.cpp ../../ChibiOS/os/rt/include/ch.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\sys\lock.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\sys\types.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\machine\types.h \
- c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h header/FIR.h \
- header/DataFilter.h header/FuntionsMath.h
+ c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h \
+ ../../ChibiOS/os/hal/include/serial.h \
+ ../../ChibiOS/os/hal/lib/streams/chprintf.h header/FIR.h \
+ header/DataFilter.h header/FuntionsMath.h header/FuntionsMath.h
 
 ../../ChibiOS/os/rt/include/ch.h:
 
@@ -307,8 +309,14 @@ c:\emtechesdk\gcc\arm-none-eabi\include\machine\types.h:
 
 c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h:
 
+../../ChibiOS/os/hal/include/serial.h:
+
+../../ChibiOS/os/hal/lib/streams/chprintf.h:
+
 header/FIR.h:
 
 header/DataFilter.h:
+
+header/FuntionsMath.h:
 
 header/FuntionsMath.h:

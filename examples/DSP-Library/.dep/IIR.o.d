@@ -91,7 +91,8 @@ build/obj/IIR.o: IIR.cpp ../../ChibiOS/os/rt/include/ch.h \
  c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h \
  ../../ChibiOS/os/hal/include/serial.h \
  ../../ChibiOS/os/hal/lib/streams/chprintf.h header/IIR.h \
- header/DataFilter.h header/FuntionsMath.h header/DataFilter.h
+ header/DataFilter.h header/FuntionsMath.h header/FuntionsMath.h \
+ header/DataFilter.h
 
 ../../ChibiOS/os/rt/include/ch.h:
 
@@ -316,6 +317,8 @@ c:\emtechesdk\gcc\arm-none-eabi\include\sys\stdio.h:
 header/IIR.h:
 
 header/DataFilter.h:
+
+header/FuntionsMath.h:
 
 header/FuntionsMath.h:
 

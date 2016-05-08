@@ -8,35 +8,53 @@
 #include <ch.h>
 #include <hal.h>
 #include <stdio.h>
+#include <serial.h>
+#include <chprintf.h>
 
 #include "header/FIR.h"
 #include "header/FuntionsMath.h"
-
 
 FIR::~FIR() {
 	// TODO Auto-generated destructor stub
 }
 
-float* FIR::directFormI(DataFilter *pDataFilter) {
+float FIR::directFormI(float pData) {
 
-	FuntionsMath *_MathOperation = (FuntionsMath*) chHeapAlloc(NULL,
-				sizeof(FuntionsMath));
+	//variable that need
+	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
 
-	pDataFilter->createArrayInputFIR();
+	int _FilterOrder = InitialDataFilter->getFilterOrder();
+	int _ContInputData;
 
-	int _Cont;
-	int _FilterOrder = pDataFilter->getFilterOrder();
-	int _NumbOutput = pDataFilter->getNumbOutput();
-	float *_ArrayResult = pDataFilter->getArrayResult();
-	float *_ArrayCoefficients =  pDataFilter->getArrayCoefficientsB();
-	float *_ArrayInputs = pDataFilter->getArrayInputsX();
+	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
 
-	for (_Cont = 0; _Cont < _NumbOutput; _Cont++) {
-		_ArrayResult[_Cont] = _MathOperation->sum(_FilterOrder, 0,
-				_ArrayCoefficients, _ArrayInputs, _Cont);
+	float _Result;
+
+	//if the buffer is full, move the data
+	if (ContBuffer == BUFFER_SIZE) {
+		InitialDataFilter->moveArray(_ArrayInputsX);
+		ContBuffer = 0;
 	}
 
-	return _ArrayResult;
+	_ContInputData = _FilterOrder + ContBuffer;
+
+	//set the inputdata
+	_ArrayInputsX[_ContInputData] = pData;
+
+	//FInal result
+	_Result = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
+			_ArrayInputsX, ContBuffer);
+
+	ContBuffer++;
+
+	return _Result;
 }
 
+void FIR::setInitialDataFilter(DataFilter *pInitialDataFilter) {
+	// Create class that do the sum
+	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
+	InitialDataFilter = pInitialDataFilter;
+	ContBuffer = 0;
+	InitialDataFilter->createArrayInput();
+}
 
