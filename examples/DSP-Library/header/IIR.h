@@ -21,6 +21,11 @@ public:
 	 */
 	float directFormI(float pData);
 
+	/**
+	 *
+	 */
+	float directFormII(float pData);
+
 };
 
 #endif /* HEADER_IIR_H_ */

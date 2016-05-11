@@ -7,19 +7,37 @@
 
 #include <ch.h>
 #include <hal.h>
+#include "FuntionsMath.h"
 
 #ifndef DATAFILTER_H_
 #define DATAFILTER_H_
 
 #define BUFFER_SIZE 10
 
+typedef int typeOfDirectForm;
+
 class DataFilter {
 public:
+
 	/**
-	 * @brief Constructor of class
-	 * @param pFilterOrder number of filter order
+	 * @brief Constructor of data for filter FIR
 	 */
-	void newDataFilter(int pFilterOrder);
+	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
+			float *pArrayCoefficientsB, typeOfDirectForm pTypeOfDirectForm);
+
+	/**
+	 * @brief Constructor of data for filter IIR using the form direct I
+	 */
+	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
+			float *pArrayCoefficientsB, float *pArrayInputsY,
+			float *pArrayCoefficientsA, typeOfDirectForm pTypeOfDirectForm);
+
+	/**
+	 * @brief Constructor of data for filter IIR using the form direct II
+	 */
+	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
+			float *pArrayCoefficientsB, float *pArrayCoefficientsA,
+			typeOfDirectForm pTypeOfDirectForm);
 
 	/**
 	 * @brief Destructor of class
@@ -27,14 +45,14 @@ public:
 	virtual ~DataFilter();
 
 	/**
-	 * @brief modify the array of input of add the initial conditions
-	 */
-	void createArrayInputY();
-
-	/**
 	 * @brief move the data of array and add pData in te position [n-1]
 	 */
 	void moveArray(float *pArray);
+
+	/**
+	 * @brief modify the array aux for add the initial conditions
+	 */
+	void createArrayAux();
 
 	/**
 	 * @brief return the pointer of array that have the coefficients
@@ -105,9 +123,14 @@ public:
 	 */
 	float* getArrayInputsY() const;
 
-protected:
+	int getTypeOfDirectForm() const;
+
+	void setTypeOfDirectForm(int typeOfDirectForm);
+
+private:
 	//Variable generic of filter
 	int FilterOrder; //Number of the order of filter
+	int TypeOfDirectForm; //Type of form filter
 
 	// Variable of input data in axis X
 	float *ArrayCoefficientsB; //Array that contains the coefficients b sub k
@@ -115,12 +138,14 @@ protected:
 
 	//Variable of input data in axis Y
 	float *ArrayCoefficientsA; //Array that contains the coefficients a sub k
-	float *ArrayInputsY; //Array that contains the inputs y[n-k]
+	float *ArrayInputsY; //Array that contains the inputs y[n-k]  //For the from direct II is used with auxiliary
 
 	//Variable of output data
 	float Result; //Get the result of filter - For IIR
 
 	int Cont; //generic cont for use in FOR
+
+	FuntionsMath *MathOperation;
 
 };
 

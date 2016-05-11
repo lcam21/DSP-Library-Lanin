@@ -7,7 +7,6 @@
 
 #include "header/IIR.h"
 
-
 float IIR::directFormI(float pData) {
 
 	//variable that need
@@ -54,5 +53,49 @@ float IIR::directFormI(float pData) {
 	ContBuffer++;
 
 	return _Result;
+}
 
+float IIR::directFormII(float pData) {
+	//variable that need
+	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
+	float *_ArrayInputsV = InitialDataFilter->getArrayInputsY();
+
+	int _FilterOrder = InitialDataFilter->getFilterOrder();
+	int _ContInputData;
+
+	float _NumSum = 0;
+	float _ResultV = 0;
+	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
+
+	float _ResultY = 0;
+	float *_ArrayCoefficientsA = InitialDataFilter->getArrayCoefficientsA();
+
+	float _Result;
+
+	//if the buffer is full, move the data
+	if (ContBuffer == BUFFER_SIZE) {
+		InitialDataFilter->moveArray(_ArrayInputsX);
+		InitialDataFilter->moveArray(_ArrayInputsV);
+		ContBuffer = 0;
+	}
+
+	_ContInputData = _FilterOrder + ContBuffer;
+
+	//set the inputdata
+	_ArrayInputsX[_ContInputData] = pData;
+
+	// sum for V
+	_NumSum = MathOperation->sum(_FilterOrder-1, 0, _ArrayCoefficientsA,
+			_ArrayInputsV, ContBuffer);
+
+	_ResultV = pData - _NumSum;
+
+	_ArrayInputsV[_ContInputData] = _ResultV;
+
+	_Result = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
+			_ArrayInputsV, ContBuffer);
+
+	ContBuffer++;
+
+	return _Result;
 }

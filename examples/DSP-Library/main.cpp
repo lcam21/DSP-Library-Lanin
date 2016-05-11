@@ -18,9 +18,10 @@
 #include "header/FIR.h"
 #include "header/DataFilter.h"
 
-// 0 - FIR
-// 1 - IIR
-int TipoFiltro = 0;
+// 0 - FIR Form Direct I
+// 1 - IIR Form Direct I
+// 2 - IIR Form Direct II
+int TipoFiltro = 2;
 
 static THD_WORKING_AREA(waThread1, 256);
 
@@ -40,8 +41,10 @@ static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 	if (TipoFiltro == 1) {
 		_ClassIIR->setInitialDataFilter(_DataFilter); //set data of filter
 
-	} else {
+	} else if (TipoFiltro == 0) {
 		_ClassFIR->setInitialDataFilter(_DataFilter);
+	} else {
+		_ClassIIR->setInitialDataFilter(_DataFilter);
 	}
 
 	chprintf((BaseSequentialStream *) &SD1, "\r\nResultado:");
@@ -55,8 +58,10 @@ static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 		if (TipoFiltro == 1) {
 			_Result = _ClassIIR->directFormI(_EntradasX[_Cont]); //set data
 
-		} else {
+		} else if (TipoFiltro == 0) {
 			_Result = _ClassFIR->directFormI(_EntradasX[_Cont]);
+		} else {
+			_Result = _ClassIIR->directFormII(_EntradasX[_Cont]);
 		}
 
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result); //print result
@@ -86,20 +91,27 @@ int main() {
 	float _CondicionesInicialesX[2] = { 0, 0 };
 	float _CoeficientesB[3] = { 0.333, 0.333, 0.333 };
 
+	float _CondicionesInicialesY[2] = { 0, 0 };
+	float _CoeficientesA[2] = { 0.167, 0.167 };
+
 	DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
 			sizeof(DataFilter));
 
 	//set data of filter
-	_DataFilter->newDataFilter(_FilterOrder);
-	_DataFilter->setArrayCoefficientsB(_CoeficientesB);
-	_DataFilter->setArrayInitialConditionsX(_CondicionesInicialesX);
-
+	typeOfDirectForm _TypeOfForm = 1;
 	if (TipoFiltro == 1) {
-		float _CondicionesInicialesY[2] = { 0, 0 };
-		float _CoeficientesA[2] = { 0.167, 0.167 };
-		_DataFilter->setArrayInitialConditionsY(_CondicionesInicialesY);
-		_DataFilter->setArrayCoefficientsA(_CoeficientesA);
+		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
+				_CoeficientesB, _CondicionesInicialesY, _CoeficientesA,
+				_TypeOfForm);
+	} else if (TipoFiltro == 0) {
+
+		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
+				_CoeficientesB, _TypeOfForm);
+	} else {
+		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
+				_CoeficientesB, _CoeficientesA, _TypeOfForm);
 	}
+
 
 	void *_Arg = _DataFilter;
 
