@@ -90,7 +90,6 @@ void DataFilter::createArrayAux() {
 	float _NumResult;
 
 	ArrayInputsY[0] = ArrayInputsX[0];
-	chprintf((BaseSequentialStream *) &SD1, "%f ", ArrayInputsY[0]); //print result
 
 	for (Cont = 0; Cont < (FilterOrder - 1); Cont++) {
 		_NumSum = MathOperation->sum(Cont, 0, ArrayCoefficientsA, ArrayInputsY,

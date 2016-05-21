@@ -16,10 +16,6 @@
 
 class Filter {
 public:
-	/**
-	 * @brief Constructor
-	 */
-	Filter();
 
 	/**
 	 * @brief Free memory
@@ -31,6 +27,12 @@ public:
 	 * @param pDataFilter
 	 */
 	float directFormI(float pData);
+
+	/**
+	 * @brief Method that implements the Direct Form II of a FIR Filter
+	 * @param pDataFilter
+	 */
+	float directFormII(float pData);
 
 	/**
 	 * @brief Method that implements for set the initial data of filter

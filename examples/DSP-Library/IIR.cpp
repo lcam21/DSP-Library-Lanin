@@ -63,11 +63,9 @@ float IIR::directFormII(float pData) {
 	int _FilterOrder = InitialDataFilter->getFilterOrder();
 	int _ContInputData;
 
-	float _NumSum = 0;
 	float _ResultV = 0;
 	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
 
-	float _ResultY = 0;
 	float *_ArrayCoefficientsA = InitialDataFilter->getArrayCoefficientsA();
 
 	float _Result;
@@ -85,10 +83,8 @@ float IIR::directFormII(float pData) {
 	_ArrayInputsX[_ContInputData] = pData;
 
 	// sum for V
-	_NumSum = MathOperation->sum(_FilterOrder-1, 0, _ArrayCoefficientsA,
-			_ArrayInputsV, ContBuffer);
-
-	_ResultV = pData - _NumSum;
+	_ResultV = pData - MathOperation->sum(_FilterOrder-1, 0, _ArrayCoefficientsA,
+			_ArrayInputsV, ContBuffer);;
 
 	_ArrayInputsV[_ContInputData] = _ResultV;
 
@@ -98,4 +94,9 @@ float IIR::directFormII(float pData) {
 	ContBuffer++;
 
 	return _Result;
+}
+
+IIR::~IIR() {
+	chHeapFree(MathOperation);
+	chHeapFree(InitialDataFilter);
 }

@@ -1,0 +1,2767 @@
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 6
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"testmsg.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.chThdGetSelfX,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	chThdGetSelfX, %function
+  24              	chThdGetSelfX:
+  25              	.LFB177:
+  26              		.file 1 "../../ChibiOS/os/rt/include/chthreads.h"
+  27              		.loc 1 174 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 1, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32 0000 80B4     		push	{r7}
+  33              		.cfi_def_cfa_offset 4
+  34              		.cfi_offset 7, -4
+  35 0002 00AF     		add	r7, sp, #0
+  36              		.cfi_def_cfa_register 7
+  37              		.loc 1 176 0
+  38 0004 034B     		ldr	r3, .L3
+  39 0006 9B69     		ldr	r3, [r3, #24]
+  40              		.loc 1 177 0
+  41 0008 1846     		mov	r0, r3
+  42 000a BD46     		mov	sp, r7
+  43              		@ sp needed
+  44 000c 5DF8047B 		ldr	r7, [sp], #4
+  45 0010 7047     		bx	lr
+  46              	.L4:
+  47 0012 00BF     		.align	2
+  48              	.L3:
+  49 0014 00000000 		.word	ch
+  50              		.cfi_endproc
+  51              	.LFE177:
+  52              		.size	chThdGetSelfX, .-chThdGetSelfX
+  53 0018 AFF30080 		.section	.text.chThdGetPriorityX,"ax",%progbits
+  53      AFF30080 
+  54              		.align	2
+  55              		.p2align 4,,15
+  56              		.thumb
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 2
+
+
+  57              		.thumb_func
+  58              		.type	chThdGetPriorityX, %function
+  59              	chThdGetPriorityX:
+  60              	.LFB178:
+  61              		.loc 1 187 0
+  62              		.cfi_startproc
+  63              		@ args = 0, pretend = 0, frame = 0
+  64              		@ frame_needed = 1, uses_anonymous_args = 0
+  65 0000 80B5     		push	{r7, lr}
+  66              		.cfi_def_cfa_offset 8
+  67              		.cfi_offset 7, -8
+  68              		.cfi_offset 14, -4
+  69 0002 00AF     		add	r7, sp, #0
+  70              		.cfi_def_cfa_register 7
+  71              		.loc 1 189 0
+  72 0004 FFF7FEFF 		bl	chThdGetSelfX
+  73 0008 0346     		mov	r3, r0
+  74 000a 9B68     		ldr	r3, [r3, #8]
+  75              		.loc 1 190 0
+  76 000c 1846     		mov	r0, r3
+  77 000e 80BD     		pop	{r7, pc}
+  78              		.cfi_endproc
+  79              	.LFE178:
+  80              		.size	chThdGetPriorityX, .-chThdGetPriorityX
+  81              		.section	.text.chMsgGet,"ax",%progbits
+  82              		.align	2
+  83              		.p2align 4,,15
+  84              		.thumb
+  85              		.thumb_func
+  86              		.type	chMsgGet, %function
+  87              	chMsgGet:
+  88              	.LFB211:
+  89              		.file 2 "../../ChibiOS/os/rt/include/chmsg.h"
+  90              		.loc 2 96 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 8
+  93              		@ frame_needed = 1, uses_anonymous_args = 0
+  94              		@ link register save eliminated.
+  95 0000 80B4     		push	{r7}
+  96              		.cfi_def_cfa_offset 4
+  97              		.cfi_offset 7, -4
+  98 0002 83B0     		sub	sp, sp, #12
+  99              		.cfi_def_cfa_offset 16
+ 100 0004 00AF     		add	r7, sp, #0
+ 101              		.cfi_def_cfa_register 7
+ 102 0006 7860     		str	r0, [r7, #4]
+ 103              		.loc 2 98 0
+ 104 0008 7B68     		ldr	r3, [r7, #4]
+ 105 000a 5B6B     		ldr	r3, [r3, #52]
+ 106              		.loc 2 99 0
+ 107 000c 1846     		mov	r0, r3
+ 108 000e 0C37     		adds	r7, r7, #12
+ 109 0010 BD46     		mov	sp, r7
+ 110              		@ sp needed
+ 111 0012 5DF8047B 		ldr	r7, [sp], #4
+ 112 0016 7047     		bx	lr
+ 113              		.cfi_endproc
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 3
+
+
+ 114              	.LFE211:
+ 115              		.size	chMsgGet, .-chMsgGet
+ 116 0018 AFF30080 		.section	.text.thread,"ax",%progbits
+ 116      AFF30080 
+ 117              		.align	2
+ 118              		.p2align 4,,15
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.type	thread, %function
+ 122              	thread:
+ 123              	.LFB229:
+ 124              		.file 3 "../../ChibiOS/test/rt/testmsg.c"
+ 125              		.loc 3 59 0
+ 126              		.cfi_startproc
+ 127              		@ args = 0, pretend = 0, frame = 8
+ 128              		@ frame_needed = 1, uses_anonymous_args = 0
+ 129 0000 80B5     		push	{r7, lr}
+ 130              		.cfi_def_cfa_offset 8
+ 131              		.cfi_offset 7, -8
+ 132              		.cfi_offset 14, -4
+ 133 0002 82B0     		sub	sp, sp, #8
+ 134              		.cfi_def_cfa_offset 16
+ 135 0004 00AF     		add	r7, sp, #0
+ 136              		.cfi_def_cfa_register 7
+ 137 0006 7860     		str	r0, [r7, #4]
+ 138              		.loc 3 61 0
+ 139 0008 7868     		ldr	r0, [r7, #4]
+ 140 000a 4121     		movs	r1, #65
+ 141 000c FFF7FEFF 		bl	chMsgSend
+ 142              		.loc 3 62 0
+ 143 0010 7868     		ldr	r0, [r7, #4]
+ 144 0012 4221     		movs	r1, #66
+ 145 0014 FFF7FEFF 		bl	chMsgSend
+ 146              		.loc 3 63 0
+ 147 0018 7868     		ldr	r0, [r7, #4]
+ 148 001a 4321     		movs	r1, #67
+ 149 001c FFF7FEFF 		bl	chMsgSend
+ 150              		.loc 3 64 0
+ 151 0020 0837     		adds	r7, r7, #8
+ 152 0022 BD46     		mov	sp, r7
+ 153              		@ sp needed
+ 154 0024 80BD     		pop	{r7, pc}
+ 155              		.cfi_endproc
+ 156              	.LFE229:
+ 157              		.size	thread, .-thread
+ 158 0026 00BFAFF3 		.section	.rodata
+ 158      0080AFF3 
+ 158      0080
+ 159              		.align	2
+ 160              	.LC0:
+ 161 0000 41424300 		.ascii	"ABC\000"
+ 162              		.section	.text.msg1_execute,"ax",%progbits
+ 163              		.align	2
+ 164              		.p2align 4,,15
+ 165              		.thumb
+ 166              		.thumb_func
+ 167              		.type	msg1_execute, %function
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 4
+
+
+ 168              	msg1_execute:
+ 169              	.LFB230:
+ 170              		.loc 3 66 0
+ 171              		.cfi_startproc
+ 172              		@ args = 0, pretend = 0, frame = 8
+ 173              		@ frame_needed = 1, uses_anonymous_args = 0
+ 174 0000 B0B5     		push	{r4, r5, r7, lr}
+ 175              		.cfi_def_cfa_offset 16
+ 176              		.cfi_offset 4, -16
+ 177              		.cfi_offset 5, -12
+ 178              		.cfi_offset 7, -8
+ 179              		.cfi_offset 14, -4
+ 180 0002 84B0     		sub	sp, sp, #16
+ 181              		.cfi_def_cfa_offset 32
+ 182 0004 02AF     		add	r7, sp, #8
+ 183              		.cfi_def_cfa 7, 24
+ 184              		.loc 3 73 0
+ 185 0006 274B     		ldr	r3, .L12
+ 186 0008 1D68     		ldr	r5, [r3]
+ 187 000a FFF7FEFF 		bl	chThdGetPriorityX
+ 188 000e 0346     		mov	r3, r0
+ 189 0010 5C1C     		adds	r4, r3, #1
+ 190              		.loc 3 74 0
+ 191 0012 FFF7FEFF 		bl	chThdGetSelfX
+ 192 0016 0346     		mov	r3, r0
+ 193              		.loc 3 73 0
+ 194 0018 0093     		str	r3, [sp]
+ 195 001a 2846     		mov	r0, r5
+ 196 001c 4FF4B871 		mov	r1, #368
+ 197 0020 2246     		mov	r2, r4
+ 198 0022 214B     		ldr	r3, .L12+4
+ 199 0024 FFF7FEFF 		bl	chThdCreateStatic
+ 200 0028 0246     		mov	r2, r0
+ 201 002a 204B     		ldr	r3, .L12+8
+ 202 002c 1A60     		str	r2, [r3]
+ 203              		.loc 3 75 0
+ 204 002e FFF7FEFF 		bl	chMsgWait
+ 205 0032 7860     		str	r0, [r7, #4]
+ 206              		.loc 3 76 0
+ 207 0034 7868     		ldr	r0, [r7, #4]
+ 208 0036 FFF7FEFF 		bl	chMsgGet
+ 209 003a 3860     		str	r0, [r7]
+ 210              		.loc 3 77 0
+ 211 003c 7868     		ldr	r0, [r7, #4]
+ 212 003e 3968     		ldr	r1, [r7]
+ 213 0040 FFF7FEFF 		bl	chMsgRelease
+ 214              		.loc 3 78 0
+ 215 0044 3B68     		ldr	r3, [r7]
+ 216 0046 DBB2     		uxtb	r3, r3
+ 217 0048 1846     		mov	r0, r3
+ 218 004a FFF7FEFF 		bl	test_emit_token
+ 219              		.loc 3 79 0
+ 220 004e FFF7FEFF 		bl	chMsgWait
+ 221 0052 7860     		str	r0, [r7, #4]
+ 222              		.loc 3 80 0
+ 223 0054 7868     		ldr	r0, [r7, #4]
+ 224 0056 FFF7FEFF 		bl	chMsgGet
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 5
+
+
+ 225 005a 3860     		str	r0, [r7]
+ 226              		.loc 3 81 0
+ 227 005c 7868     		ldr	r0, [r7, #4]
+ 228 005e 3968     		ldr	r1, [r7]
+ 229 0060 FFF7FEFF 		bl	chMsgRelease
+ 230              		.loc 3 82 0
+ 231 0064 3B68     		ldr	r3, [r7]
+ 232 0066 DBB2     		uxtb	r3, r3
+ 233 0068 1846     		mov	r0, r3
+ 234 006a FFF7FEFF 		bl	test_emit_token
+ 235              		.loc 3 83 0
+ 236 006e FFF7FEFF 		bl	chMsgWait
+ 237 0072 7860     		str	r0, [r7, #4]
+ 238              		.loc 3 84 0
+ 239 0074 7868     		ldr	r0, [r7, #4]
+ 240 0076 FFF7FEFF 		bl	chMsgGet
+ 241 007a 3860     		str	r0, [r7]
+ 242              		.loc 3 85 0
+ 243 007c 7868     		ldr	r0, [r7, #4]
+ 244 007e 3968     		ldr	r1, [r7]
+ 245 0080 FFF7FEFF 		bl	chMsgRelease
+ 246              		.loc 3 86 0
+ 247 0084 3B68     		ldr	r3, [r7]
+ 248 0086 DBB2     		uxtb	r3, r3
+ 249 0088 1846     		mov	r0, r3
+ 250 008a FFF7FEFF 		bl	test_emit_token
+ 251              		.loc 3 87 0
+ 252 008e 0120     		movs	r0, #1
+ 253 0090 0749     		ldr	r1, .L12+12
+ 254 0092 FFF7FEFF 		bl	_test_assert_sequence
+ 255 0096 0346     		mov	r3, r0
+ 256 0098 002B     		cmp	r3, #0
+ 257 009a 00D0     		beq	.L10
+ 258              		.loc 3 87 0 is_stmt 0 discriminator 1
+ 259 009c 00BF     		nop
+ 260              	.L10:
+ 261              		.loc 3 88 0 is_stmt 1
+ 262 009e 0837     		adds	r7, r7, #8
+ 263 00a0 BD46     		mov	sp, r7
+ 264              		@ sp needed
+ 265 00a2 B0BD     		pop	{r4, r5, r7, pc}
+ 266              	.L13:
+ 267              		.align	2
+ 268              	.L12:
+ 269 00a4 00000000 		.word	wa
+ 270 00a8 00000000 		.word	thread
+ 271 00ac 00000000 		.word	threads
+ 272 00b0 00000000 		.word	.LC0
+ 273              		.cfi_endproc
+ 274              	.LFE230:
+ 275              		.size	msg1_execute, .-msg1_execute
+ 276              		.global	testmsg1
+ 277 00b4 AFF30080 		.section	.rodata
+ 277      AFF30080 
+ 277      AFF30080 
+ 278              		.align	2
+ 279              	.LC1:
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 6
+
+
+ 280 0004 4D657373 		.ascii	"Messages, loop\000"
+ 280      61676573 
+ 280      2C206C6F 
+ 280      6F7000
+ 281 0013 00       		.section	.rodata.testmsg1,"a",%progbits
+ 282              		.align	2
+ 283              		.type	testmsg1, %object
+ 284              		.size	testmsg1, 16
+ 285              	testmsg1:
+ 286 0000 04000000 		.word	.LC1
+ 287 0004 00000000 		.word	0
+ 288 0008 00000000 		.word	0
+ 289 000c 00000000 		.word	msg1_execute
+ 290              		.global	patternmsg
+ 291              		.section	.rodata.patternmsg,"a",%progbits
+ 292              		.align	2
+ 293              		.type	patternmsg, %object
+ 294              		.size	patternmsg, 8
+ 295              	patternmsg:
+ 296 0000 00000000 		.word	testmsg1
+ 297 0004 00000000 		.word	0
+ 298              		.text
+ 299              	.Letext0:
+ 300              		.file 4 "c:\\emtechesdk\\gcc\\lib\\gcc\\arm-none-eabi\\4.8.3\\include\\stddef.h"
+ 301              		.file 5 "c:\\emtechesdk\\gcc\\arm-none-eabi\\include\\stdint.h"
+ 302              		.file 6 "../../ChibiOS/os/rt/ports/ARMCMx/compilers/GCC/chtypes.h"
+ 303              		.file 7 "../../ChibiOS/os/rt/include/chsystypes.h"
+ 304              		.file 8 "../../ChibiOS/os/rt/include/chschd.h"
+ 305              		.file 9 "../../ChibiOS/os/rt/ports/ARMCMx/chcore.h"
+ 306              		.file 10 "../../ChibiOS/os/rt/ports/ARMCMx/chcore_v7m.h"
+ 307              		.file 11 "../../ChibiOS/os/rt/include/chdebug.h"
+ 308              		.file 12 "../../ChibiOS/os/rt/include/chtm.h"
+ 309              		.file 13 "../../ChibiOS/os/rt/include/chstats.h"
+ 310              		.file 14 "../../ChibiOS/os/rt/include/chsem.h"
+ 311              		.file 15 "../../ChibiOS/os/rt/include/chmtx.h"
+ 312              		.file 16 "../../ChibiOS/test/rt/test.h"
+ 313              		.file 17 "../../ChibiOS/os/ext/CMSIS/include/core_cm4.h"
+ 314              		.section	.debug_info,"",%progbits
+ 315              	.Ldebug_info0:
+ 316 0000 0D090000 		.4byte	0x90d
+ 317 0004 0400     		.2byte	0x4
+ 318 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 319 000a 04       		.byte	0x4
+ 320 000b 01       		.uleb128 0x1
+ 321 000c E1040000 		.4byte	.LASF139
+ 322 0010 01       		.byte	0x1
+ 323 0011 73030000 		.4byte	.LASF140
+ 324 0015 88010000 		.4byte	.LASF141
+ 325 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 326 001d 00000000 		.4byte	0
+ 327 0021 00000000 		.4byte	.Ldebug_line0
+ 328 0025 02       		.uleb128 0x2
+ 329 0026 04       		.byte	0x4
+ 330 0027 05       		.byte	0x5
+ 331 0028 696E7400 		.ascii	"int\000"
+ 332 002c 03       		.uleb128 0x3
+ 333 002d 1C000000 		.4byte	.LASF2
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 7
+
+
+ 334 0031 04       		.byte	0x4
+ 335 0032 D4       		.byte	0xd4
+ 336 0033 37000000 		.4byte	0x37
+ 337 0037 04       		.uleb128 0x4
+ 338 0038 04       		.byte	0x4
+ 339 0039 07       		.byte	0x7
+ 340 003a 0C020000 		.4byte	.LASF0
+ 341 003e 04       		.uleb128 0x4
+ 342 003f 01       		.byte	0x1
+ 343 0040 06       		.byte	0x6
+ 344 0041 0C010000 		.4byte	.LASF1
+ 345 0045 03       		.uleb128 0x3
+ 346 0046 4A060000 		.4byte	.LASF3
+ 347 004a 05       		.byte	0x5
+ 348 004b 2A       		.byte	0x2a
+ 349 004c 50000000 		.4byte	0x50
+ 350 0050 04       		.uleb128 0x4
+ 351 0051 01       		.byte	0x1
+ 352 0052 08       		.byte	0x8
+ 353 0053 07040000 		.4byte	.LASF4
+ 354 0057 04       		.uleb128 0x4
+ 355 0058 02       		.byte	0x2
+ 356 0059 05       		.byte	0x5
+ 357 005a 1F040000 		.4byte	.LASF5
+ 358 005e 04       		.uleb128 0x4
+ 359 005f 02       		.byte	0x2
+ 360 0060 07       		.byte	0x7
+ 361 0061 5D020000 		.4byte	.LASF6
+ 362 0065 03       		.uleb128 0x3
+ 363 0066 FF030000 		.4byte	.LASF7
+ 364 006a 05       		.byte	0x5
+ 365 006b 4F       		.byte	0x4f
+ 366 006c 70000000 		.4byte	0x70
+ 367 0070 04       		.uleb128 0x4
+ 368 0071 04       		.byte	0x4
+ 369 0072 05       		.byte	0x5
+ 370 0073 3F010000 		.4byte	.LASF8
+ 371 0077 03       		.uleb128 0x3
+ 372 0078 99040000 		.4byte	.LASF9
+ 373 007c 05       		.byte	0x5
+ 374 007d 50       		.byte	0x50
+ 375 007e 82000000 		.4byte	0x82
+ 376 0082 04       		.uleb128 0x4
+ 377 0083 04       		.byte	0x4
+ 378 0084 07       		.byte	0x7
+ 379 0085 CA040000 		.4byte	.LASF10
+ 380 0089 04       		.uleb128 0x4
+ 381 008a 08       		.byte	0x8
+ 382 008b 05       		.byte	0x5
+ 383 008c FE000000 		.4byte	.LASF11
+ 384 0090 03       		.uleb128 0x3
+ 385 0091 2A000000 		.4byte	.LASF12
+ 386 0095 05       		.byte	0x5
+ 387 0096 78       		.byte	0x78
+ 388 0097 9B000000 		.4byte	0x9b
+ 389 009b 04       		.uleb128 0x4
+ 390 009c 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 8
+
+
+ 391 009d 07       		.byte	0x7
+ 392 009e 85000000 		.4byte	.LASF13
+ 393 00a2 05       		.uleb128 0x5
+ 394 00a3 65000000 		.4byte	0x65
+ 395 00a7 03       		.uleb128 0x3
+ 396 00a8 F6050000 		.4byte	.LASF14
+ 397 00ac 06       		.byte	0x6
+ 398 00ad 45       		.byte	0x45
+ 399 00ae 77000000 		.4byte	0x77
+ 400 00b2 03       		.uleb128 0x3
+ 401 00b3 EE000000 		.4byte	.LASF15
+ 402 00b7 06       		.byte	0x6
+ 403 00b8 46       		.byte	0x46
+ 404 00b9 90000000 		.4byte	0x90
+ 405 00bd 03       		.uleb128 0x3
+ 406 00be A7020000 		.4byte	.LASF16
+ 407 00c2 06       		.byte	0x6
+ 408 00c3 48       		.byte	0x48
+ 409 00c4 45000000 		.4byte	0x45
+ 410 00c8 03       		.uleb128 0x3
+ 411 00c9 48010000 		.4byte	.LASF17
+ 412 00cd 06       		.byte	0x6
+ 413 00ce 49       		.byte	0x49
+ 414 00cf 45000000 		.4byte	0x45
+ 415 00d3 03       		.uleb128 0x3
+ 416 00d4 B6030000 		.4byte	.LASF18
+ 417 00d8 06       		.byte	0x6
+ 418 00d9 4A       		.byte	0x4a
+ 419 00da 45000000 		.4byte	0x45
+ 420 00de 03       		.uleb128 0x3
+ 421 00df E7030000 		.4byte	.LASF19
+ 422 00e3 06       		.byte	0x6
+ 423 00e4 4C       		.byte	0x4c
+ 424 00e5 77000000 		.4byte	0x77
+ 425 00e9 03       		.uleb128 0x3
+ 426 00ea 89020000 		.4byte	.LASF20
+ 427 00ee 06       		.byte	0x6
+ 428 00ef 4D       		.byte	0x4d
+ 429 00f0 65000000 		.4byte	0x65
+ 430 00f4 03       		.uleb128 0x3
+ 431 00f5 C8020000 		.4byte	.LASF21
+ 432 00f9 06       		.byte	0x6
+ 433 00fa 4F       		.byte	0x4f
+ 434 00fb 77000000 		.4byte	0x77
+ 435 00ff 03       		.uleb128 0x3
+ 436 0100 FB010000 		.4byte	.LASF22
+ 437 0104 06       		.byte	0x6
+ 438 0105 51       		.byte	0x51
+ 439 0106 65000000 		.4byte	0x65
+ 440 010a 03       		.uleb128 0x3
+ 441 010b 94020000 		.4byte	.LASF23
+ 442 010f 06       		.byte	0x6
+ 443 0110 52       		.byte	0x52
+ 444 0111 77000000 		.4byte	0x77
+ 445 0115 03       		.uleb128 0x3
+ 446 0116 BF050000 		.4byte	.LASF24
+ 447 011a 07       		.byte	0x7
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 9
+
+
+ 448 011b 33       		.byte	0x33
+ 449 011c 77000000 		.4byte	0x77
+ 450 0120 03       		.uleb128 0x3
+ 451 0121 2D060000 		.4byte	.LASF25
+ 452 0125 07       		.byte	0x7
+ 453 0126 3F       		.byte	0x3f
+ 454 0127 2B010000 		.4byte	0x12b
+ 455 012b 06       		.uleb128 0x6
+ 456 012c 7F020000 		.4byte	.LASF48
+ 457 0130 68       		.byte	0x68
+ 458 0131 08       		.byte	0x8
+ 459 0132 C2       		.byte	0xc2
+ 460 0133 3E020000 		.4byte	0x23e
+ 461 0137 07       		.uleb128 0x7
+ 462 0138 50040000 		.4byte	.LASF26
+ 463 013c 08       		.byte	0x8
+ 464 013d C3       		.byte	0xc3
+ 465 013e 49020000 		.4byte	0x249
+ 466 0142 00       		.byte	0
+ 467 0143 07       		.uleb128 0x7
+ 468 0144 D8030000 		.4byte	.LASF27
+ 469 0148 08       		.byte	0x8
+ 470 0149 C5       		.byte	0xc5
+ 471 014a 49020000 		.4byte	0x249
+ 472 014e 04       		.byte	0x4
+ 473 014f 07       		.uleb128 0x7
+ 474 0150 F7000000 		.4byte	.LASF28
+ 475 0154 08       		.byte	0x8
+ 476 0155 C7       		.byte	0xc7
+ 477 0156 DE000000 		.4byte	0xde
+ 478 015a 08       		.byte	0x8
+ 479 015b 07       		.uleb128 0x7
+ 480 015c AC060000 		.4byte	.LASF29
+ 481 0160 08       		.byte	0x8
+ 482 0161 C8       		.byte	0xc8
+ 483 0162 B2040000 		.4byte	0x4b2
+ 484 0166 0C       		.byte	0xc
+ 485 0167 07       		.uleb128 0x7
+ 486 0168 57010000 		.4byte	.LASF30
+ 487 016c 08       		.byte	0x8
+ 488 016d CA       		.byte	0xca
+ 489 016e 49020000 		.4byte	0x249
+ 490 0172 10       		.byte	0x10
+ 491 0173 07       		.uleb128 0x7
+ 492 0174 53030000 		.4byte	.LASF31
+ 493 0178 08       		.byte	0x8
+ 494 0179 CB       		.byte	0xcb
+ 495 017a 49020000 		.4byte	0x249
+ 496 017e 14       		.byte	0x14
+ 497 017f 07       		.uleb128 0x7
+ 498 0180 66060000 		.4byte	.LASF32
+ 499 0184 08       		.byte	0x8
+ 500 0185 D2       		.byte	0xd2
+ 501 0186 56070000 		.4byte	0x756
+ 502 018a 18       		.byte	0x18
+ 503 018b 07       		.uleb128 0x7
+ 504 018c 01020000 		.4byte	.LASF33
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 10
+
+
+ 505 0190 08       		.byte	0x8
+ 506 0191 D8       		.byte	0xd8
+ 507 0192 68070000 		.4byte	0x768
+ 508 0196 1C       		.byte	0x1c
+ 509 0197 07       		.uleb128 0x7
+ 510 0198 29040000 		.4byte	.LASF34
+ 511 019c 08       		.byte	0x8
+ 512 019d DD       		.byte	0xdd
+ 513 019e C8000000 		.4byte	0xc8
+ 514 01a2 20       		.byte	0x20
+ 515 01a3 07       		.uleb128 0x7
+ 516 01a4 57040000 		.4byte	.LASF35
+ 517 01a8 08       		.byte	0x8
+ 518 01a9 E1       		.byte	0xe1
+ 519 01aa BD000000 		.4byte	0xbd
+ 520 01ae 21       		.byte	0x21
+ 521 01af 07       		.uleb128 0x7
+ 522 01b0 1E060000 		.4byte	.LASF36
+ 523 01b4 08       		.byte	0x8
+ 524 01b5 E6       		.byte	0xe6
+ 525 01b6 D3000000 		.4byte	0xd3
+ 526 01ba 22       		.byte	0x22
+ 527 01bb 08       		.uleb128 0x8
+ 528 01bc 705F7500 		.ascii	"p_u\000"
+ 529 01c0 08       		.byte	0x8
+ 530 01c1 3101     		.2byte	0x131
+ 531 01c3 91060000 		.4byte	0x691
+ 532 01c7 24       		.byte	0x24
+ 533 01c8 09       		.uleb128 0x9
+ 534 01c9 DF020000 		.4byte	.LASF37
+ 535 01cd 08       		.byte	0x8
+ 536 01ce 3601     		.2byte	0x136
+ 537 01d0 4F020000 		.4byte	0x24f
+ 538 01d4 28       		.byte	0x28
+ 539 01d5 09       		.uleb128 0x9
+ 540 01d6 28020000 		.4byte	.LASF38
+ 541 01da 08       		.byte	0x8
+ 542 01db 3C01     		.2byte	0x13c
+ 543 01dd 73020000 		.4byte	0x273
+ 544 01e1 2C       		.byte	0x2c
+ 545 01e2 09       		.uleb128 0x9
+ 546 01e3 89060000 		.4byte	.LASF39
+ 547 01e7 08       		.byte	0x8
+ 548 01e8 4001     		.2byte	0x140
+ 549 01ea E9000000 		.4byte	0xe9
+ 550 01ee 34       		.byte	0x34
+ 551 01ef 09       		.uleb128 0x9
+ 552 01f0 8E040000 		.4byte	.LASF40
+ 553 01f4 08       		.byte	0x8
+ 554 01f5 4601     		.2byte	0x146
+ 555 01f7 F4000000 		.4byte	0xf4
+ 556 01fb 38       		.byte	0x38
+ 557 01fc 09       		.uleb128 0x9
+ 558 01fd 15040000 		.4byte	.LASF41
+ 559 0201 08       		.byte	0x8
+ 560 0202 4D01     		.2byte	0x14d
+ 561 0204 50070000 		.4byte	0x750
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 11
+
+
+ 562 0208 3C       		.byte	0x3c
+ 563 0209 09       		.uleb128 0x9
+ 564 020a C9050000 		.4byte	.LASF42
+ 565 020e 08       		.byte	0x8
+ 566 020f 5101     		.2byte	0x151
+ 567 0211 DE000000 		.4byte	0xde
+ 568 0215 40       		.byte	0x40
+ 569 0216 09       		.uleb128 0x9
+ 570 0217 18010000 		.4byte	.LASF43
+ 571 021b 08       		.byte	0x8
+ 572 021c 5801     		.2byte	0x158
+ 573 021e 26030000 		.4byte	0x326
+ 574 0222 44       		.byte	0x44
+ 575 0223 09       		.uleb128 0x9
+ 576 0224 5F040000 		.4byte	.LASF44
+ 577 0228 08       		.byte	0x8
+ 578 0229 5E01     		.2byte	0x15e
+ 579 022b 42060000 		.4byte	0x642
+ 580 022f 48       		.byte	0x48
+ 581 0230 09       		.uleb128 0x9
+ 582 0231 45020000 		.4byte	.LASF45
+ 583 0235 08       		.byte	0x8
+ 584 0236 6201     		.2byte	0x162
+ 585 0238 26030000 		.4byte	0x326
+ 586 023c 60       		.byte	0x60
+ 587 023d 00       		.byte	0
+ 588 023e 03       		.uleb128 0x3
+ 589 023f FD020000 		.4byte	.LASF46
+ 590 0243 07       		.byte	0x7
+ 591 0244 44       		.byte	0x44
+ 592 0245 49020000 		.4byte	0x249
+ 593 0249 0A       		.uleb128 0xa
+ 594 024a 04       		.byte	0x4
+ 595 024b 20010000 		.4byte	0x120
+ 596 024f 03       		.uleb128 0x3
+ 597 0250 6D060000 		.4byte	.LASF47
+ 598 0254 07       		.byte	0x7
+ 599 0255 49       		.byte	0x49
+ 600 0256 5A020000 		.4byte	0x25a
+ 601 025a 06       		.uleb128 0x6
+ 602 025b BA040000 		.4byte	.LASF49
+ 603 025f 04       		.byte	0x4
+ 604 0260 08       		.byte	0x8
+ 605 0261 B0       		.byte	0xb0
+ 606 0262 73020000 		.4byte	0x273
+ 607 0266 07       		.uleb128 0x7
+ 608 0267 50040000 		.4byte	.LASF26
+ 609 026b 08       		.byte	0x8
+ 610 026c B1       		.byte	0xb1
+ 611 026d 49020000 		.4byte	0x249
+ 612 0271 00       		.byte	0
+ 613 0272 00       		.byte	0
+ 614 0273 03       		.uleb128 0x3
+ 615 0274 05060000 		.4byte	.LASF50
+ 616 0278 07       		.byte	0x7
+ 617 0279 50       		.byte	0x50
+ 618 027a 7E020000 		.4byte	0x27e
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 12
+
+
+ 619 027e 06       		.uleb128 0x6
+ 620 027f 4C000000 		.4byte	.LASF51
+ 621 0283 08       		.byte	0x8
+ 622 0284 08       		.byte	0x8
+ 623 0285 B7       		.byte	0xb7
+ 624 0286 A3020000 		.4byte	0x2a3
+ 625 028a 07       		.uleb128 0x7
+ 626 028b 50040000 		.4byte	.LASF26
+ 627 028f 08       		.byte	0x8
+ 628 0290 B8       		.byte	0xb8
+ 629 0291 49020000 		.4byte	0x249
+ 630 0295 00       		.byte	0
+ 631 0296 07       		.uleb128 0x7
+ 632 0297 D8030000 		.4byte	.LASF27
+ 633 029b 08       		.byte	0x8
+ 634 029c B9       		.byte	0xb9
+ 635 029d 49020000 		.4byte	0x249
+ 636 02a1 04       		.byte	0x4
+ 637 02a2 00       		.byte	0
+ 638 02a3 03       		.uleb128 0x3
+ 639 02a4 07000000 		.4byte	.LASF52
+ 640 02a8 07       		.byte	0x7
+ 641 02a9 57       		.byte	0x57
+ 642 02aa AE020000 		.4byte	0x2ae
+ 643 02ae 0B       		.uleb128 0xb
+ 644 02af BA020000 		.4byte	.LASF53
+ 645 02b3 1C       		.byte	0x1c
+ 646 02b4 08       		.byte	0x8
+ 647 02b5 9001     		.2byte	0x190
+ 648 02b7 0A030000 		.4byte	0x30a
+ 649 02bb 09       		.uleb128 0x9
+ 650 02bc A9040000 		.4byte	.LASF54
+ 651 02c0 08       		.byte	0x8
+ 652 02c1 9101     		.2byte	0x191
+ 653 02c3 73020000 		.4byte	0x273
+ 654 02c7 00       		.byte	0
+ 655 02c8 09       		.uleb128 0x9
+ 656 02c9 39040000 		.4byte	.LASF55
+ 657 02cd 08       		.byte	0x8
+ 658 02ce 9201     		.2byte	0x192
+ 659 02d0 DE000000 		.4byte	0xde
+ 660 02d4 08       		.byte	0x8
+ 661 02d5 09       		.uleb128 0x9
+ 662 02d6 5B030000 		.4byte	.LASF56
+ 663 02da 08       		.byte	0x8
+ 664 02db 9401     		.2byte	0x194
+ 665 02dd B2040000 		.4byte	0x4b2
+ 666 02e1 0C       		.byte	0xc
+ 667 02e2 09       		.uleb128 0x9
+ 668 02e3 6F010000 		.4byte	.LASF57
+ 669 02e7 08       		.byte	0x8
+ 670 02e8 9701     		.2byte	0x197
+ 671 02ea 49020000 		.4byte	0x249
+ 672 02ee 10       		.byte	0x10
+ 673 02ef 09       		.uleb128 0x9
+ 674 02f0 9D030000 		.4byte	.LASF58
+ 675 02f4 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 13
+
+
+ 676 02f5 9801     		.2byte	0x198
+ 677 02f7 49020000 		.4byte	0x249
+ 678 02fb 14       		.byte	0x14
+ 679 02fc 09       		.uleb128 0x9
+ 680 02fd 93030000 		.4byte	.LASF59
+ 681 0301 08       		.byte	0x8
+ 682 0302 9B01     		.2byte	0x19b
+ 683 0304 49020000 		.4byte	0x249
+ 684 0308 18       		.byte	0x18
+ 685 0309 00       		.byte	0
+ 686 030a 03       		.uleb128 0x3
+ 687 030b D4050000 		.4byte	.LASF60
+ 688 030f 07       		.byte	0x7
+ 689 0310 5C       		.byte	0x5c
+ 690 0311 15030000 		.4byte	0x315
+ 691 0315 0A       		.uleb128 0xa
+ 692 0316 04       		.byte	0x4
+ 693 0317 1B030000 		.4byte	0x31b
+ 694 031b 0C       		.uleb128 0xc
+ 695 031c 26030000 		.4byte	0x326
+ 696 0320 0D       		.uleb128 0xd
+ 697 0321 26030000 		.4byte	0x326
+ 698 0325 00       		.byte	0
+ 699 0326 0E       		.uleb128 0xe
+ 700 0327 04       		.byte	0x4
+ 701 0328 03       		.uleb128 0x3
+ 702 0329 C8030000 		.4byte	.LASF61
+ 703 032d 07       		.byte	0x7
+ 704 032e 61       		.byte	0x61
+ 705 032f 33030000 		.4byte	0x333
+ 706 0333 0B       		.uleb128 0xb
+ 707 0334 67040000 		.4byte	.LASF62
+ 708 0338 14       		.byte	0x14
+ 709 0339 08       		.byte	0x8
+ 710 033a 6B01     		.2byte	0x16b
+ 711 033c 82030000 		.4byte	0x382
+ 712 0340 09       		.uleb128 0x9
+ 713 0341 19020000 		.4byte	.LASF63
+ 714 0345 08       		.byte	0x8
+ 715 0346 6C01     		.2byte	0x16c
+ 716 0348 6E070000 		.4byte	0x76e
+ 717 034c 00       		.byte	0
+ 718 034d 09       		.uleb128 0x9
+ 719 034e 80010000 		.4byte	.LASF64
+ 720 0352 08       		.byte	0x8
+ 721 0353 6D01     		.2byte	0x16d
+ 722 0355 6E070000 		.4byte	0x76e
+ 723 0359 04       		.byte	0x4
+ 724 035a 09       		.uleb128 0x9
+ 725 035b B1040000 		.4byte	.LASF65
+ 726 035f 08       		.byte	0x8
+ 727 0360 6E01     		.2byte	0x16e
+ 728 0362 15010000 		.4byte	0x115
+ 729 0366 08       		.byte	0x8
+ 730 0367 09       		.uleb128 0x9
+ 731 0368 B2060000 		.4byte	.LASF66
+ 732 036c 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 14
+
+
+ 733 036d 6F01     		.2byte	0x16f
+ 734 036f 0A030000 		.4byte	0x30a
+ 735 0373 0C       		.byte	0xc
+ 736 0374 09       		.uleb128 0x9
+ 737 0375 FE050000 		.4byte	.LASF67
+ 738 0379 08       		.byte	0x8
+ 739 037a 7101     		.2byte	0x171
+ 740 037c 26030000 		.4byte	0x326
+ 741 0380 10       		.byte	0x10
+ 742 0381 00       		.byte	0
+ 743 0382 03       		.uleb128 0x3
+ 744 0383 CB000000 		.4byte	.LASF68
+ 745 0387 07       		.byte	0x7
+ 746 0388 66       		.byte	0x66
+ 747 0389 8D030000 		.4byte	0x38d
+ 748 038d 0B       		.uleb128 0xb
+ 749 038e 21030000 		.4byte	.LASF69
+ 750 0392 10       		.byte	0x10
+ 751 0393 08       		.byte	0x8
+ 752 0394 7B01     		.2byte	0x17b
+ 753 0396 CF030000 		.4byte	0x3cf
+ 754 039a 09       		.uleb128 0x9
+ 755 039b 19020000 		.4byte	.LASF63
+ 756 039f 08       		.byte	0x8
+ 757 03a0 7C01     		.2byte	0x17c
+ 758 03a2 6E070000 		.4byte	0x76e
+ 759 03a6 00       		.byte	0
+ 760 03a7 09       		.uleb128 0x9
+ 761 03a8 80010000 		.4byte	.LASF64
+ 762 03ac 08       		.byte	0x8
+ 763 03ad 7E01     		.2byte	0x17e
+ 764 03af 6E070000 		.4byte	0x76e
+ 765 03b3 04       		.byte	0x4
+ 766 03b4 09       		.uleb128 0x9
+ 767 03b5 B1040000 		.4byte	.LASF65
+ 768 03b9 08       		.byte	0x8
+ 769 03ba 8001     		.2byte	0x180
+ 770 03bc 15010000 		.4byte	0x115
+ 771 03c0 08       		.byte	0x8
+ 772 03c1 09       		.uleb128 0x9
+ 773 03c2 47030000 		.4byte	.LASF70
+ 774 03c6 08       		.byte	0x8
+ 775 03c7 8801     		.2byte	0x188
+ 776 03c9 15010000 		.4byte	0x115
+ 777 03cd 0C       		.byte	0xc
+ 778 03ce 00       		.byte	0
+ 779 03cf 03       		.uleb128 0x3
+ 780 03d0 5D000000 		.4byte	.LASF71
+ 781 03d4 07       		.byte	0x7
+ 782 03d5 6B       		.byte	0x6b
+ 783 03d6 DA030000 		.4byte	0x3da
+ 784 03da 0F       		.uleb128 0xf
+ 785 03db CB010000 		.4byte	.LASF72
+ 786 03df 1404     		.2byte	0x414
+ 787 03e1 08       		.byte	0x8
+ 788 03e2 A201     		.2byte	0x1a2
+ 789 03e4 1D040000 		.4byte	0x41d
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 15
+
+
+ 790 03e8 09       		.uleb128 0x9
+ 791 03e9 DD050000 		.4byte	.LASF73
+ 792 03ed 08       		.byte	0x8
+ 793 03ee AA01     		.2byte	0x1aa
+ 794 03f0 74070000 		.4byte	0x774
+ 795 03f4 00       		.byte	0
+ 796 03f5 09       		.uleb128 0x9
+ 797 03f6 25060000 		.4byte	.LASF74
+ 798 03fa 08       		.byte	0x8
+ 799 03fb AF01     		.2byte	0x1af
+ 800 03fd FF000000 		.4byte	0xff
+ 801 0401 04       		.byte	0x4
+ 802 0402 09       		.uleb128 0x9
+ 803 0403 E3010000 		.4byte	.LASF75
+ 804 0407 08       		.byte	0x8
+ 805 0408 B301     		.2byte	0x1b3
+ 806 040a FF000000 		.4byte	0xff
+ 807 040e 08       		.byte	0x8
+ 808 040f 09       		.uleb128 0x9
+ 809 0410 7C060000 		.4byte	.LASF76
+ 810 0414 08       		.byte	0x8
+ 811 0415 B901     		.2byte	0x1b9
+ 812 0417 D4050000 		.4byte	0x5d4
+ 813 041b 0C       		.byte	0xc
+ 814 041c 00       		.byte	0
+ 815 041d 03       		.uleb128 0x3
+ 816 041e 9B020000 		.4byte	.LASF77
+ 817 0422 07       		.byte	0x7
+ 818 0423 70       		.byte	0x70
+ 819 0424 28040000 		.4byte	0x428
+ 820 0428 0F       		.uleb128 0xf
+ 821 0429 35010000 		.4byte	.LASF78
+ 822 042d E805     		.2byte	0x5e8
+ 823 042f 08       		.byte	0x8
+ 824 0430 C201     		.2byte	0x1c2
+ 825 0432 95040000 		.4byte	0x495
+ 826 0436 09       		.uleb128 0x9
+ 827 0437 36060000 		.4byte	.LASF79
+ 828 043b 08       		.byte	0x8
+ 829 043c C601     		.2byte	0x1c6
+ 830 043e A3020000 		.4byte	0x2a3
+ 831 0442 00       		.byte	0
+ 832 0443 09       		.uleb128 0x9
+ 833 0444 28010000 		.4byte	.LASF80
+ 834 0448 08       		.byte	0x8
+ 835 0449 CA01     		.2byte	0x1ca
+ 836 044b 82030000 		.4byte	0x382
+ 837 044f 1C       		.byte	0x1c
+ 838 0450 08       		.uleb128 0x8
+ 839 0451 64626700 		.ascii	"dbg\000"
+ 840 0455 08       		.byte	0x8
+ 841 0456 CE01     		.2byte	0x1ce
+ 842 0458 CF030000 		.4byte	0x3cf
+ 843 045c 2C       		.byte	0x2c
+ 844 045d 10       		.uleb128 0x10
+ 845 045e C0000000 		.4byte	.LASF81
+ 846 0462 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 16
+
+
+ 847 0463 D201     		.2byte	0x1d2
+ 848 0465 20010000 		.4byte	0x120
+ 849 0469 4004     		.2byte	0x440
+ 850 046b 11       		.uleb128 0x11
+ 851 046c 746D00   		.ascii	"tm\000"
+ 852 046f 08       		.byte	0x8
+ 853 0470 D701     		.2byte	0x1d7
+ 854 0472 F4050000 		.4byte	0x5f4
+ 855 0476 A804     		.2byte	0x4a8
+ 856 0478 10       		.uleb128 0x10
+ 857 0479 33000000 		.4byte	.LASF82
+ 858 047d 08       		.byte	0x8
+ 859 047e DD01     		.2byte	0x1dd
+ 860 0480 86060000 		.4byte	0x686
+ 861 0484 B004     		.2byte	0x4b0
+ 862 0486 10       		.uleb128 0x10
+ 863 0487 EC010000 		.4byte	.LASF83
+ 864 048b 08       		.byte	0x8
+ 865 048c E301     		.2byte	0x1e3
+ 866 048e 79070000 		.4byte	0x779
+ 867 0492 E804     		.2byte	0x4e8
+ 868 0494 00       		.byte	0
+ 869 0495 04       		.uleb128 0x4
+ 870 0496 04       		.byte	0x4
+ 871 0497 07       		.byte	0x7
+ 872 0498 F4020000 		.4byte	.LASF84
+ 873 049c 03       		.uleb128 0x3
+ 874 049d 77010000 		.4byte	.LASF85
+ 875 04a1 09       		.byte	0x9
+ 876 04a2 65       		.byte	0x65
+ 877 04a3 26030000 		.4byte	0x326
+ 878 04a7 03       		.uleb128 0x3
+ 879 04a8 D4020000 		.4byte	.LASF86
+ 880 04ac 09       		.byte	0x9
+ 881 04ad 6D       		.byte	0x6d
+ 882 04ae 90000000 		.4byte	0x90
+ 883 04b2 06       		.uleb128 0x6
+ 884 04b3 EE050000 		.4byte	.LASF87
+ 885 04b7 04       		.byte	0x4
+ 886 04b8 09       		.byte	0x9
+ 887 04b9 89       		.byte	0x89
+ 888 04ba CB040000 		.4byte	0x4cb
+ 889 04be 12       		.uleb128 0x12
+ 890 04bf 72313300 		.ascii	"r13\000"
+ 891 04c3 09       		.byte	0x9
+ 892 04c4 8A       		.byte	0x8a
+ 893 04c5 46050000 		.4byte	0x546
+ 894 04c9 00       		.byte	0
+ 895 04ca 00       		.byte	0
+ 896 04cb 06       		.uleb128 0x6
+ 897 04cc 40000000 		.4byte	.LASF88
+ 898 04d0 24       		.byte	0x24
+ 899 04d1 0A       		.byte	0xa
+ 900 04d2 F4       		.byte	0xf4
+ 901 04d3 46050000 		.4byte	0x546
+ 902 04d7 08       		.uleb128 0x8
+ 903 04d8 723400   		.ascii	"r4\000"
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 17
+
+
+ 904 04db 0A       		.byte	0xa
+ 905 04dc 0701     		.2byte	0x107
+ 906 04de 9C040000 		.4byte	0x49c
+ 907 04e2 00       		.byte	0
+ 908 04e3 08       		.uleb128 0x8
+ 909 04e4 723500   		.ascii	"r5\000"
+ 910 04e7 0A       		.byte	0xa
+ 911 04e8 0801     		.2byte	0x108
+ 912 04ea 9C040000 		.4byte	0x49c
+ 913 04ee 04       		.byte	0x4
+ 914 04ef 08       		.uleb128 0x8
+ 915 04f0 723600   		.ascii	"r6\000"
+ 916 04f3 0A       		.byte	0xa
+ 917 04f4 0901     		.2byte	0x109
+ 918 04f6 9C040000 		.4byte	0x49c
+ 919 04fa 08       		.byte	0x8
+ 920 04fb 08       		.uleb128 0x8
+ 921 04fc 723700   		.ascii	"r7\000"
+ 922 04ff 0A       		.byte	0xa
+ 923 0500 0A01     		.2byte	0x10a
+ 924 0502 9C040000 		.4byte	0x49c
+ 925 0506 0C       		.byte	0xc
+ 926 0507 08       		.uleb128 0x8
+ 927 0508 723800   		.ascii	"r8\000"
+ 928 050b 0A       		.byte	0xa
+ 929 050c 0B01     		.2byte	0x10b
+ 930 050e 9C040000 		.4byte	0x49c
+ 931 0512 10       		.byte	0x10
+ 932 0513 08       		.uleb128 0x8
+ 933 0514 723900   		.ascii	"r9\000"
+ 934 0517 0A       		.byte	0xa
+ 935 0518 0C01     		.2byte	0x10c
+ 936 051a 9C040000 		.4byte	0x49c
+ 937 051e 14       		.byte	0x14
+ 938 051f 08       		.uleb128 0x8
+ 939 0520 72313000 		.ascii	"r10\000"
+ 940 0524 0A       		.byte	0xa
+ 941 0525 0D01     		.2byte	0x10d
+ 942 0527 9C040000 		.4byte	0x49c
+ 943 052b 18       		.byte	0x18
+ 944 052c 08       		.uleb128 0x8
+ 945 052d 72313100 		.ascii	"r11\000"
+ 946 0531 0A       		.byte	0xa
+ 947 0532 0E01     		.2byte	0x10e
+ 948 0534 9C040000 		.4byte	0x49c
+ 949 0538 1C       		.byte	0x1c
+ 950 0539 08       		.uleb128 0x8
+ 951 053a 6C7200   		.ascii	"lr\000"
+ 952 053d 0A       		.byte	0xa
+ 953 053e 0F01     		.2byte	0x10f
+ 954 0540 9C040000 		.4byte	0x49c
+ 955 0544 20       		.byte	0x20
+ 956 0545 00       		.byte	0
+ 957 0546 0A       		.uleb128 0xa
+ 958 0547 04       		.byte	0x4
+ 959 0548 CB040000 		.4byte	0x4cb
+ 960 054c 13       		.uleb128 0x13
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 18
+
+
+ 961 054d 10       		.byte	0x10
+ 962 054e 0B       		.byte	0xb
+ 963 054f 51       		.byte	0x51
+ 964 0550 85050000 		.4byte	0x585
+ 965 0554 07       		.uleb128 0x7
+ 966 0555 14000000 		.4byte	.LASF89
+ 967 0559 0B       		.byte	0xb
+ 968 055a 55       		.byte	0x55
+ 969 055b 15010000 		.4byte	0x115
+ 970 055f 00       		.byte	0
+ 971 0560 07       		.uleb128 0x7
+ 972 0561 51010000 		.4byte	.LASF90
+ 973 0565 0B       		.byte	0xb
+ 974 0566 59       		.byte	0x59
+ 975 0567 49020000 		.4byte	0x249
+ 976 056b 04       		.byte	0x4
+ 977 056c 07       		.uleb128 0x7
+ 978 056d A2060000 		.4byte	.LASF91
+ 979 0571 0B       		.byte	0xb
+ 980 0572 5D       		.byte	0x5d
+ 981 0573 26030000 		.4byte	0x326
+ 982 0577 08       		.byte	0x8
+ 983 0578 07       		.uleb128 0x7
+ 984 0579 AE000000 		.4byte	.LASF92
+ 985 057d 0B       		.byte	0xb
+ 986 057e 61       		.byte	0x61
+ 987 057f 45000000 		.4byte	0x45
+ 988 0583 0C       		.byte	0xc
+ 989 0584 00       		.byte	0
+ 990 0585 03       		.uleb128 0x3
+ 991 0586 38030000 		.4byte	.LASF93
+ 992 058a 0B       		.byte	0xb
+ 993 058b 62       		.byte	0x62
+ 994 058c 4C050000 		.4byte	0x54c
+ 995 0590 14       		.uleb128 0x14
+ 996 0591 0804     		.2byte	0x408
+ 997 0593 0B       		.byte	0xb
+ 998 0594 67       		.byte	0x67
+ 999 0595 BE050000 		.4byte	0x5be
+ 1000 0599 07       		.uleb128 0x7
+ 1001 059a 67010000 		.4byte	.LASF94
+ 1002 059e 0B       		.byte	0xb
+ 1003 059f 6B       		.byte	0x6b
+ 1004 05a0 37000000 		.4byte	0x37
+ 1005 05a4 00       		.byte	0
+ 1006 05a5 07       		.uleb128 0x7
+ 1007 05a6 00000000 		.4byte	.LASF95
+ 1008 05aa 0B       		.byte	0xb
+ 1009 05ab 6F       		.byte	0x6f
+ 1010 05ac BE050000 		.4byte	0x5be
+ 1011 05b0 04       		.byte	0x4
+ 1012 05b1 07       		.uleb128 0x7
+ 1013 05b2 BE030000 		.4byte	.LASF96
+ 1014 05b6 0B       		.byte	0xb
+ 1015 05b7 73       		.byte	0x73
+ 1016 05b8 C4050000 		.4byte	0x5c4
+ 1017 05bc 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 19
+
+
+ 1018 05bd 00       		.byte	0
+ 1019 05be 0A       		.uleb128 0xa
+ 1020 05bf 04       		.byte	0x4
+ 1021 05c0 85050000 		.4byte	0x585
+ 1022 05c4 15       		.uleb128 0x15
+ 1023 05c5 85050000 		.4byte	0x585
+ 1024 05c9 D4050000 		.4byte	0x5d4
+ 1025 05cd 16       		.uleb128 0x16
+ 1026 05ce 95040000 		.4byte	0x495
+ 1027 05d2 3F       		.byte	0x3f
+ 1028 05d3 00       		.byte	0
+ 1029 05d4 03       		.uleb128 0x3
+ 1030 05d5 9C000000 		.4byte	.LASF97
+ 1031 05d9 0B       		.byte	0xb
+ 1032 05da 74       		.byte	0x74
+ 1033 05db 90050000 		.4byte	0x590
+ 1034 05df 13       		.uleb128 0x13
+ 1035 05e0 04       		.byte	0x4
+ 1036 05e1 0C       		.byte	0xc
+ 1037 05e2 38       		.byte	0x38
+ 1038 05e3 F4050000 		.4byte	0x5f4
+ 1039 05e7 07       		.uleb128 0x7
+ 1040 05e8 E7050000 		.4byte	.LASF98
+ 1041 05ec 0C       		.byte	0xc
+ 1042 05ed 3C       		.byte	0x3c
+ 1043 05ee A7000000 		.4byte	0xa7
+ 1044 05f2 00       		.byte	0
+ 1045 05f3 00       		.byte	0
+ 1046 05f4 03       		.uleb128 0x3
+ 1047 05f5 10030000 		.4byte	.LASF99
+ 1048 05f9 0C       		.byte	0xc
+ 1049 05fa 3D       		.byte	0x3d
+ 1050 05fb DF050000 		.4byte	0x5df
+ 1051 05ff 13       		.uleb128 0x13
+ 1052 0600 18       		.byte	0x18
+ 1053 0601 0C       		.byte	0xc
+ 1054 0602 48       		.byte	0x48
+ 1055 0603 42060000 		.4byte	0x642
+ 1056 0607 07       		.uleb128 0x7
+ 1057 0608 B3050000 		.4byte	.LASF100
+ 1058 060c 0C       		.byte	0xc
+ 1059 060d 49       		.byte	0x49
+ 1060 060e A7000000 		.4byte	0xa7
+ 1061 0612 00       		.byte	0
+ 1062 0613 07       		.uleb128 0x7
+ 1063 0614 6C000000 		.4byte	.LASF101
+ 1064 0618 0C       		.byte	0xc
+ 1065 0619 4A       		.byte	0x4a
+ 1066 061a A7000000 		.4byte	0xa7
+ 1067 061e 04       		.byte	0x4
+ 1068 061f 07       		.uleb128 0x7
+ 1069 0620 8F020000 		.4byte	.LASF102
+ 1070 0624 0C       		.byte	0xc
+ 1071 0625 4B       		.byte	0x4b
+ 1072 0626 A7000000 		.4byte	0xa7
+ 1073 062a 08       		.byte	0x8
+ 1074 062b 12       		.uleb128 0x12
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 20
+
+
+ 1075 062c 6E00     		.ascii	"n\000"
+ 1076 062e 0C       		.byte	0xc
+ 1077 062f 4C       		.byte	0x4c
+ 1078 0630 0A010000 		.4byte	0x10a
+ 1079 0634 0C       		.byte	0xc
+ 1080 0635 07       		.uleb128 0x7
+ 1081 0636 A5030000 		.4byte	.LASF103
+ 1082 063a 0C       		.byte	0xc
+ 1083 063b 4D       		.byte	0x4d
+ 1084 063c B2000000 		.4byte	0xb2
+ 1085 0640 10       		.byte	0x10
+ 1086 0641 00       		.byte	0
+ 1087 0642 03       		.uleb128 0x3
+ 1088 0643 72000000 		.4byte	.LASF104
+ 1089 0647 0C       		.byte	0xc
+ 1090 0648 4E       		.byte	0x4e
+ 1091 0649 FF050000 		.4byte	0x5ff
+ 1092 064d 13       		.uleb128 0x13
+ 1093 064e 38       		.byte	0x38
+ 1094 064f 0D       		.byte	0xd
+ 1095 0650 38       		.byte	0x38
+ 1096 0651 86060000 		.4byte	0x686
+ 1097 0655 07       		.uleb128 0x7
+ 1098 0656 4C020000 		.4byte	.LASF105
+ 1099 065a 0D       		.byte	0xd
+ 1100 065b 39       		.byte	0x39
+ 1101 065c 0A010000 		.4byte	0x10a
+ 1102 0660 00       		.byte	0
+ 1103 0661 07       		.uleb128 0x7
+ 1104 0662 F6030000 		.4byte	.LASF106
+ 1105 0666 0D       		.byte	0xd
+ 1106 0667 3A       		.byte	0x3a
+ 1107 0668 0A010000 		.4byte	0x10a
+ 1108 066c 04       		.byte	0x4
+ 1109 066d 07       		.uleb128 0x7
+ 1110 066e 8F060000 		.4byte	.LASF107
+ 1111 0672 0D       		.byte	0xd
+ 1112 0673 3B       		.byte	0x3b
+ 1113 0674 42060000 		.4byte	0x642
+ 1114 0678 08       		.byte	0x8
+ 1115 0679 07       		.uleb128 0x7
+ 1116 067a AF020000 		.4byte	.LASF108
+ 1117 067e 0D       		.byte	0xd
+ 1118 067f 3D       		.byte	0x3d
+ 1119 0680 42060000 		.4byte	0x642
+ 1120 0684 20       		.byte	0x20
+ 1121 0685 00       		.byte	0
+ 1122 0686 03       		.uleb128 0x3
+ 1123 0687 70020000 		.4byte	.LASF109
+ 1124 068b 0D       		.byte	0xd
+ 1125 068c 3F       		.byte	0x3f
+ 1126 068d 4D060000 		.4byte	0x64d
+ 1127 0691 17       		.uleb128 0x17
+ 1128 0692 04       		.byte	0x4
+ 1129 0693 08       		.byte	0x8
+ 1130 0694 FA       		.byte	0xfa
+ 1131 0695 EE060000 		.4byte	0x6ee
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 21
+
+
+ 1132 0699 18       		.uleb128 0x18
+ 1133 069a 23000000 		.4byte	.LASF110
+ 1134 069e 08       		.byte	0x8
+ 1135 069f 0101     		.2byte	0x101
+ 1136 06a1 E9000000 		.4byte	0xe9
+ 1137 06a5 18       		.uleb128 0x18
+ 1138 06a6 B7000000 		.4byte	.LASF111
+ 1139 06aa 08       		.byte	0x8
+ 1140 06ab 0801     		.2byte	0x108
+ 1141 06ad E9000000 		.4byte	0xe9
+ 1142 06b1 18       		.uleb128 0x18
+ 1143 06b2 5F060000 		.4byte	.LASF112
+ 1144 06b6 08       		.byte	0x8
+ 1145 06b7 0F01     		.2byte	0x10f
+ 1146 06b9 26030000 		.4byte	0x326
+ 1147 06bd 18       		.uleb128 0x18
+ 1148 06be 2F010000 		.4byte	.LASF113
+ 1149 06c2 08       		.byte	0x8
+ 1150 06c3 1601     		.2byte	0x116
+ 1151 06c5 EE060000 		.4byte	0x6ee
+ 1152 06c9 18       		.uleb128 0x18
+ 1153 06ca 21020000 		.4byte	.LASF114
+ 1154 06ce 08       		.byte	0x8
+ 1155 06cf 1E01     		.2byte	0x11e
+ 1156 06d1 19070000 		.4byte	0x719
+ 1157 06d5 18       		.uleb128 0x18
+ 1158 06d6 A2040000 		.4byte	.LASF115
+ 1159 06da 08       		.byte	0x8
+ 1160 06db 2701     		.2byte	0x127
+ 1161 06dd 50070000 		.4byte	0x750
+ 1162 06e1 18       		.uleb128 0x18
+ 1163 06e2 49040000 		.4byte	.LASF116
+ 1164 06e6 08       		.byte	0x8
+ 1165 06e7 2F01     		.2byte	0x12f
+ 1166 06e9 F4000000 		.4byte	0xf4
+ 1167 06ed 00       		.byte	0
+ 1168 06ee 0A       		.uleb128 0xa
+ 1169 06ef 04       		.byte	0x4
+ 1170 06f0 3E020000 		.4byte	0x23e
+ 1171 06f4 06       		.uleb128 0x6
+ 1172 06f5 81040000 		.4byte	.LASF117
+ 1173 06f9 0C       		.byte	0xc
+ 1174 06fa 0E       		.byte	0xe
+ 1175 06fb 34       		.byte	0x34
+ 1176 06fc 19070000 		.4byte	0x719
+ 1177 0700 07       		.uleb128 0x7
+ 1178 0701 5F010000 		.4byte	.LASF118
+ 1179 0705 0E       		.byte	0xe
+ 1180 0706 35       		.byte	0x35
+ 1181 0707 73020000 		.4byte	0x273
+ 1182 070b 00       		.byte	0
+ 1183 070c 07       		.uleb128 0x7
+ 1184 070d 52020000 		.4byte	.LASF119
+ 1185 0711 0E       		.byte	0xe
+ 1186 0712 37       		.byte	0x37
+ 1187 0713 FF000000 		.4byte	0xff
+ 1188 0717 08       		.byte	0x8
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 22
+
+
+ 1189 0718 00       		.byte	0
+ 1190 0719 0A       		.uleb128 0xa
+ 1191 071a 04       		.byte	0x4
+ 1192 071b F4060000 		.4byte	0x6f4
+ 1193 071f 06       		.uleb128 0x6
+ 1194 0720 15060000 		.4byte	.LASF120
+ 1195 0724 10       		.byte	0x10
+ 1196 0725 0F       		.byte	0xf
+ 1197 0726 39       		.byte	0x39
+ 1198 0727 50070000 		.4byte	0x750
+ 1199 072b 07       		.uleb128 0x7
+ 1200 072c 20010000 		.4byte	.LASF121
+ 1201 0730 0F       		.byte	0xf
+ 1202 0731 3A       		.byte	0x3a
+ 1203 0732 73020000 		.4byte	0x273
+ 1204 0736 00       		.byte	0
+ 1205 0737 07       		.uleb128 0x7
+ 1206 0738 9A060000 		.4byte	.LASF122
+ 1207 073c 0F       		.byte	0xf
+ 1208 073d 3C       		.byte	0x3c
+ 1209 073e 49020000 		.4byte	0x249
+ 1210 0742 08       		.byte	0x8
+ 1211 0743 07       		.uleb128 0x7
+ 1212 0744 B8050000 		.4byte	.LASF123
+ 1213 0748 0F       		.byte	0xf
+ 1214 0749 3E       		.byte	0x3e
+ 1215 074a 94070000 		.4byte	0x794
+ 1216 074e 0C       		.byte	0xc
+ 1217 074f 00       		.byte	0
+ 1218 0750 0A       		.uleb128 0xa
+ 1219 0751 04       		.byte	0x4
+ 1220 0752 1F070000 		.4byte	0x71f
+ 1221 0756 0A       		.uleb128 0xa
+ 1222 0757 04       		.byte	0x4
+ 1223 0758 5C070000 		.4byte	0x75c
+ 1224 075c 19       		.uleb128 0x19
+ 1225 075d 61070000 		.4byte	0x761
+ 1226 0761 04       		.uleb128 0x4
+ 1227 0762 01       		.byte	0x1
+ 1228 0763 08       		.byte	0x8
+ 1229 0764 DC040000 		.4byte	.LASF124
+ 1230 0768 0A       		.uleb128 0xa
+ 1231 0769 04       		.byte	0x4
+ 1232 076a A7040000 		.4byte	0x4a7
+ 1233 076e 0A       		.uleb128 0xa
+ 1234 076f 04       		.byte	0x4
+ 1235 0770 28030000 		.4byte	0x328
+ 1236 0774 05       		.uleb128 0x5
+ 1237 0775 56070000 		.4byte	0x756
+ 1238 0779 15       		.uleb128 0x15
+ 1239 077a A7040000 		.4byte	0x4a7
+ 1240 077e 89070000 		.4byte	0x789
+ 1241 0782 16       		.uleb128 0x16
+ 1242 0783 95040000 		.4byte	0x495
+ 1243 0787 1F       		.byte	0x1f
+ 1244 0788 00       		.byte	0
+ 1245 0789 03       		.uleb128 0x3
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 23
+
+
+ 1246 078a DB010000 		.4byte	.LASF125
+ 1247 078e 0F       		.byte	0xf
+ 1248 078f 34       		.byte	0x34
+ 1249 0790 1F070000 		.4byte	0x71f
+ 1250 0794 0A       		.uleb128 0xa
+ 1251 0795 04       		.byte	0x4
+ 1252 0796 89070000 		.4byte	0x789
+ 1253 079a 06       		.uleb128 0x6
+ 1254 079b 78040000 		.4byte	.LASF126
+ 1255 079f 10       		.byte	0x10
+ 1256 07a0 10       		.byte	0x10
+ 1257 07a1 3B       		.byte	0x3b
+ 1258 07a2 D7070000 		.4byte	0x7d7
+ 1259 07a6 07       		.uleb128 0x7
+ 1260 07a7 58020000 		.4byte	.LASF127
+ 1261 07ab 10       		.byte	0x10
+ 1262 07ac 3C       		.byte	0x3c
+ 1263 07ad 56070000 		.4byte	0x756
+ 1264 07b1 00       		.byte	0
+ 1265 07b2 07       		.uleb128 0x7
+ 1266 07b3 B0030000 		.4byte	.LASF128
+ 1267 07b7 10       		.byte	0x10
+ 1268 07b8 3D       		.byte	0x3d
+ 1269 07b9 D8070000 		.4byte	0x7d8
+ 1270 07bd 04       		.byte	0x4
+ 1271 07be 07       		.uleb128 0x7
+ 1272 07bf 33020000 		.4byte	.LASF129
+ 1273 07c3 10       		.byte	0x10
+ 1274 07c4 3E       		.byte	0x3e
+ 1275 07c5 D8070000 		.4byte	0x7d8
+ 1276 07c9 08       		.byte	0x8
+ 1277 07ca 07       		.uleb128 0x7
+ 1278 07cb DF030000 		.4byte	.LASF130
+ 1279 07cf 10       		.byte	0x10
+ 1280 07d0 3F       		.byte	0x3f
+ 1281 07d1 D8070000 		.4byte	0x7d8
+ 1282 07d5 0C       		.byte	0xc
+ 1283 07d6 00       		.byte	0
+ 1284 07d7 1A       		.uleb128 0x1a
+ 1285 07d8 0A       		.uleb128 0xa
+ 1286 07d9 04       		.byte	0x4
+ 1287 07da D7070000 		.4byte	0x7d7
+ 1288 07de 1B       		.uleb128 0x1b
+ 1289 07df 3C060000 		.4byte	.LASF131
+ 1290 07e3 01       		.byte	0x1
+ 1291 07e4 AE       		.byte	0xae
+ 1292 07e5 49020000 		.4byte	0x249
+ 1293 07e9 00000000 		.4byte	.LFB177
+ 1294 07ed 18000000 		.4byte	.LFE177-.LFB177
+ 1295 07f1 01       		.uleb128 0x1
+ 1296 07f2 9C       		.byte	0x9c
+ 1297 07f3 1C       		.uleb128 0x1c
+ 1298 07f4 61030000 		.4byte	.LASF132
+ 1299 07f8 01       		.byte	0x1
+ 1300 07f9 BB       		.byte	0xbb
+ 1301 07fa DE000000 		.4byte	0xde
+ 1302 07fe 00000000 		.4byte	.LFB178
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 24
+
+
+ 1303 0802 10000000 		.4byte	.LFE178-.LFB178
+ 1304 0806 01       		.uleb128 0x1
+ 1305 0807 9C       		.byte	0x9c
+ 1306 0808 1D       		.uleb128 0x1d
+ 1307 0809 3C020000 		.4byte	.LASF142
+ 1308 080d 02       		.byte	0x2
+ 1309 080e 60       		.byte	0x60
+ 1310 080f E9000000 		.4byte	0xe9
+ 1311 0813 00000000 		.4byte	.LFB211
+ 1312 0817 18000000 		.4byte	.LFE211-.LFB211
+ 1313 081b 01       		.uleb128 0x1
+ 1314 081c 9C       		.byte	0x9c
+ 1315 081d 2F080000 		.4byte	0x82f
+ 1316 0821 1E       		.uleb128 0x1e
+ 1317 0822 747000   		.ascii	"tp\000"
+ 1318 0825 02       		.byte	0x2
+ 1319 0826 60       		.byte	0x60
+ 1320 0827 49020000 		.4byte	0x249
+ 1321 082b 02       		.uleb128 0x2
+ 1322 082c 91       		.byte	0x91
+ 1323 082d 74       		.sleb128 -12
+ 1324 082e 00       		.byte	0
+ 1325 082f 1F       		.uleb128 0x1f
+ 1326 0830 EF030000 		.4byte	.LASF133
+ 1327 0834 03       		.byte	0x3
+ 1328 0835 3B       		.byte	0x3b
+ 1329 0836 00000000 		.4byte	.LFB229
+ 1330 083a 26000000 		.4byte	.LFE229-.LFB229
+ 1331 083e 01       		.uleb128 0x1
+ 1332 083f 9C       		.byte	0x9c
+ 1333 0840 51080000 		.4byte	0x851
+ 1334 0844 1E       		.uleb128 0x1e
+ 1335 0845 7000     		.ascii	"p\000"
+ 1336 0847 03       		.byte	0x3
+ 1337 0848 3B       		.byte	0x3b
+ 1338 0849 26030000 		.4byte	0x326
+ 1339 084d 02       		.uleb128 0x2
+ 1340 084e 91       		.byte	0x91
+ 1341 084f 74       		.sleb128 -12
+ 1342 0850 00       		.byte	0
+ 1343 0851 1F       		.uleb128 0x1f
+ 1344 0852 52060000 		.4byte	.LASF134
+ 1345 0856 03       		.byte	0x3
+ 1346 0857 42       		.byte	0x42
+ 1347 0858 00000000 		.4byte	.LFB230
+ 1348 085c B4000000 		.4byte	.LFE230-.LFB230
+ 1349 0860 01       		.uleb128 0x1
+ 1350 0861 9C       		.byte	0x9c
+ 1351 0862 82080000 		.4byte	0x882
+ 1352 0866 20       		.uleb128 0x20
+ 1353 0867 747000   		.ascii	"tp\000"
+ 1354 086a 03       		.byte	0x3
+ 1355 086b 43       		.byte	0x43
+ 1356 086c 49020000 		.4byte	0x249
+ 1357 0870 02       		.uleb128 0x2
+ 1358 0871 91       		.byte	0x91
+ 1359 0872 6C       		.sleb128 -20
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 25
+
+
+ 1360 0873 20       		.uleb128 0x20
+ 1361 0874 6D736700 		.ascii	"msg\000"
+ 1362 0878 03       		.byte	0x3
+ 1363 0879 44       		.byte	0x44
+ 1364 087a E9000000 		.4byte	0xe9
+ 1365 087e 02       		.uleb128 0x2
+ 1366 087f 91       		.byte	0x91
+ 1367 0880 68       		.sleb128 -24
+ 1368 0881 00       		.byte	0
+ 1369 0882 21       		.uleb128 0x21
+ 1370 0883 E1000000 		.4byte	.LASF135
+ 1371 0887 11       		.byte	0x11
+ 1372 0888 A706     		.2byte	0x6a7
+ 1373 088a A2000000 		.4byte	0xa2
+ 1374 088e 22       		.uleb128 0x22
+ 1375 088f 636800   		.ascii	"ch\000"
+ 1376 0892 08       		.byte	0x8
+ 1377 0893 0902     		.2byte	0x209
+ 1378 0895 1D040000 		.4byte	0x41d
+ 1379 0899 15       		.uleb128 0x15
+ 1380 089a 49020000 		.4byte	0x249
+ 1381 089e A9080000 		.4byte	0x8a9
+ 1382 08a2 16       		.uleb128 0x16
+ 1383 08a3 95040000 		.4byte	0x495
+ 1384 08a7 04       		.byte	0x4
+ 1385 08a8 00       		.byte	0
+ 1386 08a9 23       		.uleb128 0x23
+ 1387 08aa 31040000 		.4byte	.LASF136
+ 1388 08ae 10       		.byte	0x10
+ 1389 08af A7       		.byte	0xa7
+ 1390 08b0 99080000 		.4byte	0x899
+ 1391 08b4 15       		.uleb128 0x15
+ 1392 08b5 26030000 		.4byte	0x326
+ 1393 08b9 BF080000 		.4byte	0x8bf
+ 1394 08bd 24       		.uleb128 0x24
+ 1395 08be 00       		.byte	0
+ 1396 08bf 25       		.uleb128 0x25
+ 1397 08c0 776100   		.ascii	"wa\000"
+ 1398 08c3 10       		.byte	0x10
+ 1399 08c4 A9       		.byte	0xa9
+ 1400 08c5 C9080000 		.4byte	0x8c9
+ 1401 08c9 19       		.uleb128 0x19
+ 1402 08ca B4080000 		.4byte	0x8b4
+ 1403 08ce 26       		.uleb128 0x26
+ 1404 08cf 40040000 		.4byte	.LASF137
+ 1405 08d3 03       		.byte	0x3
+ 1406 08d4 5A       		.byte	0x5a
+ 1407 08d5 DF080000 		.4byte	0x8df
+ 1408 08d9 05       		.uleb128 0x5
+ 1409 08da 03       		.byte	0x3
+ 1410 08db 00000000 		.4byte	testmsg1
+ 1411 08df 19       		.uleb128 0x19
+ 1412 08e0 9A070000 		.4byte	0x79a
+ 1413 08e4 15       		.uleb128 0x15
+ 1414 08e5 F4080000 		.4byte	0x8f4
+ 1415 08e9 F4080000 		.4byte	0x8f4
+ 1416 08ed 16       		.uleb128 0x16
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 26
+
+
+ 1417 08ee 95040000 		.4byte	0x495
+ 1418 08f2 01       		.byte	0x1
+ 1419 08f3 00       		.byte	0
+ 1420 08f4 0A       		.uleb128 0xa
+ 1421 08f5 04       		.byte	0x4
+ 1422 08f6 DF080000 		.4byte	0x8df
+ 1423 08fa 26       		.uleb128 0x26
+ 1424 08fb E9020000 		.4byte	.LASF138
+ 1425 08ff 03       		.byte	0x3
+ 1426 0900 66       		.byte	0x66
+ 1427 0901 0B090000 		.4byte	0x90b
+ 1428 0905 05       		.uleb128 0x5
+ 1429 0906 03       		.byte	0x3
+ 1430 0907 00000000 		.4byte	patternmsg
+ 1431 090b 19       		.uleb128 0x19
+ 1432 090c E4080000 		.4byte	0x8e4
+ 1433 0910 00       		.byte	0
+ 1434              		.section	.debug_abbrev,"",%progbits
+ 1435              	.Ldebug_abbrev0:
+ 1436 0000 01       		.uleb128 0x1
+ 1437 0001 11       		.uleb128 0x11
+ 1438 0002 01       		.byte	0x1
+ 1439 0003 25       		.uleb128 0x25
+ 1440 0004 0E       		.uleb128 0xe
+ 1441 0005 13       		.uleb128 0x13
+ 1442 0006 0B       		.uleb128 0xb
+ 1443 0007 03       		.uleb128 0x3
+ 1444 0008 0E       		.uleb128 0xe
+ 1445 0009 1B       		.uleb128 0x1b
+ 1446 000a 0E       		.uleb128 0xe
+ 1447 000b 55       		.uleb128 0x55
+ 1448 000c 17       		.uleb128 0x17
+ 1449 000d 11       		.uleb128 0x11
+ 1450 000e 01       		.uleb128 0x1
+ 1451 000f 10       		.uleb128 0x10
+ 1452 0010 17       		.uleb128 0x17
+ 1453 0011 00       		.byte	0
+ 1454 0012 00       		.byte	0
+ 1455 0013 02       		.uleb128 0x2
+ 1456 0014 24       		.uleb128 0x24
+ 1457 0015 00       		.byte	0
+ 1458 0016 0B       		.uleb128 0xb
+ 1459 0017 0B       		.uleb128 0xb
+ 1460 0018 3E       		.uleb128 0x3e
+ 1461 0019 0B       		.uleb128 0xb
+ 1462 001a 03       		.uleb128 0x3
+ 1463 001b 08       		.uleb128 0x8
+ 1464 001c 00       		.byte	0
+ 1465 001d 00       		.byte	0
+ 1466 001e 03       		.uleb128 0x3
+ 1467 001f 16       		.uleb128 0x16
+ 1468 0020 00       		.byte	0
+ 1469 0021 03       		.uleb128 0x3
+ 1470 0022 0E       		.uleb128 0xe
+ 1471 0023 3A       		.uleb128 0x3a
+ 1472 0024 0B       		.uleb128 0xb
+ 1473 0025 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 27
+
+
+ 1474 0026 0B       		.uleb128 0xb
+ 1475 0027 49       		.uleb128 0x49
+ 1476 0028 13       		.uleb128 0x13
+ 1477 0029 00       		.byte	0
+ 1478 002a 00       		.byte	0
+ 1479 002b 04       		.uleb128 0x4
+ 1480 002c 24       		.uleb128 0x24
+ 1481 002d 00       		.byte	0
+ 1482 002e 0B       		.uleb128 0xb
+ 1483 002f 0B       		.uleb128 0xb
+ 1484 0030 3E       		.uleb128 0x3e
+ 1485 0031 0B       		.uleb128 0xb
+ 1486 0032 03       		.uleb128 0x3
+ 1487 0033 0E       		.uleb128 0xe
+ 1488 0034 00       		.byte	0
+ 1489 0035 00       		.byte	0
+ 1490 0036 05       		.uleb128 0x5
+ 1491 0037 35       		.uleb128 0x35
+ 1492 0038 00       		.byte	0
+ 1493 0039 49       		.uleb128 0x49
+ 1494 003a 13       		.uleb128 0x13
+ 1495 003b 00       		.byte	0
+ 1496 003c 00       		.byte	0
+ 1497 003d 06       		.uleb128 0x6
+ 1498 003e 13       		.uleb128 0x13
+ 1499 003f 01       		.byte	0x1
+ 1500 0040 03       		.uleb128 0x3
+ 1501 0041 0E       		.uleb128 0xe
+ 1502 0042 0B       		.uleb128 0xb
+ 1503 0043 0B       		.uleb128 0xb
+ 1504 0044 3A       		.uleb128 0x3a
+ 1505 0045 0B       		.uleb128 0xb
+ 1506 0046 3B       		.uleb128 0x3b
+ 1507 0047 0B       		.uleb128 0xb
+ 1508 0048 01       		.uleb128 0x1
+ 1509 0049 13       		.uleb128 0x13
+ 1510 004a 00       		.byte	0
+ 1511 004b 00       		.byte	0
+ 1512 004c 07       		.uleb128 0x7
+ 1513 004d 0D       		.uleb128 0xd
+ 1514 004e 00       		.byte	0
+ 1515 004f 03       		.uleb128 0x3
+ 1516 0050 0E       		.uleb128 0xe
+ 1517 0051 3A       		.uleb128 0x3a
+ 1518 0052 0B       		.uleb128 0xb
+ 1519 0053 3B       		.uleb128 0x3b
+ 1520 0054 0B       		.uleb128 0xb
+ 1521 0055 49       		.uleb128 0x49
+ 1522 0056 13       		.uleb128 0x13
+ 1523 0057 38       		.uleb128 0x38
+ 1524 0058 0B       		.uleb128 0xb
+ 1525 0059 00       		.byte	0
+ 1526 005a 00       		.byte	0
+ 1527 005b 08       		.uleb128 0x8
+ 1528 005c 0D       		.uleb128 0xd
+ 1529 005d 00       		.byte	0
+ 1530 005e 03       		.uleb128 0x3
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 28
+
+
+ 1531 005f 08       		.uleb128 0x8
+ 1532 0060 3A       		.uleb128 0x3a
+ 1533 0061 0B       		.uleb128 0xb
+ 1534 0062 3B       		.uleb128 0x3b
+ 1535 0063 05       		.uleb128 0x5
+ 1536 0064 49       		.uleb128 0x49
+ 1537 0065 13       		.uleb128 0x13
+ 1538 0066 38       		.uleb128 0x38
+ 1539 0067 0B       		.uleb128 0xb
+ 1540 0068 00       		.byte	0
+ 1541 0069 00       		.byte	0
+ 1542 006a 09       		.uleb128 0x9
+ 1543 006b 0D       		.uleb128 0xd
+ 1544 006c 00       		.byte	0
+ 1545 006d 03       		.uleb128 0x3
+ 1546 006e 0E       		.uleb128 0xe
+ 1547 006f 3A       		.uleb128 0x3a
+ 1548 0070 0B       		.uleb128 0xb
+ 1549 0071 3B       		.uleb128 0x3b
+ 1550 0072 05       		.uleb128 0x5
+ 1551 0073 49       		.uleb128 0x49
+ 1552 0074 13       		.uleb128 0x13
+ 1553 0075 38       		.uleb128 0x38
+ 1554 0076 0B       		.uleb128 0xb
+ 1555 0077 00       		.byte	0
+ 1556 0078 00       		.byte	0
+ 1557 0079 0A       		.uleb128 0xa
+ 1558 007a 0F       		.uleb128 0xf
+ 1559 007b 00       		.byte	0
+ 1560 007c 0B       		.uleb128 0xb
+ 1561 007d 0B       		.uleb128 0xb
+ 1562 007e 49       		.uleb128 0x49
+ 1563 007f 13       		.uleb128 0x13
+ 1564 0080 00       		.byte	0
+ 1565 0081 00       		.byte	0
+ 1566 0082 0B       		.uleb128 0xb
+ 1567 0083 13       		.uleb128 0x13
+ 1568 0084 01       		.byte	0x1
+ 1569 0085 03       		.uleb128 0x3
+ 1570 0086 0E       		.uleb128 0xe
+ 1571 0087 0B       		.uleb128 0xb
+ 1572 0088 0B       		.uleb128 0xb
+ 1573 0089 3A       		.uleb128 0x3a
+ 1574 008a 0B       		.uleb128 0xb
+ 1575 008b 3B       		.uleb128 0x3b
+ 1576 008c 05       		.uleb128 0x5
+ 1577 008d 01       		.uleb128 0x1
+ 1578 008e 13       		.uleb128 0x13
+ 1579 008f 00       		.byte	0
+ 1580 0090 00       		.byte	0
+ 1581 0091 0C       		.uleb128 0xc
+ 1582 0092 15       		.uleb128 0x15
+ 1583 0093 01       		.byte	0x1
+ 1584 0094 27       		.uleb128 0x27
+ 1585 0095 19       		.uleb128 0x19
+ 1586 0096 01       		.uleb128 0x1
+ 1587 0097 13       		.uleb128 0x13
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 29
+
+
+ 1588 0098 00       		.byte	0
+ 1589 0099 00       		.byte	0
+ 1590 009a 0D       		.uleb128 0xd
+ 1591 009b 05       		.uleb128 0x5
+ 1592 009c 00       		.byte	0
+ 1593 009d 49       		.uleb128 0x49
+ 1594 009e 13       		.uleb128 0x13
+ 1595 009f 00       		.byte	0
+ 1596 00a0 00       		.byte	0
+ 1597 00a1 0E       		.uleb128 0xe
+ 1598 00a2 0F       		.uleb128 0xf
+ 1599 00a3 00       		.byte	0
+ 1600 00a4 0B       		.uleb128 0xb
+ 1601 00a5 0B       		.uleb128 0xb
+ 1602 00a6 00       		.byte	0
+ 1603 00a7 00       		.byte	0
+ 1604 00a8 0F       		.uleb128 0xf
+ 1605 00a9 13       		.uleb128 0x13
+ 1606 00aa 01       		.byte	0x1
+ 1607 00ab 03       		.uleb128 0x3
+ 1608 00ac 0E       		.uleb128 0xe
+ 1609 00ad 0B       		.uleb128 0xb
+ 1610 00ae 05       		.uleb128 0x5
+ 1611 00af 3A       		.uleb128 0x3a
+ 1612 00b0 0B       		.uleb128 0xb
+ 1613 00b1 3B       		.uleb128 0x3b
+ 1614 00b2 05       		.uleb128 0x5
+ 1615 00b3 01       		.uleb128 0x1
+ 1616 00b4 13       		.uleb128 0x13
+ 1617 00b5 00       		.byte	0
+ 1618 00b6 00       		.byte	0
+ 1619 00b7 10       		.uleb128 0x10
+ 1620 00b8 0D       		.uleb128 0xd
+ 1621 00b9 00       		.byte	0
+ 1622 00ba 03       		.uleb128 0x3
+ 1623 00bb 0E       		.uleb128 0xe
+ 1624 00bc 3A       		.uleb128 0x3a
+ 1625 00bd 0B       		.uleb128 0xb
+ 1626 00be 3B       		.uleb128 0x3b
+ 1627 00bf 05       		.uleb128 0x5
+ 1628 00c0 49       		.uleb128 0x49
+ 1629 00c1 13       		.uleb128 0x13
+ 1630 00c2 38       		.uleb128 0x38
+ 1631 00c3 05       		.uleb128 0x5
+ 1632 00c4 00       		.byte	0
+ 1633 00c5 00       		.byte	0
+ 1634 00c6 11       		.uleb128 0x11
+ 1635 00c7 0D       		.uleb128 0xd
+ 1636 00c8 00       		.byte	0
+ 1637 00c9 03       		.uleb128 0x3
+ 1638 00ca 08       		.uleb128 0x8
+ 1639 00cb 3A       		.uleb128 0x3a
+ 1640 00cc 0B       		.uleb128 0xb
+ 1641 00cd 3B       		.uleb128 0x3b
+ 1642 00ce 05       		.uleb128 0x5
+ 1643 00cf 49       		.uleb128 0x49
+ 1644 00d0 13       		.uleb128 0x13
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 30
+
+
+ 1645 00d1 38       		.uleb128 0x38
+ 1646 00d2 05       		.uleb128 0x5
+ 1647 00d3 00       		.byte	0
+ 1648 00d4 00       		.byte	0
+ 1649 00d5 12       		.uleb128 0x12
+ 1650 00d6 0D       		.uleb128 0xd
+ 1651 00d7 00       		.byte	0
+ 1652 00d8 03       		.uleb128 0x3
+ 1653 00d9 08       		.uleb128 0x8
+ 1654 00da 3A       		.uleb128 0x3a
+ 1655 00db 0B       		.uleb128 0xb
+ 1656 00dc 3B       		.uleb128 0x3b
+ 1657 00dd 0B       		.uleb128 0xb
+ 1658 00de 49       		.uleb128 0x49
+ 1659 00df 13       		.uleb128 0x13
+ 1660 00e0 38       		.uleb128 0x38
+ 1661 00e1 0B       		.uleb128 0xb
+ 1662 00e2 00       		.byte	0
+ 1663 00e3 00       		.byte	0
+ 1664 00e4 13       		.uleb128 0x13
+ 1665 00e5 13       		.uleb128 0x13
+ 1666 00e6 01       		.byte	0x1
+ 1667 00e7 0B       		.uleb128 0xb
+ 1668 00e8 0B       		.uleb128 0xb
+ 1669 00e9 3A       		.uleb128 0x3a
+ 1670 00ea 0B       		.uleb128 0xb
+ 1671 00eb 3B       		.uleb128 0x3b
+ 1672 00ec 0B       		.uleb128 0xb
+ 1673 00ed 01       		.uleb128 0x1
+ 1674 00ee 13       		.uleb128 0x13
+ 1675 00ef 00       		.byte	0
+ 1676 00f0 00       		.byte	0
+ 1677 00f1 14       		.uleb128 0x14
+ 1678 00f2 13       		.uleb128 0x13
+ 1679 00f3 01       		.byte	0x1
+ 1680 00f4 0B       		.uleb128 0xb
+ 1681 00f5 05       		.uleb128 0x5
+ 1682 00f6 3A       		.uleb128 0x3a
+ 1683 00f7 0B       		.uleb128 0xb
+ 1684 00f8 3B       		.uleb128 0x3b
+ 1685 00f9 0B       		.uleb128 0xb
+ 1686 00fa 01       		.uleb128 0x1
+ 1687 00fb 13       		.uleb128 0x13
+ 1688 00fc 00       		.byte	0
+ 1689 00fd 00       		.byte	0
+ 1690 00fe 15       		.uleb128 0x15
+ 1691 00ff 01       		.uleb128 0x1
+ 1692 0100 01       		.byte	0x1
+ 1693 0101 49       		.uleb128 0x49
+ 1694 0102 13       		.uleb128 0x13
+ 1695 0103 01       		.uleb128 0x1
+ 1696 0104 13       		.uleb128 0x13
+ 1697 0105 00       		.byte	0
+ 1698 0106 00       		.byte	0
+ 1699 0107 16       		.uleb128 0x16
+ 1700 0108 21       		.uleb128 0x21
+ 1701 0109 00       		.byte	0
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 31
+
+
+ 1702 010a 49       		.uleb128 0x49
+ 1703 010b 13       		.uleb128 0x13
+ 1704 010c 2F       		.uleb128 0x2f
+ 1705 010d 0B       		.uleb128 0xb
+ 1706 010e 00       		.byte	0
+ 1707 010f 00       		.byte	0
+ 1708 0110 17       		.uleb128 0x17
+ 1709 0111 17       		.uleb128 0x17
+ 1710 0112 01       		.byte	0x1
+ 1711 0113 0B       		.uleb128 0xb
+ 1712 0114 0B       		.uleb128 0xb
+ 1713 0115 3A       		.uleb128 0x3a
+ 1714 0116 0B       		.uleb128 0xb
+ 1715 0117 3B       		.uleb128 0x3b
+ 1716 0118 0B       		.uleb128 0xb
+ 1717 0119 01       		.uleb128 0x1
+ 1718 011a 13       		.uleb128 0x13
+ 1719 011b 00       		.byte	0
+ 1720 011c 00       		.byte	0
+ 1721 011d 18       		.uleb128 0x18
+ 1722 011e 0D       		.uleb128 0xd
+ 1723 011f 00       		.byte	0
+ 1724 0120 03       		.uleb128 0x3
+ 1725 0121 0E       		.uleb128 0xe
+ 1726 0122 3A       		.uleb128 0x3a
+ 1727 0123 0B       		.uleb128 0xb
+ 1728 0124 3B       		.uleb128 0x3b
+ 1729 0125 05       		.uleb128 0x5
+ 1730 0126 49       		.uleb128 0x49
+ 1731 0127 13       		.uleb128 0x13
+ 1732 0128 00       		.byte	0
+ 1733 0129 00       		.byte	0
+ 1734 012a 19       		.uleb128 0x19
+ 1735 012b 26       		.uleb128 0x26
+ 1736 012c 00       		.byte	0
+ 1737 012d 49       		.uleb128 0x49
+ 1738 012e 13       		.uleb128 0x13
+ 1739 012f 00       		.byte	0
+ 1740 0130 00       		.byte	0
+ 1741 0131 1A       		.uleb128 0x1a
+ 1742 0132 15       		.uleb128 0x15
+ 1743 0133 00       		.byte	0
+ 1744 0134 27       		.uleb128 0x27
+ 1745 0135 19       		.uleb128 0x19
+ 1746 0136 00       		.byte	0
+ 1747 0137 00       		.byte	0
+ 1748 0138 1B       		.uleb128 0x1b
+ 1749 0139 2E       		.uleb128 0x2e
+ 1750 013a 00       		.byte	0
+ 1751 013b 03       		.uleb128 0x3
+ 1752 013c 0E       		.uleb128 0xe
+ 1753 013d 3A       		.uleb128 0x3a
+ 1754 013e 0B       		.uleb128 0xb
+ 1755 013f 3B       		.uleb128 0x3b
+ 1756 0140 0B       		.uleb128 0xb
+ 1757 0141 27       		.uleb128 0x27
+ 1758 0142 19       		.uleb128 0x19
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 32
+
+
+ 1759 0143 49       		.uleb128 0x49
+ 1760 0144 13       		.uleb128 0x13
+ 1761 0145 11       		.uleb128 0x11
+ 1762 0146 01       		.uleb128 0x1
+ 1763 0147 12       		.uleb128 0x12
+ 1764 0148 06       		.uleb128 0x6
+ 1765 0149 40       		.uleb128 0x40
+ 1766 014a 18       		.uleb128 0x18
+ 1767 014b 9742     		.uleb128 0x2117
+ 1768 014d 19       		.uleb128 0x19
+ 1769 014e 00       		.byte	0
+ 1770 014f 00       		.byte	0
+ 1771 0150 1C       		.uleb128 0x1c
+ 1772 0151 2E       		.uleb128 0x2e
+ 1773 0152 00       		.byte	0
+ 1774 0153 03       		.uleb128 0x3
+ 1775 0154 0E       		.uleb128 0xe
+ 1776 0155 3A       		.uleb128 0x3a
+ 1777 0156 0B       		.uleb128 0xb
+ 1778 0157 3B       		.uleb128 0x3b
+ 1779 0158 0B       		.uleb128 0xb
+ 1780 0159 27       		.uleb128 0x27
+ 1781 015a 19       		.uleb128 0x19
+ 1782 015b 49       		.uleb128 0x49
+ 1783 015c 13       		.uleb128 0x13
+ 1784 015d 11       		.uleb128 0x11
+ 1785 015e 01       		.uleb128 0x1
+ 1786 015f 12       		.uleb128 0x12
+ 1787 0160 06       		.uleb128 0x6
+ 1788 0161 40       		.uleb128 0x40
+ 1789 0162 18       		.uleb128 0x18
+ 1790 0163 9642     		.uleb128 0x2116
+ 1791 0165 19       		.uleb128 0x19
+ 1792 0166 00       		.byte	0
+ 1793 0167 00       		.byte	0
+ 1794 0168 1D       		.uleb128 0x1d
+ 1795 0169 2E       		.uleb128 0x2e
+ 1796 016a 01       		.byte	0x1
+ 1797 016b 03       		.uleb128 0x3
+ 1798 016c 0E       		.uleb128 0xe
+ 1799 016d 3A       		.uleb128 0x3a
+ 1800 016e 0B       		.uleb128 0xb
+ 1801 016f 3B       		.uleb128 0x3b
+ 1802 0170 0B       		.uleb128 0xb
+ 1803 0171 27       		.uleb128 0x27
+ 1804 0172 19       		.uleb128 0x19
+ 1805 0173 49       		.uleb128 0x49
+ 1806 0174 13       		.uleb128 0x13
+ 1807 0175 11       		.uleb128 0x11
+ 1808 0176 01       		.uleb128 0x1
+ 1809 0177 12       		.uleb128 0x12
+ 1810 0178 06       		.uleb128 0x6
+ 1811 0179 40       		.uleb128 0x40
+ 1812 017a 18       		.uleb128 0x18
+ 1813 017b 9742     		.uleb128 0x2117
+ 1814 017d 19       		.uleb128 0x19
+ 1815 017e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 33
+
+
+ 1816 017f 13       		.uleb128 0x13
+ 1817 0180 00       		.byte	0
+ 1818 0181 00       		.byte	0
+ 1819 0182 1E       		.uleb128 0x1e
+ 1820 0183 05       		.uleb128 0x5
+ 1821 0184 00       		.byte	0
+ 1822 0185 03       		.uleb128 0x3
+ 1823 0186 08       		.uleb128 0x8
+ 1824 0187 3A       		.uleb128 0x3a
+ 1825 0188 0B       		.uleb128 0xb
+ 1826 0189 3B       		.uleb128 0x3b
+ 1827 018a 0B       		.uleb128 0xb
+ 1828 018b 49       		.uleb128 0x49
+ 1829 018c 13       		.uleb128 0x13
+ 1830 018d 02       		.uleb128 0x2
+ 1831 018e 18       		.uleb128 0x18
+ 1832 018f 00       		.byte	0
+ 1833 0190 00       		.byte	0
+ 1834 0191 1F       		.uleb128 0x1f
+ 1835 0192 2E       		.uleb128 0x2e
+ 1836 0193 01       		.byte	0x1
+ 1837 0194 03       		.uleb128 0x3
+ 1838 0195 0E       		.uleb128 0xe
+ 1839 0196 3A       		.uleb128 0x3a
+ 1840 0197 0B       		.uleb128 0xb
+ 1841 0198 3B       		.uleb128 0x3b
+ 1842 0199 0B       		.uleb128 0xb
+ 1843 019a 27       		.uleb128 0x27
+ 1844 019b 19       		.uleb128 0x19
+ 1845 019c 11       		.uleb128 0x11
+ 1846 019d 01       		.uleb128 0x1
+ 1847 019e 12       		.uleb128 0x12
+ 1848 019f 06       		.uleb128 0x6
+ 1849 01a0 40       		.uleb128 0x40
+ 1850 01a1 18       		.uleb128 0x18
+ 1851 01a2 9642     		.uleb128 0x2116
+ 1852 01a4 19       		.uleb128 0x19
+ 1853 01a5 01       		.uleb128 0x1
+ 1854 01a6 13       		.uleb128 0x13
+ 1855 01a7 00       		.byte	0
+ 1856 01a8 00       		.byte	0
+ 1857 01a9 20       		.uleb128 0x20
+ 1858 01aa 34       		.uleb128 0x34
+ 1859 01ab 00       		.byte	0
+ 1860 01ac 03       		.uleb128 0x3
+ 1861 01ad 08       		.uleb128 0x8
+ 1862 01ae 3A       		.uleb128 0x3a
+ 1863 01af 0B       		.uleb128 0xb
+ 1864 01b0 3B       		.uleb128 0x3b
+ 1865 01b1 0B       		.uleb128 0xb
+ 1866 01b2 49       		.uleb128 0x49
+ 1867 01b3 13       		.uleb128 0x13
+ 1868 01b4 02       		.uleb128 0x2
+ 1869 01b5 18       		.uleb128 0x18
+ 1870 01b6 00       		.byte	0
+ 1871 01b7 00       		.byte	0
+ 1872 01b8 21       		.uleb128 0x21
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 34
+
+
+ 1873 01b9 34       		.uleb128 0x34
+ 1874 01ba 00       		.byte	0
+ 1875 01bb 03       		.uleb128 0x3
+ 1876 01bc 0E       		.uleb128 0xe
+ 1877 01bd 3A       		.uleb128 0x3a
+ 1878 01be 0B       		.uleb128 0xb
+ 1879 01bf 3B       		.uleb128 0x3b
+ 1880 01c0 05       		.uleb128 0x5
+ 1881 01c1 49       		.uleb128 0x49
+ 1882 01c2 13       		.uleb128 0x13
+ 1883 01c3 3F       		.uleb128 0x3f
+ 1884 01c4 19       		.uleb128 0x19
+ 1885 01c5 3C       		.uleb128 0x3c
+ 1886 01c6 19       		.uleb128 0x19
+ 1887 01c7 00       		.byte	0
+ 1888 01c8 00       		.byte	0
+ 1889 01c9 22       		.uleb128 0x22
+ 1890 01ca 34       		.uleb128 0x34
+ 1891 01cb 00       		.byte	0
+ 1892 01cc 03       		.uleb128 0x3
+ 1893 01cd 08       		.uleb128 0x8
+ 1894 01ce 3A       		.uleb128 0x3a
+ 1895 01cf 0B       		.uleb128 0xb
+ 1896 01d0 3B       		.uleb128 0x3b
+ 1897 01d1 05       		.uleb128 0x5
+ 1898 01d2 49       		.uleb128 0x49
+ 1899 01d3 13       		.uleb128 0x13
+ 1900 01d4 3F       		.uleb128 0x3f
+ 1901 01d5 19       		.uleb128 0x19
+ 1902 01d6 3C       		.uleb128 0x3c
+ 1903 01d7 19       		.uleb128 0x19
+ 1904 01d8 00       		.byte	0
+ 1905 01d9 00       		.byte	0
+ 1906 01da 23       		.uleb128 0x23
+ 1907 01db 34       		.uleb128 0x34
+ 1908 01dc 00       		.byte	0
+ 1909 01dd 03       		.uleb128 0x3
+ 1910 01de 0E       		.uleb128 0xe
+ 1911 01df 3A       		.uleb128 0x3a
+ 1912 01e0 0B       		.uleb128 0xb
+ 1913 01e1 3B       		.uleb128 0x3b
+ 1914 01e2 0B       		.uleb128 0xb
+ 1915 01e3 49       		.uleb128 0x49
+ 1916 01e4 13       		.uleb128 0x13
+ 1917 01e5 3F       		.uleb128 0x3f
+ 1918 01e6 19       		.uleb128 0x19
+ 1919 01e7 3C       		.uleb128 0x3c
+ 1920 01e8 19       		.uleb128 0x19
+ 1921 01e9 00       		.byte	0
+ 1922 01ea 00       		.byte	0
+ 1923 01eb 24       		.uleb128 0x24
+ 1924 01ec 21       		.uleb128 0x21
+ 1925 01ed 00       		.byte	0
+ 1926 01ee 00       		.byte	0
+ 1927 01ef 00       		.byte	0
+ 1928 01f0 25       		.uleb128 0x25
+ 1929 01f1 34       		.uleb128 0x34
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 35
+
+
+ 1930 01f2 00       		.byte	0
+ 1931 01f3 03       		.uleb128 0x3
+ 1932 01f4 08       		.uleb128 0x8
+ 1933 01f5 3A       		.uleb128 0x3a
+ 1934 01f6 0B       		.uleb128 0xb
+ 1935 01f7 3B       		.uleb128 0x3b
+ 1936 01f8 0B       		.uleb128 0xb
+ 1937 01f9 49       		.uleb128 0x49
+ 1938 01fa 13       		.uleb128 0x13
+ 1939 01fb 3F       		.uleb128 0x3f
+ 1940 01fc 19       		.uleb128 0x19
+ 1941 01fd 3C       		.uleb128 0x3c
+ 1942 01fe 19       		.uleb128 0x19
+ 1943 01ff 00       		.byte	0
+ 1944 0200 00       		.byte	0
+ 1945 0201 26       		.uleb128 0x26
+ 1946 0202 34       		.uleb128 0x34
+ 1947 0203 00       		.byte	0
+ 1948 0204 03       		.uleb128 0x3
+ 1949 0205 0E       		.uleb128 0xe
+ 1950 0206 3A       		.uleb128 0x3a
+ 1951 0207 0B       		.uleb128 0xb
+ 1952 0208 3B       		.uleb128 0x3b
+ 1953 0209 0B       		.uleb128 0xb
+ 1954 020a 49       		.uleb128 0x49
+ 1955 020b 13       		.uleb128 0x13
+ 1956 020c 3F       		.uleb128 0x3f
+ 1957 020d 19       		.uleb128 0x19
+ 1958 020e 02       		.uleb128 0x2
+ 1959 020f 18       		.uleb128 0x18
+ 1960 0210 00       		.byte	0
+ 1961 0211 00       		.byte	0
+ 1962 0212 00       		.byte	0
+ 1963              		.section	.debug_aranges,"",%progbits
+ 1964 0000 3C000000 		.4byte	0x3c
+ 1965 0004 0200     		.2byte	0x2
+ 1966 0006 00000000 		.4byte	.Ldebug_info0
+ 1967 000a 04       		.byte	0x4
+ 1968 000b 00       		.byte	0
+ 1969 000c 0000     		.2byte	0
+ 1970 000e 0000     		.2byte	0
+ 1971 0010 00000000 		.4byte	.LFB177
+ 1972 0014 18000000 		.4byte	.LFE177-.LFB177
+ 1973 0018 00000000 		.4byte	.LFB178
+ 1974 001c 10000000 		.4byte	.LFE178-.LFB178
+ 1975 0020 00000000 		.4byte	.LFB211
+ 1976 0024 18000000 		.4byte	.LFE211-.LFB211
+ 1977 0028 00000000 		.4byte	.LFB229
+ 1978 002c 26000000 		.4byte	.LFE229-.LFB229
+ 1979 0030 00000000 		.4byte	.LFB230
+ 1980 0034 B4000000 		.4byte	.LFE230-.LFB230
+ 1981 0038 00000000 		.4byte	0
+ 1982 003c 00000000 		.4byte	0
+ 1983              		.section	.debug_ranges,"",%progbits
+ 1984              	.Ldebug_ranges0:
+ 1985 0000 00000000 		.4byte	.LFB177
+ 1986 0004 18000000 		.4byte	.LFE177
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 36
+
+
+ 1987 0008 00000000 		.4byte	.LFB178
+ 1988 000c 10000000 		.4byte	.LFE178
+ 1989 0010 00000000 		.4byte	.LFB211
+ 1990 0014 18000000 		.4byte	.LFE211
+ 1991 0018 00000000 		.4byte	.LFB229
+ 1992 001c 26000000 		.4byte	.LFE229
+ 1993 0020 00000000 		.4byte	.LFB230
+ 1994 0024 B4000000 		.4byte	.LFE230
+ 1995 0028 00000000 		.4byte	0
+ 1996 002c 00000000 		.4byte	0
+ 1997              		.section	.debug_line,"",%progbits
+ 1998              	.Ldebug_line0:
+ 1999 0000 69020000 		.section	.debug_str,"MS",%progbits,1
+ 1999      0200EC01 
+ 1999      00000201 
+ 1999      FB0E0D00 
+ 1999      01010101 
+ 2000              	.LASF95:
+ 2001 0000 74625F70 		.ascii	"tb_ptr\000"
+ 2001      747200
+ 2002              	.LASF52:
+ 2003 0007 72656164 		.ascii	"ready_list_t\000"
+ 2003      795F6C69 
+ 2003      73745F74 
+ 2003      00
+ 2004              	.LASF89:
+ 2005 0014 73655F74 		.ascii	"se_time\000"
+ 2005      696D6500 
+ 2006              	.LASF2:
+ 2007 001c 73697A65 		.ascii	"size_t\000"
+ 2007      5F7400
+ 2008              	.LASF110:
+ 2009 0023 7264796D 		.ascii	"rdymsg\000"
+ 2009      736700
+ 2010              	.LASF12:
+ 2011 002a 75696E74 		.ascii	"uint64_t\000"
+ 2011      36345F74 
+ 2011      00
+ 2012              	.LASF82:
+ 2013 0033 6B65726E 		.ascii	"kernel_stats\000"
+ 2013      656C5F73 
+ 2013      74617473 
+ 2013      00
+ 2014              	.LASF88:
+ 2015 0040 706F7274 		.ascii	"port_intctx\000"
+ 2015      5F696E74 
+ 2015      63747800 
+ 2016              	.LASF51:
+ 2017 004c 63685F74 		.ascii	"ch_threads_queue\000"
+ 2017      68726561 
+ 2017      64735F71 
+ 2017      75657565 
+ 2017      00
+ 2018              	.LASF71:
+ 2019 005d 73797374 		.ascii	"system_debug_t\000"
+ 2019      656D5F64 
+ 2019      65627567 
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 37
+
+
+ 2019      5F7400
+ 2020              	.LASF101:
+ 2021 006c 776F7273 		.ascii	"worst\000"
+ 2021      7400
+ 2022              	.LASF104:
+ 2023 0072 74696D65 		.ascii	"time_measurement_t\000"
+ 2023      5F6D6561 
+ 2023      73757265 
+ 2023      6D656E74 
+ 2023      5F7400
+ 2024              	.LASF13:
+ 2025 0085 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2025      206C6F6E 
+ 2025      6720756E 
+ 2025      7369676E 
+ 2025      65642069 
+ 2026              	.LASF97:
+ 2027 009c 63685F74 		.ascii	"ch_trace_buffer_t\000"
+ 2027      72616365 
+ 2027      5F627566 
+ 2027      6665725F 
+ 2027      7400
+ 2028              	.LASF92:
+ 2029 00ae 73655F73 		.ascii	"se_state\000"
+ 2029      74617465 
+ 2029      00
+ 2030              	.LASF111:
+ 2031 00b7 65786974 		.ascii	"exitcode\000"
+ 2031      636F6465 
+ 2031      00
+ 2032              	.LASF81:
+ 2033 00c0 6D61696E 		.ascii	"mainthread\000"
+ 2033      74687265 
+ 2033      616400
+ 2034              	.LASF68:
+ 2035 00cb 76697274 		.ascii	"virtual_timers_list_t\000"
+ 2035      75616C5F 
+ 2035      74696D65 
+ 2035      72735F6C 
+ 2035      6973745F 
+ 2036              	.LASF135:
+ 2037 00e1 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2037      52784275 
+ 2037      66666572 
+ 2037      00
+ 2038              	.LASF15:
+ 2039 00ee 72747469 		.ascii	"rttime_t\000"
+ 2039      6D655F74 
+ 2039      00
+ 2040              	.LASF28:
+ 2041 00f7 705F7072 		.ascii	"p_prio\000"
+ 2041      696F00
+ 2042              	.LASF11:
+ 2043 00fe 6C6F6E67 		.ascii	"long long int\000"
+ 2043      206C6F6E 
+ 2043      6720696E 
+ 2043      7400
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 38
+
+
+ 2044              	.LASF1:
+ 2045 010c 7369676E 		.ascii	"signed char\000"
+ 2045      65642063 
+ 2045      68617200 
+ 2046              	.LASF43:
+ 2047 0118 705F6D70 		.ascii	"p_mpool\000"
+ 2047      6F6F6C00 
+ 2048              	.LASF121:
+ 2049 0120 6D5F7175 		.ascii	"m_queue\000"
+ 2049      65756500 
+ 2050              	.LASF80:
+ 2051 0128 76746C69 		.ascii	"vtlist\000"
+ 2051      737400
+ 2052              	.LASF113:
+ 2053 012f 77747472 		.ascii	"wttrp\000"
+ 2053      7000
+ 2054              	.LASF78:
+ 2055 0135 63685F73 		.ascii	"ch_system\000"
+ 2055      79737465 
+ 2055      6D00
+ 2056              	.LASF8:
+ 2057 013f 6C6F6E67 		.ascii	"long int\000"
+ 2057      20696E74 
+ 2057      00
+ 2058              	.LASF17:
+ 2059 0148 74737461 		.ascii	"tstate_t\000"
+ 2059      74655F74 
+ 2059      00
+ 2060              	.LASF90:
+ 2061 0151 73655F74 		.ascii	"se_tp\000"
+ 2061      7000
+ 2062              	.LASF30:
+ 2063 0157 705F6E65 		.ascii	"p_newer\000"
+ 2063      77657200 
+ 2064              	.LASF118:
+ 2065 015f 735F7175 		.ascii	"s_queue\000"
+ 2065      65756500 
+ 2066              	.LASF94:
+ 2067 0167 74625F73 		.ascii	"tb_size\000"
+ 2067      697A6500 
+ 2068              	.LASF57:
+ 2069 016f 725F6E65 		.ascii	"r_newer\000"
+ 2069      77657200 
+ 2070              	.LASF85:
+ 2071 0177 72656761 		.ascii	"regarm_t\000"
+ 2071      726D5F74 
+ 2071      00
+ 2072              	.LASF64:
+ 2073 0180 76745F70 		.ascii	"vt_prev\000"
+ 2073      72657600 
+ 2074              	.LASF141:
+ 2075 0188 433A5C55 		.ascii	"C:\\Users\\Luis\\git\\DSP-Library-Lanin\\examples\\"
+ 2075      73657273 
+ 2075      5C4C7569 
+ 2075      735C6769 
+ 2075      745C4453 
+ 2076 01b5 53544D33 		.ascii	"STM32F407_EMTECH-LWIP\000"
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 39
+
+
+ 2076      32463430 
+ 2076      375F454D 
+ 2076      54454348 
+ 2076      2D4C5749 
+ 2077              	.LASF72:
+ 2078 01cb 63685F73 		.ascii	"ch_system_debug\000"
+ 2078      79737465 
+ 2078      6D5F6465 
+ 2078      62756700 
+ 2079              	.LASF125:
+ 2080 01db 6D757465 		.ascii	"mutex_t\000"
+ 2080      785F7400 
+ 2081              	.LASF75:
+ 2082 01e3 6C6F636B 		.ascii	"lock_cnt\000"
+ 2082      5F636E74 
+ 2082      00
+ 2083              	.LASF83:
+ 2084 01ec 69646C65 		.ascii	"idle_thread_wa\000"
+ 2084      5F746872 
+ 2084      6561645F 
+ 2084      776100
+ 2085              	.LASF22:
+ 2086 01fb 636E745F 		.ascii	"cnt_t\000"
+ 2086      7400
+ 2087              	.LASF33:
+ 2088 0201 705F7374 		.ascii	"p_stklimit\000"
+ 2088      6B6C696D 
+ 2088      697400
+ 2089              	.LASF0:
+ 2090 020c 756E7369 		.ascii	"unsigned int\000"
+ 2090      676E6564 
+ 2090      20696E74 
+ 2090      00
+ 2091              	.LASF63:
+ 2092 0219 76745F6E 		.ascii	"vt_next\000"
+ 2092      65787400 
+ 2093              	.LASF114:
+ 2094 0221 77747365 		.ascii	"wtsemp\000"
+ 2094      6D7000
+ 2095              	.LASF38:
+ 2096 0228 705F6D73 		.ascii	"p_msgqueue\000"
+ 2096      67717565 
+ 2096      756500
+ 2097              	.LASF129:
+ 2098 0233 74656172 		.ascii	"teardown\000"
+ 2098      646F776E 
+ 2098      00
+ 2099              	.LASF142:
+ 2100 023c 63684D73 		.ascii	"chMsgGet\000"
+ 2100      67476574 
+ 2100      00
+ 2101              	.LASF45:
+ 2102 0245 746C7350 		.ascii	"tlsPtr\000"
+ 2102      747200
+ 2103              	.LASF105:
+ 2104 024c 6E5F6972 		.ascii	"n_irq\000"
+ 2104      7100
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 40
+
+
+ 2105              	.LASF119:
+ 2106 0252 735F636E 		.ascii	"s_cnt\000"
+ 2106      7400
+ 2107              	.LASF127:
+ 2108 0258 6E616D65 		.ascii	"name\000"
+ 2108      00
+ 2109              	.LASF6:
+ 2110 025d 73686F72 		.ascii	"short unsigned int\000"
+ 2110      7420756E 
+ 2110      7369676E 
+ 2110      65642069 
+ 2110      6E7400
+ 2111              	.LASF109:
+ 2112 0270 6B65726E 		.ascii	"kernel_stats_t\000"
+ 2112      656C5F73 
+ 2112      74617473 
+ 2112      5F7400
+ 2113              	.LASF48:
+ 2114 027f 63685F74 		.ascii	"ch_thread\000"
+ 2114      68726561 
+ 2114      6400
+ 2115              	.LASF20:
+ 2116 0289 6D73675F 		.ascii	"msg_t\000"
+ 2116      7400
+ 2117              	.LASF102:
+ 2118 028f 6C617374 		.ascii	"last\000"
+ 2118      00
+ 2119              	.LASF23:
+ 2120 0294 75636E74 		.ascii	"ucnt_t\000"
+ 2120      5F7400
+ 2121              	.LASF77:
+ 2122 029b 63685F73 		.ascii	"ch_system_t\000"
+ 2122      79737465 
+ 2122      6D5F7400 
+ 2123              	.LASF16:
+ 2124 02a7 746D6F64 		.ascii	"tmode_t\000"
+ 2124      655F7400 
+ 2125              	.LASF108:
+ 2126 02af 6D5F6372 		.ascii	"m_crit_isr\000"
+ 2126      69745F69 
+ 2126      737200
+ 2127              	.LASF53:
+ 2128 02ba 63685F72 		.ascii	"ch_ready_list\000"
+ 2128      65616479 
+ 2128      5F6C6973 
+ 2128      7400
+ 2129              	.LASF21:
+ 2130 02c8 6576656E 		.ascii	"eventmask_t\000"
+ 2130      746D6173 
+ 2130      6B5F7400 
+ 2131              	.LASF86:
+ 2132 02d4 73746B61 		.ascii	"stkalign_t\000"
+ 2132      6C69676E 
+ 2132      5F7400
+ 2133              	.LASF37:
+ 2134 02df 705F7761 		.ascii	"p_waiting\000"
+ 2134      6974696E 
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 41
+
+
+ 2134      6700
+ 2135              	.LASF138:
+ 2136 02e9 70617474 		.ascii	"patternmsg\000"
+ 2136      65726E6D 
+ 2136      736700
+ 2137              	.LASF84:
+ 2138 02f4 73697A65 		.ascii	"sizetype\000"
+ 2138      74797065 
+ 2138      00
+ 2139              	.LASF46:
+ 2140 02fd 74687265 		.ascii	"thread_reference_t\000"
+ 2140      61645F72 
+ 2140      65666572 
+ 2140      656E6365 
+ 2140      5F7400
+ 2141              	.LASF99:
+ 2142 0310 746D5F63 		.ascii	"tm_calibration_t\000"
+ 2142      616C6962 
+ 2142      72617469 
+ 2142      6F6E5F74 
+ 2142      00
+ 2143              	.LASF69:
+ 2144 0321 63685F76 		.ascii	"ch_virtual_timers_list\000"
+ 2144      69727475 
+ 2144      616C5F74 
+ 2144      696D6572 
+ 2144      735F6C69 
+ 2145              	.LASF93:
+ 2146 0338 63685F73 		.ascii	"ch_swc_event_t\000"
+ 2146      77635F65 
+ 2146      76656E74 
+ 2146      5F7400
+ 2147              	.LASF70:
+ 2148 0347 76745F6C 		.ascii	"vt_lasttime\000"
+ 2148      61737474 
+ 2148      696D6500 
+ 2149              	.LASF31:
+ 2150 0353 705F6F6C 		.ascii	"p_older\000"
+ 2150      64657200 
+ 2151              	.LASF56:
+ 2152 035b 725F6374 		.ascii	"r_ctx\000"
+ 2152      7800
+ 2153              	.LASF132:
+ 2154 0361 63685468 		.ascii	"chThdGetPriorityX\000"
+ 2154      64476574 
+ 2154      5072696F 
+ 2154      72697479 
+ 2154      5800
+ 2155              	.LASF140:
+ 2156 0373 2E2E2F2E 		.ascii	"../../ChibiOS/test/rt/testmsg.c\000"
+ 2156      2E2F4368 
+ 2156      6962694F 
+ 2156      532F7465 
+ 2156      73742F72 
+ 2157              	.LASF59:
+ 2158 0393 725F6375 		.ascii	"r_current\000"
+ 2158      7272656E 
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 42
+
+
+ 2158      7400
+ 2159              	.LASF58:
+ 2160 039d 725F6F6C 		.ascii	"r_older\000"
+ 2160      64657200 
+ 2161              	.LASF103:
+ 2162 03a5 63756D75 		.ascii	"cumulative\000"
+ 2162      6C617469 
+ 2162      766500
+ 2163              	.LASF128:
+ 2164 03b0 73657475 		.ascii	"setup\000"
+ 2164      7000
+ 2165              	.LASF18:
+ 2166 03b6 74726566 		.ascii	"trefs_t\000"
+ 2166      735F7400 
+ 2167              	.LASF96:
+ 2168 03be 74625F62 		.ascii	"tb_buffer\000"
+ 2168      75666665 
+ 2168      7200
+ 2169              	.LASF61:
+ 2170 03c8 76697274 		.ascii	"virtual_timer_t\000"
+ 2170      75616C5F 
+ 2170      74696D65 
+ 2170      725F7400 
+ 2171              	.LASF27:
+ 2172 03d8 705F7072 		.ascii	"p_prev\000"
+ 2172      657600
+ 2173              	.LASF130:
+ 2174 03df 65786563 		.ascii	"execute\000"
+ 2174      75746500 
+ 2175              	.LASF19:
+ 2176 03e7 74707269 		.ascii	"tprio_t\000"
+ 2176      6F5F7400 
+ 2177              	.LASF133:
+ 2178 03ef 74687265 		.ascii	"thread\000"
+ 2178      616400
+ 2179              	.LASF106:
+ 2180 03f6 6E5F6374 		.ascii	"n_ctxswc\000"
+ 2180      78737763 
+ 2180      00
+ 2181              	.LASF7:
+ 2182 03ff 696E7433 		.ascii	"int32_t\000"
+ 2182      325F7400 
+ 2183              	.LASF4:
+ 2184 0407 756E7369 		.ascii	"unsigned char\000"
+ 2184      676E6564 
+ 2184      20636861 
+ 2184      7200
+ 2185              	.LASF41:
+ 2186 0415 705F6D74 		.ascii	"p_mtxlist\000"
+ 2186      786C6973 
+ 2186      7400
+ 2187              	.LASF5:
+ 2188 041f 73686F72 		.ascii	"short int\000"
+ 2188      7420696E 
+ 2188      7400
+ 2189              	.LASF34:
+ 2190 0429 705F7374 		.ascii	"p_state\000"
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 43
+
+
+ 2190      61746500 
+ 2191              	.LASF136:
+ 2192 0431 74687265 		.ascii	"threads\000"
+ 2192      61647300 
+ 2193              	.LASF55:
+ 2194 0439 725F7072 		.ascii	"r_prio\000"
+ 2194      696F00
+ 2195              	.LASF137:
+ 2196 0440 74657374 		.ascii	"testmsg1\000"
+ 2196      6D736731 
+ 2196      00
+ 2197              	.LASF116:
+ 2198 0449 65776D61 		.ascii	"ewmask\000"
+ 2198      736B00
+ 2199              	.LASF26:
+ 2200 0450 705F6E65 		.ascii	"p_next\000"
+ 2200      787400
+ 2201              	.LASF35:
+ 2202 0457 705F666C 		.ascii	"p_flags\000"
+ 2202      61677300 
+ 2203              	.LASF44:
+ 2204 045f 705F7374 		.ascii	"p_stats\000"
+ 2204      61747300 
+ 2205              	.LASF62:
+ 2206 0467 63685F76 		.ascii	"ch_virtual_timer\000"
+ 2206      69727475 
+ 2206      616C5F74 
+ 2206      696D6572 
+ 2206      00
+ 2207              	.LASF126:
+ 2208 0478 74657374 		.ascii	"testcase\000"
+ 2208      63617365 
+ 2208      00
+ 2209              	.LASF117:
+ 2210 0481 63685F73 		.ascii	"ch_semaphore\000"
+ 2210      656D6170 
+ 2210      686F7265 
+ 2210      00
+ 2211              	.LASF40:
+ 2212 048e 705F6570 		.ascii	"p_epending\000"
+ 2212      656E6469 
+ 2212      6E6700
+ 2213              	.LASF9:
+ 2214 0499 75696E74 		.ascii	"uint32_t\000"
+ 2214      33325F74 
+ 2214      00
+ 2215              	.LASF115:
+ 2216 04a2 77746D74 		.ascii	"wtmtxp\000"
+ 2216      787000
+ 2217              	.LASF54:
+ 2218 04a9 725F7175 		.ascii	"r_queue\000"
+ 2218      65756500 
+ 2219              	.LASF65:
+ 2220 04b1 76745F64 		.ascii	"vt_delta\000"
+ 2220      656C7461 
+ 2220      00
+ 2221              	.LASF49:
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 44
+
+
+ 2222 04ba 63685F74 		.ascii	"ch_threads_list\000"
+ 2222      68726561 
+ 2222      64735F6C 
+ 2222      69737400 
+ 2223              	.LASF10:
+ 2224 04ca 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2224      20756E73 
+ 2224      69676E65 
+ 2224      6420696E 
+ 2224      7400
+ 2225              	.LASF124:
+ 2226 04dc 63686172 		.ascii	"char\000"
+ 2226      00
+ 2227              	.LASF139:
+ 2228 04e1 474E5520 		.ascii	"GNU C 4.8.3 20131129 (release) [ARM/embedded-4_8-br"
+ 2228      4320342E 
+ 2228      382E3320 
+ 2228      32303133 
+ 2228      31313239 
+ 2229 0514 616E6368 		.ascii	"anch revision 205641] -mcpu=cortex-m4 -mapcs-frame "
+ 2229      20726576 
+ 2229      6973696F 
+ 2229      6E203230 
+ 2229      35363431 
+ 2230 0547 2D6D6E6F 		.ascii	"-mno-thumb-interwork -mthumb -ggdb -O0 -falign-func"
+ 2230      2D746875 
+ 2230      6D622D69 
+ 2230      6E746572 
+ 2230      776F726B 
+ 2231 057a 74696F6E 		.ascii	"tions=16 -ffunction-sections -fdata-sections -fno-c"
+ 2231      733D3136 
+ 2231      202D6666 
+ 2231      756E6374 
+ 2231      696F6E2D 
+ 2232 05ad 6F6D6D6F 		.ascii	"ommon\000"
+ 2232      6E00
+ 2233              	.LASF100:
+ 2234 05b3 62657374 		.ascii	"best\000"
+ 2234      00
+ 2235              	.LASF123:
+ 2236 05b8 6D5F6E65 		.ascii	"m_next\000"
+ 2236      787400
+ 2237              	.LASF24:
+ 2238 05bf 73797374 		.ascii	"systime_t\000"
+ 2238      696D655F 
+ 2238      7400
+ 2239              	.LASF42:
+ 2240 05c9 705F7265 		.ascii	"p_realprio\000"
+ 2240      616C7072 
+ 2240      696F00
+ 2241              	.LASF60:
+ 2242 05d4 76746675 		.ascii	"vtfunc_t\000"
+ 2242      6E635F74 
+ 2242      00
+ 2243              	.LASF73:
+ 2244 05dd 70616E69 		.ascii	"panic_msg\000"
+ 2244      635F6D73 
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 45
+
+
+ 2244      6700
+ 2245              	.LASF98:
+ 2246 05e7 6F666673 		.ascii	"offset\000"
+ 2246      657400
+ 2247              	.LASF87:
+ 2248 05ee 636F6E74 		.ascii	"context\000"
+ 2248      65787400 
+ 2249              	.LASF14:
+ 2250 05f6 7274636E 		.ascii	"rtcnt_t\000"
+ 2250      745F7400 
+ 2251              	.LASF67:
+ 2252 05fe 76745F70 		.ascii	"vt_par\000"
+ 2252      617200
+ 2253              	.LASF50:
+ 2254 0605 74687265 		.ascii	"threads_queue_t\000"
+ 2254      6164735F 
+ 2254      71756575 
+ 2254      655F7400 
+ 2255              	.LASF120:
+ 2256 0615 63685F6D 		.ascii	"ch_mutex\000"
+ 2256      75746578 
+ 2256      00
+ 2257              	.LASF36:
+ 2258 061e 705F7265 		.ascii	"p_refs\000"
+ 2258      667300
+ 2259              	.LASF74:
+ 2260 0625 6973725F 		.ascii	"isr_cnt\000"
+ 2260      636E7400 
+ 2261              	.LASF25:
+ 2262 062d 74687265 		.ascii	"thread_t\000"
+ 2262      61645F74 
+ 2262      00
+ 2263              	.LASF79:
+ 2264 0636 726C6973 		.ascii	"rlist\000"
+ 2264      7400
+ 2265              	.LASF131:
+ 2266 063c 63685468 		.ascii	"chThdGetSelfX\000"
+ 2266      64476574 
+ 2266      53656C66 
+ 2266      5800
+ 2267              	.LASF3:
+ 2268 064a 75696E74 		.ascii	"uint8_t\000"
+ 2268      385F7400 
+ 2269              	.LASF134:
+ 2270 0652 6D736731 		.ascii	"msg1_execute\000"
+ 2270      5F657865 
+ 2270      63757465 
+ 2270      00
+ 2271              	.LASF112:
+ 2272 065f 77746F62 		.ascii	"wtobjp\000"
+ 2272      6A7000
+ 2273              	.LASF32:
+ 2274 0666 705F6E61 		.ascii	"p_name\000"
+ 2274      6D6500
+ 2275              	.LASF47:
+ 2276 066d 74687265 		.ascii	"threads_list_t\000"
+ 2276      6164735F 
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 46
+
+
+ 2276      6C697374 
+ 2276      5F7400
+ 2277              	.LASF76:
+ 2278 067c 74726163 		.ascii	"trace_buffer\000"
+ 2278      655F6275 
+ 2278      66666572 
+ 2278      00
+ 2279              	.LASF39:
+ 2280 0689 705F6D73 		.ascii	"p_msg\000"
+ 2280      6700
+ 2281              	.LASF107:
+ 2282 068f 6D5F6372 		.ascii	"m_crit_thd\000"
+ 2282      69745F74 
+ 2282      686400
+ 2283              	.LASF122:
+ 2284 069a 6D5F6F77 		.ascii	"m_owner\000"
+ 2284      6E657200 
+ 2285              	.LASF91:
+ 2286 06a2 73655F77 		.ascii	"se_wtobjp\000"
+ 2286      746F626A 
+ 2286      7000
+ 2287              	.LASF29:
+ 2288 06ac 705F6374 		.ascii	"p_ctx\000"
+ 2288      7800
+ 2289              	.LASF66:
+ 2290 06b2 76745F66 		.ascii	"vt_func\000"
+ 2290      756E6300 
+ 2291              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.8.3 20131129 (release) [ARM/embedded-4_8-br
+ARM GAS  C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s 			page 47
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 testmsg.c
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:19     .text.chThdGetSelfX:00000000 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:24     .text.chThdGetSelfX:00000000 chThdGetSelfX
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:49     .text.chThdGetSelfX:00000014 $d
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:54     .text.chThdGetPriorityX:00000000 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:59     .text.chThdGetPriorityX:00000000 chThdGetPriorityX
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:82     .text.chMsgGet:00000000 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:87     .text.chMsgGet:00000000 chMsgGet
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:117    .text.thread:00000000 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:122    .text.thread:00000000 thread
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:159    .rodata:00000000 $d
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:163    .text.msg1_execute:00000000 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:168    .text.msg1_execute:00000000 msg1_execute
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:269    .text.msg1_execute:000000a4 $d
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:285    .rodata.testmsg1:00000000 testmsg1
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:282    .rodata.testmsg1:00000000 $d
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:295    .rodata.patternmsg:00000000 patternmsg
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:292    .rodata.patternmsg:00000000 $d
+                     .debug_frame:00000010 $d
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:53     .text.chThdGetSelfX:00000018 $t
+C:\Users\Luis\AppData\Local\Temp\cceDIcRa.s:277    .text.msg1_execute:000000b4 $t
+
+UNDEFINED SYMBOLS
+ch
+chMsgSend
+chThdCreateStatic
+chMsgWait
+chMsgRelease
+test_emit_token
+_test_assert_sequence
+wa
+threads

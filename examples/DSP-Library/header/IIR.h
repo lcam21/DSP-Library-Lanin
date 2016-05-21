@@ -26,6 +26,11 @@ public:
 	 */
 	float directFormII(float pData);
 
+	/**
+	 * @brief Free memory
+	 */
+	virtual ~IIR();
+
 };
 
 #endif /* HEADER_IIR_H_ */

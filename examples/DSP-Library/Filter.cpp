@@ -7,10 +7,6 @@
 
 #include "header/Filter.h"
 
-Filter::Filter() {
-	ContBuffer = 0;
-}
-
 Filter::~Filter() {
 	chHeapFree(MathOperation);
 	chHeapFree(InitialDataFilter);
