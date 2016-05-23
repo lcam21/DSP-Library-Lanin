@@ -61,7 +61,7 @@ Disassembly of section .text:
  8000238:	f7ff bff8 	b.w	800022c <initloop>
 
 0800023c <endinitloop>:
- 800023c:	f008 fe70 	bl	8008f20 <main>
+ 800023c:	f008 fe58 	bl	8008ef0 <main>
  8000240:	4c11      	ldr	r4, [pc, #68]	; (8000288 <endfiniloop+0x34>)
  8000242:	4d12      	ldr	r5, [pc, #72]	; (800028c <endfiniloop+0x38>)
 
@@ -79,7 +79,7 @@ Disassembly of section .text:
  8000260:	20000000 	.word	0x20000000
  8000264:	20000400 	.word	0x20000400
  8000268:	20000400 	.word	0x20000400
- 800026c:	0800a130 	.word	0x0800a130
+ 800026c:	0800a070 	.word	0x0800a070
  8000270:	20000800 	.word	0x20000800
  8000274:	20000804 	.word	0x20000804
  8000278:	20000808 	.word	0x20000808
@@ -2228,7 +2228,7 @@ static inline void chVTDoTickI(void) {
  80015e6:	bd80      	pop	{r7, pc}
  80015e8:	20000808 	.word	0x20000808
  80015ec:	20000824 	.word	0x20000824
- 80015f0:	08009a70 	.word	0x08009a70
+ 80015f0:	080099b0 	.word	0x080099b0
  80015f4:	f3af 8000 	nop.w
  80015f8:	f3af 8000 	nop.w
  80015fc:	f3af 8000 	nop.w
@@ -2426,10 +2426,10 @@ void chSysInit(void) {
  80016c4:	20000c48 	.word	0x20000c48
  80016c8:	20000808 	.word	0x20000808
  80016cc:	20000400 	.word	0x20000400
- 80016d0:	08009b30 	.word	0x08009b30
+ 80016d0:	08009a70 	.word	0x08009a70
  80016d4:	20000cf0 	.word	0x20000cf0
  80016d8:	08001641 	.word	0x08001641
- 80016dc:	080098a0 	.word	0x080098a0
+ 80016dc:	08009870 	.word	0x08009870
 
 080016e0 <chSysHalt>:
  *
@@ -2745,7 +2745,7 @@ void _dbg_check_enable(void) {
 }
  800183a:	bd80      	pop	{r7, pc}
  800183c:	20000808 	.word	0x20000808
- 8001840:	080098c0 	.word	0x080098c0
+ 8001840:	08009890 	.word	0x08009890
  8001844:	f3af 8000 	nop.w
  8001848:	f3af 8000 	nop.w
  800184c:	f3af 8000 	nop.w
@@ -2781,7 +2781,7 @@ void _dbg_check_lock(void) {
  8001870:	bd80      	pop	{r7, pc}
  8001872:	bf00      	nop
  8001874:	20000808 	.word	0x20000808
- 8001878:	080098c8 	.word	0x080098c8
+ 8001878:	08009898 	.word	0x08009898
  800187c:	f3af 8000 	nop.w
 
 08001880 <_dbg_check_unlock>:
@@ -2815,7 +2815,7 @@ void _dbg_check_unlock(void) {
  80018a0:	bd80      	pop	{r7, pc}
  80018a2:	bf00      	nop
  80018a4:	20000808 	.word	0x20000808
- 80018a8:	080098d0 	.word	0x080098d0
+ 80018a8:	080098a0 	.word	0x080098a0
  80018ac:	f3af 8000 	nop.w
 
 080018b0 <_dbg_check_lock_from_isr>:
@@ -2849,7 +2849,7 @@ void _dbg_check_lock_from_isr(void) {
  80018d0:	bd80      	pop	{r7, pc}
  80018d2:	bf00      	nop
  80018d4:	20000808 	.word	0x20000808
- 80018d8:	080098d8 	.word	0x080098d8
+ 80018d8:	080098a8 	.word	0x080098a8
  80018dc:	f3af 8000 	nop.w
 
 080018e0 <_dbg_check_unlock_from_isr>:
@@ -2883,7 +2883,7 @@ void _dbg_check_unlock_from_isr(void) {
  8001900:	bd80      	pop	{r7, pc}
  8001902:	bf00      	nop
  8001904:	20000808 	.word	0x20000808
- 8001908:	080098e0 	.word	0x080098e0
+ 8001908:	080098b0 	.word	0x080098b0
  800190c:	f3af 8000 	nop.w
 
 08001910 <_dbg_check_enter_isr>:
@@ -2923,7 +2923,7 @@ void _dbg_check_enter_isr(void) {
  800193c:	bd80      	pop	{r7, pc}
  800193e:	bf00      	nop
  8001940:	20000808 	.word	0x20000808
- 8001944:	080098e8 	.word	0x080098e8
+ 8001944:	080098b8 	.word	0x080098b8
  8001948:	f3af 8000 	nop.w
  800194c:	f3af 8000 	nop.w
 
@@ -2964,7 +2964,7 @@ void _dbg_check_leave_isr(void) {
  800197c:	bd80      	pop	{r7, pc}
  800197e:	bf00      	nop
  8001980:	20000808 	.word	0x20000808
- 8001984:	080098f0 	.word	0x080098f0
+ 8001984:	080098c0 	.word	0x080098c0
  8001988:	f3af 8000 	nop.w
  800198c:	f3af 8000 	nop.w
 
@@ -2994,7 +2994,7 @@ void chDbgCheckClassI(void) {
 }
  80019aa:	bd80      	pop	{r7, pc}
  80019ac:	20000808 	.word	0x20000808
- 80019b0:	080098f8 	.word	0x080098f8
+ 80019b0:	080098c8 	.word	0x080098c8
  80019b4:	f3af 8000 	nop.w
  80019b8:	f3af 8000 	nop.w
  80019bc:	f3af 8000 	nop.w
@@ -3025,7 +3025,7 @@ void chDbgCheckClassS(void) {
 }
  80019da:	bd80      	pop	{r7, pc}
  80019dc:	20000808 	.word	0x20000808
- 80019e0:	08009900 	.word	0x08009900
+ 80019e0:	080098d0 	.word	0x080098d0
  80019e4:	f3af 8000 	nop.w
  80019e8:	f3af 8000 	nop.w
  80019ec:	f3af 8000 	nop.w
@@ -3493,7 +3493,7 @@ void chVTDoSetI(virtual_timer_t *vtp, systime_t delay,
  8001c46:	3720      	adds	r7, #32
  8001c48:	46bd      	mov	sp, r7
  8001c4a:	bd80      	pop	{r7, pc}
- 8001c4c:	08009a80 	.word	0x08009a80
+ 8001c4c:	080099c0 	.word	0x080099c0
  8001c50:	20000808 	.word	0x20000808
  8001c54:	20000824 	.word	0x20000824
  8001c58:	f3af 8000 	nop.w
@@ -3679,7 +3679,7 @@ void chVTDoResetI(virtual_timer_t *vtp) {
  8001d46:	3710      	adds	r7, #16
  8001d48:	46bd      	mov	sp, r7
  8001d4a:	bd80      	pop	{r7, pc}
- 8001d4c:	08009a90 	.word	0x08009a90
+ 8001d4c:	080099d0 	.word	0x080099d0
  8001d50:	20000808 	.word	0x20000808
  8001d54:	20000824 	.word	0x20000824
  8001d58:	f3af 8000 	nop.w
@@ -4129,7 +4129,7 @@ thread_t *chSchReadyI(thread_t *tp) {
  8001fa2:	46bd      	mov	sp, r7
  8001fa4:	bd80      	pop	{r7, pc}
  8001fa6:	bf00      	nop
- 8001fa8:	08009aa0 	.word	0x08009aa0
+ 8001fa8:	080099e0 	.word	0x080099e0
  8001fac:	20000808 	.word	0x20000808
 
 08001fb0 <chSchGoSleepS>:
@@ -4215,7 +4215,7 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PSP(void)
  8002020:	46bd      	mov	sp, r7
  8002022:	bd90      	pop	{r4, r7, pc}
  8002024:	20000808 	.word	0x20000808
- 8002028:	08009910 	.word	0x08009910
+ 8002028:	080098e0 	.word	0x080098e0
  800202c:	f3af 8000 	nop.w
 
 08002030 <wakeup>:
@@ -4466,7 +4466,7 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PSP(void)
  800219c:	bd90      	pop	{r4, r7, pc}
  800219e:	bf00      	nop
  80021a0:	20000808 	.word	0x20000808
- 80021a4:	08009910 	.word	0x08009910
+ 80021a4:	080098e0 	.word	0x080098e0
  80021a8:	f3af 8000 	nop.w
  80021ac:	f3af 8000 	nop.w
 
@@ -4652,7 +4652,7 @@ __attribute__( ( always_inline ) ) __STATIC_INLINE uint32_t __get_PSP(void)
  80022ac:	bd90      	pop	{r4, r7, pc}
  80022ae:	bf00      	nop
  80022b0:	20000808 	.word	0x20000808
- 80022b4:	08009910 	.word	0x08009910
+ 80022b4:	080098e0 	.word	0x080098e0
  80022b8:	f3af 8000 	nop.w
  80022bc:	f3af 8000 	nop.w
 
@@ -5022,7 +5022,7 @@ static inline void chSysUnlock(void) {
  8002490:	bd80      	pop	{r7, pc}
  8002492:	bf00      	nop
  8002494:	20000808 	.word	0x20000808
- 8002498:	08009ac0 	.word	0x08009ac0
+ 8002498:	08009a00 	.word	0x08009a00
  800249c:	f3af 8000 	nop.w
 
 080024a0 <chThdGetSelfX>:
@@ -5076,7 +5076,7 @@ static inline void chThdSleepS(systime_t time) {
  80024de:	46bd      	mov	sp, r7
  80024e0:	bd80      	pop	{r7, pc}
  80024e2:	bf00      	nop
- 80024e4:	08009ad0 	.word	0x08009ad0
+ 80024e4:	08009a10 	.word	0x08009a10
  80024e8:	f3af 8000 	nop.w
  80024ec:	f3af 8000 	nop.w
 
@@ -5129,7 +5129,7 @@ static inline void chThdDoDequeueNextI(threads_queue_t *tqp, msg_t msg) {
  8002536:	3710      	adds	r7, #16
  8002538:	46bd      	mov	sp, r7
  800253a:	bd80      	pop	{r7, pc}
- 800253c:	08009b10 	.word	0x08009b10
+ 800253c:	08009a50 	.word	0x08009a50
 
 08002540 <_thread_init>:
  * @param[in] prio      the priority level for the new thread
@@ -5363,7 +5363,7 @@ thread_t *chThdCreateI(void *wsp, size_t size,
  8002676:	46bd      	mov	sp, r7
  8002678:	bd80      	pop	{r7, pc}
  800267a:	bf00      	nop
- 800267c:	08009ab0 	.word	0x08009ab0
+ 800267c:	080099f0 	.word	0x080099f0
  8002680:	080002a1 	.word	0x080002a1
  8002684:	f3af 8000 	nop.w
  8002688:	f3af 8000 	nop.w
@@ -5570,7 +5570,7 @@ void chThdExitS(msg_t msg) {
  8002798:	46bd      	mov	sp, r7
  800279a:	bd80      	pop	{r7, pc}
  800279c:	20000808 	.word	0x20000808
- 80027a0:	08009ae0 	.word	0x08009ae0
+ 80027a0:	08009a20 	.word	0x08009a20
  80027a4:	f3af 8000 	nop.w
  80027a8:	f3af 8000 	nop.w
  80027ac:	f3af 8000 	nop.w
@@ -5620,7 +5620,7 @@ msg_t chThdSuspendS(thread_reference_t *trp) {
  80027ea:	46bd      	mov	sp, r7
  80027ec:	bd80      	pop	{r7, pc}
  80027ee:	bf00      	nop
- 80027f0:	08009af0 	.word	0x08009af0
+ 80027f0:	08009a30 	.word	0x08009a30
  80027f4:	f3af 8000 	nop.w
  80027f8:	f3af 8000 	nop.w
  80027fc:	f3af 8000 	nop.w
@@ -5673,7 +5673,7 @@ void chThdResumeI(thread_reference_t *trp, msg_t msg) {
  800283a:	3710      	adds	r7, #16
  800283c:	46bd      	mov	sp, r7
  800283e:	bd80      	pop	{r7, pc}
- 8002840:	08009b00 	.word	0x08009b00
+ 8002840:	08009a40 	.word	0x08009a40
  8002844:	f3af 8000 	nop.w
  8002848:	f3af 8000 	nop.w
  800284c:	f3af 8000 	nop.w
@@ -6528,7 +6528,7 @@ static inline void chSysUnlock(void) {
  8002cf0:	bd80      	pop	{r7, pc}
  8002cf2:	bf00      	nop
  8002cf4:	20000808 	.word	0x20000808
- 8002cf8:	08009b60 	.word	0x08009b60
+ 8002cf8:	08009aa0 	.word	0x08009aa0
  8002cfc:	f3af 8000 	nop.w
 
 08002d00 <chMtxQueueNotEmptyS>:
@@ -6592,7 +6592,7 @@ void chMtxObjectInit(mutex_t *mp) {
  8002d42:	3708      	adds	r7, #8
  8002d44:	46bd      	mov	sp, r7
  8002d46:	bd80      	pop	{r7, pc}
- 8002d48:	08009b50 	.word	0x08009b50
+ 8002d48:	08009a90 	.word	0x08009a90
  8002d4c:	f3af 8000 	nop.w
 
 08002d50 <chMtxLock>:
@@ -6825,7 +6825,7 @@ void chMtxLockS(mutex_t *mp) {
  8002e64:	46bd      	mov	sp, r7
  8002e66:	bd80      	pop	{r7, pc}
  8002e68:	20000808 	.word	0x20000808
- 8002e6c:	08009b70 	.word	0x08009b70
+ 8002e6c:	08009ab0 	.word	0x08009ab0
 
 08002e70 <chMtxUnlock>:
  *
@@ -7017,7 +7017,7 @@ void chMtxUnlock(mutex_t *mp) {
  8002f48:	46bd      	mov	sp, r7
  8002f4a:	bd80      	pop	{r7, pc}
  8002f4c:	20000808 	.word	0x20000808
- 8002f50:	08009b80 	.word	0x08009b80
+ 8002f50:	08009ac0 	.word	0x08009ac0
  8002f54:	f3af 8000 	nop.w
  8002f58:	f3af 8000 	nop.w
  8002f5c:	f3af 8000 	nop.w
@@ -7114,7 +7114,7 @@ void chEvtBroadcastFlagsI(event_source_t *esp, eventflags_t flags) {
  8002fc2:	46bd      	mov	sp, r7
  8002fc4:	bd80      	pop	{r7, pc}
  8002fc6:	bf00      	nop
- 8002fc8:	08009b90 	.word	0x08009b90
+ 8002fc8:	08009ad0 	.word	0x08009ad0
  8002fcc:	f3af 8000 	nop.w
 
 08002fd0 <chEvtSignalI>:
@@ -7208,7 +7208,7 @@ void chEvtSignalI(thread_t *tp, eventmask_t events) {
  8003036:	3708      	adds	r7, #8
  8003038:	46bd      	mov	sp, r7
  800303a:	bd80      	pop	{r7, pc}
- 800303c:	08009bb0 	.word	0x08009bb0
+ 800303c:	08009af0 	.word	0x08009af0
 
 08003040 <port_lock>:
 /**
@@ -7358,7 +7358,7 @@ static inline void chSysUnlock(void) {
  80030f0:	bd80      	pop	{r7, pc}
  80030f2:	bf00      	nop
  80030f4:	20000808 	.word	0x20000808
- 80030f8:	08009bc0 	.word	0x08009bc0
+ 80030f8:	08009b00 	.word	0x08009b00
  80030fc:	f3af 8000 	nop.w
 
 08003100 <chThdQueueObjectInit>:
@@ -7897,7 +7897,7 @@ size_t chIQReadTimeout(input_queue_t *iqp, uint8_t *bp,
  8003402:	46bd      	mov	sp, r7
  8003404:	bd80      	pop	{r7, pc}
  8003406:	bf00      	nop
- 8003408:	08009bd0 	.word	0x08009bd0
+ 8003408:	08009b10 	.word	0x08009b10
  800340c:	f3af 8000 	nop.w
 
 08003410 <chOQObjectInit>:
@@ -8272,7 +8272,7 @@ size_t chOQWriteTimeout(output_queue_t *oqp, const uint8_t *bp,
  8003602:	46bd      	mov	sp, r7
  8003604:	bd80      	pop	{r7, pc}
  8003606:	bf00      	nop
- 8003608:	08009be0 	.word	0x08009be0
+ 8003608:	08009b20 	.word	0x08009b20
  800360c:	f3af 8000 	nop.w
 
 08003610 <port_lock>:
@@ -8396,7 +8396,7 @@ static inline void chSysUnlock(void) {
  80036a0:	bd80      	pop	{r7, pc}
  80036a2:	bf00      	nop
  80036a4:	20000808 	.word	0x20000808
- 80036a8:	08009c00 	.word	0x08009c00
+ 80036a8:	08009b40 	.word	0x08009b40
  80036ac:	f3af 8000 	nop.w
 
 080036b0 <_core_init>:
@@ -9114,7 +9114,7 @@ void halInit(void) {
 #endif
 }
  80039e2:	bd80      	pop	{r7, pc}
- 80039e4:	0800a030 	.word	0x0800a030
+ 80039e4:	08009f70 	.word	0x08009f70
  80039e8:	f3af 8000 	nop.w
  80039ec:	f3af 8000 	nop.w
 
@@ -9218,7 +9218,7 @@ uint32_t _mmcsd_get_slice(const uint32_t *data,
  8003a82:	3720      	adds	r7, #32
  8003a84:	46bd      	mov	sp, r7
  8003a86:	bd80      	pop	{r7, pc}
- 8003a88:	08009c10 	.word	0x08009c10
+ 8003a88:	08009b50 	.word	0x08009b50
  8003a8c:	f3af 8000 	nop.w
 
 08003a90 <_mmcsd_get_capacity>:
@@ -9316,7 +9316,7 @@ uint32_t _mmcsd_get_capacity(const uint32_t *csd) {
  8003b0a:	46bd      	mov	sp, r7
  8003b0c:	bd80      	pop	{r7, pc}
  8003b0e:	bf00      	nop
- 8003b10:	08009c30 	.word	0x08009c30
+ 8003b10:	08009b70 	.word	0x08009b70
  8003b14:	f3af 8000 	nop.w
  8003b18:	f3af 8000 	nop.w
  8003b1c:	f3af 8000 	nop.w
@@ -9390,7 +9390,7 @@ uint32_t _mmcsd_get_capacity_ext(const uint8_t *ext_csd) {
  8003b5a:	3708      	adds	r7, #8
  8003b5c:	46bd      	mov	sp, r7
  8003b5e:	bd80      	pop	{r7, pc}
- 8003b60:	08009c50 	.word	0x08009c50
+ 8003b60:	08009b90 	.word	0x08009b90
  8003b64:	f3af 8000 	nop.w
  8003b68:	f3af 8000 	nop.w
  8003b6c:	f3af 8000 	nop.w
@@ -9803,7 +9803,7 @@ static inline void chSysUnlock(void) {
  8003d60:	bd80      	pop	{r7, pc}
  8003d62:	bf00      	nop
  8003d64:	20000808 	.word	0x20000808
- 8003d68:	08009cf0 	.word	0x08009cf0
+ 8003d68:	08009c30 	.word	0x08009c30
  8003d6c:	f3af 8000 	nop.w
 
 08003d70 <osalSysLock>:
@@ -10237,7 +10237,7 @@ static uint32_t mmc_cmd6_construct(mmc_switch_t access, uint32_t idx,
  8003fae:	3710      	adds	r7, #16
  8003fb0:	46bd      	mov	sp, r7
  8003fb2:	bd80      	pop	{r7, pc}
- 8003fb4:	08009c90 	.word	0x08009c90
+ 8003fb4:	08009bd0 	.word	0x08009bd0
  8003fb8:	f3af 8000 	nop.w
  8003fbc:	f3af 8000 	nop.w
 
@@ -10294,7 +10294,7 @@ static uint32_t sdc_cmd6_construct(sd_switch_t mode,
  800400e:	3710      	adds	r7, #16
  8004010:	46bd      	mov	sp, r7
  8004012:	bd80      	pop	{r7, pc}
- 8004014:	08009cb0 	.word	0x08009cb0
+ 8004014:	08009bf0 	.word	0x08009bf0
  8004018:	f3af 8000 	nop.w
  800401c:	f3af 8000 	nop.w
 
@@ -10915,7 +10915,7 @@ static bool mmc_set_bus_width(SDCDriver *sdcp) {
  800437a:	46bd      	mov	sp, r7
  800437c:	bd80      	pop	{r7, pc}
  800437e:	bf00      	nop
- 8004380:	08009cd0 	.word	0x08009cd0
+ 8004380:	08009c10 	.word	0x08009c10
  8004384:	fdffe008 	.word	0xfdffe008
  8004388:	f3af 8000 	nop.w
  800438c:	f3af 8000 	nop.w
@@ -11063,7 +11063,7 @@ void sdcObjectInit(SDCDriver *sdcp) {
  8004428:	46bd      	mov	sp, r7
  800442a:	f85d 7b04 	ldr.w	r7, [sp], #4
  800442e:	4770      	bx	lr
- 8004430:	08009c70 	.word	0x08009c70
+ 8004430:	08009bb0 	.word	0x08009bb0
  8004434:	f3af 8000 	nop.w
  8004438:	f3af 8000 	nop.w
  800443c:	f3af 8000 	nop.w
@@ -11433,7 +11433,7 @@ failed:
  800461a:	3718      	adds	r7, #24
  800461c:	46bd      	mov	sp, r7
  800461e:	bd80      	pop	{r7, pc}
- 8004620:	08009d00 	.word	0x08009d00
+ 8004620:	08009c40 	.word	0x08009c40
  8004624:	fdffe008 	.word	0xfdffe008
  8004628:	f3af 8000 	nop.w
  800462c:	f3af 8000 	nop.w
@@ -11524,7 +11524,7 @@ bool sdcDisconnect(SDCDriver *sdcp) {
  80046a6:	46bd      	mov	sp, r7
  80046a8:	bd80      	pop	{r7, pc}
  80046aa:	bf00      	nop
- 80046ac:	08009d10 	.word	0x08009d10
+ 80046ac:	08009c50 	.word	0x08009c50
 
 080046b0 <sdcRead>:
  * @retval HAL_SUCCESS  operation succeeded.
@@ -11610,7 +11610,7 @@ bool sdcRead(SDCDriver *sdcp, uint32_t startblk, uint8_t *buf, uint32_t n) {
  8004726:	46bd      	mov	sp, r7
  8004728:	bd80      	pop	{r7, pc}
  800472a:	bf00      	nop
- 800472c:	08009d20 	.word	0x08009d20
+ 800472c:	08009c60 	.word	0x08009c60
 
 08004730 <sdcWrite>:
  * @retval HAL_FAILED   operation failed.
@@ -11696,7 +11696,7 @@ bool sdcWrite(SDCDriver *sdcp, uint32_t startblk,
  80047a6:	46bd      	mov	sp, r7
  80047a8:	bd80      	pop	{r7, pc}
  80047aa:	bf00      	nop
- 80047ac:	08009d30 	.word	0x08009d30
+ 80047ac:	08009c70 	.word	0x08009c70
 
 080047b0 <sdcSync>:
  * @retval HAL_SUCCESS  the operation succeeded.
@@ -11752,7 +11752,7 @@ bool sdcSync(SDCDriver *sdcp) {
  80047ea:	3710      	adds	r7, #16
  80047ec:	46bd      	mov	sp, r7
  80047ee:	bd80      	pop	{r7, pc}
- 80047f0:	08009d40 	.word	0x08009d40
+ 80047f0:	08009c80 	.word	0x08009c80
  80047f4:	f3af 8000 	nop.w
  80047f8:	f3af 8000 	nop.w
  80047fc:	f3af 8000 	nop.w
@@ -11808,7 +11808,7 @@ bool sdcGetInfo(SDCDriver *sdcp, BlockDeviceInfo *bdip) {
  800483e:	46bd      	mov	sp, r7
  8004840:	bd80      	pop	{r7, pc}
  8004842:	bf00      	nop
- 8004844:	08009d50 	.word	0x08009d50
+ 8004844:	08009c90 	.word	0x08009c90
  8004848:	f3af 8000 	nop.w
  800484c:	f3af 8000 	nop.w
 
@@ -11933,7 +11933,7 @@ static inline void chSysUnlock(void) {
  80048e0:	bd80      	pop	{r7, pc}
  80048e2:	bf00      	nop
  80048e4:	20000808 	.word	0x20000808
- 80048e8:	08009d90 	.word	0x08009d90
+ 80048e8:	08009cd0 	.word	0x08009cd0
  80048ec:	f3af 8000 	nop.w
 
 080048f0 <chEvtObjectInit>:
@@ -12361,7 +12361,7 @@ void sdObjectInit(SerialDriver *sdp, qnotify_t inotify, qnotify_t onotify) {
  8004b6e:	3710      	adds	r7, #16
  8004b70:	46bd      	mov	sp, r7
  8004b72:	bd80      	pop	{r7, pc}
- 8004b74:	08009d60 	.word	0x08009d60
+ 8004b74:	08009ca0 	.word	0x08009ca0
  8004b78:	f3af 8000 	nop.w
  8004b7c:	f3af 8000 	nop.w
 
@@ -12413,7 +12413,7 @@ void sdStart(SerialDriver *sdp, const SerialConfig *config) {
  8004bc2:	3708      	adds	r7, #8
  8004bc4:	46bd      	mov	sp, r7
  8004bc6:	bd80      	pop	{r7, pc}
- 8004bc8:	08009d80 	.word	0x08009d80
+ 8004bc8:	08009cc0 	.word	0x08009cc0
  8004bcc:	f3af 8000 	nop.w
 
 08004bd0 <sdIncomingDataI>:
@@ -12473,7 +12473,7 @@ void sdIncomingDataI(SerialDriver *sdp, uint8_t b) {
  8004c2a:	3708      	adds	r7, #8
  8004c2c:	46bd      	mov	sp, r7
  8004c2e:	bd80      	pop	{r7, pc}
- 8004c30:	08009da0 	.word	0x08009da0
+ 8004c30:	08009ce0 	.word	0x08009ce0
  8004c34:	f3af 8000 	nop.w
  8004c38:	f3af 8000 	nop.w
  8004c3c:	f3af 8000 	nop.w
@@ -12718,7 +12718,7 @@ void stStartAlarm(systime_t abstime) {
  8004d6e:	3708      	adds	r7, #8
  8004d70:	46bd      	mov	sp, r7
  8004d72:	bd80      	pop	{r7, pc}
- 8004d74:	08009db0 	.word	0x08009db0
+ 8004d74:	08009cf0 	.word	0x08009cf0
  8004d78:	f3af 8000 	nop.w
  8004d7c:	f3af 8000 	nop.w
 
@@ -12769,7 +12769,7 @@ void stSetAlarm(systime_t abstime) {
  8004db6:	46bd      	mov	sp, r7
  8004db8:	bd80      	pop	{r7, pc}
  8004dba:	bf00      	nop
- 8004dbc:	08009dc0 	.word	0x08009dc0
+ 8004dbc:	08009d00 	.word	0x08009d00
 
 08004dc0 <port_lock>:
 /**
@@ -13593,9 +13593,9 @@ static bool default_handler(USBDriver *usbp) {
  8005282:	46bd      	mov	sp, r7
  8005284:	bdf0      	pop	{r4, r5, r6, r7, pc}
  8005286:	bf00      	nop
- 8005288:	08009dd0 	.word	0x08009dd0
- 800528c:	08009df0 	.word	0x08009df0
- 8005290:	08009de0 	.word	0x08009de0
+ 8005288:	08009d10 	.word	0x08009d10
+ 800528c:	08009d30 	.word	0x08009d30
+ 8005290:	08009d20 	.word	0x08009d20
  8005294:	f3af 8000 	nop.w
  8005298:	f3af 8000 	nop.w
  800529c:	f3af 8000 	nop.w
@@ -13858,7 +13858,7 @@ bool usbStartReceiveI(USBDriver *usbp, usbep_t ep) {
  800540a:	3708      	adds	r7, #8
  800540c:	46bd      	mov	sp, r7
  800540e:	bd80      	pop	{r7, pc}
- 8005410:	08009e00 	.word	0x08009e00
+ 8005410:	08009d40 	.word	0x08009d40
  8005414:	f3af 8000 	nop.w
  8005418:	f3af 8000 	nop.w
  800541c:	f3af 8000 	nop.w
@@ -13925,7 +13925,7 @@ bool usbStartTransmitI(USBDriver *usbp, usbep_t ep) {
  800547a:	3708      	adds	r7, #8
  800547c:	46bd      	mov	sp, r7
  800547e:	bd80      	pop	{r7, pc}
- 8005480:	08009e20 	.word	0x08009e20
+ 8005480:	08009d60 	.word	0x08009d60
  8005484:	f3af 8000 	nop.w
  8005488:	f3af 8000 	nop.w
  800548c:	f3af 8000 	nop.w
@@ -14454,7 +14454,7 @@ void _usb_ep0in(USBDriver *usbp, usbep_t ep) {
  800578a:	3710      	adds	r7, #16
  800578c:	46bd      	mov	sp, r7
  800578e:	bd80      	pop	{r7, pc}
- 8005790:	08009e40 	.word	0x08009e40
+ 8005790:	08009d80 	.word	0x08009d80
  8005794:	f3af 8000 	nop.w
  8005798:	f3af 8000 	nop.w
  800579c:	f3af 8000 	nop.w
@@ -14594,7 +14594,7 @@ void _usb_ep0out(USBDriver *usbp, usbep_t ep) {
  8005862:	3708      	adds	r7, #8
  8005864:	46bd      	mov	sp, r7
  8005866:	bd80      	pop	{r7, pc}
- 8005868:	08009e50 	.word	0x08009e50
+ 8005868:	08009d90 	.word	0x08009d90
  800586c:	f3af 8000 	nop.w
 
 08005870 <long_to_string_with_divisor>:
@@ -14832,7 +14832,7 @@ static char *ftoa(char *p, double num, unsigned long precision) {
  80059f2:	46bd      	mov	sp, r7
  80059f4:	bdb0      	pop	{r4, r5, r7, pc}
  80059f6:	bf00      	nop
- 80059f8:	08009e60 	.word	0x08009e60
+ 80059f8:	08009da0 	.word	0x08009da0
  80059fc:	cccccccd 	.word	0xcccccccd
 
 08005a00 <chvprintf>:
@@ -15507,7 +15507,7 @@ unsigned_common:
  8005eaa:	3750      	adds	r7, #80	; 0x50
  8005eac:	46bd      	mov	sp, r7
  8005eae:	bd80      	pop	{r7, pc}
- 8005eb0:	08009920 	.word	0x08009920
+ 8005eb0:	080098f0 	.word	0x080098f0
  8005eb4:	f3af 8000 	nop.w
  8005eb8:	f3af 8000 	nop.w
  8005ebc:	f3af 8000 	nop.w
@@ -16465,7 +16465,7 @@ void dmaInit(void) {
  8006484:	4770      	bx	lr
  8006486:	bf00      	nop
  8006488:	20000e18 	.word	0x20000e18
- 800648c:	08009e90 	.word	0x08009e90
+ 800648c:	08009dd0 	.word	0x08009dd0
  8006490:	20000e1c 	.word	0x20000e1c
  8006494:	40026000 	.word	0x40026000
  8006498:	40026400 	.word	0x40026400
@@ -17144,7 +17144,7 @@ void adc_lld_init(void) {
  8006826:	bf00      	nop
  8006828:	20000e9c 	.word	0x20000e9c
  800682c:	40012000 	.word	0x40012000
- 8006830:	08009f20 	.word	0x08009f20
+ 8006830:	08009e60 	.word	0x08009e60
  8006834:	00022c16 	.word	0x00022c16
  8006838:	f3af 8000 	nop.w
  800683c:	f3af 8000 	nop.w
@@ -17639,7 +17639,7 @@ static void mii_find_phy(MACDriver *macp) {
  8006ac0:	bd80      	pop	{r7, pc}
  8006ac2:	bf00      	nop
  8006ac4:	40028000 	.word	0x40028000
- 8006ac8:	08009930 	.word	0x08009930
+ 8006ac8:	08009900 	.word	0x08009900
  8006acc:	f3af 8000 	nop.w
 
 08006ad0 <Vector134>:
@@ -18107,7 +18107,7 @@ static inline void chSysUnlock(void) {
  8006d70:	bd80      	pop	{r7, pc}
  8006d72:	bf00      	nop
  8006d74:	20000808 	.word	0x20000808
- 8006d78:	08009f70 	.word	0x08009f70
+ 8006d78:	08009eb0 	.word	0x08009eb0
  8006d7c:	f3af 8000 	nop.w
 
 08006d80 <chSysLockFromISR>:
@@ -18402,7 +18402,7 @@ static bool sdc_lld_prepare_read_bytes(SDCDriver *sdcp,
  8006eee:	3710      	adds	r7, #16
  8006ef0:	46bd      	mov	sp, r7
  8006ef2:	bd80      	pop	{r7, pc}
- 8006ef4:	08009f50 	.word	0x08009f50
+ 8006ef4:	08009e90 	.word	0x08009e90
  8006ef8:	000927c0 	.word	0x000927c0
  8006efc:	00c007ff 	.word	0x00c007ff
 
@@ -18950,7 +18950,7 @@ void sdc_lld_init(void) {
  800724c:	bd80      	pop	{r7, pc}
  800724e:	bf00      	nop
  8007250:	20003314 	.word	0x20003314
- 8007254:	08009f14 	.word	0x08009f14
+ 8007254:	08009e54 	.word	0x08009e54
  8007258:	40012c00 	.word	0x40012c00
  800725c:	f3af 8000 	nop.w
 
@@ -19671,7 +19671,7 @@ error:
  80076a2:	3718      	adds	r7, #24
  80076a4:	46bd      	mov	sp, r7
  80076a6:	bd80      	pop	{r7, pc}
- 80076a8:	08009f80 	.word	0x08009f80
+ 80076a8:	08009ec0 	.word	0x08009ec0
  80076ac:	000927c0 	.word	0x000927c0
  80076b0:	00c007ff 	.word	0x00c007ff
  80076b4:	f3af 8000 	nop.w
@@ -19828,7 +19828,7 @@ error:
  8007796:	3718      	adds	r7, #24
  8007798:	46bd      	mov	sp, r7
  800779a:	bd80      	pop	{r7, pc}
- 800779c:	08009fa0 	.word	0x08009fa0
+ 800779c:	08009ee0 	.word	0x08009ee0
  80077a0:	005b8d80 	.word	0x005b8d80
  80077a4:	00c007ff 	.word	0x00c007ff
  80077a8:	f3af 8000 	nop.w
@@ -20588,7 +20588,7 @@ static uint32_t otg_ram_alloc(USBDriver *usbp, size_t size) {
  8007bc6:	46bd      	mov	sp, r7
  8007bc8:	bd80      	pop	{r7, pc}
  8007bca:	bf00      	nop
- 8007bcc:	0800a010 	.word	0x0800a010
+ 8007bcc:	08009f50 	.word	0x08009f50
 
 08007bd0 <otg_epin_handler>:
  * @param[in] usbp      pointer to the @p USBDriver object
@@ -21348,11 +21348,11 @@ void usb_lld_init(void) {
  8008078:	bd80      	pop	{r7, pc}
  800807a:	bf00      	nop
  800807c:	20003560 	.word	0x20003560
- 8008080:	08009ff0 	.word	0x08009ff0
+ 8008080:	08009f30 	.word	0x08009f30
  8008084:	200035e0 	.word	0x200035e0
  8008088:	20003750 	.word	0x20003750
  800808c:	40040000 	.word	0x40040000
- 8008090:	0800a000 	.word	0x0800a000
+ 8008090:	08009f40 	.word	0x08009f40
  8008094:	200037d0 	.word	0x200037d0
  8008098:	f3af 8000 	nop.w
  800809c:	f3af 8000 	nop.w
@@ -21558,7 +21558,7 @@ void usb_lld_reset(USBDriver *usbp) {
  80081c2:	46bd      	mov	sp, r7
  80081c4:	bd90      	pop	{r4, r7, pc}
  80081c6:	bf00      	nop
- 80081c8:	08009fc0 	.word	0x08009fc0
+ 80081c8:	08009f00 	.word	0x08009f00
  80081cc:	f3af 8000 	nop.w
 
 080081d0 <usb_lld_set_address>:
@@ -22259,8 +22259,8 @@ void spi_lld_init(void) {
  80085e4:	2000398c 	.word	0x2000398c
  80085e8:	2000395c 	.word	0x2000395c
  80085ec:	40013000 	.word	0x40013000
- 80085f0:	08009ef0 	.word	0x08009ef0
- 80085f4:	08009f14 	.word	0x08009f14
+ 80085f0:	08009e30 	.word	0x08009e30
+ 80085f4:	08009e54 	.word	0x08009e54
  80085f8:	06010016 	.word	0x06010016
  80085fc:	06010046 	.word	0x06010046
 
@@ -23412,7 +23412,7 @@ void sd_lld_start(SerialDriver *sdp, const SerialConfig *config) {
  8008c4e:	46bd      	mov	sp, r7
  8008c50:	bd80      	pop	{r7, pc}
  8008c52:	bf00      	nop
- 8008c54:	0800a020 	.word	0x0800a020
+ 8008c54:	08009f60 	.word	0x08009f60
  8008c58:	20003990 	.word	0x20003990
  8008c5c:	40023800 	.word	0x40023800
  8008c60:	200059e8 	.word	0x200059e8
@@ -23620,2109 +23620,2072 @@ static inline int chprintf(BaseSequentialStream *chp, const char *fmt, ...) {
 
 08008d80 <_ZL7Thread1Pv>:
 // 2 - IIR Form Direct II
-int TipoFiltro = 2;
+int TipoFiltro = 1;
 
 static THD_WORKING_AREA(waThread1, 256);
 
 static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
- 8008d80:	b580      	push	{r7, lr}
- 8008d82:	b0ba      	sub	sp, #232	; 0xe8
+ 8008d80:	b5b0      	push	{r4, r5, r7, lr}
+ 8008d82:	b092      	sub	sp, #72	; 0x48
  8008d84:	af00      	add	r7, sp, #0
  8008d86:	6078      	str	r0, [r7, #4]
 	(void) pArg;
 	DataFilter *_DataFilter = (DataFilter *) pArg;
  8008d88:	687b      	ldr	r3, [r7, #4]
- 8008d8a:	f8c7 30dc 	str.w	r3, [r7, #220]	; 0xdc
+ 8008d8a:	63fb      	str	r3, [r7, #60]	; 0x3c
 
 	chRegSetThreadName("Filtro");
- 8008d8e:	485b      	ldr	r0, [pc, #364]	; (8008efc <_ZL7Thread1Pv+0x17c>)
- 8008d90:	f7ff ffce 	bl	8008d30 <_ZL18chRegSetThreadNamePKc>
-			19.05196, 18.26409, 17.25310, 16.03134, 14.61374, 13.01760,
-			11.26245, 9.36970, 7.36249, 5.26534, 3.10386, 0.90447, -1.30597,
-			-3.50046, -5.65219, -7.73486, -9.72305, -11.59245, -13.32024,
-			-14.88530, -16.26852, -17.45299, -18.42425, -19.17044, -19.68243,
-			-19.95397, -19.98175, -19.76542, -19.30763, -18.61397, -17.69292,
-			-16.55573, -15.21628 };
- 8008d94:	4b5a      	ldr	r3, [pc, #360]	; (8008f00 <_ZL7Thread1Pv+0x180>)
- 8008d96:	f107 010c 	add.w	r1, r7, #12
- 8008d9a:	461a      	mov	r2, r3
- 8008d9c:	23c8      	movs	r3, #200	; 0xc8
- 8008d9e:	4608      	mov	r0, r1
- 8008da0:	4611      	mov	r1, r2
- 8008da2:	461a      	mov	r2, r3
- 8008da4:	f7f8 f9b4 	bl	8001110 <memcpy>
+ 8008d8c:	484e      	ldr	r0, [pc, #312]	; (8008ec8 <_ZL7Thread1Pv+0x148>)
+ 8008d8e:	f7ff ffcf 	bl	8008d30 <_ZL18chRegSetThreadNamePKc>
+
+	//data
+	float _EntradasX[10] = { -13.69094, -11.99835, -10.15919, -8.19591,
+			-6.13252, -3.99420, -1.80709, 0.40210, 2.60637, 4.77880 };
+ 8008d92:	4b4e      	ldr	r3, [pc, #312]	; (8008ecc <_ZL7Thread1Pv+0x14c>)
+ 8008d94:	f107 040c 	add.w	r4, r7, #12
+ 8008d98:	461d      	mov	r5, r3
+ 8008d9a:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 8008d9c:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 8008d9e:	cd0f      	ldmia	r5!, {r0, r1, r2, r3}
+ 8008da0:	c40f      	stmia	r4!, {r0, r1, r2, r3}
+ 8008da2:	e895 0003 	ldmia.w	r5, {r0, r1}
+ 8008da6:	e884 0003 	stmia.w	r4, {r0, r1}
 
 	float _Result;
 
 	IIR *_ClassIIR = (IIR*) chHeapAlloc(NULL, sizeof(IIR));
- 8008da8:	2000      	movs	r0, #0
- 8008daa:	2110      	movs	r1, #16
- 8008dac:	f7fa fd00 	bl	80037b0 <chHeapAlloc>
- 8008db0:	f8c7 00d8 	str.w	r0, [r7, #216]	; 0xd8
+ 8008daa:	2000      	movs	r0, #0
+ 8008dac:	2110      	movs	r1, #16
+ 8008dae:	f7fa fcff 	bl	80037b0 <chHeapAlloc>
+ 8008db2:	63b8      	str	r0, [r7, #56]	; 0x38
 	FIR *_ClassFIR = (FIR*) chHeapAlloc(NULL, sizeof(FIR));
  8008db4:	2000      	movs	r0, #0
  8008db6:	2110      	movs	r1, #16
  8008db8:	f7fa fcfa 	bl	80037b0 <chHeapAlloc>
- 8008dbc:	f8c7 00d4 	str.w	r0, [r7, #212]	; 0xd4
+ 8008dbc:	6378      	str	r0, [r7, #52]	; 0x34
 
 	if (TipoFiltro == 1) {
- 8008dc0:	4b50      	ldr	r3, [pc, #320]	; (8008f04 <_ZL7Thread1Pv+0x184>)
- 8008dc2:	681b      	ldr	r3, [r3, #0]
- 8008dc4:	2b01      	cmp	r3, #1
- 8008dc6:	d107      	bne.n	8008dd8 <_ZL7Thread1Pv+0x58>
+ 8008dbe:	4b44      	ldr	r3, [pc, #272]	; (8008ed0 <_ZL7Thread1Pv+0x150>)
+ 8008dc0:	681b      	ldr	r3, [r3, #0]
+ 8008dc2:	2b01      	cmp	r3, #1
+ 8008dc4:	d105      	bne.n	8008dd2 <_ZL7Thread1Pv+0x52>
 		_ClassIIR->setInitialDataFilter(_DataFilter); //set data of filter
- 8008dc8:	f8d7 30d8 	ldr.w	r3, [r7, #216]	; 0xd8
- 8008dcc:	4618      	mov	r0, r3
- 8008dce:	f8d7 10dc 	ldr.w	r1, [r7, #220]	; 0xdc
- 8008dd2:	f000 f98d 	bl	80090f0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
- 8008dd6:	e012      	b.n	8008dfe <_ZL7Thread1Pv+0x7e>
+ 8008dc6:	6bbb      	ldr	r3, [r7, #56]	; 0x38
+ 8008dc8:	4618      	mov	r0, r3
+ 8008dca:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
+ 8008dcc:	f000 f978 	bl	80090c0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
+ 8008dd0:	e00e      	b.n	8008df0 <_ZL7Thread1Pv+0x70>
 
 	} else if (TipoFiltro == 0) {
- 8008dd8:	4b4a      	ldr	r3, [pc, #296]	; (8008f04 <_ZL7Thread1Pv+0x184>)
- 8008dda:	681b      	ldr	r3, [r3, #0]
- 8008ddc:	2b00      	cmp	r3, #0
- 8008dde:	d107      	bne.n	8008df0 <_ZL7Thread1Pv+0x70>
+ 8008dd2:	4b3f      	ldr	r3, [pc, #252]	; (8008ed0 <_ZL7Thread1Pv+0x150>)
+ 8008dd4:	681b      	ldr	r3, [r3, #0]
+ 8008dd6:	2b00      	cmp	r3, #0
+ 8008dd8:	d105      	bne.n	8008de6 <_ZL7Thread1Pv+0x66>
 		_ClassFIR->setInitialDataFilter(_DataFilter);
- 8008de0:	f8d7 30d4 	ldr.w	r3, [r7, #212]	; 0xd4
- 8008de4:	4618      	mov	r0, r3
- 8008de6:	f8d7 10dc 	ldr.w	r1, [r7, #220]	; 0xdc
- 8008dea:	f000 f981 	bl	80090f0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
- 8008dee:	e006      	b.n	8008dfe <_ZL7Thread1Pv+0x7e>
+ 8008dda:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+ 8008ddc:	4618      	mov	r0, r3
+ 8008dde:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
+ 8008de0:	f000 f96e 	bl	80090c0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
+ 8008de4:	e004      	b.n	8008df0 <_ZL7Thread1Pv+0x70>
 	} else {
 		_ClassIIR->setInitialDataFilter(_DataFilter);
- 8008df0:	f8d7 30d8 	ldr.w	r3, [r7, #216]	; 0xd8
- 8008df4:	4618      	mov	r0, r3
- 8008df6:	f8d7 10dc 	ldr.w	r1, [r7, #220]	; 0xdc
- 8008dfa:	f000 f979 	bl	80090f0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
+ 8008de6:	6bbb      	ldr	r3, [r7, #56]	; 0x38
+ 8008de8:	4618      	mov	r0, r3
+ 8008dea:	6bf9      	ldr	r1, [r7, #60]	; 0x3c
+ 8008dec:	f000 f968 	bl	80090c0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>
 	}
 
 	chprintf((BaseSequentialStream *) &SD1, "\r\n\n\n\nResultado:");
- 8008dfe:	4842      	ldr	r0, [pc, #264]	; (8008f08 <_ZL7Thread1Pv+0x188>)
- 8008e00:	4942      	ldr	r1, [pc, #264]	; (8008f0c <_ZL7Thread1Pv+0x18c>)
- 8008e02:	f7ff ffa5 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
+ 8008df0:	4838      	ldr	r0, [pc, #224]	; (8008ed4 <_ZL7Thread1Pv+0x154>)
+ 8008df2:	4939      	ldr	r1, [pc, #228]	; (8008ed8 <_ZL7Thread1Pv+0x158>)
+ 8008df4:	f7ff ffac 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
 
 	int _Cont;
 	//input data of filter
-	for (_Cont = 0; _Cont < 50; _Cont++) {
- 8008e06:	2300      	movs	r3, #0
- 8008e08:	f8c7 30e0 	str.w	r3, [r7, #224]	; 0xe0
- 8008e0c:	e059      	b.n	8008ec2 <_ZL7Thread1Pv+0x142>
+	for (_Cont = 0; _Cont < 10; _Cont++) {
+ 8008df8:	2300      	movs	r3, #0
+ 8008dfa:	643b      	str	r3, [r7, #64]	; 0x40
+ 8008dfc:	e04d      	b.n	8008e9a <_ZL7Thread1Pv+0x11a>
 		chThdSleepMilliseconds(200);
- 8008e0e:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
- 8008e12:	f7f9 fc6d 	bl	80026f0 <chThdSleep>
+ 8008dfe:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
+ 8008e02:	f7f9 fc75 	bl	80026f0 <chThdSleep>
 		palTogglePad(GPIOG, GPIOG_LED1);
- 8008e16:	4b3e      	ldr	r3, [pc, #248]	; (8008f10 <_ZL7Thread1Pv+0x190>)
- 8008e18:	4a3d      	ldr	r2, [pc, #244]	; (8008f10 <_ZL7Thread1Pv+0x190>)
- 8008e1a:	6952      	ldr	r2, [r2, #20]
- 8008e1c:	f082 0204 	eor.w	r2, r2, #4
- 8008e20:	615a      	str	r2, [r3, #20]
+ 8008e06:	4b35      	ldr	r3, [pc, #212]	; (8008edc <_ZL7Thread1Pv+0x15c>)
+ 8008e08:	4a34      	ldr	r2, [pc, #208]	; (8008edc <_ZL7Thread1Pv+0x15c>)
+ 8008e0a:	6952      	ldr	r2, [r2, #20]
+ 8008e0c:	f082 0204 	eor.w	r2, r2, #4
+ 8008e10:	615a      	str	r2, [r3, #20]
 
 		if (TipoFiltro == 1) {
- 8008e22:	4b38      	ldr	r3, [pc, #224]	; (8008f04 <_ZL7Thread1Pv+0x184>)
- 8008e24:	681b      	ldr	r3, [r3, #0]
- 8008e26:	2b01      	cmp	r3, #1
- 8008e28:	d10f      	bne.n	8008e4a <_ZL7Thread1Pv+0xca>
+ 8008e12:	4b2f      	ldr	r3, [pc, #188]	; (8008ed0 <_ZL7Thread1Pv+0x150>)
+ 8008e14:	681b      	ldr	r3, [r3, #0]
+ 8008e16:	2b01      	cmp	r3, #1
+ 8008e18:	d10c      	bne.n	8008e34 <_ZL7Thread1Pv+0xb4>
 			_Result = _ClassIIR->directFormI(_EntradasX[_Cont]); //set data
- 8008e2a:	f8d7 30e0 	ldr.w	r3, [r7, #224]	; 0xe0
- 8008e2e:	009b      	lsls	r3, r3, #2
- 8008e30:	f107 02e8 	add.w	r2, r7, #232	; 0xe8
- 8008e34:	4413      	add	r3, r2
- 8008e36:	f853 3cdc 	ldr.w	r3, [r3, #-220]
- 8008e3a:	f8d7 00d8 	ldr.w	r0, [r7, #216]	; 0xd8
- 8008e3e:	4619      	mov	r1, r3
- 8008e40:	f000 f96e 	bl	8009120 <_ZN3IIR11directFormIEf>
- 8008e44:	f8c7 00e4 	str.w	r0, [r7, #228]	; 0xe4
- 8008e48:	e022      	b.n	8008e90 <_ZL7Thread1Pv+0x110>
+ 8008e1a:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008e1c:	009b      	lsls	r3, r3, #2
+ 8008e1e:	f107 0248 	add.w	r2, r7, #72	; 0x48
+ 8008e22:	4413      	add	r3, r2
+ 8008e24:	f853 3c3c 	ldr.w	r3, [r3, #-60]
+ 8008e28:	6bb8      	ldr	r0, [r7, #56]	; 0x38
+ 8008e2a:	4619      	mov	r1, r3
+ 8008e2c:	f000 f960 	bl	80090f0 <_ZN3IIR11directFormIEf>
+ 8008e30:	6478      	str	r0, [r7, #68]	; 0x44
+ 8008e32:	e01c      	b.n	8008e6e <_ZL7Thread1Pv+0xee>
 		} else if (TipoFiltro == 0) {
- 8008e4a:	4b2e      	ldr	r3, [pc, #184]	; (8008f04 <_ZL7Thread1Pv+0x184>)
- 8008e4c:	681b      	ldr	r3, [r3, #0]
- 8008e4e:	2b00      	cmp	r3, #0
- 8008e50:	d10f      	bne.n	8008e72 <_ZL7Thread1Pv+0xf2>
+ 8008e34:	4b26      	ldr	r3, [pc, #152]	; (8008ed0 <_ZL7Thread1Pv+0x150>)
+ 8008e36:	681b      	ldr	r3, [r3, #0]
+ 8008e38:	2b00      	cmp	r3, #0
+ 8008e3a:	d10c      	bne.n	8008e56 <_ZL7Thread1Pv+0xd6>
 			_Result = _ClassFIR->directFormI(_EntradasX[_Cont]);
- 8008e52:	f8d7 30e0 	ldr.w	r3, [r7, #224]	; 0xe0
- 8008e56:	009b      	lsls	r3, r3, #2
- 8008e58:	f107 02e8 	add.w	r2, r7, #232	; 0xe8
- 8008e5c:	4413      	add	r3, r2
- 8008e5e:	f853 3cdc 	ldr.w	r3, [r3, #-220]
- 8008e62:	f8d7 00d4 	ldr.w	r0, [r7, #212]	; 0xd4
- 8008e66:	4619      	mov	r1, r3
- 8008e68:	f000 fa52 	bl	8009310 <_ZN3FIR11directFormIEf>
- 8008e6c:	f8c7 00e4 	str.w	r0, [r7, #228]	; 0xe4
- 8008e70:	e00e      	b.n	8008e90 <_ZL7Thread1Pv+0x110>
+ 8008e3c:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008e3e:	009b      	lsls	r3, r3, #2
+ 8008e40:	f107 0248 	add.w	r2, r7, #72	; 0x48
+ 8008e44:	4413      	add	r3, r2
+ 8008e46:	f853 3c3c 	ldr.w	r3, [r3, #-60]
+ 8008e4a:	6b78      	ldr	r0, [r7, #52]	; 0x34
+ 8008e4c:	4619      	mov	r1, r3
+ 8008e4e:	f000 fa47 	bl	80092e0 <_ZN3FIR11directFormIEf>
+ 8008e52:	6478      	str	r0, [r7, #68]	; 0x44
+ 8008e54:	e00b      	b.n	8008e6e <_ZL7Thread1Pv+0xee>
 		} else {
 			_Result = _ClassIIR->directFormII(_EntradasX[_Cont]);
- 8008e72:	f8d7 30e0 	ldr.w	r3, [r7, #224]	; 0xe0
- 8008e76:	009b      	lsls	r3, r3, #2
- 8008e78:	f107 02e8 	add.w	r2, r7, #232	; 0xe8
- 8008e7c:	4413      	add	r3, r2
- 8008e7e:	f853 3cdc 	ldr.w	r3, [r3, #-220]
- 8008e82:	f8d7 00d8 	ldr.w	r0, [r7, #216]	; 0xd8
- 8008e86:	4619      	mov	r1, r3
- 8008e88:	f000 f9ca 	bl	8009220 <_ZN3IIR12directFormIIEf>
- 8008e8c:	f8c7 00e4 	str.w	r0, [r7, #228]	; 0xe4
+ 8008e56:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008e58:	009b      	lsls	r3, r3, #2
+ 8008e5a:	f107 0248 	add.w	r2, r7, #72	; 0x48
+ 8008e5e:	4413      	add	r3, r2
+ 8008e60:	f853 3c3c 	ldr.w	r3, [r3, #-60]
+ 8008e64:	6bb8      	ldr	r0, [r7, #56]	; 0x38
+ 8008e66:	4619      	mov	r1, r3
+ 8008e68:	f000 f9c2 	bl	80091f0 <_ZN3IIR12directFormIIEf>
+ 8008e6c:	6478      	str	r0, [r7, #68]	; 0x44
 		}
 
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result); //print result
- 8008e90:	f8d7 00e4 	ldr.w	r0, [r7, #228]	; 0xe4
- 8008e94:	f7f7 fb80 	bl	8000598 <__aeabi_f2d>
- 8008e98:	4602      	mov	r2, r0
- 8008e9a:	460b      	mov	r3, r1
- 8008e9c:	481a      	ldr	r0, [pc, #104]	; (8008f08 <_ZL7Thread1Pv+0x188>)
- 8008e9e:	491d      	ldr	r1, [pc, #116]	; (8008f14 <_ZL7Thread1Pv+0x194>)
- 8008ea0:	f7ff ff56 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
+ 8008e6e:	6c78      	ldr	r0, [r7, #68]	; 0x44
+ 8008e70:	f7f7 fb92 	bl	8000598 <__aeabi_f2d>
+ 8008e74:	4602      	mov	r2, r0
+ 8008e76:	460b      	mov	r3, r1
+ 8008e78:	4816      	ldr	r0, [pc, #88]	; (8008ed4 <_ZL7Thread1Pv+0x154>)
+ 8008e7a:	4919      	ldr	r1, [pc, #100]	; (8008ee0 <_ZL7Thread1Pv+0x160>)
+ 8008e7c:	f7ff ff68 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
 
 		chThdSleepMilliseconds(200);
- 8008ea4:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
- 8008ea8:	f7f9 fc22 	bl	80026f0 <chThdSleep>
+ 8008e80:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
+ 8008e84:	f7f9 fc34 	bl	80026f0 <chThdSleep>
 		palTogglePad(GPIOG, GPIOG_LED1);
- 8008eac:	4b18      	ldr	r3, [pc, #96]	; (8008f10 <_ZL7Thread1Pv+0x190>)
- 8008eae:	4a18      	ldr	r2, [pc, #96]	; (8008f10 <_ZL7Thread1Pv+0x190>)
- 8008eb0:	6952      	ldr	r2, [r2, #20]
- 8008eb2:	f082 0204 	eor.w	r2, r2, #4
- 8008eb6:	615a      	str	r2, [r3, #20]
+ 8008e88:	4b14      	ldr	r3, [pc, #80]	; (8008edc <_ZL7Thread1Pv+0x15c>)
+ 8008e8a:	4a14      	ldr	r2, [pc, #80]	; (8008edc <_ZL7Thread1Pv+0x15c>)
+ 8008e8c:	6952      	ldr	r2, [r2, #20]
+ 8008e8e:	f082 0204 	eor.w	r2, r2, #4
+ 8008e92:	615a      	str	r2, [r3, #20]
 
 	chprintf((BaseSequentialStream *) &SD1, "\r\n\n\n\nResultado:");
 
 	int _Cont;
 	//input data of filter
-	for (_Cont = 0; _Cont < 50; _Cont++) {
- 8008eb8:	f8d7 30e0 	ldr.w	r3, [r7, #224]	; 0xe0
- 8008ebc:	3301      	adds	r3, #1
- 8008ebe:	f8c7 30e0 	str.w	r3, [r7, #224]	; 0xe0
- 8008ec2:	f8d7 30e0 	ldr.w	r3, [r7, #224]	; 0xe0
- 8008ec6:	2b31      	cmp	r3, #49	; 0x31
- 8008ec8:	dda1      	ble.n	8008e0e <_ZL7Thread1Pv+0x8e>
+	for (_Cont = 0; _Cont < 10; _Cont++) {
+ 8008e94:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008e96:	3301      	adds	r3, #1
+ 8008e98:	643b      	str	r3, [r7, #64]	; 0x40
+ 8008e9a:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008e9c:	2b09      	cmp	r3, #9
+ 8008e9e:	ddae      	ble.n	8008dfe <_ZL7Thread1Pv+0x7e>
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _Result); //print result
 
 		chThdSleepMilliseconds(200);
 		palTogglePad(GPIOG, GPIOG_LED1);
 	}
 	if (TipoFiltro == 1) {
- 8008eca:	4b0e      	ldr	r3, [pc, #56]	; (8008f04 <_ZL7Thread1Pv+0x184>)
- 8008ecc:	681b      	ldr	r3, [r3, #0]
- 8008ece:	2b01      	cmp	r3, #1
- 8008ed0:	d108      	bne.n	8008ee4 <_ZL7Thread1Pv+0x164>
+ 8008ea0:	4b0b      	ldr	r3, [pc, #44]	; (8008ed0 <_ZL7Thread1Pv+0x150>)
+ 8008ea2:	681b      	ldr	r3, [r3, #0]
+ 8008ea4:	2b01      	cmp	r3, #1
+ 8008ea6:	d106      	bne.n	8008eb6 <_ZL7Thread1Pv+0x136>
 		_ClassIIR->~Filter();
- 8008ed2:	f8d7 30d8 	ldr.w	r3, [r7, #216]	; 0xd8
- 8008ed6:	681b      	ldr	r3, [r3, #0]
- 8008ed8:	681b      	ldr	r3, [r3, #0]
- 8008eda:	f8d7 20d8 	ldr.w	r2, [r7, #216]	; 0xd8
- 8008ede:	4610      	mov	r0, r2
- 8008ee0:	4798      	blx	r3
- 8008ee2:	e007      	b.n	8008ef4 <_ZL7Thread1Pv+0x174>
+ 8008ea8:	6bbb      	ldr	r3, [r7, #56]	; 0x38
+ 8008eaa:	681b      	ldr	r3, [r3, #0]
+ 8008eac:	681b      	ldr	r3, [r3, #0]
+ 8008eae:	6bba      	ldr	r2, [r7, #56]	; 0x38
+ 8008eb0:	4610      	mov	r0, r2
+ 8008eb2:	4798      	blx	r3
+ 8008eb4:	e005      	b.n	8008ec2 <_ZL7Thread1Pv+0x142>
 
 	} else {
 		_ClassFIR->~Filter();
- 8008ee4:	f8d7 30d4 	ldr.w	r3, [r7, #212]	; 0xd4
- 8008ee8:	681b      	ldr	r3, [r3, #0]
- 8008eea:	681b      	ldr	r3, [r3, #0]
- 8008eec:	f8d7 20d4 	ldr.w	r2, [r7, #212]	; 0xd4
- 8008ef0:	4610      	mov	r0, r2
- 8008ef2:	4798      	blx	r3
+ 8008eb6:	6b7b      	ldr	r3, [r7, #52]	; 0x34
+ 8008eb8:	681b      	ldr	r3, [r3, #0]
+ 8008eba:	681b      	ldr	r3, [r3, #0]
+ 8008ebc:	6b7a      	ldr	r2, [r7, #52]	; 0x34
+ 8008ebe:	4610      	mov	r0, r2
+ 8008ec0:	4798      	blx	r3
 	}
 }
- 8008ef4:	37e8      	adds	r7, #232	; 0xe8
- 8008ef6:	46bd      	mov	sp, r7
- 8008ef8:	bd80      	pop	{r7, pc}
- 8008efa:	bf00      	nop
- 8008efc:	08009940 	.word	0x08009940
- 8008f00:	0800995c 	.word	0x0800995c
- 8008f04:	20000800 	.word	0x20000800
- 8008f08:	20003990 	.word	0x20003990
- 8008f0c:	08009948 	.word	0x08009948
- 8008f10:	40021800 	.word	0x40021800
- 8008f14:	08009958 	.word	0x08009958
- 8008f18:	f3af 8000 	nop.w
- 8008f1c:	f3af 8000 	nop.w
+ 8008ec2:	3748      	adds	r7, #72	; 0x48
+ 8008ec4:	46bd      	mov	sp, r7
+ 8008ec6:	bdb0      	pop	{r4, r5, r7, pc}
+ 8008ec8:	08009910 	.word	0x08009910
+ 8008ecc:	0800992c 	.word	0x0800992c
+ 8008ed0:	20000800 	.word	0x20000800
+ 8008ed4:	20003990 	.word	0x20003990
+ 8008ed8:	08009918 	.word	0x08009918
+ 8008edc:	40021800 	.word	0x40021800
+ 8008ee0:	08009928 	.word	0x08009928
+ 8008ee4:	f3af 8000 	nop.w
+ 8008ee8:	f3af 8000 	nop.w
+ 8008eec:	f3af 8000 	nop.w
 
-08008f20 <main>:
+08008ef0 <main>:
 
 int main() {
- 8008f20:	b590      	push	{r4, r7, lr}
- 8008f22:	b099      	sub	sp, #100	; 0x64
- 8008f24:	af04      	add	r7, sp, #16
+ 8008ef0:	b590      	push	{r4, r7, lr}
+ 8008ef2:	b099      	sub	sp, #100	; 0x64
+ 8008ef4:	af04      	add	r7, sp, #16
 
 	halInit();
- 8008f26:	f7fa fd43 	bl	80039b0 <halInit>
+ 8008ef6:	f7fa fd5b 	bl	80039b0 <halInit>
 	chSysInit();
- 8008f2a:	f7f8 fb91 	bl	8001650 <chSysInit>
+ 8008efa:	f7f8 fba9 	bl	8001650 <chSysInit>
 
 	SerialConfig uartCfg = { 9600, };
- 8008f2e:	f107 0334 	add.w	r3, r7, #52	; 0x34
- 8008f32:	2200      	movs	r2, #0
- 8008f34:	601a      	str	r2, [r3, #0]
- 8008f36:	3304      	adds	r3, #4
- 8008f38:	2200      	movs	r2, #0
- 8008f3a:	601a      	str	r2, [r3, #0]
- 8008f3c:	3304      	adds	r3, #4
- 8008f3e:	2200      	movs	r2, #0
- 8008f40:	601a      	str	r2, [r3, #0]
- 8008f42:	3304      	adds	r3, #4
- 8008f44:	f44f 5316 	mov.w	r3, #9600	; 0x2580
- 8008f48:	637b      	str	r3, [r7, #52]	; 0x34
+ 8008efe:	f107 0334 	add.w	r3, r7, #52	; 0x34
+ 8008f02:	2200      	movs	r2, #0
+ 8008f04:	601a      	str	r2, [r3, #0]
+ 8008f06:	3304      	adds	r3, #4
+ 8008f08:	2200      	movs	r2, #0
+ 8008f0a:	601a      	str	r2, [r3, #0]
+ 8008f0c:	3304      	adds	r3, #4
+ 8008f0e:	2200      	movs	r2, #0
+ 8008f10:	601a      	str	r2, [r3, #0]
+ 8008f12:	3304      	adds	r3, #4
+ 8008f14:	f44f 5316 	mov.w	r3, #9600	; 0x2580
+ 8008f18:	637b      	str	r3, [r7, #52]	; 0x34
 
 	sdStart(&SD1, &uartCfg);
- 8008f4a:	f107 0334 	add.w	r3, r7, #52	; 0x34
- 8008f4e:	483e      	ldr	r0, [pc, #248]	; (8009048 <main+0x128>)
- 8008f50:	4619      	mov	r1, r3
- 8008f52:	f7fb fe15 	bl	8004b80 <sdStart>
+ 8008f1a:	f107 0334 	add.w	r3, r7, #52	; 0x34
+ 8008f1e:	483b      	ldr	r0, [pc, #236]	; (800900c <main+0x11c>)
+ 8008f20:	4619      	mov	r1, r3
+ 8008f22:	f7fb fe2d 	bl	8004b80 <sdStart>
 
 	int _FilterOrder = 3;
- 8008f56:	2303      	movs	r3, #3
- 8008f58:	64fb      	str	r3, [r7, #76]	; 0x4c
+ 8008f26:	2303      	movs	r3, #3
+ 8008f28:	64fb      	str	r3, [r7, #76]	; 0x4c
 
 	// Orden: ...., x[-3], x[-2], x[-1]
-	float _CondicionesInicialesX[3] = { 0, 0, 0 };
- 8008f5a:	f04f 0300 	mov.w	r3, #0
- 8008f5e:	62bb      	str	r3, [r7, #40]	; 0x28
- 8008f60:	f04f 0300 	mov.w	r3, #0
- 8008f64:	62fb      	str	r3, [r7, #44]	; 0x2c
- 8008f66:	f04f 0300 	mov.w	r3, #0
- 8008f6a:	633b      	str	r3, [r7, #48]	; 0x30
+	float _CondicionesInicialesX[3] = { -17.69292, -16.55573, -15.2162 };
+ 8008f2a:	4a39      	ldr	r2, [pc, #228]	; (8009010 <main+0x120>)
+ 8008f2c:	f107 0328 	add.w	r3, r7, #40	; 0x28
+ 8008f30:	ca07      	ldmia	r2, {r0, r1, r2}
+ 8008f32:	e883 0007 	stmia.w	r3, {r0, r1, r2}
 	// Orden: BO, B1, B2, B3, ....
 	float _CoeficientesB[4] = { 0.0186074, -0.0180370, -0.0180370, 0.0186074 };
- 8008f6c:	4b37      	ldr	r3, [pc, #220]	; (800904c <main+0x12c>)
- 8008f6e:	f107 0418 	add.w	r4, r7, #24
- 8008f72:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
- 8008f74:	e884 000f 	stmia.w	r4, {r0, r1, r2, r3}
+ 8008f36:	4b37      	ldr	r3, [pc, #220]	; (8009014 <main+0x124>)
+ 8008f38:	f107 0418 	add.w	r4, r7, #24
+ 8008f3c:	cb0f      	ldmia	r3, {r0, r1, r2, r3}
+ 8008f3e:	e884 000f 	stmia.w	r4, {r0, r1, r2, r3}
 
 	// Orden: ...., y[-3], y[-2], y[-1]
-	float _CondicionesInicialesY[3] = { 0, 0, 0 };
- 8008f78:	f04f 0300 	mov.w	r3, #0
- 8008f7c:	60fb      	str	r3, [r7, #12]
- 8008f7e:	f04f 0300 	mov.w	r3, #0
- 8008f82:	613b      	str	r3, [r7, #16]
- 8008f84:	f04f 0300 	mov.w	r3, #0
- 8008f88:	617b      	str	r3, [r7, #20]
+	float _CondicionesInicialesY[3] = { -2.19900, -3.61179, -5.00955 };
+ 8008f42:	4a35      	ldr	r2, [pc, #212]	; (8009018 <main+0x128>)
+ 8008f44:	f107 030c 	add.w	r3, r7, #12
+ 8008f48:	ca07      	ldmia	r2, {r0, r1, r2}
+ 8008f4a:	e883 0007 	stmia.w	r3, {r0, r1, r2}
 	//Orden: A1, A2, A3, ...
 	float _CoeficientesA[3] = { -2.8687468, 2.7565297, -0.8866419 };
- 8008f8a:	4a31      	ldr	r2, [pc, #196]	; (8009050 <main+0x130>)
- 8008f8c:	463b      	mov	r3, r7
- 8008f8e:	ca07      	ldmia	r2, {r0, r1, r2}
- 8008f90:	e883 0007 	stmia.w	r3, {r0, r1, r2}
+ 8008f4e:	4a33      	ldr	r2, [pc, #204]	; (800901c <main+0x12c>)
+ 8008f50:	463b      	mov	r3, r7
+ 8008f52:	ca07      	ldmia	r2, {r0, r1, r2}
+ 8008f54:	e883 0007 	stmia.w	r3, {r0, r1, r2}
 
 	DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
 			sizeof(DataFilter));
- 8008f94:	2000      	movs	r0, #0
- 8008f96:	2128      	movs	r1, #40	; 0x28
- 8008f98:	f7fa fc0a 	bl	80037b0 <chHeapAlloc>
- 8008f9c:	64b8      	str	r0, [r7, #72]	; 0x48
+ 8008f58:	2000      	movs	r0, #0
+ 8008f5a:	2128      	movs	r1, #40	; 0x28
+ 8008f5c:	f7fa fc28 	bl	80037b0 <chHeapAlloc>
+ 8008f60:	64b8      	str	r0, [r7, #72]	; 0x48
 
 	//set data of filter
 	typeOfDirectForm _TypeOfForm = 1;
- 8008f9e:	2301      	movs	r3, #1
- 8008fa0:	647b      	str	r3, [r7, #68]	; 0x44
+ 8008f62:	2301      	movs	r3, #1
+ 8008f64:	647b      	str	r3, [r7, #68]	; 0x44
 	if (TipoFiltro == 1) {
- 8008fa2:	4b2c      	ldr	r3, [pc, #176]	; (8009054 <main+0x134>)
- 8008fa4:	681b      	ldr	r3, [r3, #0]
- 8008fa6:	2b01      	cmp	r3, #1
- 8008fa8:	d10f      	bne.n	8008fca <main+0xaa>
+ 8008f66:	4b2e      	ldr	r3, [pc, #184]	; (8009020 <main+0x130>)
+ 8008f68:	681b      	ldr	r3, [r3, #0]
+ 8008f6a:	2b01      	cmp	r3, #1
+ 8008f6c:	d10f      	bne.n	8008f8e <main+0x9e>
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
 				_CoeficientesB, _CondicionesInicialesY, _CoeficientesA,
 				_TypeOfForm);
- 8008faa:	f107 0228 	add.w	r2, r7, #40	; 0x28
- 8008fae:	f107 0318 	add.w	r3, r7, #24
- 8008fb2:	f107 010c 	add.w	r1, r7, #12
- 8008fb6:	9100      	str	r1, [sp, #0]
- 8008fb8:	4639      	mov	r1, r7
- 8008fba:	9101      	str	r1, [sp, #4]
- 8008fbc:	6c79      	ldr	r1, [r7, #68]	; 0x44
- 8008fbe:	9102      	str	r1, [sp, #8]
- 8008fc0:	6cb8      	ldr	r0, [r7, #72]	; 0x48
- 8008fc2:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
- 8008fc4:	f000 fa34 	bl	8009430 <_ZN10DataFilter13newDataFilterEiPfS0_S0_S0_i>
- 8008fc8:	e01a      	b.n	8009000 <main+0xe0>
+ 8008f6e:	f107 0228 	add.w	r2, r7, #40	; 0x28
+ 8008f72:	f107 0318 	add.w	r3, r7, #24
+ 8008f76:	f107 010c 	add.w	r1, r7, #12
+ 8008f7a:	9100      	str	r1, [sp, #0]
+ 8008f7c:	4639      	mov	r1, r7
+ 8008f7e:	9101      	str	r1, [sp, #4]
+ 8008f80:	6c79      	ldr	r1, [r7, #68]	; 0x44
+ 8008f82:	9102      	str	r1, [sp, #8]
+ 8008f84:	6cb8      	ldr	r0, [r7, #72]	; 0x48
+ 8008f86:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
+ 8008f88:	f000 fa3a 	bl	8009400 <_ZN10DataFilter13newDataFilterEiPfS0_S0_S0_i>
+ 8008f8c:	e01a      	b.n	8008fc4 <main+0xd4>
 	} else if (TipoFiltro == 0) {
- 8008fca:	4b22      	ldr	r3, [pc, #136]	; (8009054 <main+0x134>)
- 8008fcc:	681b      	ldr	r3, [r3, #0]
- 8008fce:	2b00      	cmp	r3, #0
- 8008fd0:	d10a      	bne.n	8008fe8 <main+0xc8>
+ 8008f8e:	4b24      	ldr	r3, [pc, #144]	; (8009020 <main+0x130>)
+ 8008f90:	681b      	ldr	r3, [r3, #0]
+ 8008f92:	2b00      	cmp	r3, #0
+ 8008f94:	d10a      	bne.n	8008fac <main+0xbc>
 
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
 				_CoeficientesB, _TypeOfForm);
- 8008fd2:	f107 0228 	add.w	r2, r7, #40	; 0x28
- 8008fd6:	f107 0318 	add.w	r3, r7, #24
- 8008fda:	6c79      	ldr	r1, [r7, #68]	; 0x44
- 8008fdc:	9100      	str	r1, [sp, #0]
- 8008fde:	6cb8      	ldr	r0, [r7, #72]	; 0x48
- 8008fe0:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
- 8008fe2:	f000 f9f5 	bl	80093d0 <_ZN10DataFilter13newDataFilterEiPfS0_i>
- 8008fe6:	e00b      	b.n	8009000 <main+0xe0>
+ 8008f96:	f107 0228 	add.w	r2, r7, #40	; 0x28
+ 8008f9a:	f107 0318 	add.w	r3, r7, #24
+ 8008f9e:	6c79      	ldr	r1, [r7, #68]	; 0x44
+ 8008fa0:	9100      	str	r1, [sp, #0]
+ 8008fa2:	6cb8      	ldr	r0, [r7, #72]	; 0x48
+ 8008fa4:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
+ 8008fa6:	f000 f9fb 	bl	80093a0 <_ZN10DataFilter13newDataFilterEiPfS0_i>
+ 8008faa:	e00b      	b.n	8008fc4 <main+0xd4>
 	} else {
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
 				_CoeficientesB, _CoeficientesA, _TypeOfForm);
- 8008fe8:	f107 0228 	add.w	r2, r7, #40	; 0x28
- 8008fec:	f107 0318 	add.w	r3, r7, #24
- 8008ff0:	4639      	mov	r1, r7
- 8008ff2:	9100      	str	r1, [sp, #0]
- 8008ff4:	6c79      	ldr	r1, [r7, #68]	; 0x44
- 8008ff6:	9101      	str	r1, [sp, #4]
- 8008ff8:	6cb8      	ldr	r0, [r7, #72]	; 0x48
- 8008ffa:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
- 8008ffc:	f000 fa68 	bl	80094d0 <_ZN10DataFilter13newDataFilterEiPfS0_S0_i>
+ 8008fac:	f107 0228 	add.w	r2, r7, #40	; 0x28
+ 8008fb0:	f107 0318 	add.w	r3, r7, #24
+ 8008fb4:	4639      	mov	r1, r7
+ 8008fb6:	9100      	str	r1, [sp, #0]
+ 8008fb8:	6c79      	ldr	r1, [r7, #68]	; 0x44
+ 8008fba:	9101      	str	r1, [sp, #4]
+ 8008fbc:	6cb8      	ldr	r0, [r7, #72]	; 0x48
+ 8008fbe:	6cf9      	ldr	r1, [r7, #76]	; 0x4c
+ 8008fc0:	f000 fa6e 	bl	80094a0 <_ZN10DataFilter13newDataFilterEiPfS0_S0_i>
 	}
 
 	void *_Arg = _DataFilter;
- 8009000:	6cbb      	ldr	r3, [r7, #72]	; 0x48
- 8009002:	643b      	str	r3, [r7, #64]	; 0x40
+ 8008fc4:	6cbb      	ldr	r3, [r7, #72]	; 0x48
+ 8008fc6:	643b      	str	r3, [r7, #64]	; 0x40
 
 	chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, _Arg);
- 8009004:	6c3b      	ldr	r3, [r7, #64]	; 0x40
- 8009006:	9300      	str	r3, [sp, #0]
- 8009008:	4813      	ldr	r0, [pc, #76]	; (8009058 <main+0x138>)
- 800900a:	f44f 71f8 	mov.w	r1, #496	; 0x1f0
- 800900e:	2240      	movs	r2, #64	; 0x40
- 8009010:	4b12      	ldr	r3, [pc, #72]	; (800905c <main+0x13c>)
- 8009012:	f7f9 fb3d 	bl	8002690 <chThdCreateStatic>
+ 8008fc8:	6c3b      	ldr	r3, [r7, #64]	; 0x40
+ 8008fca:	9300      	str	r3, [sp, #0]
+ 8008fcc:	4815      	ldr	r0, [pc, #84]	; (8009024 <main+0x134>)
+ 8008fce:	f44f 71f8 	mov.w	r1, #496	; 0x1f0
+ 8008fd2:	2240      	movs	r2, #64	; 0x40
+ 8008fd4:	4b14      	ldr	r3, [pc, #80]	; (8009028 <main+0x138>)
+ 8008fd6:	f7f9 fb5b 	bl	8002690 <chThdCreateStatic>
 
 	while (TRUE) {
 		if (palReadPad(GPIOG, GPIOG_BUTTON)) {
- 8009016:	4b12      	ldr	r3, [pc, #72]	; (8009060 <main+0x140>)
- 8009018:	691b      	ldr	r3, [r3, #16]
- 800901a:	f403 4300 	and.w	r3, r3, #32768	; 0x8000
- 800901e:	2b00      	cmp	r3, #0
- 8009020:	bf0c      	ite	eq
- 8009022:	2300      	moveq	r3, #0
- 8009024:	2301      	movne	r3, #1
- 8009026:	b2db      	uxtb	r3, r3
- 8009028:	2b00      	cmp	r3, #0
- 800902a:	d007      	beq.n	800903c <main+0x11c>
+ 8008fda:	4b14      	ldr	r3, [pc, #80]	; (800902c <main+0x13c>)
+ 8008fdc:	691b      	ldr	r3, [r3, #16]
+ 8008fde:	f403 4300 	and.w	r3, r3, #32768	; 0x8000
+ 8008fe2:	2b00      	cmp	r3, #0
+ 8008fe4:	bf0c      	ite	eq
+ 8008fe6:	2300      	moveq	r3, #0
+ 8008fe8:	2301      	movne	r3, #1
+ 8008fea:	b2db      	uxtb	r3, r3
+ 8008fec:	2b00      	cmp	r3, #0
+ 8008fee:	d007      	beq.n	8009000 <main+0x110>
 			chprintf((BaseSequentialStream *) &SD1,
 					"Se ha presionado SW1 \r\n");
- 800902c:	4806      	ldr	r0, [pc, #24]	; (8009048 <main+0x128>)
- 800902e:	490d      	ldr	r1, [pc, #52]	; (8009064 <main+0x144>)
- 8009030:	f7ff fe8e 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
+ 8008ff0:	4806      	ldr	r0, [pc, #24]	; (800900c <main+0x11c>)
+ 8008ff2:	490f      	ldr	r1, [pc, #60]	; (8009030 <main+0x140>)
+ 8008ff4:	f7ff feac 	bl	8008d50 <_ZL8chprintfP20BaseSequentialStreamPKcz>
 			chThdSleepMilliseconds(200);
- 8009034:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
- 8009038:	f7f9 fb5a 	bl	80026f0 <chThdSleep>
+ 8008ff8:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
+ 8008ffc:	f7f9 fb78 	bl	80026f0 <chThdSleep>
 		}
 		chThdSleepMilliseconds(200);
- 800903c:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
- 8009040:	f7f9 fb56 	bl	80026f0 <chThdSleep>
+ 8009000:	f44f 60fa 	mov.w	r0, #2000	; 0x7d0
+ 8009004:	f7f9 fb74 	bl	80026f0 <chThdSleep>
 	}
- 8009044:	e7e7      	b.n	8009016 <main+0xf6>
- 8009046:	bf00      	nop
- 8009048:	20003990 	.word	0x20003990
- 800904c:	08009a3c 	.word	0x08009a3c
- 8009050:	08009a4c 	.word	0x08009a4c
- 8009054:	20000800 	.word	0x20000800
- 8009058:	20007a48 	.word	0x20007a48
- 800905c:	08008d81 	.word	0x08008d81
- 8009060:	40021800 	.word	0x40021800
- 8009064:	08009a24 	.word	0x08009a24
- 8009068:	f3af 8000 	nop.w
- 800906c:	f3af 8000 	nop.w
+ 8009008:	e7e7      	b.n	8008fda <main+0xea>
+ 800900a:	bf00      	nop
+ 800900c:	20003990 	.word	0x20003990
+ 8009010:	0800996c 	.word	0x0800996c
+ 8009014:	08009978 	.word	0x08009978
+ 8009018:	08009988 	.word	0x08009988
+ 800901c:	08009994 	.word	0x08009994
+ 8009020:	20000800 	.word	0x20000800
+ 8009024:	20007a48 	.word	0x20007a48
+ 8009028:	08008d81 	.word	0x08008d81
+ 800902c:	40021800 	.word	0x40021800
+ 8009030:	08009954 	.word	0x08009954
+ 8009034:	f3af 8000 	nop.w
+ 8009038:	f3af 8000 	nop.w
+ 800903c:	f3af 8000 	nop.w
 
-08009070 <_ZN12FuntionsMath3sumEiiPfS0_i>:
+08009040 <_ZN12FuntionsMath3sumEiiPfS0_i>:
 
 #include "header/FuntionsMath.h"
 
 
 float FuntionsMath::sum(int pUpperLimit, int pLowerLimit, float* pCoefficients,
 		float* pArray, int pCont) {
- 8009070:	b580      	push	{r7, lr}
- 8009072:	b088      	sub	sp, #32
- 8009074:	af00      	add	r7, sp, #0
- 8009076:	60f8      	str	r0, [r7, #12]
- 8009078:	60b9      	str	r1, [r7, #8]
- 800907a:	607a      	str	r2, [r7, #4]
- 800907c:	603b      	str	r3, [r7, #0]
+ 8009040:	b580      	push	{r7, lr}
+ 8009042:	b088      	sub	sp, #32
+ 8009044:	af00      	add	r7, sp, #0
+ 8009046:	60f8      	str	r0, [r7, #12]
+ 8009048:	60b9      	str	r1, [r7, #8]
+ 800904a:	607a      	str	r2, [r7, #4]
+ 800904c:	603b      	str	r3, [r7, #0]
 
 	float _Result = 0; //save the result
- 800907e:	f04f 0300 	mov.w	r3, #0
- 8009082:	61fb      	str	r3, [r7, #28]
+ 800904e:	f04f 0300 	mov.w	r3, #0
+ 8009052:	61fb      	str	r3, [r7, #28]
 	int _PosInitCond = 0; //access to
- 8009084:	2300      	movs	r3, #0
- 8009086:	61bb      	str	r3, [r7, #24]
+ 8009054:	2300      	movs	r3, #0
+ 8009056:	61bb      	str	r3, [r7, #24]
 	float _auxCoeficiente;
 	float _auxArray;
 
 	for (Cont = pLowerLimit; Cont <= pUpperLimit; Cont++) {
- 8009088:	68fb      	ldr	r3, [r7, #12]
- 800908a:	687a      	ldr	r2, [r7, #4]
- 800908c:	601a      	str	r2, [r3, #0]
- 800908e:	e023      	b.n	80090d8 <_ZN12FuntionsMath3sumEiiPfS0_i+0x68>
+ 8009058:	68fb      	ldr	r3, [r7, #12]
+ 800905a:	687a      	ldr	r2, [r7, #4]
+ 800905c:	601a      	str	r2, [r3, #0]
+ 800905e:	e023      	b.n	80090a8 <_ZN12FuntionsMath3sumEiiPfS0_i+0x68>
 
 		_PosInitCond = pCont + pUpperLimit;
- 8009090:	6afa      	ldr	r2, [r7, #44]	; 0x2c
- 8009092:	68bb      	ldr	r3, [r7, #8]
- 8009094:	4413      	add	r3, r2
- 8009096:	61bb      	str	r3, [r7, #24]
+ 8009060:	6afa      	ldr	r2, [r7, #44]	; 0x2c
+ 8009062:	68bb      	ldr	r3, [r7, #8]
+ 8009064:	4413      	add	r3, r2
+ 8009066:	61bb      	str	r3, [r7, #24]
 
 		_auxCoeficiente = pCoefficients[Cont];
- 8009098:	68fb      	ldr	r3, [r7, #12]
- 800909a:	681b      	ldr	r3, [r3, #0]
- 800909c:	009b      	lsls	r3, r3, #2
- 800909e:	683a      	ldr	r2, [r7, #0]
- 80090a0:	4413      	add	r3, r2
- 80090a2:	681b      	ldr	r3, [r3, #0]
- 80090a4:	617b      	str	r3, [r7, #20]
+ 8009068:	68fb      	ldr	r3, [r7, #12]
+ 800906a:	681b      	ldr	r3, [r3, #0]
+ 800906c:	009b      	lsls	r3, r3, #2
+ 800906e:	683a      	ldr	r2, [r7, #0]
+ 8009070:	4413      	add	r3, r2
+ 8009072:	681b      	ldr	r3, [r3, #0]
+ 8009074:	617b      	str	r3, [r7, #20]
 		_auxArray = pArray[_PosInitCond];
- 80090a6:	69bb      	ldr	r3, [r7, #24]
- 80090a8:	009b      	lsls	r3, r3, #2
- 80090aa:	6aba      	ldr	r2, [r7, #40]	; 0x28
- 80090ac:	4413      	add	r3, r2
- 80090ae:	681b      	ldr	r3, [r3, #0]
- 80090b0:	613b      	str	r3, [r7, #16]
+ 8009076:	69bb      	ldr	r3, [r7, #24]
+ 8009078:	009b      	lsls	r3, r3, #2
+ 800907a:	6aba      	ldr	r2, [r7, #40]	; 0x28
+ 800907c:	4413      	add	r3, r2
+ 800907e:	681b      	ldr	r3, [r3, #0]
+ 8009080:	613b      	str	r3, [r7, #16]
 
 		_Result += _auxCoeficiente * _auxArray;
- 80090b2:	6978      	ldr	r0, [r7, #20]
- 80090b4:	6939      	ldr	r1, [r7, #16]
- 80090b6:	f7f7 fe63 	bl	8000d80 <__aeabi_fmul>
- 80090ba:	4603      	mov	r3, r0
- 80090bc:	69f8      	ldr	r0, [r7, #28]
- 80090be:	4619      	mov	r1, r3
- 80090c0:	f7f7 fd54 	bl	8000b6c <__addsf3>
- 80090c4:	4603      	mov	r3, r0
- 80090c6:	61fb      	str	r3, [r7, #28]
+ 8009082:	6978      	ldr	r0, [r7, #20]
+ 8009084:	6939      	ldr	r1, [r7, #16]
+ 8009086:	f7f7 fe7b 	bl	8000d80 <__aeabi_fmul>
+ 800908a:	4603      	mov	r3, r0
+ 800908c:	69f8      	ldr	r0, [r7, #28]
+ 800908e:	4619      	mov	r1, r3
+ 8009090:	f7f7 fd6c 	bl	8000b6c <__addsf3>
+ 8009094:	4603      	mov	r3, r0
+ 8009096:	61fb      	str	r3, [r7, #28]
 
 		//_Result += pCoefficients[Cont] * pArray[_PosInitCond];
 
 		pCont--;
- 80090c8:	6afb      	ldr	r3, [r7, #44]	; 0x2c
- 80090ca:	3b01      	subs	r3, #1
- 80090cc:	62fb      	str	r3, [r7, #44]	; 0x2c
+ 8009098:	6afb      	ldr	r3, [r7, #44]	; 0x2c
+ 800909a:	3b01      	subs	r3, #1
+ 800909c:	62fb      	str	r3, [r7, #44]	; 0x2c
 	float _Result = 0; //save the result
 	int _PosInitCond = 0; //access to
 	float _auxCoeficiente;
 	float _auxArray;
 
 	for (Cont = pLowerLimit; Cont <= pUpperLimit; Cont++) {
- 80090ce:	68fb      	ldr	r3, [r7, #12]
- 80090d0:	681b      	ldr	r3, [r3, #0]
- 80090d2:	1c5a      	adds	r2, r3, #1
- 80090d4:	68fb      	ldr	r3, [r7, #12]
- 80090d6:	601a      	str	r2, [r3, #0]
- 80090d8:	68fb      	ldr	r3, [r7, #12]
- 80090da:	681a      	ldr	r2, [r3, #0]
- 80090dc:	68bb      	ldr	r3, [r7, #8]
- 80090de:	429a      	cmp	r2, r3
- 80090e0:	ddd6      	ble.n	8009090 <_ZN12FuntionsMath3sumEiiPfS0_i+0x20>
+ 800909e:	68fb      	ldr	r3, [r7, #12]
+ 80090a0:	681b      	ldr	r3, [r3, #0]
+ 80090a2:	1c5a      	adds	r2, r3, #1
+ 80090a4:	68fb      	ldr	r3, [r7, #12]
+ 80090a6:	601a      	str	r2, [r3, #0]
+ 80090a8:	68fb      	ldr	r3, [r7, #12]
+ 80090aa:	681a      	ldr	r2, [r3, #0]
+ 80090ac:	68bb      	ldr	r3, [r7, #8]
+ 80090ae:	429a      	cmp	r2, r3
+ 80090b0:	ddd6      	ble.n	8009060 <_ZN12FuntionsMath3sumEiiPfS0_i+0x20>
 
 		//_Result += pCoefficients[Cont] * pArray[_PosInitCond];
 
 		pCont--;
 	}
 	return _Result;
- 80090e2:	69fb      	ldr	r3, [r7, #28]
+ 80090b2:	69fb      	ldr	r3, [r7, #28]
 }
- 80090e4:	4618      	mov	r0, r3
- 80090e6:	3720      	adds	r7, #32
- 80090e8:	46bd      	mov	sp, r7
- 80090ea:	bd80      	pop	{r7, pc}
- 80090ec:	f3af 8000 	nop.w
+ 80090b4:	4618      	mov	r0, r3
+ 80090b6:	3720      	adds	r7, #32
+ 80090b8:	46bd      	mov	sp, r7
+ 80090ba:	bd80      	pop	{r7, pc}
+ 80090bc:	f3af 8000 	nop.w
 
-080090f0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>:
+080090c0 <_ZN6Filter20setInitialDataFilterEP10DataFilter>:
 Filter::~Filter() {
 	chHeapFree(MathOperation);
 	chHeapFree(InitialDataFilter);
 }
 
 void Filter::setInitialDataFilter(DataFilter *pInitialDataFilter) {
- 80090f0:	b580      	push	{r7, lr}
- 80090f2:	b082      	sub	sp, #8
- 80090f4:	af00      	add	r7, sp, #0
- 80090f6:	6078      	str	r0, [r7, #4]
- 80090f8:	6039      	str	r1, [r7, #0]
+ 80090c0:	b580      	push	{r7, lr}
+ 80090c2:	b082      	sub	sp, #8
+ 80090c4:	af00      	add	r7, sp, #0
+ 80090c6:	6078      	str	r0, [r7, #4]
+ 80090c8:	6039      	str	r1, [r7, #0]
 	// Create class that do the sum
 	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
- 80090fa:	2000      	movs	r0, #0
- 80090fc:	2104      	movs	r1, #4
- 80090fe:	f7fa fb57 	bl	80037b0 <chHeapAlloc>
- 8009102:	4602      	mov	r2, r0
- 8009104:	687b      	ldr	r3, [r7, #4]
- 8009106:	605a      	str	r2, [r3, #4]
+ 80090ca:	2000      	movs	r0, #0
+ 80090cc:	2104      	movs	r1, #4
+ 80090ce:	f7fa fb6f 	bl	80037b0 <chHeapAlloc>
+ 80090d2:	4602      	mov	r2, r0
+ 80090d4:	687b      	ldr	r3, [r7, #4]
+ 80090d6:	605a      	str	r2, [r3, #4]
 	InitialDataFilter = pInitialDataFilter;
- 8009108:	687b      	ldr	r3, [r7, #4]
- 800910a:	683a      	ldr	r2, [r7, #0]
- 800910c:	609a      	str	r2, [r3, #8]
+ 80090d8:	687b      	ldr	r3, [r7, #4]
+ 80090da:	683a      	ldr	r2, [r7, #0]
+ 80090dc:	609a      	str	r2, [r3, #8]
 	ContBuffer = 0;
- 800910e:	687b      	ldr	r3, [r7, #4]
- 8009110:	2200      	movs	r2, #0
- 8009112:	60da      	str	r2, [r3, #12]
+ 80090de:	687b      	ldr	r3, [r7, #4]
+ 80090e0:	2200      	movs	r2, #0
+ 80090e2:	60da      	str	r2, [r3, #12]
 }
- 8009114:	3708      	adds	r7, #8
- 8009116:	46bd      	mov	sp, r7
- 8009118:	bd80      	pop	{r7, pc}
- 800911a:	bf00      	nop
- 800911c:	f3af 8000 	nop.w
+ 80090e4:	3708      	adds	r7, #8
+ 80090e6:	46bd      	mov	sp, r7
+ 80090e8:	bd80      	pop	{r7, pc}
+ 80090ea:	bf00      	nop
+ 80090ec:	f3af 8000 	nop.w
 
-08009120 <_ZN3IIR11directFormIEf>:
+080090f0 <_ZN3IIR11directFormIEf>:
  *      Author: lcalvare
  */
 
 #include "header/IIR.h"
 
 float IIR::directFormI(float pData) {
- 8009120:	b580      	push	{r7, lr}
- 8009122:	b08e      	sub	sp, #56	; 0x38
- 8009124:	af02      	add	r7, sp, #8
- 8009126:	6078      	str	r0, [r7, #4]
- 8009128:	6039      	str	r1, [r7, #0]
+ 80090f0:	b580      	push	{r7, lr}
+ 80090f2:	b08e      	sub	sp, #56	; 0x38
+ 80090f4:	af02      	add	r7, sp, #8
+ 80090f6:	6078      	str	r0, [r7, #4]
+ 80090f8:	6039      	str	r1, [r7, #0]
 
 	//variable that need
 	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
- 800912a:	687b      	ldr	r3, [r7, #4]
- 800912c:	689b      	ldr	r3, [r3, #8]
- 800912e:	4618      	mov	r0, r3
- 8009130:	f000 fb06 	bl	8009740 <_ZNK10DataFilter15getArrayInputsXEv>
- 8009134:	62f8      	str	r0, [r7, #44]	; 0x2c
+ 80090fa:	687b      	ldr	r3, [r7, #4]
+ 80090fc:	689b      	ldr	r3, [r3, #8]
+ 80090fe:	4618      	mov	r0, r3
+ 8009100:	f000 fb06 	bl	8009710 <_ZNK10DataFilter15getArrayInputsXEv>
+ 8009104:	62f8      	str	r0, [r7, #44]	; 0x2c
 	float *_ArrayInputsY = InitialDataFilter->getArrayInputsY();
- 8009136:	687b      	ldr	r3, [r7, #4]
- 8009138:	689b      	ldr	r3, [r3, #8]
- 800913a:	4618      	mov	r0, r3
- 800913c:	f000 fb90 	bl	8009860 <_ZNK10DataFilter15getArrayInputsYEv>
- 8009140:	62b8      	str	r0, [r7, #40]	; 0x28
+ 8009106:	687b      	ldr	r3, [r7, #4]
+ 8009108:	689b      	ldr	r3, [r3, #8]
+ 800910a:	4618      	mov	r0, r3
+ 800910c:	f000 fb90 	bl	8009830 <_ZNK10DataFilter15getArrayInputsYEv>
+ 8009110:	62b8      	str	r0, [r7, #40]	; 0x28
 
 	int _FilterOrder = InitialDataFilter->getFilterOrder();
- 8009142:	687b      	ldr	r3, [r7, #4]
- 8009144:	689b      	ldr	r3, [r3, #8]
- 8009146:	4618      	mov	r0, r3
- 8009148:	f000 fb0a 	bl	8009760 <_ZNK10DataFilter14getFilterOrderEv>
- 800914c:	6278      	str	r0, [r7, #36]	; 0x24
+ 8009112:	687b      	ldr	r3, [r7, #4]
+ 8009114:	689b      	ldr	r3, [r3, #8]
+ 8009116:	4618      	mov	r0, r3
+ 8009118:	f000 fb0a 	bl	8009730 <_ZNK10DataFilter14getFilterOrderEv>
+ 800911c:	6278      	str	r0, [r7, #36]	; 0x24
 	int _ContInputData;
 
 	float _ResultX = 0;
- 800914e:	f04f 0300 	mov.w	r3, #0
- 8009152:	623b      	str	r3, [r7, #32]
+ 800911e:	f04f 0300 	mov.w	r3, #0
+ 8009122:	623b      	str	r3, [r7, #32]
 	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
- 8009154:	687b      	ldr	r3, [r7, #4]
- 8009156:	689b      	ldr	r3, [r3, #8]
- 8009158:	4618      	mov	r0, r3
- 800915a:	f000 fa91 	bl	8009680 <_ZNK10DataFilter21getArrayCoefficientsBEv>
- 800915e:	61f8      	str	r0, [r7, #28]
+ 8009124:	687b      	ldr	r3, [r7, #4]
+ 8009126:	689b      	ldr	r3, [r3, #8]
+ 8009128:	4618      	mov	r0, r3
+ 800912a:	f000 fa91 	bl	8009650 <_ZNK10DataFilter21getArrayCoefficientsBEv>
+ 800912e:	61f8      	str	r0, [r7, #28]
 
 	float _ResultY = 0;
- 8009160:	f04f 0300 	mov.w	r3, #0
- 8009164:	61bb      	str	r3, [r7, #24]
+ 8009130:	f04f 0300 	mov.w	r3, #0
+ 8009134:	61bb      	str	r3, [r7, #24]
 	float *_ArrayCoefficientsA = InitialDataFilter->getArrayCoefficientsA();
- 8009166:	687b      	ldr	r3, [r7, #4]
- 8009168:	689b      	ldr	r3, [r3, #8]
- 800916a:	4618      	mov	r0, r3
- 800916c:	f000 fb18 	bl	80097a0 <_ZNK10DataFilter21getArrayCoefficientsAEv>
- 8009170:	6178      	str	r0, [r7, #20]
+ 8009136:	687b      	ldr	r3, [r7, #4]
+ 8009138:	689b      	ldr	r3, [r3, #8]
+ 800913a:	4618      	mov	r0, r3
+ 800913c:	f000 fb18 	bl	8009770 <_ZNK10DataFilter21getArrayCoefficientsAEv>
+ 8009140:	6178      	str	r0, [r7, #20]
 
 	float _Result;
 
 	//if the buffer is full, move the data
 	if (ContBuffer == BUFFER_SIZE) {
- 8009172:	687b      	ldr	r3, [r7, #4]
- 8009174:	68db      	ldr	r3, [r3, #12]
- 8009176:	2b0a      	cmp	r3, #10
- 8009178:	d10e      	bne.n	8009198 <_ZN3IIR11directFormIEf+0x78>
+ 8009142:	687b      	ldr	r3, [r7, #4]
+ 8009144:	68db      	ldr	r3, [r3, #12]
+ 8009146:	2b0a      	cmp	r3, #10
+ 8009148:	d10e      	bne.n	8009168 <_ZN3IIR11directFormIEf+0x78>
 		InitialDataFilter->moveArray(_ArrayInputsX);
- 800917a:	687b      	ldr	r3, [r7, #4]
- 800917c:	689b      	ldr	r3, [r3, #8]
- 800917e:	4618      	mov	r0, r3
- 8009180:	6af9      	ldr	r1, [r7, #44]	; 0x2c
- 8009182:	f000 fa55 	bl	8009630 <_ZN10DataFilter9moveArrayEPf>
+ 800914a:	687b      	ldr	r3, [r7, #4]
+ 800914c:	689b      	ldr	r3, [r3, #8]
+ 800914e:	4618      	mov	r0, r3
+ 8009150:	6af9      	ldr	r1, [r7, #44]	; 0x2c
+ 8009152:	f000 fa55 	bl	8009600 <_ZN10DataFilter9moveArrayEPf>
 		InitialDataFilter->moveArray(_ArrayInputsY);
- 8009186:	687b      	ldr	r3, [r7, #4]
- 8009188:	689b      	ldr	r3, [r3, #8]
- 800918a:	4618      	mov	r0, r3
- 800918c:	6ab9      	ldr	r1, [r7, #40]	; 0x28
- 800918e:	f000 fa4f 	bl	8009630 <_ZN10DataFilter9moveArrayEPf>
+ 8009156:	687b      	ldr	r3, [r7, #4]
+ 8009158:	689b      	ldr	r3, [r3, #8]
+ 800915a:	4618      	mov	r0, r3
+ 800915c:	6ab9      	ldr	r1, [r7, #40]	; 0x28
+ 800915e:	f000 fa4f 	bl	8009600 <_ZN10DataFilter9moveArrayEPf>
 		ContBuffer = 0;
- 8009192:	687b      	ldr	r3, [r7, #4]
- 8009194:	2200      	movs	r2, #0
- 8009196:	60da      	str	r2, [r3, #12]
+ 8009162:	687b      	ldr	r3, [r7, #4]
+ 8009164:	2200      	movs	r2, #0
+ 8009166:	60da      	str	r2, [r3, #12]
 	}
 
 	_ContInputData = _FilterOrder + ContBuffer;
- 8009198:	687b      	ldr	r3, [r7, #4]
- 800919a:	68da      	ldr	r2, [r3, #12]
- 800919c:	6a7b      	ldr	r3, [r7, #36]	; 0x24
- 800919e:	4413      	add	r3, r2
- 80091a0:	613b      	str	r3, [r7, #16]
+ 8009168:	687b      	ldr	r3, [r7, #4]
+ 800916a:	68da      	ldr	r2, [r3, #12]
+ 800916c:	6a7b      	ldr	r3, [r7, #36]	; 0x24
+ 800916e:	4413      	add	r3, r2
+ 8009170:	613b      	str	r3, [r7, #16]
 
 	//set the inputdata
 	_ArrayInputsX[_ContInputData] = pData;
- 80091a2:	693b      	ldr	r3, [r7, #16]
- 80091a4:	009b      	lsls	r3, r3, #2
- 80091a6:	6afa      	ldr	r2, [r7, #44]	; 0x2c
- 80091a8:	4413      	add	r3, r2
- 80091aa:	683a      	ldr	r2, [r7, #0]
- 80091ac:	601a      	str	r2, [r3, #0]
+ 8009172:	693b      	ldr	r3, [r7, #16]
+ 8009174:	009b      	lsls	r3, r3, #2
+ 8009176:	6afa      	ldr	r2, [r7, #44]	; 0x2c
+ 8009178:	4413      	add	r3, r2
+ 800917a:	683a      	ldr	r2, [r7, #0]
+ 800917c:	601a      	str	r2, [r3, #0]
 
 	// sum for X
 	_ResultX = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
 			_ArrayInputsX, ContBuffer);
- 80091ae:	687b      	ldr	r3, [r7, #4]
- 80091b0:	685b      	ldr	r3, [r3, #4]
- 80091b2:	687a      	ldr	r2, [r7, #4]
- 80091b4:	68d2      	ldr	r2, [r2, #12]
- 80091b6:	6af9      	ldr	r1, [r7, #44]	; 0x2c
- 80091b8:	9100      	str	r1, [sp, #0]
- 80091ba:	9201      	str	r2, [sp, #4]
- 80091bc:	4618      	mov	r0, r3
- 80091be:	6a79      	ldr	r1, [r7, #36]	; 0x24
- 80091c0:	2200      	movs	r2, #0
- 80091c2:	69fb      	ldr	r3, [r7, #28]
- 80091c4:	f7ff ff54 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 80091c8:	6238      	str	r0, [r7, #32]
+ 800917e:	687b      	ldr	r3, [r7, #4]
+ 8009180:	685b      	ldr	r3, [r3, #4]
+ 8009182:	687a      	ldr	r2, [r7, #4]
+ 8009184:	68d2      	ldr	r2, [r2, #12]
+ 8009186:	6af9      	ldr	r1, [r7, #44]	; 0x2c
+ 8009188:	9100      	str	r1, [sp, #0]
+ 800918a:	9201      	str	r2, [sp, #4]
+ 800918c:	4618      	mov	r0, r3
+ 800918e:	6a79      	ldr	r1, [r7, #36]	; 0x24
+ 8009190:	2200      	movs	r2, #0
+ 8009192:	69fb      	ldr	r3, [r7, #28]
+ 8009194:	f7ff ff54 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 8009198:	6238      	str	r0, [r7, #32]
 
 	//sum for Y
 	_ResultY = MathOperation->sum(_FilterOrder - 1, 0, _ArrayCoefficientsA,
 			_ArrayInputsY, ContBuffer);
- 80091ca:	687b      	ldr	r3, [r7, #4]
- 80091cc:	685a      	ldr	r2, [r3, #4]
- 80091ce:	6a7b      	ldr	r3, [r7, #36]	; 0x24
- 80091d0:	3b01      	subs	r3, #1
- 80091d2:	6879      	ldr	r1, [r7, #4]
- 80091d4:	68c9      	ldr	r1, [r1, #12]
- 80091d6:	6ab8      	ldr	r0, [r7, #40]	; 0x28
- 80091d8:	9000      	str	r0, [sp, #0]
- 80091da:	9101      	str	r1, [sp, #4]
- 80091dc:	4610      	mov	r0, r2
- 80091de:	4619      	mov	r1, r3
- 80091e0:	2200      	movs	r2, #0
- 80091e2:	697b      	ldr	r3, [r7, #20]
- 80091e4:	f7ff ff44 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 80091e8:	61b8      	str	r0, [r7, #24]
+ 800919a:	687b      	ldr	r3, [r7, #4]
+ 800919c:	685a      	ldr	r2, [r3, #4]
+ 800919e:	6a7b      	ldr	r3, [r7, #36]	; 0x24
+ 80091a0:	3b01      	subs	r3, #1
+ 80091a2:	6879      	ldr	r1, [r7, #4]
+ 80091a4:	68c9      	ldr	r1, [r1, #12]
+ 80091a6:	6ab8      	ldr	r0, [r7, #40]	; 0x28
+ 80091a8:	9000      	str	r0, [sp, #0]
+ 80091aa:	9101      	str	r1, [sp, #4]
+ 80091ac:	4610      	mov	r0, r2
+ 80091ae:	4619      	mov	r1, r3
+ 80091b0:	2200      	movs	r2, #0
+ 80091b2:	697b      	ldr	r3, [r7, #20]
+ 80091b4:	f7ff ff44 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 80091b8:	61b8      	str	r0, [r7, #24]
 
 	// Final reusult
 	_Result = _ResultX - _ResultY;
- 80091ea:	6a38      	ldr	r0, [r7, #32]
- 80091ec:	69b9      	ldr	r1, [r7, #24]
- 80091ee:	f7f7 fcbb 	bl	8000b68 <__aeabi_fsub>
- 80091f2:	4603      	mov	r3, r0
- 80091f4:	60fb      	str	r3, [r7, #12]
+ 80091ba:	6a38      	ldr	r0, [r7, #32]
+ 80091bc:	69b9      	ldr	r1, [r7, #24]
+ 80091be:	f7f7 fcd3 	bl	8000b68 <__aeabi_fsub>
+ 80091c2:	4603      	mov	r3, r0
+ 80091c4:	60fb      	str	r3, [r7, #12]
 
 	//set the data for history
 	_ArrayInputsY[_ContInputData] = _Result;
- 80091f6:	693b      	ldr	r3, [r7, #16]
- 80091f8:	009b      	lsls	r3, r3, #2
- 80091fa:	6aba      	ldr	r2, [r7, #40]	; 0x28
- 80091fc:	4413      	add	r3, r2
- 80091fe:	68fa      	ldr	r2, [r7, #12]
- 8009200:	601a      	str	r2, [r3, #0]
+ 80091c6:	693b      	ldr	r3, [r7, #16]
+ 80091c8:	009b      	lsls	r3, r3, #2
+ 80091ca:	6aba      	ldr	r2, [r7, #40]	; 0x28
+ 80091cc:	4413      	add	r3, r2
+ 80091ce:	68fa      	ldr	r2, [r7, #12]
+ 80091d0:	601a      	str	r2, [r3, #0]
 
 	ContBuffer++;
- 8009202:	687b      	ldr	r3, [r7, #4]
- 8009204:	68db      	ldr	r3, [r3, #12]
- 8009206:	1c5a      	adds	r2, r3, #1
- 8009208:	687b      	ldr	r3, [r7, #4]
- 800920a:	60da      	str	r2, [r3, #12]
+ 80091d2:	687b      	ldr	r3, [r7, #4]
+ 80091d4:	68db      	ldr	r3, [r3, #12]
+ 80091d6:	1c5a      	adds	r2, r3, #1
+ 80091d8:	687b      	ldr	r3, [r7, #4]
+ 80091da:	60da      	str	r2, [r3, #12]
 
 	return _Result;
- 800920c:	68fb      	ldr	r3, [r7, #12]
+ 80091dc:	68fb      	ldr	r3, [r7, #12]
 }
- 800920e:	4618      	mov	r0, r3
- 8009210:	3730      	adds	r7, #48	; 0x30
- 8009212:	46bd      	mov	sp, r7
- 8009214:	bd80      	pop	{r7, pc}
- 8009216:	bf00      	nop
- 8009218:	f3af 8000 	nop.w
- 800921c:	f3af 8000 	nop.w
+ 80091de:	4618      	mov	r0, r3
+ 80091e0:	3730      	adds	r7, #48	; 0x30
+ 80091e2:	46bd      	mov	sp, r7
+ 80091e4:	bd80      	pop	{r7, pc}
+ 80091e6:	bf00      	nop
+ 80091e8:	f3af 8000 	nop.w
+ 80091ec:	f3af 8000 	nop.w
 
-08009220 <_ZN3IIR12directFormIIEf>:
+080091f0 <_ZN3IIR12directFormIIEf>:
 
 float IIR::directFormII(float pData) {
- 8009220:	b580      	push	{r7, lr}
- 8009222:	b08c      	sub	sp, #48	; 0x30
- 8009224:	af02      	add	r7, sp, #8
- 8009226:	6078      	str	r0, [r7, #4]
- 8009228:	6039      	str	r1, [r7, #0]
+ 80091f0:	b580      	push	{r7, lr}
+ 80091f2:	b08c      	sub	sp, #48	; 0x30
+ 80091f4:	af02      	add	r7, sp, #8
+ 80091f6:	6078      	str	r0, [r7, #4]
+ 80091f8:	6039      	str	r1, [r7, #0]
 	//variable that need
 	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
- 800922a:	687b      	ldr	r3, [r7, #4]
- 800922c:	689b      	ldr	r3, [r3, #8]
- 800922e:	4618      	mov	r0, r3
- 8009230:	f000 fa86 	bl	8009740 <_ZNK10DataFilter15getArrayInputsXEv>
- 8009234:	6278      	str	r0, [r7, #36]	; 0x24
+ 80091fa:	687b      	ldr	r3, [r7, #4]
+ 80091fc:	689b      	ldr	r3, [r3, #8]
+ 80091fe:	4618      	mov	r0, r3
+ 8009200:	f000 fa86 	bl	8009710 <_ZNK10DataFilter15getArrayInputsXEv>
+ 8009204:	6278      	str	r0, [r7, #36]	; 0x24
 	float *_ArrayInputsV = InitialDataFilter->getArrayInputsY();
- 8009236:	687b      	ldr	r3, [r7, #4]
- 8009238:	689b      	ldr	r3, [r3, #8]
- 800923a:	4618      	mov	r0, r3
- 800923c:	f000 fb10 	bl	8009860 <_ZNK10DataFilter15getArrayInputsYEv>
- 8009240:	6238      	str	r0, [r7, #32]
+ 8009206:	687b      	ldr	r3, [r7, #4]
+ 8009208:	689b      	ldr	r3, [r3, #8]
+ 800920a:	4618      	mov	r0, r3
+ 800920c:	f000 fb10 	bl	8009830 <_ZNK10DataFilter15getArrayInputsYEv>
+ 8009210:	6238      	str	r0, [r7, #32]
 
 	int _FilterOrder = InitialDataFilter->getFilterOrder();
- 8009242:	687b      	ldr	r3, [r7, #4]
- 8009244:	689b      	ldr	r3, [r3, #8]
- 8009246:	4618      	mov	r0, r3
- 8009248:	f000 fa8a 	bl	8009760 <_ZNK10DataFilter14getFilterOrderEv>
- 800924c:	61f8      	str	r0, [r7, #28]
+ 8009212:	687b      	ldr	r3, [r7, #4]
+ 8009214:	689b      	ldr	r3, [r3, #8]
+ 8009216:	4618      	mov	r0, r3
+ 8009218:	f000 fa8a 	bl	8009730 <_ZNK10DataFilter14getFilterOrderEv>
+ 800921c:	61f8      	str	r0, [r7, #28]
 	int _ContInputData;
 
 	float _ResultV = 0;
- 800924e:	f04f 0300 	mov.w	r3, #0
- 8009252:	61bb      	str	r3, [r7, #24]
+ 800921e:	f04f 0300 	mov.w	r3, #0
+ 8009222:	61bb      	str	r3, [r7, #24]
 	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
- 8009254:	687b      	ldr	r3, [r7, #4]
- 8009256:	689b      	ldr	r3, [r3, #8]
- 8009258:	4618      	mov	r0, r3
- 800925a:	f000 fa11 	bl	8009680 <_ZNK10DataFilter21getArrayCoefficientsBEv>
- 800925e:	6178      	str	r0, [r7, #20]
+ 8009224:	687b      	ldr	r3, [r7, #4]
+ 8009226:	689b      	ldr	r3, [r3, #8]
+ 8009228:	4618      	mov	r0, r3
+ 800922a:	f000 fa11 	bl	8009650 <_ZNK10DataFilter21getArrayCoefficientsBEv>
+ 800922e:	6178      	str	r0, [r7, #20]
 
 	float *_ArrayCoefficientsA = InitialDataFilter->getArrayCoefficientsA();
- 8009260:	687b      	ldr	r3, [r7, #4]
- 8009262:	689b      	ldr	r3, [r3, #8]
- 8009264:	4618      	mov	r0, r3
- 8009266:	f000 fa9b 	bl	80097a0 <_ZNK10DataFilter21getArrayCoefficientsAEv>
- 800926a:	6138      	str	r0, [r7, #16]
+ 8009230:	687b      	ldr	r3, [r7, #4]
+ 8009232:	689b      	ldr	r3, [r3, #8]
+ 8009234:	4618      	mov	r0, r3
+ 8009236:	f000 fa9b 	bl	8009770 <_ZNK10DataFilter21getArrayCoefficientsAEv>
+ 800923a:	6138      	str	r0, [r7, #16]
 
 	float _Result;
 
 	//if the buffer is full, move the data
 	if (ContBuffer == BUFFER_SIZE) {
- 800926c:	687b      	ldr	r3, [r7, #4]
- 800926e:	68db      	ldr	r3, [r3, #12]
- 8009270:	2b0a      	cmp	r3, #10
- 8009272:	d10e      	bne.n	8009292 <_ZN3IIR12directFormIIEf+0x72>
+ 800923c:	687b      	ldr	r3, [r7, #4]
+ 800923e:	68db      	ldr	r3, [r3, #12]
+ 8009240:	2b0a      	cmp	r3, #10
+ 8009242:	d10e      	bne.n	8009262 <_ZN3IIR12directFormIIEf+0x72>
 		InitialDataFilter->moveArray(_ArrayInputsX);
- 8009274:	687b      	ldr	r3, [r7, #4]
- 8009276:	689b      	ldr	r3, [r3, #8]
- 8009278:	4618      	mov	r0, r3
- 800927a:	6a79      	ldr	r1, [r7, #36]	; 0x24
- 800927c:	f000 f9d8 	bl	8009630 <_ZN10DataFilter9moveArrayEPf>
+ 8009244:	687b      	ldr	r3, [r7, #4]
+ 8009246:	689b      	ldr	r3, [r3, #8]
+ 8009248:	4618      	mov	r0, r3
+ 800924a:	6a79      	ldr	r1, [r7, #36]	; 0x24
+ 800924c:	f000 f9d8 	bl	8009600 <_ZN10DataFilter9moveArrayEPf>
 		InitialDataFilter->moveArray(_ArrayInputsV);
- 8009280:	687b      	ldr	r3, [r7, #4]
- 8009282:	689b      	ldr	r3, [r3, #8]
- 8009284:	4618      	mov	r0, r3
- 8009286:	6a39      	ldr	r1, [r7, #32]
- 8009288:	f000 f9d2 	bl	8009630 <_ZN10DataFilter9moveArrayEPf>
+ 8009250:	687b      	ldr	r3, [r7, #4]
+ 8009252:	689b      	ldr	r3, [r3, #8]
+ 8009254:	4618      	mov	r0, r3
+ 8009256:	6a39      	ldr	r1, [r7, #32]
+ 8009258:	f000 f9d2 	bl	8009600 <_ZN10DataFilter9moveArrayEPf>
 		ContBuffer = 0;
- 800928c:	687b      	ldr	r3, [r7, #4]
- 800928e:	2200      	movs	r2, #0
- 8009290:	60da      	str	r2, [r3, #12]
+ 800925c:	687b      	ldr	r3, [r7, #4]
+ 800925e:	2200      	movs	r2, #0
+ 8009260:	60da      	str	r2, [r3, #12]
 	}
 
 	_ContInputData = _FilterOrder + ContBuffer;
- 8009292:	687b      	ldr	r3, [r7, #4]
- 8009294:	68da      	ldr	r2, [r3, #12]
- 8009296:	69fb      	ldr	r3, [r7, #28]
- 8009298:	4413      	add	r3, r2
- 800929a:	60fb      	str	r3, [r7, #12]
+ 8009262:	687b      	ldr	r3, [r7, #4]
+ 8009264:	68da      	ldr	r2, [r3, #12]
+ 8009266:	69fb      	ldr	r3, [r7, #28]
+ 8009268:	4413      	add	r3, r2
+ 800926a:	60fb      	str	r3, [r7, #12]
 
 	//set the inputdata
 	_ArrayInputsX[_ContInputData] = pData;
- 800929c:	68fb      	ldr	r3, [r7, #12]
- 800929e:	009b      	lsls	r3, r3, #2
- 80092a0:	6a7a      	ldr	r2, [r7, #36]	; 0x24
- 80092a2:	4413      	add	r3, r2
- 80092a4:	683a      	ldr	r2, [r7, #0]
- 80092a6:	601a      	str	r2, [r3, #0]
+ 800926c:	68fb      	ldr	r3, [r7, #12]
+ 800926e:	009b      	lsls	r3, r3, #2
+ 8009270:	6a7a      	ldr	r2, [r7, #36]	; 0x24
+ 8009272:	4413      	add	r3, r2
+ 8009274:	683a      	ldr	r2, [r7, #0]
+ 8009276:	601a      	str	r2, [r3, #0]
 
 	// sum for V
 	_ResultV = pData - MathOperation->sum(_FilterOrder-1, 0, _ArrayCoefficientsA,
 			_ArrayInputsV, ContBuffer);;
- 80092a8:	687b      	ldr	r3, [r7, #4]
- 80092aa:	685a      	ldr	r2, [r3, #4]
- 80092ac:	69fb      	ldr	r3, [r7, #28]
- 80092ae:	3b01      	subs	r3, #1
- 80092b0:	6879      	ldr	r1, [r7, #4]
- 80092b2:	68c9      	ldr	r1, [r1, #12]
- 80092b4:	6a38      	ldr	r0, [r7, #32]
- 80092b6:	9000      	str	r0, [sp, #0]
- 80092b8:	9101      	str	r1, [sp, #4]
- 80092ba:	4610      	mov	r0, r2
- 80092bc:	4619      	mov	r1, r3
- 80092be:	2200      	movs	r2, #0
- 80092c0:	693b      	ldr	r3, [r7, #16]
- 80092c2:	f7ff fed5 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 80092c6:	4603      	mov	r3, r0
- 80092c8:	6838      	ldr	r0, [r7, #0]
- 80092ca:	4619      	mov	r1, r3
- 80092cc:	f7f7 fc4c 	bl	8000b68 <__aeabi_fsub>
- 80092d0:	4603      	mov	r3, r0
- 80092d2:	61bb      	str	r3, [r7, #24]
+ 8009278:	687b      	ldr	r3, [r7, #4]
+ 800927a:	685a      	ldr	r2, [r3, #4]
+ 800927c:	69fb      	ldr	r3, [r7, #28]
+ 800927e:	3b01      	subs	r3, #1
+ 8009280:	6879      	ldr	r1, [r7, #4]
+ 8009282:	68c9      	ldr	r1, [r1, #12]
+ 8009284:	6a38      	ldr	r0, [r7, #32]
+ 8009286:	9000      	str	r0, [sp, #0]
+ 8009288:	9101      	str	r1, [sp, #4]
+ 800928a:	4610      	mov	r0, r2
+ 800928c:	4619      	mov	r1, r3
+ 800928e:	2200      	movs	r2, #0
+ 8009290:	693b      	ldr	r3, [r7, #16]
+ 8009292:	f7ff fed5 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 8009296:	4603      	mov	r3, r0
+ 8009298:	6838      	ldr	r0, [r7, #0]
+ 800929a:	4619      	mov	r1, r3
+ 800929c:	f7f7 fc64 	bl	8000b68 <__aeabi_fsub>
+ 80092a0:	4603      	mov	r3, r0
+ 80092a2:	61bb      	str	r3, [r7, #24]
 
 	_ArrayInputsV[_ContInputData] = _ResultV;
- 80092d4:	68fb      	ldr	r3, [r7, #12]
- 80092d6:	009b      	lsls	r3, r3, #2
- 80092d8:	6a3a      	ldr	r2, [r7, #32]
- 80092da:	4413      	add	r3, r2
- 80092dc:	69ba      	ldr	r2, [r7, #24]
- 80092de:	601a      	str	r2, [r3, #0]
+ 80092a4:	68fb      	ldr	r3, [r7, #12]
+ 80092a6:	009b      	lsls	r3, r3, #2
+ 80092a8:	6a3a      	ldr	r2, [r7, #32]
+ 80092aa:	4413      	add	r3, r2
+ 80092ac:	69ba      	ldr	r2, [r7, #24]
+ 80092ae:	601a      	str	r2, [r3, #0]
 
 	_Result = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
 			_ArrayInputsV, ContBuffer);
- 80092e0:	687b      	ldr	r3, [r7, #4]
- 80092e2:	685b      	ldr	r3, [r3, #4]
- 80092e4:	687a      	ldr	r2, [r7, #4]
- 80092e6:	68d2      	ldr	r2, [r2, #12]
- 80092e8:	6a39      	ldr	r1, [r7, #32]
- 80092ea:	9100      	str	r1, [sp, #0]
- 80092ec:	9201      	str	r2, [sp, #4]
- 80092ee:	4618      	mov	r0, r3
- 80092f0:	69f9      	ldr	r1, [r7, #28]
- 80092f2:	2200      	movs	r2, #0
- 80092f4:	697b      	ldr	r3, [r7, #20]
- 80092f6:	f7ff febb 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 80092fa:	60b8      	str	r0, [r7, #8]
+ 80092b0:	687b      	ldr	r3, [r7, #4]
+ 80092b2:	685b      	ldr	r3, [r3, #4]
+ 80092b4:	687a      	ldr	r2, [r7, #4]
+ 80092b6:	68d2      	ldr	r2, [r2, #12]
+ 80092b8:	6a39      	ldr	r1, [r7, #32]
+ 80092ba:	9100      	str	r1, [sp, #0]
+ 80092bc:	9201      	str	r2, [sp, #4]
+ 80092be:	4618      	mov	r0, r3
+ 80092c0:	69f9      	ldr	r1, [r7, #28]
+ 80092c2:	2200      	movs	r2, #0
+ 80092c4:	697b      	ldr	r3, [r7, #20]
+ 80092c6:	f7ff febb 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 80092ca:	60b8      	str	r0, [r7, #8]
 
 	ContBuffer++;
- 80092fc:	687b      	ldr	r3, [r7, #4]
- 80092fe:	68db      	ldr	r3, [r3, #12]
- 8009300:	1c5a      	adds	r2, r3, #1
- 8009302:	687b      	ldr	r3, [r7, #4]
- 8009304:	60da      	str	r2, [r3, #12]
+ 80092cc:	687b      	ldr	r3, [r7, #4]
+ 80092ce:	68db      	ldr	r3, [r3, #12]
+ 80092d0:	1c5a      	adds	r2, r3, #1
+ 80092d2:	687b      	ldr	r3, [r7, #4]
+ 80092d4:	60da      	str	r2, [r3, #12]
 
 	return _Result;
- 8009306:	68bb      	ldr	r3, [r7, #8]
+ 80092d6:	68bb      	ldr	r3, [r7, #8]
 }
- 8009308:	4618      	mov	r0, r3
- 800930a:	3728      	adds	r7, #40	; 0x28
- 800930c:	46bd      	mov	sp, r7
- 800930e:	bd80      	pop	{r7, pc}
+ 80092d8:	4618      	mov	r0, r3
+ 80092da:	3728      	adds	r7, #40	; 0x28
+ 80092dc:	46bd      	mov	sp, r7
+ 80092de:	bd80      	pop	{r7, pc}
 
-08009310 <_ZN3FIR11directFormIEf>:
+080092e0 <_ZN3FIR11directFormIEf>:
  *      Author: luis
  */
 
 #include "header/FIR.h"
 
 float FIR::directFormI(float pData) {
- 8009310:	b580      	push	{r7, lr}
- 8009312:	b08a      	sub	sp, #40	; 0x28
- 8009314:	af02      	add	r7, sp, #8
- 8009316:	6078      	str	r0, [r7, #4]
- 8009318:	6039      	str	r1, [r7, #0]
+ 80092e0:	b580      	push	{r7, lr}
+ 80092e2:	b08a      	sub	sp, #40	; 0x28
+ 80092e4:	af02      	add	r7, sp, #8
+ 80092e6:	6078      	str	r0, [r7, #4]
+ 80092e8:	6039      	str	r1, [r7, #0]
 
 	//variable that need
 	float *_ArrayInputsX = InitialDataFilter->getArrayInputsX();
- 800931a:	687b      	ldr	r3, [r7, #4]
- 800931c:	689b      	ldr	r3, [r3, #8]
- 800931e:	4618      	mov	r0, r3
- 8009320:	f000 fa0e 	bl	8009740 <_ZNK10DataFilter15getArrayInputsXEv>
- 8009324:	61f8      	str	r0, [r7, #28]
+ 80092ea:	687b      	ldr	r3, [r7, #4]
+ 80092ec:	689b      	ldr	r3, [r3, #8]
+ 80092ee:	4618      	mov	r0, r3
+ 80092f0:	f000 fa0e 	bl	8009710 <_ZNK10DataFilter15getArrayInputsXEv>
+ 80092f4:	61f8      	str	r0, [r7, #28]
 
 	int _FilterOrder = InitialDataFilter->getFilterOrder();
- 8009326:	687b      	ldr	r3, [r7, #4]
- 8009328:	689b      	ldr	r3, [r3, #8]
- 800932a:	4618      	mov	r0, r3
- 800932c:	f000 fa18 	bl	8009760 <_ZNK10DataFilter14getFilterOrderEv>
- 8009330:	61b8      	str	r0, [r7, #24]
+ 80092f6:	687b      	ldr	r3, [r7, #4]
+ 80092f8:	689b      	ldr	r3, [r3, #8]
+ 80092fa:	4618      	mov	r0, r3
+ 80092fc:	f000 fa18 	bl	8009730 <_ZNK10DataFilter14getFilterOrderEv>
+ 8009300:	61b8      	str	r0, [r7, #24]
 	int _ContInputData;
 
 	float *_ArrayCoefficientsB = InitialDataFilter->getArrayCoefficientsB();
- 8009332:	687b      	ldr	r3, [r7, #4]
- 8009334:	689b      	ldr	r3, [r3, #8]
- 8009336:	4618      	mov	r0, r3
- 8009338:	f000 f9a2 	bl	8009680 <_ZNK10DataFilter21getArrayCoefficientsBEv>
- 800933c:	6178      	str	r0, [r7, #20]
+ 8009302:	687b      	ldr	r3, [r7, #4]
+ 8009304:	689b      	ldr	r3, [r3, #8]
+ 8009306:	4618      	mov	r0, r3
+ 8009308:	f000 f9a2 	bl	8009650 <_ZNK10DataFilter21getArrayCoefficientsBEv>
+ 800930c:	6178      	str	r0, [r7, #20]
 
 	float _Result;
 
 	//if the buffer is full, move the data
 	if (ContBuffer == BUFFER_SIZE) {
- 800933e:	687b      	ldr	r3, [r7, #4]
- 8009340:	68db      	ldr	r3, [r3, #12]
- 8009342:	2b0a      	cmp	r3, #10
- 8009344:	d108      	bne.n	8009358 <_ZN3FIR11directFormIEf+0x48>
+ 800930e:	687b      	ldr	r3, [r7, #4]
+ 8009310:	68db      	ldr	r3, [r3, #12]
+ 8009312:	2b0a      	cmp	r3, #10
+ 8009314:	d108      	bne.n	8009328 <_ZN3FIR11directFormIEf+0x48>
 		InitialDataFilter->moveArray(_ArrayInputsX);
- 8009346:	687b      	ldr	r3, [r7, #4]
- 8009348:	689b      	ldr	r3, [r3, #8]
- 800934a:	4618      	mov	r0, r3
- 800934c:	69f9      	ldr	r1, [r7, #28]
- 800934e:	f000 f96f 	bl	8009630 <_ZN10DataFilter9moveArrayEPf>
+ 8009316:	687b      	ldr	r3, [r7, #4]
+ 8009318:	689b      	ldr	r3, [r3, #8]
+ 800931a:	4618      	mov	r0, r3
+ 800931c:	69f9      	ldr	r1, [r7, #28]
+ 800931e:	f000 f96f 	bl	8009600 <_ZN10DataFilter9moveArrayEPf>
 		ContBuffer = 0;
- 8009352:	687b      	ldr	r3, [r7, #4]
- 8009354:	2200      	movs	r2, #0
- 8009356:	60da      	str	r2, [r3, #12]
+ 8009322:	687b      	ldr	r3, [r7, #4]
+ 8009324:	2200      	movs	r2, #0
+ 8009326:	60da      	str	r2, [r3, #12]
 	}
 
 	_ContInputData = _FilterOrder + ContBuffer;
- 8009358:	687b      	ldr	r3, [r7, #4]
- 800935a:	68da      	ldr	r2, [r3, #12]
- 800935c:	69bb      	ldr	r3, [r7, #24]
- 800935e:	4413      	add	r3, r2
- 8009360:	613b      	str	r3, [r7, #16]
+ 8009328:	687b      	ldr	r3, [r7, #4]
+ 800932a:	68da      	ldr	r2, [r3, #12]
+ 800932c:	69bb      	ldr	r3, [r7, #24]
+ 800932e:	4413      	add	r3, r2
+ 8009330:	613b      	str	r3, [r7, #16]
 
 	//set the inputdata
 	_ArrayInputsX[_ContInputData] = pData;
- 8009362:	693b      	ldr	r3, [r7, #16]
- 8009364:	009b      	lsls	r3, r3, #2
- 8009366:	69fa      	ldr	r2, [r7, #28]
- 8009368:	4413      	add	r3, r2
- 800936a:	683a      	ldr	r2, [r7, #0]
- 800936c:	601a      	str	r2, [r3, #0]
+ 8009332:	693b      	ldr	r3, [r7, #16]
+ 8009334:	009b      	lsls	r3, r3, #2
+ 8009336:	69fa      	ldr	r2, [r7, #28]
+ 8009338:	4413      	add	r3, r2
+ 800933a:	683a      	ldr	r2, [r7, #0]
+ 800933c:	601a      	str	r2, [r3, #0]
 
 	//FInal result
 	_Result = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
 			_ArrayInputsX, ContBuffer);
- 800936e:	687b      	ldr	r3, [r7, #4]
- 8009370:	685b      	ldr	r3, [r3, #4]
- 8009372:	687a      	ldr	r2, [r7, #4]
- 8009374:	68d2      	ldr	r2, [r2, #12]
- 8009376:	69f9      	ldr	r1, [r7, #28]
- 8009378:	9100      	str	r1, [sp, #0]
- 800937a:	9201      	str	r2, [sp, #4]
- 800937c:	4618      	mov	r0, r3
- 800937e:	69b9      	ldr	r1, [r7, #24]
- 8009380:	2200      	movs	r2, #0
- 8009382:	697b      	ldr	r3, [r7, #20]
- 8009384:	f7ff fe74 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 8009388:	60f8      	str	r0, [r7, #12]
+ 800933e:	687b      	ldr	r3, [r7, #4]
+ 8009340:	685b      	ldr	r3, [r3, #4]
+ 8009342:	687a      	ldr	r2, [r7, #4]
+ 8009344:	68d2      	ldr	r2, [r2, #12]
+ 8009346:	69f9      	ldr	r1, [r7, #28]
+ 8009348:	9100      	str	r1, [sp, #0]
+ 800934a:	9201      	str	r2, [sp, #4]
+ 800934c:	4618      	mov	r0, r3
+ 800934e:	69b9      	ldr	r1, [r7, #24]
+ 8009350:	2200      	movs	r2, #0
+ 8009352:	697b      	ldr	r3, [r7, #20]
+ 8009354:	f7ff fe74 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 8009358:	60f8      	str	r0, [r7, #12]
 
 	ContBuffer++;
- 800938a:	687b      	ldr	r3, [r7, #4]
- 800938c:	68db      	ldr	r3, [r3, #12]
- 800938e:	1c5a      	adds	r2, r3, #1
- 8009390:	687b      	ldr	r3, [r7, #4]
- 8009392:	60da      	str	r2, [r3, #12]
+ 800935a:	687b      	ldr	r3, [r7, #4]
+ 800935c:	68db      	ldr	r3, [r3, #12]
+ 800935e:	1c5a      	adds	r2, r3, #1
+ 8009360:	687b      	ldr	r3, [r7, #4]
+ 8009362:	60da      	str	r2, [r3, #12]
 
 	return _Result;
- 8009394:	68fb      	ldr	r3, [r7, #12]
+ 8009364:	68fb      	ldr	r3, [r7, #12]
 }
- 8009396:	4618      	mov	r0, r3
- 8009398:	3720      	adds	r7, #32
- 800939a:	46bd      	mov	sp, r7
- 800939c:	bd80      	pop	{r7, pc}
- 800939e:	bf00      	nop
+ 8009366:	4618      	mov	r0, r3
+ 8009368:	3720      	adds	r7, #32
+ 800936a:	46bd      	mov	sp, r7
+ 800936c:	bd80      	pop	{r7, pc}
+ 800936e:	bf00      	nop
 
-080093a0 <_ZL8chprintfP20BaseSequentialStreamPKcz>:
+08009370 <_ZL8chprintfP20BaseSequentialStreamPKcz>:
  * @param[in] chp       pointer to a @p BaseSequentialStream implementing object
  * @param[in] fmt       formatting string
  *
  * @api
  */
 static inline int chprintf(BaseSequentialStream *chp, const char *fmt, ...) {
- 80093a0:	b40e      	push	{r1, r2, r3}
- 80093a2:	b580      	push	{r7, lr}
- 80093a4:	b085      	sub	sp, #20
- 80093a6:	af00      	add	r7, sp, #0
- 80093a8:	6078      	str	r0, [r7, #4]
+ 8009370:	b40e      	push	{r1, r2, r3}
+ 8009372:	b580      	push	{r7, lr}
+ 8009374:	b085      	sub	sp, #20
+ 8009376:	af00      	add	r7, sp, #0
+ 8009378:	6078      	str	r0, [r7, #4]
   va_list ap;
   int formatted_bytes;
 
   va_start(ap, fmt);
- 80093aa:	f107 0320 	add.w	r3, r7, #32
- 80093ae:	60bb      	str	r3, [r7, #8]
+ 800937a:	f107 0320 	add.w	r3, r7, #32
+ 800937e:	60bb      	str	r3, [r7, #8]
   formatted_bytes = chvprintf(chp, fmt, ap);
- 80093b0:	6878      	ldr	r0, [r7, #4]
- 80093b2:	69f9      	ldr	r1, [r7, #28]
- 80093b4:	68ba      	ldr	r2, [r7, #8]
- 80093b6:	f7fc fb23 	bl	8005a00 <chvprintf>
- 80093ba:	60f8      	str	r0, [r7, #12]
+ 8009380:	6878      	ldr	r0, [r7, #4]
+ 8009382:	69f9      	ldr	r1, [r7, #28]
+ 8009384:	68ba      	ldr	r2, [r7, #8]
+ 8009386:	f7fc fb3b 	bl	8005a00 <chvprintf>
+ 800938a:	60f8      	str	r0, [r7, #12]
   va_end(ap);
 
   return formatted_bytes;
- 80093bc:	68fb      	ldr	r3, [r7, #12]
+ 800938c:	68fb      	ldr	r3, [r7, #12]
 }
- 80093be:	4618      	mov	r0, r3
- 80093c0:	3714      	adds	r7, #20
- 80093c2:	46bd      	mov	sp, r7
- 80093c4:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
- 80093c8:	b003      	add	sp, #12
- 80093ca:	4770      	bx	lr
- 80093cc:	f3af 8000 	nop.w
+ 800938e:	4618      	mov	r0, r3
+ 8009390:	3714      	adds	r7, #20
+ 8009392:	46bd      	mov	sp, r7
+ 8009394:	e8bd 4080 	ldmia.w	sp!, {r7, lr}
+ 8009398:	b003      	add	sp, #12
+ 800939a:	4770      	bx	lr
+ 800939c:	f3af 8000 	nop.w
 
-080093d0 <_ZN10DataFilter13newDataFilterEiPfS0_i>:
+080093a0 <_ZN10DataFilter13newDataFilterEiPfS0_i>:
 #include <stdio.h>
 #include <serial.h>
 #include <chprintf.h>
 
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 		float *pArrayCoefficientsB, typeOfDirectForm pTypeOfDirectForm) {
- 80093d0:	b580      	push	{r7, lr}
- 80093d2:	b084      	sub	sp, #16
- 80093d4:	af00      	add	r7, sp, #0
- 80093d6:	60f8      	str	r0, [r7, #12]
- 80093d8:	60b9      	str	r1, [r7, #8]
- 80093da:	607a      	str	r2, [r7, #4]
- 80093dc:	603b      	str	r3, [r7, #0]
+ 80093a0:	b580      	push	{r7, lr}
+ 80093a2:	b084      	sub	sp, #16
+ 80093a4:	af00      	add	r7, sp, #0
+ 80093a6:	60f8      	str	r0, [r7, #12]
+ 80093a8:	60b9      	str	r1, [r7, #8]
+ 80093aa:	607a      	str	r2, [r7, #4]
+ 80093ac:	603b      	str	r3, [r7, #0]
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
- 80093de:	68bb      	ldr	r3, [r7, #8]
- 80093e0:	3301      	adds	r3, #1
- 80093e2:	009b      	lsls	r3, r3, #2
- 80093e4:	2000      	movs	r0, #0
- 80093e6:	4619      	mov	r1, r3
- 80093e8:	f7fa f9e2 	bl	80037b0 <chHeapAlloc>
- 80093ec:	4602      	mov	r2, r0
- 80093ee:	68fb      	ldr	r3, [r7, #12]
- 80093f0:	60da      	str	r2, [r3, #12]
+ 80093ae:	68bb      	ldr	r3, [r7, #8]
+ 80093b0:	3301      	adds	r3, #1
+ 80093b2:	009b      	lsls	r3, r3, #2
+ 80093b4:	2000      	movs	r0, #0
+ 80093b6:	4619      	mov	r1, r3
+ 80093b8:	f7fa f9fa 	bl	80037b0 <chHeapAlloc>
+ 80093bc:	4602      	mov	r2, r0
+ 80093be:	68fb      	ldr	r3, [r7, #12]
+ 80093c0:	60da      	str	r2, [r3, #12]
 	ArrayInputsX = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
- 80093f2:	68fb      	ldr	r3, [r7, #12]
- 80093f4:	685b      	ldr	r3, [r3, #4]
- 80093f6:	330a      	adds	r3, #10
- 80093f8:	009b      	lsls	r3, r3, #2
- 80093fa:	2000      	movs	r0, #0
- 80093fc:	4619      	mov	r1, r3
- 80093fe:	f7fa f9d7 	bl	80037b0 <chHeapAlloc>
- 8009402:	4602      	mov	r2, r0
- 8009404:	68fb      	ldr	r3, [r7, #12]
- 8009406:	611a      	str	r2, [r3, #16]
+ 80093c2:	68fb      	ldr	r3, [r7, #12]
+ 80093c4:	685b      	ldr	r3, [r3, #4]
+ 80093c6:	330a      	adds	r3, #10
+ 80093c8:	009b      	lsls	r3, r3, #2
+ 80093ca:	2000      	movs	r0, #0
+ 80093cc:	4619      	mov	r1, r3
+ 80093ce:	f7fa f9ef 	bl	80037b0 <chHeapAlloc>
+ 80093d2:	4602      	mov	r2, r0
+ 80093d4:	68fb      	ldr	r3, [r7, #12]
+ 80093d6:	611a      	str	r2, [r3, #16]
 
 	setFilterOrder(pFilterOrder);
- 8009408:	68f8      	ldr	r0, [r7, #12]
- 800940a:	68b9      	ldr	r1, [r7, #8]
- 800940c:	f000 f9b8 	bl	8009780 <_ZN10DataFilter14setFilterOrderEi>
+ 80093d8:	68f8      	ldr	r0, [r7, #12]
+ 80093da:	68b9      	ldr	r1, [r7, #8]
+ 80093dc:	f000 f9b8 	bl	8009750 <_ZN10DataFilter14setFilterOrderEi>
 	setTypeOfDirectForm(pTypeOfDirectForm);
- 8009410:	68f8      	ldr	r0, [r7, #12]
- 8009412:	69b9      	ldr	r1, [r7, #24]
- 8009414:	f000 fa34 	bl	8009880 <_ZN10DataFilter19setTypeOfDirectFormEi>
+ 80093e0:	68f8      	ldr	r0, [r7, #12]
+ 80093e2:	69b9      	ldr	r1, [r7, #24]
+ 80093e4:	f000 fa34 	bl	8009850 <_ZN10DataFilter19setTypeOfDirectFormEi>
 	setArrayInitialConditionsX(pArrayInputsX);
- 8009418:	68f8      	ldr	r0, [r7, #12]
- 800941a:	6879      	ldr	r1, [r7, #4]
- 800941c:	f000 f968 	bl	80096f0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
+ 80093e8:	68f8      	ldr	r0, [r7, #12]
+ 80093ea:	6879      	ldr	r1, [r7, #4]
+ 80093ec:	f000 f968 	bl	80096c0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
 	setArrayCoefficientsB(pArrayCoefficientsB);
- 8009420:	68f8      	ldr	r0, [r7, #12]
- 8009422:	6839      	ldr	r1, [r7, #0]
- 8009424:	f000 f93c 	bl	80096a0 <_ZN10DataFilter21setArrayCoefficientsBEPf>
+ 80093f0:	68f8      	ldr	r0, [r7, #12]
+ 80093f2:	6839      	ldr	r1, [r7, #0]
+ 80093f4:	f000 f93c 	bl	8009670 <_ZN10DataFilter21setArrayCoefficientsBEPf>
 
 }
- 8009428:	3710      	adds	r7, #16
- 800942a:	46bd      	mov	sp, r7
- 800942c:	bd80      	pop	{r7, pc}
- 800942e:	bf00      	nop
+ 80093f8:	3710      	adds	r7, #16
+ 80093fa:	46bd      	mov	sp, r7
+ 80093fc:	bd80      	pop	{r7, pc}
+ 80093fe:	bf00      	nop
 
-08009430 <_ZN10DataFilter13newDataFilterEiPfS0_S0_S0_i>:
+08009400 <_ZN10DataFilter13newDataFilterEiPfS0_S0_S0_i>:
 
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 		float *pArrayCoefficientsB, float *pArrayInputsY,
 		float *pArrayCoefficientsA, typeOfDirectForm pTypeOfDirectForm) {
- 8009430:	b580      	push	{r7, lr}
- 8009432:	b084      	sub	sp, #16
- 8009434:	af00      	add	r7, sp, #0
- 8009436:	60f8      	str	r0, [r7, #12]
- 8009438:	60b9      	str	r1, [r7, #8]
- 800943a:	607a      	str	r2, [r7, #4]
- 800943c:	603b      	str	r3, [r7, #0]
+ 8009400:	b580      	push	{r7, lr}
+ 8009402:	b084      	sub	sp, #16
+ 8009404:	af00      	add	r7, sp, #0
+ 8009406:	60f8      	str	r0, [r7, #12]
+ 8009408:	60b9      	str	r1, [r7, #8]
+ 800940a:	607a      	str	r2, [r7, #4]
+ 800940c:	603b      	str	r3, [r7, #0]
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
- 800943e:	68bb      	ldr	r3, [r7, #8]
- 8009440:	3301      	adds	r3, #1
- 8009442:	009b      	lsls	r3, r3, #2
- 8009444:	2000      	movs	r0, #0
- 8009446:	4619      	mov	r1, r3
- 8009448:	f7fa f9b2 	bl	80037b0 <chHeapAlloc>
- 800944c:	4602      	mov	r2, r0
- 800944e:	68fb      	ldr	r3, [r7, #12]
- 8009450:	60da      	str	r2, [r3, #12]
+ 800940e:	68bb      	ldr	r3, [r7, #8]
+ 8009410:	3301      	adds	r3, #1
+ 8009412:	009b      	lsls	r3, r3, #2
+ 8009414:	2000      	movs	r0, #0
+ 8009416:	4619      	mov	r1, r3
+ 8009418:	f7fa f9ca 	bl	80037b0 <chHeapAlloc>
+ 800941c:	4602      	mov	r2, r0
+ 800941e:	68fb      	ldr	r3, [r7, #12]
+ 8009420:	60da      	str	r2, [r3, #12]
 	ArrayInputsX = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
- 8009452:	68fb      	ldr	r3, [r7, #12]
- 8009454:	685b      	ldr	r3, [r3, #4]
- 8009456:	330a      	adds	r3, #10
- 8009458:	009b      	lsls	r3, r3, #2
- 800945a:	2000      	movs	r0, #0
- 800945c:	4619      	mov	r1, r3
- 800945e:	f7fa f9a7 	bl	80037b0 <chHeapAlloc>
- 8009462:	4602      	mov	r2, r0
- 8009464:	68fb      	ldr	r3, [r7, #12]
- 8009466:	611a      	str	r2, [r3, #16]
+ 8009422:	68fb      	ldr	r3, [r7, #12]
+ 8009424:	685b      	ldr	r3, [r3, #4]
+ 8009426:	330a      	adds	r3, #10
+ 8009428:	009b      	lsls	r3, r3, #2
+ 800942a:	2000      	movs	r0, #0
+ 800942c:	4619      	mov	r1, r3
+ 800942e:	f7fa f9bf 	bl	80037b0 <chHeapAlloc>
+ 8009432:	4602      	mov	r2, r0
+ 8009434:	68fb      	ldr	r3, [r7, #12]
+ 8009436:	611a      	str	r2, [r3, #16]
 	ArrayCoefficientsA = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder));
- 8009468:	68bb      	ldr	r3, [r7, #8]
- 800946a:	009b      	lsls	r3, r3, #2
- 800946c:	2000      	movs	r0, #0
- 800946e:	4619      	mov	r1, r3
- 8009470:	f7fa f99e 	bl	80037b0 <chHeapAlloc>
- 8009474:	4602      	mov	r2, r0
- 8009476:	68fb      	ldr	r3, [r7, #12]
- 8009478:	615a      	str	r2, [r3, #20]
+ 8009438:	68bb      	ldr	r3, [r7, #8]
+ 800943a:	009b      	lsls	r3, r3, #2
+ 800943c:	2000      	movs	r0, #0
+ 800943e:	4619      	mov	r1, r3
+ 8009440:	f7fa f9b6 	bl	80037b0 <chHeapAlloc>
+ 8009444:	4602      	mov	r2, r0
+ 8009446:	68fb      	ldr	r3, [r7, #12]
+ 8009448:	615a      	str	r2, [r3, #20]
 	ArrayInputsY = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
- 800947a:	68fb      	ldr	r3, [r7, #12]
- 800947c:	685b      	ldr	r3, [r3, #4]
- 800947e:	330a      	adds	r3, #10
- 8009480:	009b      	lsls	r3, r3, #2
- 8009482:	2000      	movs	r0, #0
- 8009484:	4619      	mov	r1, r3
- 8009486:	f7fa f993 	bl	80037b0 <chHeapAlloc>
- 800948a:	4602      	mov	r2, r0
- 800948c:	68fb      	ldr	r3, [r7, #12]
- 800948e:	619a      	str	r2, [r3, #24]
+ 800944a:	68fb      	ldr	r3, [r7, #12]
+ 800944c:	685b      	ldr	r3, [r3, #4]
+ 800944e:	330a      	adds	r3, #10
+ 8009450:	009b      	lsls	r3, r3, #2
+ 8009452:	2000      	movs	r0, #0
+ 8009454:	4619      	mov	r1, r3
+ 8009456:	f7fa f9ab 	bl	80037b0 <chHeapAlloc>
+ 800945a:	4602      	mov	r2, r0
+ 800945c:	68fb      	ldr	r3, [r7, #12]
+ 800945e:	619a      	str	r2, [r3, #24]
 
 	//set variables
 	setFilterOrder(pFilterOrder);
- 8009490:	68f8      	ldr	r0, [r7, #12]
- 8009492:	68b9      	ldr	r1, [r7, #8]
- 8009494:	f000 f974 	bl	8009780 <_ZN10DataFilter14setFilterOrderEi>
+ 8009460:	68f8      	ldr	r0, [r7, #12]
+ 8009462:	68b9      	ldr	r1, [r7, #8]
+ 8009464:	f000 f974 	bl	8009750 <_ZN10DataFilter14setFilterOrderEi>
 	setTypeOfDirectForm(pTypeOfDirectForm);
- 8009498:	68f8      	ldr	r0, [r7, #12]
- 800949a:	6a39      	ldr	r1, [r7, #32]
- 800949c:	f000 f9f0 	bl	8009880 <_ZN10DataFilter19setTypeOfDirectFormEi>
+ 8009468:	68f8      	ldr	r0, [r7, #12]
+ 800946a:	6a39      	ldr	r1, [r7, #32]
+ 800946c:	f000 f9f0 	bl	8009850 <_ZN10DataFilter19setTypeOfDirectFormEi>
 	setArrayInitialConditionsX(pArrayInputsX);
- 80094a0:	68f8      	ldr	r0, [r7, #12]
- 80094a2:	6879      	ldr	r1, [r7, #4]
- 80094a4:	f000 f924 	bl	80096f0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
+ 8009470:	68f8      	ldr	r0, [r7, #12]
+ 8009472:	6879      	ldr	r1, [r7, #4]
+ 8009474:	f000 f924 	bl	80096c0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
 	setArrayCoefficientsB(pArrayCoefficientsB);
- 80094a8:	68f8      	ldr	r0, [r7, #12]
- 80094aa:	6839      	ldr	r1, [r7, #0]
- 80094ac:	f000 f8f8 	bl	80096a0 <_ZN10DataFilter21setArrayCoefficientsBEPf>
+ 8009478:	68f8      	ldr	r0, [r7, #12]
+ 800947a:	6839      	ldr	r1, [r7, #0]
+ 800947c:	f000 f8f8 	bl	8009670 <_ZN10DataFilter21setArrayCoefficientsBEPf>
 	setArrayInitialConditionsY(pArrayInputsY);
- 80094b0:	68f8      	ldr	r0, [r7, #12]
- 80094b2:	69b9      	ldr	r1, [r7, #24]
- 80094b4:	f000 f9ac 	bl	8009810 <_ZN10DataFilter26setArrayInitialConditionsYEPf>
+ 8009480:	68f8      	ldr	r0, [r7, #12]
+ 8009482:	69b9      	ldr	r1, [r7, #24]
+ 8009484:	f000 f9ac 	bl	80097e0 <_ZN10DataFilter26setArrayInitialConditionsYEPf>
 	setArrayCoefficientsA(pArrayCoefficientsA);
- 80094b8:	68f8      	ldr	r0, [r7, #12]
- 80094ba:	69f9      	ldr	r1, [r7, #28]
- 80094bc:	f000 f980 	bl	80097c0 <_ZN10DataFilter21setArrayCoefficientsAEPf>
+ 8009488:	68f8      	ldr	r0, [r7, #12]
+ 800948a:	69f9      	ldr	r1, [r7, #28]
+ 800948c:	f000 f980 	bl	8009790 <_ZN10DataFilter21setArrayCoefficientsAEPf>
 }
- 80094c0:	3710      	adds	r7, #16
- 80094c2:	46bd      	mov	sp, r7
- 80094c4:	bd80      	pop	{r7, pc}
- 80094c6:	bf00      	nop
- 80094c8:	f3af 8000 	nop.w
- 80094cc:	f3af 8000 	nop.w
+ 8009490:	3710      	adds	r7, #16
+ 8009492:	46bd      	mov	sp, r7
+ 8009494:	bd80      	pop	{r7, pc}
+ 8009496:	bf00      	nop
+ 8009498:	f3af 8000 	nop.w
+ 800949c:	f3af 8000 	nop.w
 
-080094d0 <_ZN10DataFilter13newDataFilterEiPfS0_S0_i>:
+080094a0 <_ZN10DataFilter13newDataFilterEiPfS0_S0_i>:
 
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 		float *pArrayCoefficientsB, float *pArrayCoefficientsA,
 		typeOfDirectForm pTypeOfDirectForm) {
- 80094d0:	b580      	push	{r7, lr}
- 80094d2:	b084      	sub	sp, #16
- 80094d4:	af00      	add	r7, sp, #0
- 80094d6:	60f8      	str	r0, [r7, #12]
- 80094d8:	60b9      	str	r1, [r7, #8]
- 80094da:	607a      	str	r2, [r7, #4]
- 80094dc:	603b      	str	r3, [r7, #0]
+ 80094a0:	b580      	push	{r7, lr}
+ 80094a2:	b084      	sub	sp, #16
+ 80094a4:	af00      	add	r7, sp, #0
+ 80094a6:	60f8      	str	r0, [r7, #12]
+ 80094a8:	60b9      	str	r1, [r7, #8]
+ 80094aa:	607a      	str	r2, [r7, #4]
+ 80094ac:	603b      	str	r3, [r7, #0]
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder + 1));
- 80094de:	68bb      	ldr	r3, [r7, #8]
- 80094e0:	3301      	adds	r3, #1
- 80094e2:	009b      	lsls	r3, r3, #2
- 80094e4:	2000      	movs	r0, #0
- 80094e6:	4619      	mov	r1, r3
- 80094e8:	f7fa f962 	bl	80037b0 <chHeapAlloc>
- 80094ec:	4602      	mov	r2, r0
- 80094ee:	68fb      	ldr	r3, [r7, #12]
- 80094f0:	60da      	str	r2, [r3, #12]
+ 80094ae:	68bb      	ldr	r3, [r7, #8]
+ 80094b0:	3301      	adds	r3, #1
+ 80094b2:	009b      	lsls	r3, r3, #2
+ 80094b4:	2000      	movs	r0, #0
+ 80094b6:	4619      	mov	r1, r3
+ 80094b8:	f7fa f97a 	bl	80037b0 <chHeapAlloc>
+ 80094bc:	4602      	mov	r2, r0
+ 80094be:	68fb      	ldr	r3, [r7, #12]
+ 80094c0:	60da      	str	r2, [r3, #12]
 	ArrayInputsX = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
- 80094f2:	68fb      	ldr	r3, [r7, #12]
- 80094f4:	685b      	ldr	r3, [r3, #4]
- 80094f6:	330a      	adds	r3, #10
- 80094f8:	009b      	lsls	r3, r3, #2
- 80094fa:	2000      	movs	r0, #0
- 80094fc:	4619      	mov	r1, r3
- 80094fe:	f7fa f957 	bl	80037b0 <chHeapAlloc>
- 8009502:	4602      	mov	r2, r0
- 8009504:	68fb      	ldr	r3, [r7, #12]
- 8009506:	611a      	str	r2, [r3, #16]
+ 80094c2:	68fb      	ldr	r3, [r7, #12]
+ 80094c4:	685b      	ldr	r3, [r3, #4]
+ 80094c6:	330a      	adds	r3, #10
+ 80094c8:	009b      	lsls	r3, r3, #2
+ 80094ca:	2000      	movs	r0, #0
+ 80094cc:	4619      	mov	r1, r3
+ 80094ce:	f7fa f96f 	bl	80037b0 <chHeapAlloc>
+ 80094d2:	4602      	mov	r2, r0
+ 80094d4:	68fb      	ldr	r3, [r7, #12]
+ 80094d6:	611a      	str	r2, [r3, #16]
 	ArrayCoefficientsA = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (pFilterOrder));
- 8009508:	68bb      	ldr	r3, [r7, #8]
- 800950a:	009b      	lsls	r3, r3, #2
- 800950c:	2000      	movs	r0, #0
- 800950e:	4619      	mov	r1, r3
- 8009510:	f7fa f94e 	bl	80037b0 <chHeapAlloc>
- 8009514:	4602      	mov	r2, r0
- 8009516:	68fb      	ldr	r3, [r7, #12]
- 8009518:	615a      	str	r2, [r3, #20]
+ 80094d8:	68bb      	ldr	r3, [r7, #8]
+ 80094da:	009b      	lsls	r3, r3, #2
+ 80094dc:	2000      	movs	r0, #0
+ 80094de:	4619      	mov	r1, r3
+ 80094e0:	f7fa f966 	bl	80037b0 <chHeapAlloc>
+ 80094e4:	4602      	mov	r2, r0
+ 80094e6:	68fb      	ldr	r3, [r7, #12]
+ 80094e8:	615a      	str	r2, [r3, #20]
 	ArrayInputsY = (float*) chHeapAlloc(NULL,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
- 800951a:	68fb      	ldr	r3, [r7, #12]
- 800951c:	685b      	ldr	r3, [r3, #4]
- 800951e:	330a      	adds	r3, #10
- 8009520:	009b      	lsls	r3, r3, #2
- 8009522:	2000      	movs	r0, #0
- 8009524:	4619      	mov	r1, r3
- 8009526:	f7fa f943 	bl	80037b0 <chHeapAlloc>
- 800952a:	4602      	mov	r2, r0
- 800952c:	68fb      	ldr	r3, [r7, #12]
- 800952e:	619a      	str	r2, [r3, #24]
+ 80094ea:	68fb      	ldr	r3, [r7, #12]
+ 80094ec:	685b      	ldr	r3, [r3, #4]
+ 80094ee:	330a      	adds	r3, #10
+ 80094f0:	009b      	lsls	r3, r3, #2
+ 80094f2:	2000      	movs	r0, #0
+ 80094f4:	4619      	mov	r1, r3
+ 80094f6:	f7fa f95b 	bl	80037b0 <chHeapAlloc>
+ 80094fa:	4602      	mov	r2, r0
+ 80094fc:	68fb      	ldr	r3, [r7, #12]
+ 80094fe:	619a      	str	r2, [r3, #24]
 
 	setFilterOrder(pFilterOrder);
- 8009530:	68f8      	ldr	r0, [r7, #12]
- 8009532:	68b9      	ldr	r1, [r7, #8]
- 8009534:	f000 f924 	bl	8009780 <_ZN10DataFilter14setFilterOrderEi>
+ 8009500:	68f8      	ldr	r0, [r7, #12]
+ 8009502:	68b9      	ldr	r1, [r7, #8]
+ 8009504:	f000 f924 	bl	8009750 <_ZN10DataFilter14setFilterOrderEi>
 	setTypeOfDirectForm(pTypeOfDirectForm);
- 8009538:	68f8      	ldr	r0, [r7, #12]
- 800953a:	69f9      	ldr	r1, [r7, #28]
- 800953c:	f000 f9a0 	bl	8009880 <_ZN10DataFilter19setTypeOfDirectFormEi>
+ 8009508:	68f8      	ldr	r0, [r7, #12]
+ 800950a:	69f9      	ldr	r1, [r7, #28]
+ 800950c:	f000 f9a0 	bl	8009850 <_ZN10DataFilter19setTypeOfDirectFormEi>
 	setArrayInitialConditionsX(pArrayInputsX);
- 8009540:	68f8      	ldr	r0, [r7, #12]
- 8009542:	6879      	ldr	r1, [r7, #4]
- 8009544:	f000 f8d4 	bl	80096f0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
+ 8009510:	68f8      	ldr	r0, [r7, #12]
+ 8009512:	6879      	ldr	r1, [r7, #4]
+ 8009514:	f000 f8d4 	bl	80096c0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>
 	setArrayCoefficientsB(pArrayCoefficientsB);
- 8009548:	68f8      	ldr	r0, [r7, #12]
- 800954a:	6839      	ldr	r1, [r7, #0]
- 800954c:	f000 f8a8 	bl	80096a0 <_ZN10DataFilter21setArrayCoefficientsBEPf>
+ 8009518:	68f8      	ldr	r0, [r7, #12]
+ 800951a:	6839      	ldr	r1, [r7, #0]
+ 800951c:	f000 f8a8 	bl	8009670 <_ZN10DataFilter21setArrayCoefficientsBEPf>
 	setArrayCoefficientsA(pArrayCoefficientsA);
- 8009550:	68f8      	ldr	r0, [r7, #12]
- 8009552:	69b9      	ldr	r1, [r7, #24]
- 8009554:	f000 f934 	bl	80097c0 <_ZN10DataFilter21setArrayCoefficientsAEPf>
+ 8009520:	68f8      	ldr	r0, [r7, #12]
+ 8009522:	69b9      	ldr	r1, [r7, #24]
+ 8009524:	f000 f934 	bl	8009790 <_ZN10DataFilter21setArrayCoefficientsAEPf>
 
 	createArrayAux();
- 8009558:	68f8      	ldr	r0, [r7, #12]
- 800955a:	f000 f809 	bl	8009570 <_ZN10DataFilter14createArrayAuxEv>
+ 8009528:	68f8      	ldr	r0, [r7, #12]
+ 800952a:	f000 f809 	bl	8009540 <_ZN10DataFilter14createArrayAuxEv>
 }
- 800955e:	3710      	adds	r7, #16
- 8009560:	46bd      	mov	sp, r7
- 8009562:	bd80      	pop	{r7, pc}
- 8009564:	f3af 8000 	nop.w
- 8009568:	f3af 8000 	nop.w
- 800956c:	f3af 8000 	nop.w
+ 800952e:	3710      	adds	r7, #16
+ 8009530:	46bd      	mov	sp, r7
+ 8009532:	bd80      	pop	{r7, pc}
+ 8009534:	f3af 8000 	nop.w
+ 8009538:	f3af 8000 	nop.w
+ 800953c:	f3af 8000 	nop.w
 
-08009570 <_ZN10DataFilter14createArrayAuxEv>:
+08009540 <_ZN10DataFilter14createArrayAuxEv>:
 	chHeapFree(ArrayCoefficientsA);
 	chHeapFree(ArrayInputsY);
 	chHeapFree(ArrayInputsX);
 }
 
 void DataFilter::createArrayAux() {
- 8009570:	b590      	push	{r4, r7, lr}
- 8009572:	b089      	sub	sp, #36	; 0x24
- 8009574:	af02      	add	r7, sp, #8
- 8009576:	6078      	str	r0, [r7, #4]
+ 8009540:	b590      	push	{r4, r7, lr}
+ 8009542:	b089      	sub	sp, #36	; 0x24
+ 8009544:	af02      	add	r7, sp, #8
+ 8009546:	6078      	str	r0, [r7, #4]
 
 	MathOperation = (FuntionsMath*) chHeapAlloc(NULL, sizeof(FuntionsMath));
- 8009578:	2000      	movs	r0, #0
- 800957a:	2104      	movs	r1, #4
- 800957c:	f7fa f918 	bl	80037b0 <chHeapAlloc>
- 8009580:	4602      	mov	r2, r0
- 8009582:	687b      	ldr	r3, [r7, #4]
- 8009584:	625a      	str	r2, [r3, #36]	; 0x24
+ 8009548:	2000      	movs	r0, #0
+ 800954a:	2104      	movs	r1, #4
+ 800954c:	f7fa f930 	bl	80037b0 <chHeapAlloc>
+ 8009550:	4602      	mov	r2, r0
+ 8009552:	687b      	ldr	r3, [r7, #4]
+ 8009554:	625a      	str	r2, [r3, #36]	; 0x24
 
 	float _NumSum;
 	float _NumX;
 	float _NumResult;
 
 	ArrayInputsY[0] = ArrayInputsX[0];
- 8009586:	687b      	ldr	r3, [r7, #4]
- 8009588:	699b      	ldr	r3, [r3, #24]
- 800958a:	687a      	ldr	r2, [r7, #4]
- 800958c:	6912      	ldr	r2, [r2, #16]
- 800958e:	6812      	ldr	r2, [r2, #0]
- 8009590:	601a      	str	r2, [r3, #0]
+ 8009556:	687b      	ldr	r3, [r7, #4]
+ 8009558:	699b      	ldr	r3, [r3, #24]
+ 800955a:	687a      	ldr	r2, [r7, #4]
+ 800955c:	6912      	ldr	r2, [r2, #16]
+ 800955e:	6812      	ldr	r2, [r2, #0]
+ 8009560:	601a      	str	r2, [r3, #0]
 
 	for (Cont = 0; Cont < (FilterOrder - 1); Cont++) {
- 8009592:	687b      	ldr	r3, [r7, #4]
- 8009594:	2200      	movs	r2, #0
- 8009596:	621a      	str	r2, [r3, #32]
- 8009598:	e037      	b.n	800960a <_ZN10DataFilter14createArrayAuxEv+0x9a>
+ 8009562:	687b      	ldr	r3, [r7, #4]
+ 8009564:	2200      	movs	r2, #0
+ 8009566:	621a      	str	r2, [r3, #32]
+ 8009568:	e037      	b.n	80095da <_ZN10DataFilter14createArrayAuxEv+0x9a>
 		_NumSum = MathOperation->sum(Cont, 0, ArrayCoefficientsA, ArrayInputsY,
 				Cont);
- 800959a:	687b      	ldr	r3, [r7, #4]
- 800959c:	6a59      	ldr	r1, [r3, #36]	; 0x24
- 800959e:	687b      	ldr	r3, [r7, #4]
- 80095a0:	6a1a      	ldr	r2, [r3, #32]
- 80095a2:	687b      	ldr	r3, [r7, #4]
- 80095a4:	695b      	ldr	r3, [r3, #20]
- 80095a6:	6878      	ldr	r0, [r7, #4]
- 80095a8:	6984      	ldr	r4, [r0, #24]
- 80095aa:	6878      	ldr	r0, [r7, #4]
- 80095ac:	6a00      	ldr	r0, [r0, #32]
- 80095ae:	9400      	str	r4, [sp, #0]
- 80095b0:	9001      	str	r0, [sp, #4]
- 80095b2:	4608      	mov	r0, r1
- 80095b4:	4611      	mov	r1, r2
- 80095b6:	2200      	movs	r2, #0
- 80095b8:	f7ff fd5a 	bl	8009070 <_ZN12FuntionsMath3sumEiiPfS0_i>
- 80095bc:	6178      	str	r0, [r7, #20]
+ 800956a:	687b      	ldr	r3, [r7, #4]
+ 800956c:	6a59      	ldr	r1, [r3, #36]	; 0x24
+ 800956e:	687b      	ldr	r3, [r7, #4]
+ 8009570:	6a1a      	ldr	r2, [r3, #32]
+ 8009572:	687b      	ldr	r3, [r7, #4]
+ 8009574:	695b      	ldr	r3, [r3, #20]
+ 8009576:	6878      	ldr	r0, [r7, #4]
+ 8009578:	6984      	ldr	r4, [r0, #24]
+ 800957a:	6878      	ldr	r0, [r7, #4]
+ 800957c:	6a00      	ldr	r0, [r0, #32]
+ 800957e:	9400      	str	r4, [sp, #0]
+ 8009580:	9001      	str	r0, [sp, #4]
+ 8009582:	4608      	mov	r0, r1
+ 8009584:	4611      	mov	r1, r2
+ 8009586:	2200      	movs	r2, #0
+ 8009588:	f7ff fd5a 	bl	8009040 <_ZN12FuntionsMath3sumEiiPfS0_i>
+ 800958c:	6178      	str	r0, [r7, #20]
 		_NumX = ArrayInputsX[Cont + 1];
- 80095be:	687b      	ldr	r3, [r7, #4]
- 80095c0:	691a      	ldr	r2, [r3, #16]
- 80095c2:	687b      	ldr	r3, [r7, #4]
- 80095c4:	6a1b      	ldr	r3, [r3, #32]
- 80095c6:	3301      	adds	r3, #1
- 80095c8:	009b      	lsls	r3, r3, #2
- 80095ca:	4413      	add	r3, r2
- 80095cc:	681b      	ldr	r3, [r3, #0]
- 80095ce:	613b      	str	r3, [r7, #16]
+ 800958e:	687b      	ldr	r3, [r7, #4]
+ 8009590:	691a      	ldr	r2, [r3, #16]
+ 8009592:	687b      	ldr	r3, [r7, #4]
+ 8009594:	6a1b      	ldr	r3, [r3, #32]
+ 8009596:	3301      	adds	r3, #1
+ 8009598:	009b      	lsls	r3, r3, #2
+ 800959a:	4413      	add	r3, r2
+ 800959c:	681b      	ldr	r3, [r3, #0]
+ 800959e:	613b      	str	r3, [r7, #16]
 		_NumResult = _NumX - _NumSum;
- 80095d0:	6938      	ldr	r0, [r7, #16]
- 80095d2:	6979      	ldr	r1, [r7, #20]
- 80095d4:	f7f7 fac8 	bl	8000b68 <__aeabi_fsub>
- 80095d8:	4603      	mov	r3, r0
- 80095da:	60fb      	str	r3, [r7, #12]
+ 80095a0:	6938      	ldr	r0, [r7, #16]
+ 80095a2:	6979      	ldr	r1, [r7, #20]
+ 80095a4:	f7f7 fae0 	bl	8000b68 <__aeabi_fsub>
+ 80095a8:	4603      	mov	r3, r0
+ 80095aa:	60fb      	str	r3, [r7, #12]
 		ArrayInputsY[Cont + 1] = _NumResult;
- 80095dc:	687b      	ldr	r3, [r7, #4]
- 80095de:	699a      	ldr	r2, [r3, #24]
- 80095e0:	687b      	ldr	r3, [r7, #4]
- 80095e2:	6a1b      	ldr	r3, [r3, #32]
- 80095e4:	3301      	adds	r3, #1
- 80095e6:	009b      	lsls	r3, r3, #2
- 80095e8:	4413      	add	r3, r2
- 80095ea:	68fa      	ldr	r2, [r7, #12]
- 80095ec:	601a      	str	r2, [r3, #0]
+ 80095ac:	687b      	ldr	r3, [r7, #4]
+ 80095ae:	699a      	ldr	r2, [r3, #24]
+ 80095b0:	687b      	ldr	r3, [r7, #4]
+ 80095b2:	6a1b      	ldr	r3, [r3, #32]
+ 80095b4:	3301      	adds	r3, #1
+ 80095b6:	009b      	lsls	r3, r3, #2
+ 80095b8:	4413      	add	r3, r2
+ 80095ba:	68fa      	ldr	r2, [r7, #12]
+ 80095bc:	601a      	str	r2, [r3, #0]
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _NumResult); //print result
- 80095ee:	68f8      	ldr	r0, [r7, #12]
- 80095f0:	f7f6 ffd2 	bl	8000598 <__aeabi_f2d>
- 80095f4:	4602      	mov	r2, r0
- 80095f6:	460b      	mov	r3, r1
- 80095f8:	4809      	ldr	r0, [pc, #36]	; (8009620 <_ZN10DataFilter14createArrayAuxEv+0xb0>)
- 80095fa:	490a      	ldr	r1, [pc, #40]	; (8009624 <_ZN10DataFilter14createArrayAuxEv+0xb4>)
- 80095fc:	f7ff fed0 	bl	80093a0 <_ZL8chprintfP20BaseSequentialStreamPKcz>
+ 80095be:	68f8      	ldr	r0, [r7, #12]
+ 80095c0:	f7f6 ffea 	bl	8000598 <__aeabi_f2d>
+ 80095c4:	4602      	mov	r2, r0
+ 80095c6:	460b      	mov	r3, r1
+ 80095c8:	4809      	ldr	r0, [pc, #36]	; (80095f0 <_ZN10DataFilter14createArrayAuxEv+0xb0>)
+ 80095ca:	490a      	ldr	r1, [pc, #40]	; (80095f4 <_ZN10DataFilter14createArrayAuxEv+0xb4>)
+ 80095cc:	f7ff fed0 	bl	8009370 <_ZL8chprintfP20BaseSequentialStreamPKcz>
 	float _NumX;
 	float _NumResult;
 
 	ArrayInputsY[0] = ArrayInputsX[0];
 
 	for (Cont = 0; Cont < (FilterOrder - 1); Cont++) {
- 8009600:	687b      	ldr	r3, [r7, #4]
- 8009602:	6a1b      	ldr	r3, [r3, #32]
- 8009604:	1c5a      	adds	r2, r3, #1
- 8009606:	687b      	ldr	r3, [r7, #4]
- 8009608:	621a      	str	r2, [r3, #32]
- 800960a:	687b      	ldr	r3, [r7, #4]
- 800960c:	6a1a      	ldr	r2, [r3, #32]
- 800960e:	687b      	ldr	r3, [r7, #4]
- 8009610:	685b      	ldr	r3, [r3, #4]
- 8009612:	3b01      	subs	r3, #1
- 8009614:	429a      	cmp	r2, r3
- 8009616:	dbc0      	blt.n	800959a <_ZN10DataFilter14createArrayAuxEv+0x2a>
+ 80095d0:	687b      	ldr	r3, [r7, #4]
+ 80095d2:	6a1b      	ldr	r3, [r3, #32]
+ 80095d4:	1c5a      	adds	r2, r3, #1
+ 80095d6:	687b      	ldr	r3, [r7, #4]
+ 80095d8:	621a      	str	r2, [r3, #32]
+ 80095da:	687b      	ldr	r3, [r7, #4]
+ 80095dc:	6a1a      	ldr	r2, [r3, #32]
+ 80095de:	687b      	ldr	r3, [r7, #4]
+ 80095e0:	685b      	ldr	r3, [r3, #4]
+ 80095e2:	3b01      	subs	r3, #1
+ 80095e4:	429a      	cmp	r2, r3
+ 80095e6:	dbc0      	blt.n	800956a <_ZN10DataFilter14createArrayAuxEv+0x2a>
 		_NumX = ArrayInputsX[Cont + 1];
 		_NumResult = _NumX - _NumSum;
 		ArrayInputsY[Cont + 1] = _NumResult;
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _NumResult); //print result
 	}
 }
- 8009618:	371c      	adds	r7, #28
- 800961a:	46bd      	mov	sp, r7
- 800961c:	bd90      	pop	{r4, r7, pc}
- 800961e:	bf00      	nop
- 8009620:	20003990 	.word	0x20003990
- 8009624:	08009a60 	.word	0x08009a60
- 8009628:	f3af 8000 	nop.w
- 800962c:	f3af 8000 	nop.w
+ 80095e8:	371c      	adds	r7, #28
+ 80095ea:	46bd      	mov	sp, r7
+ 80095ec:	bd90      	pop	{r4, r7, pc}
+ 80095ee:	bf00      	nop
+ 80095f0:	20003990 	.word	0x20003990
+ 80095f4:	080099a0 	.word	0x080099a0
+ 80095f8:	f3af 8000 	nop.w
+ 80095fc:	f3af 8000 	nop.w
 
-08009630 <_ZN10DataFilter9moveArrayEPf>:
+08009600 <_ZN10DataFilter9moveArrayEPf>:
 
 void DataFilter::moveArray(float *pArray) {
- 8009630:	b480      	push	{r7}
- 8009632:	b083      	sub	sp, #12
- 8009634:	af00      	add	r7, sp, #0
- 8009636:	6078      	str	r0, [r7, #4]
- 8009638:	6039      	str	r1, [r7, #0]
+ 8009600:	b480      	push	{r7}
+ 8009602:	b083      	sub	sp, #12
+ 8009604:	af00      	add	r7, sp, #0
+ 8009606:	6078      	str	r0, [r7, #4]
+ 8009608:	6039      	str	r1, [r7, #0]
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
- 800963a:	687b      	ldr	r3, [r7, #4]
- 800963c:	2200      	movs	r2, #0
- 800963e:	621a      	str	r2, [r3, #32]
- 8009640:	e011      	b.n	8009666 <_ZN10DataFilter9moveArrayEPf+0x36>
+ 800960a:	687b      	ldr	r3, [r7, #4]
+ 800960c:	2200      	movs	r2, #0
+ 800960e:	621a      	str	r2, [r3, #32]
+ 8009610:	e011      	b.n	8009636 <_ZN10DataFilter9moveArrayEPf+0x36>
 		pArray[Cont] = pArray[Cont + BUFFER_SIZE];
- 8009642:	687b      	ldr	r3, [r7, #4]
- 8009644:	6a1b      	ldr	r3, [r3, #32]
- 8009646:	009b      	lsls	r3, r3, #2
- 8009648:	683a      	ldr	r2, [r7, #0]
- 800964a:	4413      	add	r3, r2
- 800964c:	687a      	ldr	r2, [r7, #4]
- 800964e:	6a12      	ldr	r2, [r2, #32]
- 8009650:	320a      	adds	r2, #10
- 8009652:	0092      	lsls	r2, r2, #2
- 8009654:	6839      	ldr	r1, [r7, #0]
- 8009656:	440a      	add	r2, r1
- 8009658:	6812      	ldr	r2, [r2, #0]
- 800965a:	601a      	str	r2, [r3, #0]
+ 8009612:	687b      	ldr	r3, [r7, #4]
+ 8009614:	6a1b      	ldr	r3, [r3, #32]
+ 8009616:	009b      	lsls	r3, r3, #2
+ 8009618:	683a      	ldr	r2, [r7, #0]
+ 800961a:	4413      	add	r3, r2
+ 800961c:	687a      	ldr	r2, [r7, #4]
+ 800961e:	6a12      	ldr	r2, [r2, #32]
+ 8009620:	320a      	adds	r2, #10
+ 8009622:	0092      	lsls	r2, r2, #2
+ 8009624:	6839      	ldr	r1, [r7, #0]
+ 8009626:	440a      	add	r2, r1
+ 8009628:	6812      	ldr	r2, [r2, #0]
+ 800962a:	601a      	str	r2, [r3, #0]
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _NumResult); //print result
 	}
 }
 
 void DataFilter::moveArray(float *pArray) {
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
- 800965c:	687b      	ldr	r3, [r7, #4]
- 800965e:	6a1b      	ldr	r3, [r3, #32]
- 8009660:	1c5a      	adds	r2, r3, #1
- 8009662:	687b      	ldr	r3, [r7, #4]
- 8009664:	621a      	str	r2, [r3, #32]
- 8009666:	687b      	ldr	r3, [r7, #4]
- 8009668:	6a1a      	ldr	r2, [r3, #32]
- 800966a:	687b      	ldr	r3, [r7, #4]
- 800966c:	685b      	ldr	r3, [r3, #4]
- 800966e:	429a      	cmp	r2, r3
- 8009670:	dbe7      	blt.n	8009642 <_ZN10DataFilter9moveArrayEPf+0x12>
+ 800962c:	687b      	ldr	r3, [r7, #4]
+ 800962e:	6a1b      	ldr	r3, [r3, #32]
+ 8009630:	1c5a      	adds	r2, r3, #1
+ 8009632:	687b      	ldr	r3, [r7, #4]
+ 8009634:	621a      	str	r2, [r3, #32]
+ 8009636:	687b      	ldr	r3, [r7, #4]
+ 8009638:	6a1a      	ldr	r2, [r3, #32]
+ 800963a:	687b      	ldr	r3, [r7, #4]
+ 800963c:	685b      	ldr	r3, [r3, #4]
+ 800963e:	429a      	cmp	r2, r3
+ 8009640:	dbe7      	blt.n	8009612 <_ZN10DataFilter9moveArrayEPf+0x12>
 		pArray[Cont] = pArray[Cont + BUFFER_SIZE];
 	}
 }
- 8009672:	370c      	adds	r7, #12
- 8009674:	46bd      	mov	sp, r7
- 8009676:	f85d 7b04 	ldr.w	r7, [sp], #4
- 800967a:	4770      	bx	lr
- 800967c:	f3af 8000 	nop.w
+ 8009642:	370c      	adds	r7, #12
+ 8009644:	46bd      	mov	sp, r7
+ 8009646:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800964a:	4770      	bx	lr
+ 800964c:	f3af 8000 	nop.w
 
-08009680 <_ZNK10DataFilter21getArrayCoefficientsBEv>:
+08009650 <_ZNK10DataFilter21getArrayCoefficientsBEv>:
 
 float* DataFilter::getArrayCoefficientsB() const {
- 8009680:	b480      	push	{r7}
- 8009682:	b083      	sub	sp, #12
- 8009684:	af00      	add	r7, sp, #0
- 8009686:	6078      	str	r0, [r7, #4]
+ 8009650:	b480      	push	{r7}
+ 8009652:	b083      	sub	sp, #12
+ 8009654:	af00      	add	r7, sp, #0
+ 8009656:	6078      	str	r0, [r7, #4]
 	return ArrayCoefficientsB;
- 8009688:	687b      	ldr	r3, [r7, #4]
- 800968a:	68db      	ldr	r3, [r3, #12]
+ 8009658:	687b      	ldr	r3, [r7, #4]
+ 800965a:	68db      	ldr	r3, [r3, #12]
 }
- 800968c:	4618      	mov	r0, r3
- 800968e:	370c      	adds	r7, #12
- 8009690:	46bd      	mov	sp, r7
- 8009692:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009696:	4770      	bx	lr
- 8009698:	f3af 8000 	nop.w
- 800969c:	f3af 8000 	nop.w
+ 800965c:	4618      	mov	r0, r3
+ 800965e:	370c      	adds	r7, #12
+ 8009660:	46bd      	mov	sp, r7
+ 8009662:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009666:	4770      	bx	lr
+ 8009668:	f3af 8000 	nop.w
+ 800966c:	f3af 8000 	nop.w
 
-080096a0 <_ZN10DataFilter21setArrayCoefficientsBEPf>:
+08009670 <_ZN10DataFilter21setArrayCoefficientsBEPf>:
 
 void DataFilter::setArrayCoefficientsB(float* pArrayCoefficientsB) {
- 80096a0:	b480      	push	{r7}
- 80096a2:	b083      	sub	sp, #12
- 80096a4:	af00      	add	r7, sp, #0
- 80096a6:	6078      	str	r0, [r7, #4]
- 80096a8:	6039      	str	r1, [r7, #0]
+ 8009670:	b480      	push	{r7}
+ 8009672:	b083      	sub	sp, #12
+ 8009674:	af00      	add	r7, sp, #0
+ 8009676:	6078      	str	r0, [r7, #4]
+ 8009678:	6039      	str	r1, [r7, #0]
 	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
+ 800967a:	687b      	ldr	r3, [r7, #4]
+ 800967c:	2200      	movs	r2, #0
+ 800967e:	621a      	str	r2, [r3, #32]
+ 8009680:	e011      	b.n	80096a6 <_ZN10DataFilter21setArrayCoefficientsBEPf+0x36>
+		ArrayCoefficientsB[Cont] = pArrayCoefficientsB[Cont];
+ 8009682:	687b      	ldr	r3, [r7, #4]
+ 8009684:	68da      	ldr	r2, [r3, #12]
+ 8009686:	687b      	ldr	r3, [r7, #4]
+ 8009688:	6a1b      	ldr	r3, [r3, #32]
+ 800968a:	009b      	lsls	r3, r3, #2
+ 800968c:	4413      	add	r3, r2
+ 800968e:	687a      	ldr	r2, [r7, #4]
+ 8009690:	6a12      	ldr	r2, [r2, #32]
+ 8009692:	0092      	lsls	r2, r2, #2
+ 8009694:	6839      	ldr	r1, [r7, #0]
+ 8009696:	440a      	add	r2, r1
+ 8009698:	6812      	ldr	r2, [r2, #0]
+ 800969a:	601a      	str	r2, [r3, #0]
+float* DataFilter::getArrayCoefficientsB() const {
+	return ArrayCoefficientsB;
+}
+
+void DataFilter::setArrayCoefficientsB(float* pArrayCoefficientsB) {
+	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
+ 800969c:	687b      	ldr	r3, [r7, #4]
+ 800969e:	6a1b      	ldr	r3, [r3, #32]
+ 80096a0:	1c5a      	adds	r2, r3, #1
+ 80096a2:	687b      	ldr	r3, [r7, #4]
+ 80096a4:	621a      	str	r2, [r3, #32]
+ 80096a6:	687b      	ldr	r3, [r7, #4]
+ 80096a8:	6a1a      	ldr	r2, [r3, #32]
  80096aa:	687b      	ldr	r3, [r7, #4]
- 80096ac:	2200      	movs	r2, #0
- 80096ae:	621a      	str	r2, [r3, #32]
- 80096b0:	e011      	b.n	80096d6 <_ZN10DataFilter21setArrayCoefficientsBEPf+0x36>
+ 80096ac:	685b      	ldr	r3, [r3, #4]
+ 80096ae:	3301      	adds	r3, #1
+ 80096b0:	429a      	cmp	r2, r3
+ 80096b2:	dbe6      	blt.n	8009682 <_ZN10DataFilter21setArrayCoefficientsBEPf+0x12>
 		ArrayCoefficientsB[Cont] = pArrayCoefficientsB[Cont];
- 80096b2:	687b      	ldr	r3, [r7, #4]
- 80096b4:	68da      	ldr	r2, [r3, #12]
- 80096b6:	687b      	ldr	r3, [r7, #4]
- 80096b8:	6a1b      	ldr	r3, [r3, #32]
- 80096ba:	009b      	lsls	r3, r3, #2
- 80096bc:	4413      	add	r3, r2
- 80096be:	687a      	ldr	r2, [r7, #4]
- 80096c0:	6a12      	ldr	r2, [r2, #32]
- 80096c2:	0092      	lsls	r2, r2, #2
- 80096c4:	6839      	ldr	r1, [r7, #0]
- 80096c6:	440a      	add	r2, r1
- 80096c8:	6812      	ldr	r2, [r2, #0]
- 80096ca:	601a      	str	r2, [r3, #0]
-float* DataFilter::getArrayCoefficientsB() const {
-	return ArrayCoefficientsB;
+	}
 }
+ 80096b4:	370c      	adds	r7, #12
+ 80096b6:	46bd      	mov	sp, r7
+ 80096b8:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80096bc:	4770      	bx	lr
+ 80096be:	bf00      	nop
 
-void DataFilter::setArrayCoefficientsB(float* pArrayCoefficientsB) {
-	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
- 80096cc:	687b      	ldr	r3, [r7, #4]
- 80096ce:	6a1b      	ldr	r3, [r3, #32]
- 80096d0:	1c5a      	adds	r2, r3, #1
+080096c0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>:
+
+void DataFilter::setArrayInitialConditionsX(float *pArrayInitialConditions) {
+ 80096c0:	b480      	push	{r7}
+ 80096c2:	b083      	sub	sp, #12
+ 80096c4:	af00      	add	r7, sp, #0
+ 80096c6:	6078      	str	r0, [r7, #4]
+ 80096c8:	6039      	str	r1, [r7, #0]
+	for (Cont = 0; Cont < FilterOrder; Cont++) {
+ 80096ca:	687b      	ldr	r3, [r7, #4]
+ 80096cc:	2200      	movs	r2, #0
+ 80096ce:	621a      	str	r2, [r3, #32]
+ 80096d0:	e011      	b.n	80096f6 <_ZN10DataFilter26setArrayInitialConditionsXEPf+0x36>
+		ArrayInputsX[Cont] = pArrayInitialConditions[Cont];
  80096d2:	687b      	ldr	r3, [r7, #4]
- 80096d4:	621a      	str	r2, [r3, #32]
+ 80096d4:	691a      	ldr	r2, [r3, #16]
  80096d6:	687b      	ldr	r3, [r7, #4]
- 80096d8:	6a1a      	ldr	r2, [r3, #32]
- 80096da:	687b      	ldr	r3, [r7, #4]
- 80096dc:	685b      	ldr	r3, [r3, #4]
- 80096de:	3301      	adds	r3, #1
- 80096e0:	429a      	cmp	r2, r3
- 80096e2:	dbe6      	blt.n	80096b2 <_ZN10DataFilter21setArrayCoefficientsBEPf+0x12>
+ 80096d8:	6a1b      	ldr	r3, [r3, #32]
+ 80096da:	009b      	lsls	r3, r3, #2
+ 80096dc:	4413      	add	r3, r2
+ 80096de:	687a      	ldr	r2, [r7, #4]
+ 80096e0:	6a12      	ldr	r2, [r2, #32]
+ 80096e2:	0092      	lsls	r2, r2, #2
+ 80096e4:	6839      	ldr	r1, [r7, #0]
+ 80096e6:	440a      	add	r2, r1
+ 80096e8:	6812      	ldr	r2, [r2, #0]
+ 80096ea:	601a      	str	r2, [r3, #0]
 		ArrayCoefficientsB[Cont] = pArrayCoefficientsB[Cont];
 	}
 }
- 80096e4:	370c      	adds	r7, #12
- 80096e6:	46bd      	mov	sp, r7
- 80096e8:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80096ec:	4770      	bx	lr
- 80096ee:	bf00      	nop
-
-080096f0 <_ZN10DataFilter26setArrayInitialConditionsXEPf>:
 
 void DataFilter::setArrayInitialConditionsX(float *pArrayInitialConditions) {
- 80096f0:	b480      	push	{r7}
- 80096f2:	b083      	sub	sp, #12
- 80096f4:	af00      	add	r7, sp, #0
- 80096f6:	6078      	str	r0, [r7, #4]
- 80096f8:	6039      	str	r1, [r7, #0]
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
+ 80096ec:	687b      	ldr	r3, [r7, #4]
+ 80096ee:	6a1b      	ldr	r3, [r3, #32]
+ 80096f0:	1c5a      	adds	r2, r3, #1
+ 80096f2:	687b      	ldr	r3, [r7, #4]
+ 80096f4:	621a      	str	r2, [r3, #32]
+ 80096f6:	687b      	ldr	r3, [r7, #4]
+ 80096f8:	6a1a      	ldr	r2, [r3, #32]
  80096fa:	687b      	ldr	r3, [r7, #4]
- 80096fc:	2200      	movs	r2, #0
- 80096fe:	621a      	str	r2, [r3, #32]
- 8009700:	e011      	b.n	8009726 <_ZN10DataFilter26setArrayInitialConditionsXEPf+0x36>
-		ArrayInputsX[Cont] = pArrayInitialConditions[Cont];
- 8009702:	687b      	ldr	r3, [r7, #4]
- 8009704:	691a      	ldr	r2, [r3, #16]
- 8009706:	687b      	ldr	r3, [r7, #4]
- 8009708:	6a1b      	ldr	r3, [r3, #32]
- 800970a:	009b      	lsls	r3, r3, #2
- 800970c:	4413      	add	r3, r2
- 800970e:	687a      	ldr	r2, [r7, #4]
- 8009710:	6a12      	ldr	r2, [r2, #32]
- 8009712:	0092      	lsls	r2, r2, #2
- 8009714:	6839      	ldr	r1, [r7, #0]
- 8009716:	440a      	add	r2, r1
- 8009718:	6812      	ldr	r2, [r2, #0]
- 800971a:	601a      	str	r2, [r3, #0]
-		ArrayCoefficientsB[Cont] = pArrayCoefficientsB[Cont];
-	}
-}
-
-void DataFilter::setArrayInitialConditionsX(float *pArrayInitialConditions) {
-	for (Cont = 0; Cont < FilterOrder; Cont++) {
- 800971c:	687b      	ldr	r3, [r7, #4]
- 800971e:	6a1b      	ldr	r3, [r3, #32]
- 8009720:	1c5a      	adds	r2, r3, #1
- 8009722:	687b      	ldr	r3, [r7, #4]
- 8009724:	621a      	str	r2, [r3, #32]
- 8009726:	687b      	ldr	r3, [r7, #4]
- 8009728:	6a1a      	ldr	r2, [r3, #32]
- 800972a:	687b      	ldr	r3, [r7, #4]
- 800972c:	685b      	ldr	r3, [r3, #4]
- 800972e:	429a      	cmp	r2, r3
- 8009730:	dbe7      	blt.n	8009702 <_ZN10DataFilter26setArrayInitialConditionsXEPf+0x12>
+ 80096fc:	685b      	ldr	r3, [r3, #4]
+ 80096fe:	429a      	cmp	r2, r3
+ 8009700:	dbe7      	blt.n	80096d2 <_ZN10DataFilter26setArrayInitialConditionsXEPf+0x12>
 		ArrayInputsX[Cont] = pArrayInitialConditions[Cont];
 	}
 }
- 8009732:	370c      	adds	r7, #12
- 8009734:	46bd      	mov	sp, r7
- 8009736:	f85d 7b04 	ldr.w	r7, [sp], #4
- 800973a:	4770      	bx	lr
- 800973c:	f3af 8000 	nop.w
+ 8009702:	370c      	adds	r7, #12
+ 8009704:	46bd      	mov	sp, r7
+ 8009706:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800970a:	4770      	bx	lr
+ 800970c:	f3af 8000 	nop.w
 
-08009740 <_ZNK10DataFilter15getArrayInputsXEv>:
+08009710 <_ZNK10DataFilter15getArrayInputsXEv>:
 
 float* DataFilter::getArrayInputsX() const {
- 8009740:	b480      	push	{r7}
- 8009742:	b083      	sub	sp, #12
- 8009744:	af00      	add	r7, sp, #0
- 8009746:	6078      	str	r0, [r7, #4]
+ 8009710:	b480      	push	{r7}
+ 8009712:	b083      	sub	sp, #12
+ 8009714:	af00      	add	r7, sp, #0
+ 8009716:	6078      	str	r0, [r7, #4]
 	return ArrayInputsX;
- 8009748:	687b      	ldr	r3, [r7, #4]
- 800974a:	691b      	ldr	r3, [r3, #16]
+ 8009718:	687b      	ldr	r3, [r7, #4]
+ 800971a:	691b      	ldr	r3, [r3, #16]
 }
- 800974c:	4618      	mov	r0, r3
- 800974e:	370c      	adds	r7, #12
- 8009750:	46bd      	mov	sp, r7
- 8009752:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009756:	4770      	bx	lr
- 8009758:	f3af 8000 	nop.w
- 800975c:	f3af 8000 	nop.w
+ 800971c:	4618      	mov	r0, r3
+ 800971e:	370c      	adds	r7, #12
+ 8009720:	46bd      	mov	sp, r7
+ 8009722:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009726:	4770      	bx	lr
+ 8009728:	f3af 8000 	nop.w
+ 800972c:	f3af 8000 	nop.w
 
-08009760 <_ZNK10DataFilter14getFilterOrderEv>:
+08009730 <_ZNK10DataFilter14getFilterOrderEv>:
 
 int DataFilter::getFilterOrder() const {
- 8009760:	b480      	push	{r7}
- 8009762:	b083      	sub	sp, #12
- 8009764:	af00      	add	r7, sp, #0
- 8009766:	6078      	str	r0, [r7, #4]
+ 8009730:	b480      	push	{r7}
+ 8009732:	b083      	sub	sp, #12
+ 8009734:	af00      	add	r7, sp, #0
+ 8009736:	6078      	str	r0, [r7, #4]
 	return FilterOrder;
- 8009768:	687b      	ldr	r3, [r7, #4]
- 800976a:	685b      	ldr	r3, [r3, #4]
+ 8009738:	687b      	ldr	r3, [r7, #4]
+ 800973a:	685b      	ldr	r3, [r3, #4]
 }
- 800976c:	4618      	mov	r0, r3
- 800976e:	370c      	adds	r7, #12
- 8009770:	46bd      	mov	sp, r7
- 8009772:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009776:	4770      	bx	lr
- 8009778:	f3af 8000 	nop.w
- 800977c:	f3af 8000 	nop.w
+ 800973c:	4618      	mov	r0, r3
+ 800973e:	370c      	adds	r7, #12
+ 8009740:	46bd      	mov	sp, r7
+ 8009742:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009746:	4770      	bx	lr
+ 8009748:	f3af 8000 	nop.w
+ 800974c:	f3af 8000 	nop.w
 
-08009780 <_ZN10DataFilter14setFilterOrderEi>:
+08009750 <_ZN10DataFilter14setFilterOrderEi>:
 
 void DataFilter::setFilterOrder(int pFilterOrder) {
- 8009780:	b480      	push	{r7}
- 8009782:	b083      	sub	sp, #12
- 8009784:	af00      	add	r7, sp, #0
- 8009786:	6078      	str	r0, [r7, #4]
- 8009788:	6039      	str	r1, [r7, #0]
+ 8009750:	b480      	push	{r7}
+ 8009752:	b083      	sub	sp, #12
+ 8009754:	af00      	add	r7, sp, #0
+ 8009756:	6078      	str	r0, [r7, #4]
+ 8009758:	6039      	str	r1, [r7, #0]
 	FilterOrder = pFilterOrder;
- 800978a:	687b      	ldr	r3, [r7, #4]
- 800978c:	683a      	ldr	r2, [r7, #0]
- 800978e:	605a      	str	r2, [r3, #4]
+ 800975a:	687b      	ldr	r3, [r7, #4]
+ 800975c:	683a      	ldr	r2, [r7, #0]
+ 800975e:	605a      	str	r2, [r3, #4]
 }
- 8009790:	370c      	adds	r7, #12
- 8009792:	46bd      	mov	sp, r7
- 8009794:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009798:	4770      	bx	lr
- 800979a:	bf00      	nop
- 800979c:	f3af 8000 	nop.w
+ 8009760:	370c      	adds	r7, #12
+ 8009762:	46bd      	mov	sp, r7
+ 8009764:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009768:	4770      	bx	lr
+ 800976a:	bf00      	nop
+ 800976c:	f3af 8000 	nop.w
 
-080097a0 <_ZNK10DataFilter21getArrayCoefficientsAEv>:
+08009770 <_ZNK10DataFilter21getArrayCoefficientsAEv>:
 
 float* DataFilter::getArrayCoefficientsA() const {
- 80097a0:	b480      	push	{r7}
- 80097a2:	b083      	sub	sp, #12
- 80097a4:	af00      	add	r7, sp, #0
- 80097a6:	6078      	str	r0, [r7, #4]
+ 8009770:	b480      	push	{r7}
+ 8009772:	b083      	sub	sp, #12
+ 8009774:	af00      	add	r7, sp, #0
+ 8009776:	6078      	str	r0, [r7, #4]
 	return ArrayCoefficientsA;
- 80097a8:	687b      	ldr	r3, [r7, #4]
- 80097aa:	695b      	ldr	r3, [r3, #20]
+ 8009778:	687b      	ldr	r3, [r7, #4]
+ 800977a:	695b      	ldr	r3, [r3, #20]
 }
- 80097ac:	4618      	mov	r0, r3
- 80097ae:	370c      	adds	r7, #12
- 80097b0:	46bd      	mov	sp, r7
- 80097b2:	f85d 7b04 	ldr.w	r7, [sp], #4
- 80097b6:	4770      	bx	lr
- 80097b8:	f3af 8000 	nop.w
- 80097bc:	f3af 8000 	nop.w
+ 800977c:	4618      	mov	r0, r3
+ 800977e:	370c      	adds	r7, #12
+ 8009780:	46bd      	mov	sp, r7
+ 8009782:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009786:	4770      	bx	lr
+ 8009788:	f3af 8000 	nop.w
+ 800978c:	f3af 8000 	nop.w
 
-080097c0 <_ZN10DataFilter21setArrayCoefficientsAEPf>:
+08009790 <_ZN10DataFilter21setArrayCoefficientsAEPf>:
 
 void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
- 80097c0:	b480      	push	{r7}
- 80097c2:	b083      	sub	sp, #12
- 80097c4:	af00      	add	r7, sp, #0
- 80097c6:	6078      	str	r0, [r7, #4]
- 80097c8:	6039      	str	r1, [r7, #0]
+ 8009790:	b480      	push	{r7}
+ 8009792:	b083      	sub	sp, #12
+ 8009794:	af00      	add	r7, sp, #0
+ 8009796:	6078      	str	r0, [r7, #4]
+ 8009798:	6039      	str	r1, [r7, #0]
 	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
+ 800979a:	687b      	ldr	r3, [r7, #4]
+ 800979c:	2200      	movs	r2, #0
+ 800979e:	621a      	str	r2, [r3, #32]
+ 80097a0:	e011      	b.n	80097c6 <_ZN10DataFilter21setArrayCoefficientsAEPf+0x36>
+		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
+ 80097a2:	687b      	ldr	r3, [r7, #4]
+ 80097a4:	695a      	ldr	r2, [r3, #20]
+ 80097a6:	687b      	ldr	r3, [r7, #4]
+ 80097a8:	6a1b      	ldr	r3, [r3, #32]
+ 80097aa:	009b      	lsls	r3, r3, #2
+ 80097ac:	4413      	add	r3, r2
+ 80097ae:	687a      	ldr	r2, [r7, #4]
+ 80097b0:	6a12      	ldr	r2, [r2, #32]
+ 80097b2:	0092      	lsls	r2, r2, #2
+ 80097b4:	6839      	ldr	r1, [r7, #0]
+ 80097b6:	440a      	add	r2, r1
+ 80097b8:	6812      	ldr	r2, [r2, #0]
+ 80097ba:	601a      	str	r2, [r3, #0]
+float* DataFilter::getArrayCoefficientsA() const {
+	return ArrayCoefficientsA;
+}
+
+void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
+	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
+ 80097bc:	687b      	ldr	r3, [r7, #4]
+ 80097be:	6a1b      	ldr	r3, [r3, #32]
+ 80097c0:	1c5a      	adds	r2, r3, #1
+ 80097c2:	687b      	ldr	r3, [r7, #4]
+ 80097c4:	621a      	str	r2, [r3, #32]
+ 80097c6:	687b      	ldr	r3, [r7, #4]
+ 80097c8:	6a1a      	ldr	r2, [r3, #32]
  80097ca:	687b      	ldr	r3, [r7, #4]
- 80097cc:	2200      	movs	r2, #0
- 80097ce:	621a      	str	r2, [r3, #32]
- 80097d0:	e011      	b.n	80097f6 <_ZN10DataFilter21setArrayCoefficientsAEPf+0x36>
+ 80097cc:	685b      	ldr	r3, [r3, #4]
+ 80097ce:	3301      	adds	r3, #1
+ 80097d0:	429a      	cmp	r2, r3
+ 80097d2:	dbe6      	blt.n	80097a2 <_ZN10DataFilter21setArrayCoefficientsAEPf+0x12>
 		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
- 80097d2:	687b      	ldr	r3, [r7, #4]
- 80097d4:	695a      	ldr	r2, [r3, #20]
- 80097d6:	687b      	ldr	r3, [r7, #4]
- 80097d8:	6a1b      	ldr	r3, [r3, #32]
- 80097da:	009b      	lsls	r3, r3, #2
- 80097dc:	4413      	add	r3, r2
- 80097de:	687a      	ldr	r2, [r7, #4]
- 80097e0:	6a12      	ldr	r2, [r2, #32]
- 80097e2:	0092      	lsls	r2, r2, #2
- 80097e4:	6839      	ldr	r1, [r7, #0]
- 80097e6:	440a      	add	r2, r1
- 80097e8:	6812      	ldr	r2, [r2, #0]
- 80097ea:	601a      	str	r2, [r3, #0]
-float* DataFilter::getArrayCoefficientsA() const {
-	return ArrayCoefficientsA;
+	}
 }
+ 80097d4:	370c      	adds	r7, #12
+ 80097d6:	46bd      	mov	sp, r7
+ 80097d8:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 80097dc:	4770      	bx	lr
+ 80097de:	bf00      	nop
 
-void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
-	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
- 80097ec:	687b      	ldr	r3, [r7, #4]
- 80097ee:	6a1b      	ldr	r3, [r3, #32]
- 80097f0:	1c5a      	adds	r2, r3, #1
+080097e0 <_ZN10DataFilter26setArrayInitialConditionsYEPf>:
+
+void DataFilter::setArrayInitialConditionsY(float* arrayInitialConditionsY) {
+ 80097e0:	b480      	push	{r7}
+ 80097e2:	b083      	sub	sp, #12
+ 80097e4:	af00      	add	r7, sp, #0
+ 80097e6:	6078      	str	r0, [r7, #4]
+ 80097e8:	6039      	str	r1, [r7, #0]
+	for (Cont = 0; Cont < FilterOrder; Cont++) {
+ 80097ea:	687b      	ldr	r3, [r7, #4]
+ 80097ec:	2200      	movs	r2, #0
+ 80097ee:	621a      	str	r2, [r3, #32]
+ 80097f0:	e011      	b.n	8009816 <_ZN10DataFilter26setArrayInitialConditionsYEPf+0x36>
+		ArrayInputsY[Cont] = arrayInitialConditionsY[Cont];
  80097f2:	687b      	ldr	r3, [r7, #4]
- 80097f4:	621a      	str	r2, [r3, #32]
+ 80097f4:	699a      	ldr	r2, [r3, #24]
  80097f6:	687b      	ldr	r3, [r7, #4]
- 80097f8:	6a1a      	ldr	r2, [r3, #32]
- 80097fa:	687b      	ldr	r3, [r7, #4]
- 80097fc:	685b      	ldr	r3, [r3, #4]
- 80097fe:	3301      	adds	r3, #1
- 8009800:	429a      	cmp	r2, r3
- 8009802:	dbe6      	blt.n	80097d2 <_ZN10DataFilter21setArrayCoefficientsAEPf+0x12>
+ 80097f8:	6a1b      	ldr	r3, [r3, #32]
+ 80097fa:	009b      	lsls	r3, r3, #2
+ 80097fc:	4413      	add	r3, r2
+ 80097fe:	687a      	ldr	r2, [r7, #4]
+ 8009800:	6a12      	ldr	r2, [r2, #32]
+ 8009802:	0092      	lsls	r2, r2, #2
+ 8009804:	6839      	ldr	r1, [r7, #0]
+ 8009806:	440a      	add	r2, r1
+ 8009808:	6812      	ldr	r2, [r2, #0]
+ 800980a:	601a      	str	r2, [r3, #0]
 		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
 	}
 }
- 8009804:	370c      	adds	r7, #12
- 8009806:	46bd      	mov	sp, r7
- 8009808:	f85d 7b04 	ldr.w	r7, [sp], #4
- 800980c:	4770      	bx	lr
- 800980e:	bf00      	nop
-
-08009810 <_ZN10DataFilter26setArrayInitialConditionsYEPf>:
 
 void DataFilter::setArrayInitialConditionsY(float* arrayInitialConditionsY) {
- 8009810:	b480      	push	{r7}
- 8009812:	b083      	sub	sp, #12
- 8009814:	af00      	add	r7, sp, #0
- 8009816:	6078      	str	r0, [r7, #4]
- 8009818:	6039      	str	r1, [r7, #0]
 	for (Cont = 0; Cont < FilterOrder; Cont++) {
+ 800980c:	687b      	ldr	r3, [r7, #4]
+ 800980e:	6a1b      	ldr	r3, [r3, #32]
+ 8009810:	1c5a      	adds	r2, r3, #1
+ 8009812:	687b      	ldr	r3, [r7, #4]
+ 8009814:	621a      	str	r2, [r3, #32]
+ 8009816:	687b      	ldr	r3, [r7, #4]
+ 8009818:	6a1a      	ldr	r2, [r3, #32]
  800981a:	687b      	ldr	r3, [r7, #4]
- 800981c:	2200      	movs	r2, #0
- 800981e:	621a      	str	r2, [r3, #32]
- 8009820:	e011      	b.n	8009846 <_ZN10DataFilter26setArrayInitialConditionsYEPf+0x36>
-		ArrayInputsY[Cont] = arrayInitialConditionsY[Cont];
- 8009822:	687b      	ldr	r3, [r7, #4]
- 8009824:	699a      	ldr	r2, [r3, #24]
- 8009826:	687b      	ldr	r3, [r7, #4]
- 8009828:	6a1b      	ldr	r3, [r3, #32]
- 800982a:	009b      	lsls	r3, r3, #2
- 800982c:	4413      	add	r3, r2
- 800982e:	687a      	ldr	r2, [r7, #4]
- 8009830:	6a12      	ldr	r2, [r2, #32]
- 8009832:	0092      	lsls	r2, r2, #2
- 8009834:	6839      	ldr	r1, [r7, #0]
- 8009836:	440a      	add	r2, r1
- 8009838:	6812      	ldr	r2, [r2, #0]
- 800983a:	601a      	str	r2, [r3, #0]
-		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
-	}
-}
-
-void DataFilter::setArrayInitialConditionsY(float* arrayInitialConditionsY) {
-	for (Cont = 0; Cont < FilterOrder; Cont++) {
- 800983c:	687b      	ldr	r3, [r7, #4]
- 800983e:	6a1b      	ldr	r3, [r3, #32]
- 8009840:	1c5a      	adds	r2, r3, #1
- 8009842:	687b      	ldr	r3, [r7, #4]
- 8009844:	621a      	str	r2, [r3, #32]
- 8009846:	687b      	ldr	r3, [r7, #4]
- 8009848:	6a1a      	ldr	r2, [r3, #32]
- 800984a:	687b      	ldr	r3, [r7, #4]
- 800984c:	685b      	ldr	r3, [r3, #4]
- 800984e:	429a      	cmp	r2, r3
- 8009850:	dbe7      	blt.n	8009822 <_ZN10DataFilter26setArrayInitialConditionsYEPf+0x12>
+ 800981c:	685b      	ldr	r3, [r3, #4]
+ 800981e:	429a      	cmp	r2, r3
+ 8009820:	dbe7      	blt.n	80097f2 <_ZN10DataFilter26setArrayInitialConditionsYEPf+0x12>
 		ArrayInputsY[Cont] = arrayInitialConditionsY[Cont];
 	}
 }
- 8009852:	370c      	adds	r7, #12
- 8009854:	46bd      	mov	sp, r7
- 8009856:	f85d 7b04 	ldr.w	r7, [sp], #4
- 800985a:	4770      	bx	lr
- 800985c:	f3af 8000 	nop.w
+ 8009822:	370c      	adds	r7, #12
+ 8009824:	46bd      	mov	sp, r7
+ 8009826:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 800982a:	4770      	bx	lr
+ 800982c:	f3af 8000 	nop.w
 
-08009860 <_ZNK10DataFilter15getArrayInputsYEv>:
+08009830 <_ZNK10DataFilter15getArrayInputsYEv>:
 
 float* DataFilter::getArrayInputsY() const {
- 8009860:	b480      	push	{r7}
- 8009862:	b083      	sub	sp, #12
- 8009864:	af00      	add	r7, sp, #0
- 8009866:	6078      	str	r0, [r7, #4]
+ 8009830:	b480      	push	{r7}
+ 8009832:	b083      	sub	sp, #12
+ 8009834:	af00      	add	r7, sp, #0
+ 8009836:	6078      	str	r0, [r7, #4]
 	return ArrayInputsY;
- 8009868:	687b      	ldr	r3, [r7, #4]
- 800986a:	699b      	ldr	r3, [r3, #24]
+ 8009838:	687b      	ldr	r3, [r7, #4]
+ 800983a:	699b      	ldr	r3, [r3, #24]
 }
- 800986c:	4618      	mov	r0, r3
- 800986e:	370c      	adds	r7, #12
- 8009870:	46bd      	mov	sp, r7
- 8009872:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009876:	4770      	bx	lr
- 8009878:	f3af 8000 	nop.w
- 800987c:	f3af 8000 	nop.w
+ 800983c:	4618      	mov	r0, r3
+ 800983e:	370c      	adds	r7, #12
+ 8009840:	46bd      	mov	sp, r7
+ 8009842:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009846:	4770      	bx	lr
+ 8009848:	f3af 8000 	nop.w
+ 800984c:	f3af 8000 	nop.w
 
-08009880 <_ZN10DataFilter19setTypeOfDirectFormEi>:
+08009850 <_ZN10DataFilter19setTypeOfDirectFormEi>:
 
 int DataFilter::getTypeOfDirectForm() const {
 	return TypeOfDirectForm;
 }
 
 void DataFilter::setTypeOfDirectForm(int typeOfDirectForm) {
- 8009880:	b480      	push	{r7}
- 8009882:	b083      	sub	sp, #12
- 8009884:	af00      	add	r7, sp, #0
- 8009886:	6078      	str	r0, [r7, #4]
- 8009888:	6039      	str	r1, [r7, #0]
+ 8009850:	b480      	push	{r7}
+ 8009852:	b083      	sub	sp, #12
+ 8009854:	af00      	add	r7, sp, #0
+ 8009856:	6078      	str	r0, [r7, #4]
+ 8009858:	6039      	str	r1, [r7, #0]
 	TypeOfDirectForm = typeOfDirectForm;
- 800988a:	687b      	ldr	r3, [r7, #4]
- 800988c:	683a      	ldr	r2, [r7, #0]
- 800988e:	609a      	str	r2, [r3, #8]
+ 800985a:	687b      	ldr	r3, [r7, #4]
+ 800985c:	683a      	ldr	r2, [r7, #0]
+ 800985e:	609a      	str	r2, [r3, #8]
 }
- 8009890:	370c      	adds	r7, #12
- 8009892:	46bd      	mov	sp, r7
- 8009894:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8009898:	4770      	bx	lr
- 800989a:	bf00      	nop
- 800989c:	f3af 8000 	nop.w
- 80098a0:	656c6469 	.word	0x656c6469
+ 8009860:	370c      	adds	r7, #12
+ 8009862:	46bd      	mov	sp, r7
+ 8009864:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8009868:	4770      	bx	lr
+ 800986a:	bf00      	nop
+ 800986c:	f3af 8000 	nop.w
+ 8009870:	656c6469 	.word	0x656c6469
 	...
- 80098b0:	31235653 	.word	0x31235653
+ 8009880:	31235653 	.word	0x31235653
+ 8009884:	00000000 	.word	0x00000000
+ 8009888:	32235653 	.word	0x32235653
+ 800988c:	00000000 	.word	0x00000000
+ 8009890:	33235653 	.word	0x33235653
+ 8009894:	00000000 	.word	0x00000000
+ 8009898:	34235653 	.word	0x34235653
+ 800989c:	00000000 	.word	0x00000000
+ 80098a0:	35235653 	.word	0x35235653
+ 80098a4:	00000000 	.word	0x00000000
+ 80098a8:	36235653 	.word	0x36235653
+ 80098ac:	00000000 	.word	0x00000000
+ 80098b0:	37235653 	.word	0x37235653
  80098b4:	00000000 	.word	0x00000000
- 80098b8:	32235653 	.word	0x32235653
+ 80098b8:	38235653 	.word	0x38235653
  80098bc:	00000000 	.word	0x00000000
- 80098c0:	33235653 	.word	0x33235653
+ 80098c0:	39235653 	.word	0x39235653
  80098c4:	00000000 	.word	0x00000000
- 80098c8:	34235653 	.word	0x34235653
- 80098cc:	00000000 	.word	0x00000000
- 80098d0:	35235653 	.word	0x35235653
- 80098d4:	00000000 	.word	0x00000000
- 80098d8:	36235653 	.word	0x36235653
- 80098dc:	00000000 	.word	0x00000000
- 80098e0:	37235653 	.word	0x37235653
- 80098e4:	00000000 	.word	0x00000000
- 80098e8:	38235653 	.word	0x38235653
- 80098ec:	00000000 	.word	0x00000000
- 80098f0:	39235653 	.word	0x39235653
- 80098f4:	00000000 	.word	0x00000000
- 80098f8:	31235653 	.word	0x31235653
- 80098fc:	00000030 	.word	0x00000030
- 8009900:	31235653 	.word	0x31235653
- 8009904:	00000031 	.word	0x00000031
+ 80098c8:	31235653 	.word	0x31235653
+ 80098cc:	00000030 	.word	0x00000030
+ 80098d0:	31235653 	.word	0x31235653
+ 80098d4:	00000031 	.word	0x00000031
 	...
- 8009910:	63617473 	.word	0x63617473
- 8009914:	766f206b 	.word	0x766f206b
- 8009918:	6c667265 	.word	0x6c667265
- 800991c:	0000776f 	.word	0x0000776f
- 8009920:	6c756e28 	.word	0x6c756e28
- 8009924:	0000296c 	.word	0x0000296c
+ 80098e0:	63617473 	.word	0x63617473
+ 80098e4:	766f206b 	.word	0x766f206b
+ 80098e8:	6c667265 	.word	0x6c667265
+ 80098ec:	0000776f 	.word	0x0000776f
+ 80098f0:	6c756e28 	.word	0x6c756e28
+ 80098f4:	0000296c 	.word	0x0000296c
 	...
- 8009930:	2043414d 	.word	0x2043414d
- 8009934:	6c696166 	.word	0x6c696166
- 8009938:	00657275 	.word	0x00657275
- 800993c:	00000000 	.word	0x00000000
- 8009940:	746c6946 	.word	0x746c6946
- 8009944:	00006f72 	.word	0x00006f72
- 8009948:	0a0a0a0d 	.word	0x0a0a0a0d
- 800994c:	7365520a 	.word	0x7365520a
- 8009950:	61746c75 	.word	0x61746c75
- 8009954:	003a6f64 	.word	0x003a6f64
- 8009958:	00206625 	.word	0x00206625
- 800995c:	00000000 	.word	0x00000000
- 8009960:	400d4270 	.word	0x400d4270
- 8009964:	408c6580 	.word	0x408c6580
- 8009968:	40d072b0 	.word	0x40d072b0
- 800996c:	4108fa05 	.word	0x4108fa05
- 8009970:	41280e4c 	.word	0x41280e4c
- 8009974:	41451503 	.word	0x41451503
- 8009978:	415fb35d 	.word	0x415fb35d
- 800997c:	4177961e 	.word	0x4177961e
- 8009980:	41863948 	.word	0x41863948
- 8009984:	418f03bf 	.word	0x418f03bf
- 8009988:	41960eee 	.word	0x41960eee
- 800998c:	419b44d5 	.word	0x419b44d5
- 8009990:	419e9528 	.word	0x419e9528
- 8009994:	419ff584 	.word	0x419ff584
- 8009998:	419f61a1 	.word	0x419f61a1
- 800999c:	419cdb4d 	.word	0x419cdb4d
- 80099a0:	41986a6a 	.word	0x41986a6a
- 80099a4:	41921cdb 	.word	0x41921cdb
- 80099a8:	418a0659 	.word	0x418a0659
- 80099ac:	4180402f 	.word	0x4180402f
- 80099b0:	4169d1e1 	.word	0x4169d1e1
- 80099b4:	41504817 	.word	0x41504817
- 80099b8:	413432ff 	.word	0x413432ff
- 80099bc:	4115ea4b 	.word	0x4115ea4b
- 80099c0:	40eb9985 	.word	0x40eb9985
- 80099c4:	40a87daa 	.word	0x40a87daa
- 80099c8:	4046a5a4 	.word	0x4046a5a4
- 80099cc:	3f678b59 	.word	0x3f678b59
- 80099d0:	bfa72a06 	.word	0xbfa72a06
- 80099d4:	c0600789 	.word	0xc0600789
- 80099d8:	c0b4debe 	.word	0xc0b4debe
- 80099dc:	c0f783f9 	.word	0xc0f783f9
- 80099e0:	c11b919d 	.word	0xc11b919d
- 80099e4:	c1397aad 	.word	0xc1397aad
- 80099e8:	c1551fb4 	.word	0xc1551fb4
- 80099ec:	c16e2a30 	.word	0xc16e2a30
- 80099f0:	c18225ee 	.word	0xc18225ee
- 80099f4:	c18b9fb9 	.word	0xc18b9fb9
- 80099f8:	c19364dd 	.word	0xc19364dd
- 80099fc:	c1995d10 	.word	0xc1995d10
- 8009a00:	c19d759e 	.word	0xc19d759e
- 8009a04:	c19fa1bb 	.word	0xc19fa1bb
- 8009a08:	c19fdaa0 	.word	0xc19fdaa0
- 8009a0c:	c19e1f95 	.word	0xc19e1f95
- 8009a10:	c19a7607 	.word	0xc19a7607
- 8009a14:	c194e969 	.word	0xc194e969
- 8009a18:	c18d8b1a 	.word	0xc18d8b1a
- 8009a1c:	c1847223 	.word	0xc1847223
- 8009a20:	c17375e2 	.word	0xc17375e2
- 8009a24:	68206553 	.word	0x68206553
- 8009a28:	72702061 	.word	0x72702061
- 8009a2c:	6f697365 	.word	0x6f697365
- 8009a30:	6f64616e 	.word	0x6f64616e
- 8009a34:	31575320 	.word	0x31575320
- 8009a38:	000a0d20 	.word	0x000a0d20
- 8009a3c:	3c986e8c 	.word	0x3c986e8c
- 8009a40:	bc93c255 	.word	0xbc93c255
- 8009a44:	bc93c255 	.word	0xbc93c255
- 8009a48:	3c986e8c 	.word	0x3c986e8c
- 8009a4c:	c037998c 	.word	0xc037998c
- 8009a50:	40306afc 	.word	0x40306afc
- 8009a54:	bf62faf7 	.word	0xbf62faf7
-	...
- 8009a60:	00206625 	.word	0x00206625
+ 8009900:	2043414d 	.word	0x2043414d
+ 8009904:	6c696166 	.word	0x6c696166
+ 8009908:	00657275 	.word	0x00657275
+ 800990c:	00000000 	.word	0x00000000
+ 8009910:	746c6946 	.word	0x746c6946
+ 8009914:	00006f72 	.word	0x00006f72
+ 8009918:	0a0a0a0d 	.word	0x0a0a0a0d
+ 800991c:	7365520a 	.word	0x7365520a
+ 8009920:	61746c75 	.word	0x61746c75
+ 8009924:	003a6f64 	.word	0x003a6f64
+ 8009928:	00206625 	.word	0x00206625
+ 800992c:	c15b0e17 	.word	0xc15b0e17
+ 8009930:	c13ff93e 	.word	0xc13ff93e
+ 8009934:	c1228c0b 	.word	0xc1228c0b
+ 8009938:	c1032273 	.word	0xc1032273
+ 800993c:	c0c43d9b 	.word	0xc0c43d9b
+ 8009940:	c07fa0f9 	.word	0xc07fa0f9
+ 8009944:	bfe74eba 	.word	0xbfe74eba
+ 8009948:	3ecde00d 	.word	0x3ecde00d
+ 800994c:	4026cec4 	.word	0x4026cec4
+ 8009950:	4098ebee 	.word	0x4098ebee
+ 8009954:	68206553 	.word	0x68206553
+ 8009958:	72702061 	.word	0x72702061
+ 800995c:	6f697365 	.word	0x6f697365
+ 8009960:	6f64616e 	.word	0x6f64616e
+ 8009964:	31575320 	.word	0x31575320
+ 8009968:	000a0d20 	.word	0x000a0d20
+ 800996c:	c18d8b1a 	.word	0xc18d8b1a
+ 8009970:	c1847223 	.word	0xc1847223
+ 8009974:	c173758e 	.word	0xc173758e
+ 8009978:	3c986e8c 	.word	0x3c986e8c
+ 800997c:	bc93c255 	.word	0xbc93c255
+ 8009980:	bc93c255 	.word	0xbc93c255
+ 8009984:	3c986e8c 	.word	0x3c986e8c
+ 8009988:	c00cbc6a 	.word	0xc00cbc6a
+ 800998c:	c0672791 	.word	0xc0672791
+ 8009990:	c0a04e3c 	.word	0xc0a04e3c
+ 8009994:	c037998c 	.word	0xc037998c
+ 8009998:	40306afc 	.word	0x40306afc
+ 800999c:	bf62faf7 	.word	0xbf62faf7
+ 80099a0:	00206625 	.word	0x00206625
 	...
 
-08009a70 <__func__.5928>:
- 8009a70:	54566863 69546f44 00496b63 00000000     chVTDoTickI.....
+080099b0 <__func__.5928>:
+ 80099b0:	54566863 69546f44 00496b63 00000000     chVTDoTickI.....
 
-08009a80 <__func__.6545>:
- 8009a80:	54566863 65536f44 00004974 00000000     chVTDoSetI......
+080099c0 <__func__.6545>:
+ 80099c0:	54566863 65536f44 00004974 00000000     chVTDoSetI......
 
-08009a90 <__func__.6553>:
- 8009a90:	54566863 65526f44 49746573 00000000     chVTDoResetI....
+080099d0 <__func__.6553>:
+ 80099d0:	54566863 65526f44 49746573 00000000     chVTDoResetI....
 
-08009aa0 <__func__.6542>:
- 8009aa0:	63536863 61655268 00497964 00000000     chSchReadyI.....
+080099e0 <__func__.6542>:
+ 80099e0:	63536863 61655268 00497964 00000000     chSchReadyI.....
 
-08009ab0 <__func__.6554>:
- 8009ab0:	68546863 65724364 49657461 00000000     chThdCreateI....
+080099f0 <__func__.6554>:
+ 80099f0:	68546863 65724364 49657461 00000000     chThdCreateI....
 
-08009ac0 <__func__.5842>:
- 8009ac0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009a00 <__func__.5842>:
+ 8009a00:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009ad0 <__func__.6013>:
- 8009ad0:	68546863 656c5364 00537065 00000000     chThdSleepS.....
+08009a10 <__func__.6013>:
+ 8009a10:	68546863 656c5364 00537065 00000000     chThdSleepS.....
 
-08009ae0 <__func__.6598>:
- 8009ae0:	68546863 69784564 00005374 00000000     chThdExitS......
+08009a20 <__func__.6598>:
+ 8009a20:	68546863 69784564 00005374 00000000     chThdExitS......
 
-08009af0 <__func__.6608>:
- 8009af0:	68546863 73755364 646e6570 00000053     chThdSuspendS...
+08009a30 <__func__.6608>:
+ 8009a30:	68546863 73755364 646e6570 00000053     chThdSuspendS...
 
-08009b00 <__func__.6620>:
- 8009b00:	68546863 73655264 49656d75 00000000     chThdResumeI....
+08009a40 <__func__.6620>:
+ 8009a40:	68546863 73655264 49656d75 00000000     chThdResumeI....
 
-08009b10 <__func__.6025>:
- 8009b10:	68546863 446f4464 65757165 654e6575     chThdDoDequeueNe
- 8009b20:	00497478 00000000 00000000 00000000     xtI.............
+08009a50 <__func__.6025>:
+ 8009a50:	68546863 446f4464 65757165 654e6575     chThdDoDequeueNe
+ 8009a60:	00497478 00000000 00000000 00000000     xtI.............
 
-08009b30 <ch_debug>:
- 8009b30:	6e69616d 18021600 08680404 1814100c     main......h.....
- 8009b40:	2221201c 00000000 00000000 00000000     . !"............
+08009a70 <ch_debug>:
+ 8009a70:	6e69616d 18021600 08680404 1814100c     main......h.....
+ 8009a80:	2221201c 00000000 00000000 00000000     . !"............
 
-08009b50 <__func__.6537>:
- 8009b50:	744d6863 6a624f78 49746365 0074696e     chMtxObjectInit.
+08009a90 <__func__.6537>:
+ 8009a90:	744d6863 6a624f78 49746365 0074696e     chMtxObjectInit.
 
-08009b60 <__func__.5842>:
- 8009b60:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009aa0 <__func__.5842>:
+ 8009aa0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009b70 <__func__.6545>:
- 8009b70:	744d6863 636f4c78 0000536b 00000000     chMtxLockS......
+08009ab0 <__func__.6545>:
+ 8009ab0:	744d6863 636f4c78 0000536b 00000000     chMtxLockS......
 
-08009b80 <__func__.6568>:
- 8009b80:	744d6863 6c6e5578 006b636f 00000000     chMtxUnlock.....
+08009ac0 <__func__.6568>:
+ 8009ac0:	744d6863 6c6e5578 006b636f 00000000     chMtxUnlock.....
 
-08009b90 <__func__.6562>:
- 8009b90:	76456863 6f724274 61636461 6c467473     chEvtBroadcastFl
- 8009ba0:	49736761 00000000 00000000 00000000     agsI............
+08009ad0 <__func__.6562>:
+ 8009ad0:	76456863 6f724274 61636461 6c467473     chEvtBroadcastFl
+ 8009ae0:	49736761 00000000 00000000 00000000     agsI............
 
-08009bb0 <__func__.6579>:
- 8009bb0:	76456863 67695374 496c616e 00000000     chEvtSignalI....
+08009af0 <__func__.6579>:
+ 8009af0:	76456863 67695374 496c616e 00000000     chEvtSignalI....
 
-08009bc0 <__func__.5842>:
- 8009bc0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009b00 <__func__.5842>:
+ 8009b00:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009bd0 <__func__.6565>:
- 8009bd0:	51496863 64616552 656d6954 0074756f     chIQReadTimeout.
+08009b10 <__func__.6565>:
+ 8009b10:	51496863 64616552 656d6954 0074756f     chIQReadTimeout.
 
-08009be0 <__func__.6601>:
- 8009be0:	514f6863 74697257 6d695465 74756f65     chOQWriteTimeout
+08009b20 <__func__.6601>:
+ 8009b20:	514f6863 74697257 6d695465 74756f65     chOQWriteTimeout
 	...
 
-08009c00 <__func__.5842>:
- 8009c00:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009b40 <__func__.5842>:
+ 8009b40:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009c10 <__func__.7912>:
- 8009c10:	636d6d5f 675f6473 735f7465 6563696c     _mmcsd_get_slice
+08009b50 <__func__.7912>:
+ 8009b50:	636d6d5f 675f6473 735f7465 6563696c     _mmcsd_get_slice
 	...
 
-08009c30 <__func__.7919>:
- 8009c30:	636d6d5f 675f6473 635f7465 63617061     _mmcsd_get_capac
- 8009c40:	00797469 00000000 00000000 00000000     ity.............
+08009b70 <__func__.7919>:
+ 8009b70:	636d6d5f 675f6473 635f7465 63617061     _mmcsd_get_capac
+ 8009b80:	00797469 00000000 00000000 00000000     ity.............
 
-08009c50 <__func__.7927>:
- 8009c50:	636d6d5f 675f6473 635f7465 63617061     _mmcsd_get_capac
- 8009c60:	5f797469 00747865 00000000 00000000     ity_ext.........
+08009b90 <__func__.7927>:
+ 8009b90:	636d6d5f 675f6473 635f7465 63617061     _mmcsd_get_capac
+ 8009ba0:	5f797469 00747865 00000000 00000000     ity_ext.........
 
-08009c70 <sdc_vmt>:
- 8009c70:	08008c81 08008ce1 08004441 08004631     ........AD..1F..
- 8009c80:	080046b1 08004731 080047b1 08004801     .F..1G...G...H..
+08009bb0 <sdc_vmt>:
+ 8009bb0:	08008c81 08008ce1 08004441 08004631     ........AD..1F..
+ 8009bc0:	080046b1 08004731 080047b1 08004801     .F..1G...G...H..
 
-08009c90 <__func__.8305>:
- 8009c90:	5f636d6d 36646d63 6e6f635f 75727473     mmc_cmd6_constru
- 8009ca0:	00007463 00000000 00000000 00000000     ct..............
+08009bd0 <__func__.8305>:
+ 8009bd0:	5f636d6d 36646d63 6e6f635f 75727473     mmc_cmd6_constru
+ 8009be0:	00007463 00000000 00000000 00000000     ct..............
 
-08009cb0 <__func__.8312>:
- 8009cb0:	5f636473 36646d63 6e6f635f 75727473     sdc_cmd6_constru
- 8009cc0:	00007463 00000000 00000000 00000000     ct..............
+08009bf0 <__func__.8312>:
+ 8009bf0:	5f636473 36646d63 6e6f635f 75727473     sdc_cmd6_constru
+ 8009c00:	00007463 00000000 00000000 00000000     ct..............
 
-08009cd0 <__func__.8356>:
- 8009cd0:	5f636d6d 5f746573 5f737562 74646977     mmc_set_bus_widt
- 8009ce0:	00000068 00000000 00000000 00000000     h...............
+08009c10 <__func__.8356>:
+ 8009c10:	5f636d6d 5f746573 5f737562 74646977     mmc_set_bus_widt
+ 8009c20:	00000068 00000000 00000000 00000000     h...............
 
-08009cf0 <__func__.6186>:
- 8009cf0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009c30 <__func__.6186>:
+ 8009c30:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009d00 <__func__.8388>:
- 8009d00:	43636473 656e6e6f 00007463 00000000     sdcConnect......
+08009c40 <__func__.8388>:
+ 8009c40:	43636473 656e6e6f 00007463 00000000     sdcConnect......
 
-08009d10 <__func__.8399>:
- 8009d10:	44636473 6f637369 63656e6e 00000074     sdcDisconnect...
+08009c50 <__func__.8399>:
+ 8009c50:	44636473 6f637369 63656e6e 00000074     sdcDisconnect...
 
-08009d20 <__func__.8407>:
- 8009d20:	52636473 00646165 00000000 00000000     sdcRead.........
+08009c60 <__func__.8407>:
+ 8009c60:	52636473 00646165 00000000 00000000     sdcRead.........
 
-08009d30 <__func__.8415>:
- 8009d30:	57636473 65746972 00000000 00000000     sdcWrite........
+08009c70 <__func__.8415>:
+ 8009c70:	57636473 65746972 00000000 00000000     sdcWrite........
 
-08009d40 <__func__.8425>:
- 8009d40:	53636473 00636e79 00000000 00000000     sdcSync.........
+08009c80 <__func__.8425>:
+ 8009c80:	53636473 00636e79 00000000 00000000     sdcSync.........
 
-08009d50 <__func__.8430>:
- 8009d50:	47636473 6e497465 00006f66 00000000     sdcGetInfo......
+08009c90 <__func__.8430>:
+ 8009c90:	47636473 6e497465 00006f66 00000000     sdcGetInfo......
 
-08009d60 <vmt>:
- 8009d60:	080049a1 080049d1 08004a01 08004a31     .I...I...J..1J..
- 8009d70:	08004a51 08004a81 08004aa1 08004ad1     QJ...J...J...J..
+08009ca0 <vmt>:
+ 8009ca0:	080049a1 080049d1 08004a01 08004a31     .I...I...J..1J..
+ 8009cb0:	08004a51 08004a81 08004aa1 08004ad1     QJ...J...J...J..
 
-08009d80 <__func__.7954>:
- 8009d80:	74536473 00747261 00000000 00000000     sdStart.........
+08009cc0 <__func__.7954>:
+ 8009cc0:	74536473 00747261 00000000 00000000     sdStart.........
 
-08009d90 <__func__.5842>:
- 8009d90:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009cd0 <__func__.5842>:
+ 8009cd0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009da0 <__func__.7963>:
- 8009da0:	6e496473 696d6f63 6144676e 00496174     sdIncomingDataI.
+08009ce0 <__func__.7963>:
+ 8009ce0:	6e496473 696d6f63 6144676e 00496174     sdIncomingDataI.
 
-08009db0 <__func__.7909>:
- 8009db0:	74537473 41747261 6d72616c 00000000     stStartAlarm....
+08009cf0 <__func__.7909>:
+ 8009cf0:	74537473 41747261 6d72616c 00000000     stStartAlarm....
 
-08009dc0 <__func__.7916>:
- 8009dc0:	65537473 616c4174 00006d72 00000000     stSetAlarm......
+08009d00 <__func__.7916>:
+ 8009d00:	65537473 616c4174 00006d72 00000000     stSetAlarm......
 
-08009dd0 <zero_status>:
+08009d10 <zero_status>:
 	...
 
-08009de0 <active_status>:
+08009d20 <active_status>:
 	...
 
-08009df0 <halted_status>:
- 8009df0:	00000001 00000000 00000000 00000000     ................
+08009d30 <halted_status>:
+ 8009d30:	00000001 00000000 00000000 00000000     ................
 
-08009e00 <__func__.8356>:
- 8009e00:	53627375 74726174 65636552 49657669     usbStartReceiveI
+08009d40 <__func__.8356>:
+ 8009d40:	53627375 74726174 65636552 49657669     usbStartReceiveI
 	...
 
-08009e20 <__func__.8361>:
- 8009e20:	53627375 74726174 6e617254 74696d73     usbStartTransmit
- 8009e30:	00000049 00000000 00000000 00000000     I...............
+08009d60 <__func__.8361>:
+ 8009d60:	53627375 74726174 6e617254 74696d73     usbStartTransmit
+ 8009d70:	00000049 00000000 00000000 00000000     I...............
 
-08009e40 <__func__.8395>:
- 8009e40:	6273755f 3070655f 00006e69 00000000     _usb_ep0in......
+08009d80 <__func__.8395>:
+ 8009d80:	6273755f 3070655f 00006e69 00000000     _usb_ep0in......
 
-08009e50 <__func__.8409>:
- 8009e50:	6273755f 3070655f 0074756f 00000000     _usb_ep0out.....
+08009d90 <__func__.8409>:
+ 8009d90:	6273755f 3070655f 0074756f 00000000     _usb_ep0out.....
 
-08009e60 <pow10>:
- 8009e60:	0000000a 00000064 000003e8 00002710     ....d........'..
- 8009e70:	000186a0 000f4240 00989680 05f5e100     ....@B..........
- 8009e80:	3b9aca00 00000000 00000000 00000000     ...;............
+08009da0 <pow10>:
+ 8009da0:	0000000a 00000064 000003e8 00002710     ....d........'..
+ 8009db0:	000186a0 000f4240 00989680 05f5e100     ....@B..........
+ 8009dc0:	3b9aca00 00000000 00000000 00000000     ...;............
 
-08009e90 <_stm32_dma_streams>:
- 8009e90:	40026010 40026008 000b0000 40026028     .`.@.`.@....(`.@
- 8009ea0:	40026008 000c0106 40026040 40026008     .`.@....@`.@.`.@
- 8009eb0:	000d0210 40026058 40026008 000e0316     ....X`.@.`.@....
- 8009ec0:	40026070 4002600c 000f0400 40026088     p`.@.`.@.....`.@
- 8009ed0:	4002600c 00100506 400260a0 4002600c     .`.@.....`.@.`.@
- 8009ee0:	00110610 400260b8 4002600c 002f0716     .....`.@.`.@../.
- 8009ef0:	40026410 40026408 00380800 40026428     .d.@.d.@..8.(d.@
- 8009f00:	40026408 00390906 40026440 40026408     .d.@..9.@d.@.d.@
- 8009f10:	003a0a10 40026458 40026408 003b0b16     ..:.Xd.@.d.@..;.
- 8009f20:	40026470 4002640c 003c0c00 40026488     pd.@.d.@..<..d.@
- 8009f30:	4002640c 00440d06 400264a0 4002640c     .d.@..D..d.@.d.@
- 8009f40:	00450e10 400264b8 4002640c 00460f16     ..E..d.@.d.@..F.
+08009dd0 <_stm32_dma_streams>:
+ 8009dd0:	40026010 40026008 000b0000 40026028     .`.@.`.@....(`.@
+ 8009de0:	40026008 000c0106 40026040 40026008     .`.@....@`.@.`.@
+ 8009df0:	000d0210 40026058 40026008 000e0316     ....X`.@.`.@....
+ 8009e00:	40026070 4002600c 000f0400 40026088     p`.@.`.@.....`.@
+ 8009e10:	4002600c 00100506 400260a0 4002600c     .`.@.....`.@.`.@
+ 8009e20:	00110610 400260b8 4002600c 002f0716     .....`.@.`.@../.
+ 8009e30:	40026410 40026408 00380800 40026428     .d.@.d.@..8.(d.@
+ 8009e40:	40026408 00390906 40026440 40026408     .d.@..9.@d.@.d.@
+ 8009e50:	003a0a10 40026458 40026408 003b0b16     ..:.Xd.@.d.@..;.
+ 8009e60:	40026470 4002640c 003c0c00 40026488     pd.@.d.@..<..d.@
+ 8009e70:	4002640c 00440d06 400264a0 4002640c     .d.@..D..d.@.d.@
+ 8009e80:	00450e10 400264b8 4002640c 00460f16     ..E..d.@.d.@..F.
 
-08009f50 <__func__.8258>:
- 8009f50:	5f636473 5f646c6c 70657270 5f657261     sdc_lld_prepare_
- 8009f60:	64616572 7479625f 00007365 00000000     read_bytes......
+08009e90 <__func__.8258>:
+ 8009e90:	5f636473 5f646c6c 70657270 5f657261     sdc_lld_prepare_
+ 8009ea0:	64616572 7479625f 00007365 00000000     read_bytes......
 
-08009f70 <__func__.6186>:
- 8009f70:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
+08009eb0 <__func__.6186>:
+ 8009eb0:	79536863 6c6e5573 006b636f 00000000     chSysUnlock.....
 
-08009f80 <__func__.8380>:
- 8009f80:	5f636473 5f646c6c 64616572 696c615f     sdc_lld_read_ali
- 8009f90:	64656e67 00000000 00000000 00000000     gned............
+08009ec0 <__func__.8380>:
+ 8009ec0:	5f636473 5f646c6c 64616572 696c615f     sdc_lld_read_ali
+ 8009ed0:	64656e67 00000000 00000000 00000000     gned............
 
-08009fa0 <__func__.8389>:
- 8009fa0:	5f636473 5f646c6c 74697277 6c615f65     sdc_lld_write_al
- 8009fb0:	656e6769 00000064 00000000 00000000     igned...........
+08009ee0 <__func__.8389>:
+ 8009ee0:	5f636473 5f646c6c 74697277 6c615f65     sdc_lld_write_al
+ 8009ef0:	656e6769 00000064 00000000 00000000     igned...........
 
-08009fc0 <ep0config>:
- 8009fc0:	00000000 08005501 08005681 080057a1     .....U...V...W..
- 8009fd0:	00400040 20003940 20003940 00000001     @.@.@9. @9. ....
- 8009fe0:	20003954 00000000 00000000 00000000     T9. ............
+08009f00 <ep0config>:
+ 8009f00:	00000000 08005501 08005681 080057a1     .....U...V...W..
+ 8009f10:	00400040 20003940 20003940 00000001     @.@.@9. @9. ....
+ 8009f20:	20003954 00000000 00000000 00000000     T9. ............
 
-08009ff0 <fsparams>:
- 8009ff0:	00000080 00000140 00000003 00000000     ....@...........
+08009f30 <fsparams>:
+ 8009f30:	00000080 00000140 00000003 00000000     ....@...........
 
-0800a000 <hsparams>:
- 800a000:	00000100 00000400 00000005 00000000     ................
+08009f40 <hsparams>:
+ 8009f40:	00000100 00000400 00000005 00000000     ................
 
-0800a010 <__func__.8304>:
- 800a010:	5f67746f 5f6d6172 6f6c6c61 00000063     otg_ram_alloc...
+08009f50 <__func__.8304>:
+ 8009f50:	5f67746f 5f6d6172 6f6c6c61 00000063     otg_ram_alloc...
 
-0800a020 <default_config>:
- 800a020:	0001c200 40000000 00000000 00000000     .......@........
+08009f60 <default_config>:
+ 8009f60:	0001c200 40000000 00000000 00000000     .......@........
 
-0800a030 <pal_default_config>:
- 800a030:	aaa88028 00000000 ffffffff 20011500     (.............. 
- 800a040:	0000ffff b0000bb0 000aa770 aaa40280     ........p.......
- 800a050:	00000000 ffffffff 00015405 0000ffff     .........T......
- 800a060:	00000000 ccbb7700 02aaaa08 00000000     .....w..........
- 800a070:	ffffffff 04000051 0000ffff 88bb00b0     ....Q...........
- 800a080:	000ccccc 00000020 00000000 ffffffff     .... ...........
- 800a090:	55555545 0000ffff 00000c00 00000000     EUUU............
+08009f70 <pal_default_config>:
+ 8009f70:	aaa88028 00000000 ffffffff 20011500     (.............. 
+ 8009f80:	0000ffff b0000bb0 000aa770 aaa40280     ........p.......
+ 8009f90:	00000000 ffffffff 00015405 0000ffff     .........T......
+ 8009fa0:	00000000 ccbb7700 02aaaa08 00000000     .....w..........
+ 8009fb0:	ffffffff 04000051 0000ffff 88bb00b0     ....Q...........
+ 8009fc0:	000ccccc 00000020 00000000 ffffffff     .... ...........
+ 8009fd0:	55555545 0000ffff 00000c00 00000000     EUUU............
 	...
- 800a0a8:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
+ 8009fe8:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
 	...
- 800a0c4:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
- 800a0d4:	00000000 00810554 00000000 ffffffff     ....T...........
- 800a0e4:	15045554 0000ffc3 00000000 0000b000     TU..............
+ 800a004:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
+ 800a014:	00000000 00810554 00000000 ffffffff     ....T...........
+ 800a024:	15045554 0000ffc3 00000000 0000b000     TU..............
 	...
- 800a0fc:	ffffffff 55555550 0000ffff 00000000     ....PUUU........
+ 800a03c:	ffffffff 55555550 0000ffff 00000000     ....PUUU........
 	...
- 800a118:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
- 800a128:	00000000                                ....
+ 800a058:	ffffffff 55555555 0000ffff 00000000     ....UUUU........
+ 800a068:	00000000                                ....
