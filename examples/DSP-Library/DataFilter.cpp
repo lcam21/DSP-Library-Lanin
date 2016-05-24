@@ -91,12 +91,15 @@ void DataFilter::createArrayAux() {
 
 	ArrayInputsY[0] = ArrayInputsX[0];
 
+	chprintf((BaseSequentialStream *) &SD1, "\r\n\V: %f ", _NumResult, ArrayInputsY[0]); //print result
+
 	for (Cont = 0; Cont < (FilterOrder - 1); Cont++) {
 		_NumSum = MathOperation->sum(Cont, 0, ArrayCoefficientsA, ArrayInputsY,
-				Cont);
+				0);
 		_NumX = ArrayInputsX[Cont + 1];
 		_NumResult = _NumX - _NumSum;
 		ArrayInputsY[Cont + 1] = _NumResult;
+
 		chprintf((BaseSequentialStream *) &SD1, "%f ", _NumResult); //print result
 	}
 }

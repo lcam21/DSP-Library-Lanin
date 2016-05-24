@@ -5,6 +5,12 @@
  *      Author: lcalvare
  */
 
+#include <ch.h>
+#include <hal.h>
+#include <stdio.h>
+#include <serial.h>
+#include <chprintf.h>
+
 #include "header/IIR.h"
 
 float IIR::directFormI(float pData) {
@@ -86,10 +92,14 @@ float IIR::directFormII(float pData) {
 	_ResultV = pData - MathOperation->sum(_FilterOrder-1, 0, _ArrayCoefficientsA,
 			_ArrayInputsV, ContBuffer);;
 
+	//chprintf((BaseSequentialStream *) &SD1, "%f ", _ResultV); //print result
+
 	_ArrayInputsV[_ContInputData] = _ResultV;
 
 	_Result = MathOperation->sum(_FilterOrder, 0, _ArrayCoefficientsB,
 			_ArrayInputsV, ContBuffer);
+
+	//chprintf((BaseSequentialStream *) &SD1, "Y: %f ", _Result); //print result
 
 	ContBuffer++;
 

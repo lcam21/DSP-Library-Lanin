@@ -21,7 +21,7 @@
 // 0 - FIR Form Direct I
 // 1 - IIR Form Direct I
 // 2 - IIR Form Direct II
-int TipoFiltro = 1;
+int TipoFiltro = 2;
 
 static THD_WORKING_AREA(waThread1, 256);
 
@@ -32,8 +32,15 @@ static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 	chRegSetThreadName("Filtro");
 
 	//data
-	float _EntradasX[10] = { -13.69094, -11.99835, -10.15919, -8.19591,
-			-6.13252, -3.99420, -1.80709, 0.40210, 2.60637, 4.77880 };
+	float _EntradasX[50] = { -13.69094, -11.99835, -10.15919, -8.19591,
+			-6.13252, -3.99420, -1.80709, 0.40210, 2.60637, 4.77880, 6.89286,
+			8.92271, 10.84355, 12.63193, 14.26599, 15.72577, 16.99344, 18.05351,
+			18.89303, 19.50175, 19.87223, 19.99994, 19.88332, 19.52380,
+			18.92577, 18.09654, 17.04623, 15.78768, 14.33627, 12.70971,
+			10.92789, 9.01257, 6.98714, 4.87636, 2.70601, 0.50260, -1.70695,
+			-3.89564, -6.03675, -8.10411, -10.07246, -11.91777, -13.61749,
+			-15.15084, -16.49911, -17.64582, -18.57697, -19.28117, -19.74982,
+			-19.97720 };
 
 	float _Result;
 
@@ -53,7 +60,7 @@ static THD_FUNCTION(Thread1, pArg) { //Funtion that the thread execute
 
 	int _Cont;
 	//input data of filter
-	for (_Cont = 0; _Cont < 10; _Cont++) {
+	for (_Cont = 0; _Cont < 50; _Cont++) {
 		chThdSleepMilliseconds(200);
 		palTogglePad(GPIOG, GPIOG_LED1);
 
@@ -90,7 +97,7 @@ int main() {
 	int _FilterOrder = 3;
 
 	// Orden: ...., x[-3], x[-2], x[-1]
-	float _CondicionesInicialesX[3] = { -17.69292, -16.55573, -15.2162 };
+	float _CondicionesInicialesX[3] = { -17.69292, -16.55573, -15.21628 };
 	// Orden: BO, B1, B2, B3, ....
 	float _CoeficientesB[4] = { 0.0186074, -0.0180370, -0.0180370, 0.0186074 };
 
