@@ -21,7 +21,7 @@
 // 0 - FIR Form Direct I
 // 1 - IIR Form Direct I
 // 2 - IIR Form Direct II
-int TipoFiltro = 2;
+int TipoFiltro = 1;
 
 static THD_WORKING_AREA(waThread1, 256);
 
@@ -102,26 +102,23 @@ int main() {
 	float _CoeficientesB[4] = { 0.0186074, -0.0180370, -0.0180370, 0.0186074 };
 
 	// Orden: ...., y[-3], y[-2], y[-1]
-	float _CondicionesInicialesY[3] = { -2.19900, -3.61179, -5.00955 };
-	//Orden: A1, A2, A3, ...
-	float _CoeficientesA[3] = { -2.8687468, 2.7565297, -0.8866419 };
+	float _CondicionesInicialesY[3] = { -2.19972, -3.61250, -5.01023 };
+	//Orden: A0, A1, A2, A3, ...
+	float _CoeficientesA[4] = { 1, -2.8687468, 2.7565297, -0.8866419 }; //CAMBIOOO
 
 	DataFilter *_DataFilter = (DataFilter*) chHeapAlloc(NULL,
 			sizeof(DataFilter));
 
-	//set data of filter
-	typeOfDirectForm _TypeOfForm = 1;
 	if (TipoFiltro == 1) {
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
-				_CoeficientesB, _CondicionesInicialesY, _CoeficientesA,
-				_TypeOfForm);
+				_CoeficientesB, _CondicionesInicialesY, _CoeficientesA);
 	} else if (TipoFiltro == 0) {
 
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
-				_CoeficientesB, _TypeOfForm);
+				_CoeficientesB);
 	} else {
 		_DataFilter->newDataFilter(_FilterOrder, _CondicionesInicialesX,
-				_CoeficientesB, _CoeficientesA, _TypeOfForm);
+				_CoeficientesB, _CoeficientesA);
 	}
 
 	void *_Arg = _DataFilter;

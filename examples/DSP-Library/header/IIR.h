@@ -1,8 +1,9 @@
 /*
- * IIR.h
- *
- *  Created on: Apr 18, 2016
- *      Author: lcalvare
+ * @class IIR
+ * @brief Class for processing data for IIR filters
+ * @file IIR.h
+ * @autor Luis Alvarez Mata
+ * @see Class Filter
  */
 
 #include "Filter.h"
@@ -17,12 +18,14 @@ public:
 	/**
 	 * @brief Method that implements the Direct Form I of a IIR Filter
 	 * @param pData - input data for apply the filter
-	 * @return variable with data filter
+	 * @return output data filtering
 	 */
 	float directFormI(float pData);
 
 	/**
-	 *
+	 * @brief Method that implements the Direct Form II of a IIR Filter
+	 * @param pData - input data for apply the filter
+	 * @return output data filtering
 	 */
 	float directFormII(float pData);
 

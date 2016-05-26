@@ -25,7 +25,8 @@ public:
 
 private:
 
-	int Cont;
+	int Cont; /** @brief Variable use with general count */
+
 };
 
 #endif /* HEADER_FUNTIONSMATH_H_ */

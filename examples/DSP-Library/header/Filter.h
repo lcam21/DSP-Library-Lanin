@@ -1,8 +1,9 @@
 /*
- * Filter.h
- *
- *  Created on: 08/05/2016
- *      Author: Luis
+ * @class Filter
+ * @brief Parent class containing the generic functions for filters
+ * @file Filter.h
+ * @autor Luis Alvarez Mata
+ * @see Class FuntionsMath
  */
 
 #include <ch.h>
@@ -24,13 +25,15 @@ public:
 
 	/**
 	 * @brief Method that implements the Direct Form I of a FIR Filter
-	 * @param pDataFilter
+	 * @param Input data filter
+	 * @return output data filtering
 	 */
 	float directFormI(float pData);
 
 	/**
 	 * @brief Method that implements the Direct Form II of a FIR Filter
 	 * @param pDataFilter
+	 * @retur output data filtering
 	 */
 	float directFormII(float pData);
 
@@ -41,9 +44,9 @@ public:
 	void setInitialDataFilter(DataFilter *pInitialDataFilter);
 
 protected:
-	FuntionsMath *MathOperation;
-	DataFilter *InitialDataFilter;
-	int ContBuffer;
+	FuntionsMath *MathOperation; /** @brief Pointer type MathOperation, for call sum operation */
+	DataFilter *InitialDataFilter; /** @brief Pointer for set data filter */
+	int ContBuffer; /** @brief Variable use with general count */
 };
 
 #endif /* FILTER_H_ */

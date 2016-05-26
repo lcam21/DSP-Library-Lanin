@@ -1,8 +1,9 @@
 /*
- * FIR.h
- *
- *  Created on: Apr 13, 2016
- *      Author: luis
+ * @class FIR
+ * @brief Class for processing data for FIR filters
+ * @file FIR.h
+ * @autor Luis Alvarez Mata
+ * @see Class Filter
  */
 
 #include "Filter.h"
@@ -20,15 +21,15 @@ public:
 
 	/**
 	 * @brief Method that implements the Direct Form I of a FIR Filter
-	 * @param pDataFilter
-	 * @return variable with get the filter data
+	 * @param pData Input data filter
+	 * @return output data filtering
 	 */
 	float directFormI(float pData);
 
 	/**
 	 * @brief Method that implements the Direct Form I of a FIR Filter
-	 * @param pDataFilter
-	 * @return variable with get the filter data
+	 * @param pData Input data filter
+	 * @return output data filtering
 	 */
 	float directFormII(float pData);
 

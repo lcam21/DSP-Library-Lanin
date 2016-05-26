@@ -1,8 +1,8 @@
 /*
- * DataFilter.h
- *
- *  Created on: Apr 17, 2016
- *      Author: luis
+ * @class DataFilter
+ * @brief Class responsible for containing the filter data
+ * @file DataFilter.h
+ * @autor Luis Alvarez Mata
  */
 
 #include <ch.h>
@@ -12,140 +12,136 @@
 #ifndef DATAFILTER_H_
 #define DATAFILTER_H_
 
-#define BUFFER_SIZE 10
-
-typedef int typeOfDirectForm;
+#define BUFFER_SIZE 10 /**< Buffer size of create array */
 
 class DataFilter {
 public:
 
 	/**
 	 * @brief Constructor of data for filter FIR
+	 * @param pFilterOrder Filter Order
+	 * @param pArrayInputsX Initial conditions for X
+	 * @param pArrayCoefficientsB Coefficients transfer function (zeros)
 	 */
 	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
-			float *pArrayCoefficientsB, typeOfDirectForm pTypeOfDirectForm);
+			float *pArrayCoefficientsB);
 
 	/**
 	 * @brief Constructor of data for filter IIR using the form direct I
+	 * @param pFilterOrder Filter Order
+	 * @param pArrayInputsX Initial conditions for X (input)
+	 * @param pArrayCoefficientsB Coefficients transfer function (zeros)
+	 * @param pArrayInputsY Initial condition for y (output)
+	 * @param pArrayCoefficientsA Coefficients transfer function (polos)
 	 */
 	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
 			float *pArrayCoefficientsB, float *pArrayInputsY,
-			float *pArrayCoefficientsA, typeOfDirectForm pTypeOfDirectForm);
+			float *pArrayCoefficientsA);
 
 	/**
 	 * @brief Constructor of data for filter IIR using the form direct II
+	 * @param pFilterOrder Filter Order
+	 * @param pArrayInputsX Initial conditions for X (input)
+	 * @param pArrayCoefficientsB Coefficients transfer function (zeros)
+	 * @param pArrayCoefficientsA Coefficients transfer function (polos)
 	 */
 	void newDataFilter(int pFilterOrder, float *pArrayInputsX,
-			float *pArrayCoefficientsB, float *pArrayCoefficientsA,
-			typeOfDirectForm pTypeOfDirectForm);
+			float *pArrayCoefficientsB, float *pArrayCoefficientsA);
 
 	/**
-	 * @brief Destructor of class
+	 * @brief Destroyer of class
 	 */
 	virtual ~DataFilter();
 
 	/**
-	 * @brief move the data of array and add pData in te position [n-1]
+	 * @brief Move the data of array and add pData in the position [n-1]
+	 * @param pArray Array pointer to move
 	 */
 	void moveArray(float *pArray);
 
 	/**
-	 * @brief modify the array aux for add the initial conditions
+	 * @brief Modify the array aux for add the initial conditions
 	 */
 	void createArrayAux();
 
 	/**
-	 * @brief return the pointer of array that have the coefficients
-	 * @return pointer double
+	 * @brief Return the pointer of array that have the coefficients
+	 * @return Pointer double
 	 */
 	float* getArrayCoefficientsB() const;
 
 	/**
-	 * @brief set the value of array of coefficients
+	 * @brief Set the value of array of coefficients
 	 */
 	void setArrayCoefficientsB(float* pArrayCoefficients);
 
 	/**
-	 * @brief return the pointer of array that have the initial conditions
-	 * @return pointer double
-	 */
-	float* getArrayInitialConditionsX() const;
-
-	/**
-	 * @brief set the value of array of initial conditions
+	 * @brief Set the value of array of initial conditions
 	 */
 	void setArrayInitialConditionsX(float* pArrayInitialConditions);
 
 	/**
-	 * @brief return the pointer of array that have the inputs
-	 * @return pointer double
+	 * @brief Return the pointer of array that have the inputs
+	 * @return Pointer with the inputs
 	 */
 	float* getArrayInputsX() const;
 
 	/**
-	 * @brief set the value of array of initial inputs - Only for filter FIR
+	 * @brief Set the value of array of initial inputs - Only for filter FIR
 	 */
 	void setArrayInputsX(float* pArrayInputs, int pSizeInputs);
 
 	/**
-	 * @brief return order of filter
-	 * @return integer variable with contains the value of filter order
+	 * @brief Return order of filter
+	 * @return Integer variable with contains the value of filter order
 	 */
 	int getFilterOrder() const;
 
 	/**
-	 * @brief set the value of filter order
+	 * @brief Set the value of filter order
 	 */
 	void setFilterOrder(int pFilterOrder);
 
 	/**
-	 * @brief get the value of coefficients A
+	 * @brief Get the value of coefficients A
+	 * @return Pointer with the array of coefficients of polos
 	 */
 	float* getArrayCoefficientsA() const;
 
 	/**
-	 * @brief set the value of coefficients A
+	 * @brief Set the value of coefficients A
 	 */
 	void setArrayCoefficientsA(float* arrayCoefficientsA);
 
 	/**
-	 * @brief get the value of InitialConditions Y
-	 */
-	float* getArrayInitialConditionsY() const;
-
-	/**
-	 * @brief set the value of InitialConditions Y
+	 * @brief Set the value of InitialConditions Y
 	 */
 	void setArrayInitialConditionsY(float* arrayInitialConditionsY);
 
 	/**
-	 * @brief get the value of Inputs Y
+	 * @brief Get the value of Inputs Y
+	 * @return Pointer of array inputs Y
 	 */
 	float* getArrayInputsY() const;
 
-	int getTypeOfDirectForm() const;
-
-	void setTypeOfDirectForm(int typeOfDirectForm);
-
 private:
 	//Variable generic of filter
-	int FilterOrder; //Number of the order of filter
-	int TypeOfDirectForm; //Type of form filter
+	int FilterOrder; /** @brief Number of the order of filter*/
 
 	// Variable of input data in axis X
-	float *ArrayCoefficientsB; //Array that contains the coefficients b sub k
-	float *ArrayInputsX; //Array that contains the inputs x[n-k]
+	float *ArrayCoefficientsB; /** @brief Array that contains the coefficients b sub k*/
+	float *ArrayInputsX; /** @brief Array that contains the inputs x[n-k] */
 
 	//Variable of input data in axis Y
-	float *ArrayCoefficientsA; //Array that contains the coefficients a sub k
-	float *ArrayInputsY; //Array that contains the inputs y[n-k]  //For the from direct II is used with auxiliary
+	float *ArrayCoefficientsA; /** @brief Array that contains the coefficients a sub k */
+	float *ArrayInputsY; /** @brief Array that contains the inputs y[n-k]  //For the from direct II is used with auxiliary */
 
 	//Variable of output data
-	float Result; //Get the result of filter - For IIR
+	float Result; /** @brief Get the result of filter - For IIR */
 
-	int Cont; //generic cont for use in FOR
+	int Cont; /** @brief generic cont for use in FOR */
 
-	FuntionsMath *MathOperation;
+	FuntionsMath *MathOperation; /** @brief Pointer of MathOperation using in create initial conditions */
 
 };
 

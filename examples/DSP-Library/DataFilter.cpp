@@ -1,18 +1,7 @@
-/*
- * DataFilter.cpp
- *
- *  Created on: Apr 17, 2016
- *      Author: luis
- */
-
 #include "header/DataFilter.h"
 
-#include <stdio.h>
-#include <serial.h>
-#include <chprintf.h>
-
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
-		float *pArrayCoefficientsB, typeOfDirectForm pTypeOfDirectForm) {
+		float *pArrayCoefficientsB) {
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
@@ -21,7 +10,6 @@ void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
 
 	setFilterOrder(pFilterOrder);
-	setTypeOfDirectForm(pTypeOfDirectForm);
 	setArrayInitialConditionsX(pArrayInputsX);
 	setArrayCoefficientsB(pArrayCoefficientsB);
 
@@ -29,7 +17,7 @@ void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 		float *pArrayCoefficientsB, float *pArrayInputsY,
-		float *pArrayCoefficientsA, typeOfDirectForm pTypeOfDirectForm) {
+		float *pArrayCoefficientsA) {
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
@@ -43,7 +31,6 @@ void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 
 	//set variables
 	setFilterOrder(pFilterOrder);
-	setTypeOfDirectForm(pTypeOfDirectForm);
 	setArrayInitialConditionsX(pArrayInputsX);
 	setArrayCoefficientsB(pArrayCoefficientsB);
 	setArrayInitialConditionsY(pArrayInputsY);
@@ -51,8 +38,7 @@ void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 }
 
 void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
-		float *pArrayCoefficientsB, float *pArrayCoefficientsA,
-		typeOfDirectForm pTypeOfDirectForm) {
+		float *pArrayCoefficientsB, float *pArrayCoefficientsA) {
 
 	//allocate memory
 	ArrayCoefficientsB = (float*) chHeapAlloc(NULL,
@@ -65,7 +51,6 @@ void DataFilter::newDataFilter(int pFilterOrder, float *pArrayInputsX,
 			sizeof(float) * (FilterOrder + BUFFER_SIZE));
 
 	setFilterOrder(pFilterOrder);
-	setTypeOfDirectForm(pTypeOfDirectForm);
 	setArrayInitialConditionsX(pArrayInputsX);
 	setArrayCoefficientsB(pArrayCoefficientsB);
 	setArrayCoefficientsA(pArrayCoefficientsA);
@@ -91,16 +76,12 @@ void DataFilter::createArrayAux() {
 
 	ArrayInputsY[0] = ArrayInputsX[0];
 
-	chprintf((BaseSequentialStream *) &SD1, "\r\n\V: %f ", _NumResult, ArrayInputsY[0]); //print result
-
 	for (Cont = 0; Cont < (FilterOrder - 1); Cont++) {
 		_NumSum = MathOperation->sum(Cont, 0, ArrayCoefficientsA, ArrayInputsY,
 				0);
 		_NumX = ArrayInputsX[Cont + 1];
 		_NumResult = _NumX - _NumSum;
 		ArrayInputsY[Cont + 1] = _NumResult;
-
-		chprintf((BaseSequentialStream *) &SD1, "%f ", _NumResult); //print result
 	}
 }
 
@@ -143,8 +124,8 @@ float* DataFilter::getArrayCoefficientsA() const {
 }
 
 void DataFilter::setArrayCoefficientsA(float* arrayCoefficientsA) {
-	for (Cont = 0; Cont < (FilterOrder + 1); Cont++) {
-		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont];
+	for (Cont = 0; Cont < FilterOrder; Cont++) {
+		ArrayCoefficientsA[Cont] = arrayCoefficientsA[Cont + 1]; ///CAMBIOOOOO
 	}
 }
 
@@ -156,12 +137,4 @@ void DataFilter::setArrayInitialConditionsY(float* arrayInitialConditionsY) {
 
 float* DataFilter::getArrayInputsY() const {
 	return ArrayInputsY;
-}
-
-int DataFilter::getTypeOfDirectForm() const {
-	return TypeOfDirectForm;
-}
-
-void DataFilter::setTypeOfDirectForm(int typeOfDirectForm) {
-	TypeOfDirectForm = typeOfDirectForm;
 }
